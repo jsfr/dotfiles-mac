@@ -1,0 +1,10 @@
+[package]
+disabled = true
+
+[git_status]
+ahead.value = "↑"
+behind.value = "↓"
+diverged.value = "⤭ "
+
+[cmd_duration]
+disabled = true

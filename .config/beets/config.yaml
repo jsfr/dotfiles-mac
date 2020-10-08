@@ -1,0 +1,4 @@
+directory: ~/GoogleDrive/Music
+library: ~/GoogleDrive/Music/library.db
+import:
+  move: yes

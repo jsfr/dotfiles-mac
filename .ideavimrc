@@ -1,0 +1,50 @@
+" source ~/.config/nvim/init.vim
+
+set number
+set relativenumber
+set clipboard+=unnamedplus
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set ideajoin
+
+set surround
+
+nnoremap ; :
+vnoremap ; :
+
+let mapleader = " "
+
+"disable ex mode
+map Q <Nop>
+
+inoremap jj <Esc>
+
+nnoremap <tab> :action TabSwitchPlugin.SwitchTab<CR>
+nnoremap <leader>p :action SearchEverywhere<CR>
+
+nnoremap gr :action FindUsages<CR>
+
+vnoremap - :action ActivateProjectToolWindow<CR>
+nnoremap - :action ActivateProjectToolWindow<CR>
+
+nnoremap <leader>/ :action VimWindowSplitVertical<CR>
+nnoremap <leader>- :action VimWindowSplitHorizontal<CR>
+nnoremap <leader>bd :action VimWindowClose<CR>
+
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gc :<BS><BS><BS><BS><BS>action VimVisualSwapSelections<CR>:action CommentByLineComment<CR><ESC>gv
+
+nnoremap [l :action GotoPreviousError<CR>
+nnoremap ]l :action GotoNextError<CR>
+nnoremap <leader>ll :action ShowErrorDescription<CR>
+
+" Moving blocks of text in visual mode
+vnoremap < <gv
+vnoremap > >gv
+
+" Indent everything
+noremap <Space>= miggvG=`i
+
+vnoremap <leader>tf :s/.* \(.*\):[^,]*/\1 = TODO()/<CR>gv=

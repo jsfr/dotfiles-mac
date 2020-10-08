@@ -1,0 +1,59 @@
+[user]
+    name = Jens Fredskov
+    email = jensfredskov@protonmail.ch
+[credential]
+    helper = cache
+[push]
+    default = current
+[alias]
+    c = commit
+    up = pull --all --rebase --autostash
+    p = push
+    s = status -sb
+    co = checkout
+    a = add
+    aa = add -A
+    d = diff
+    dc = diff --cached
+    l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short --graph
+    yolo = "!git commit -m \"YOLO: `curl -s http://whatthecommit.com/index.txt`\""
+    st = stash
+    batman = "!git commit -m \"Batman! (this commit has no parents)\""
+    cb = create-branch -r
+    db = delete-branch
+    wip = commit -m "wip" --no-verify
+    sm = "!git co master && git up && git co - && git merge master"
+[core]
+    editor = nvim
+    ; pager = diff-so-fancy | less --tabs=2 -RFX
+    pager = delta --theme="base16"
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[color "diff"]
+    meta = yellow bold
+    commit = green bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "status"]
+    changed = yellow
+    untracked = cyan
+[help]
+    autocorrect = 1
+[interactive]
+    diffFilter = delta --color-only
+; [diff-so-fancy]
+;     useUnicodeRuler = false
