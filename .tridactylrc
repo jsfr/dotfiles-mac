@@ -1,0 +1,20 @@
+" General Settings
+set update.lastchecktime 1602170263822
+set update.lastnaggedversion 1.20.0
+set update.nag true
+set update.nagwait 7
+set update.checkintervalsecs 86400
+set configversion 2.0
+set newtab about:blank
+set theme dark
+set followpagepatterns.prev Previous
+
+" Binds
+unbindurl feedly.com j
+unbindurl feedly.com k
+
+" Subconfig Settings
+seturl www.google.com followpagepatterns.next Next
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
