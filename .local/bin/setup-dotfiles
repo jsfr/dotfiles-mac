@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Copied from https://www.atlassian.com/git/tutorials/dotfiles
+# When setting up a new machine call this like so:
+# $ curl -Lks https://raw.githubusercontent.com/jsfr/dotfiles-mac/master/.local/bin/setup-dotfiles | /bin/bash
+
 git clone --bare git@github.com:jsfr/dotfiles-mac.git "$HOME/.dotfiles"
 
 function config() {
