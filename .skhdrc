@@ -61,16 +61,16 @@ shift + cmd - k : yabai -m window --warp north
 shift + cmd - l : yabai -m window --warp east
 
 # send window to desktop
-shift + lalt - 1 : yabai -m window --space 1  ; ~/.local/bin/spaces.sh
-shift + lalt - 2 : yabai -m window --space 2  ; ~/.local/bin/spaces.sh
-shift + lalt - 3 : yabai -m window --space 3  ; ~/.local/bin/spaces.sh
-shift + lalt - 4 : yabai -m window --space 4  ; ~/.local/bin/spaces.sh
-shift + lalt - 5 : yabai -m window --space 5  ; ~/.local/bin/spaces.sh
-shift + lalt - 6 : yabai -m window --space 6  ; ~/.local/bin/spaces.sh
-shift + lalt - 7 : yabai -m window --space 7  ; ~/.local/bin/spaces.sh
-shift + lalt - 8 : yabai -m window --space 8  ; ~/.local/bin/spaces.sh
-shift + lalt - 9 : yabai -m window --space 9  ; ~/.local/bin/spaces.sh
-shift + lalt - 0 : yabai -m window --space 10 ; ~/.local/bin/spaces.sh
+shift + lalt - 1 : yabai -m window --space 1  ; ~/.local/bin/update-spaces
+shift + lalt - 2 : yabai -m window --space 2  ; ~/.local/bin/update-spaces
+shift + lalt - 3 : yabai -m window --space 3  ; ~/.local/bin/update-spaces
+shift + lalt - 4 : yabai -m window --space 4  ; ~/.local/bin/update-spaces
+shift + lalt - 5 : yabai -m window --space 5  ; ~/.local/bin/update-spaces
+shift + lalt - 6 : yabai -m window --space 6  ; ~/.local/bin/update-spaces
+shift + lalt - 7 : yabai -m window --space 7  ; ~/.local/bin/update-spaces
+shift + lalt - 8 : yabai -m window --space 8  ; ~/.local/bin/update-spaces
+shift + lalt - 9 : yabai -m window --space 9  ; ~/.local/bin/update-spaces
+shift + lalt - 0 : yabai -m window --space 10 ; ~/.local/bin/update-spaces
 
 # send window to desktop and follow focus
 shift + lalt - escape : yabai -m window --space recent ; yabai -m space --focus recent
