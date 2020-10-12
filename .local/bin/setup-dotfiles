@@ -6,19 +6,19 @@
 
 git clone --bare git@github.com:jsfr/dotfiles-mac.git "$HOME/.dotfiles"
 
-function config() {
-  /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
+function cfg() {
+  git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" "$@"
 }
 
 mkdir -p .dotfiles-backup
 
-if config checkout; then
+if cfg checkout; then
   echo "Checked out config."
 else
   echo "Backing up pre-existing dot files."
-  config checkout 2>&1 | grep -E "\s+\." | awk "{'print $1'}" | xargs -I{} mv {} .dotfiles-backup/{}
+  cfg checkout 2>&1 | grep -E "\s+\." | awk "{'print $1'}" | xargs -I{} mv {} .dotfiles-backup/{}
 fi
 
-config checkout
+cfg checkout
 
-config config status.showUntrackedFiles no
+cfg config status.showUntrackedFiles no

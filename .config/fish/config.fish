@@ -10,7 +10,7 @@ set fish_greeting ""
 
 # define aliases
 alias ls="ls -1FvG"
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # define abbreviations
 function abbreviations

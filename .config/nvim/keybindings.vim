@@ -111,3 +111,12 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf <Plug>(coc-fix-current)
 nmap <leader>cr :CocRestart<CR>
+
+command! Dotfiles
+  \ call fzf#run(fzf#wrap({
+  \     'source': 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME ls-files',
+  \     'sink': 'e',
+  \     'dir': '$HOME'
+  \ }))
+
+nmap <leader>. :Dotfiles<CR>
