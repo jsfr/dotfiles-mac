@@ -14,3 +14,11 @@ description = "Shows the current number of dotfile changes that have yet to be c
 command = """ /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l  """
 when = """ test "$HOME" = "$PWD" """
 symbol = "%"
+
+[custom.desks]
+description = "Shows the current desk files that have been sourced"
+command = """ echo "$DESK_NAME" """
+when = """ test -n "$DESK_NAME"  """
+symbol = "◲"
+style = "bold green"
+format = "in [$symbol $output]($style) "
