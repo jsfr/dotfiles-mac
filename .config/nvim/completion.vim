@@ -17,7 +17,8 @@ let g:coc_global_extensions = [
       \ 'coc-rust-analyzer',
       \ 'coc-elixir',
       \ 'coc-prettier',
-      \ 'coc-solargraph'
+      \ 'coc-solargraph',
+      \ 'coc-deno'
       \]
 
 " Use tab for trigger completion with characters ahead and navigate.

@@ -76,4 +76,9 @@ if type -q desk
   test -n "$DESK_ENV"; and source "$DESK_ENV"; or true
 end
 
+if type -q deno
+  deno completions fish > ~/.deno_completions.fish
+  source ~/.deno_completions.fish
+end
+
 starship init fish | source
