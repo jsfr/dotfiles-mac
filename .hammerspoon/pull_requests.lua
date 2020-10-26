@@ -84,7 +84,7 @@ end
 
 
 local function update_menu(menu)
-  local unread_style = { red = 1.0, green = 0.0, blue = 0.0, alpha = 1.0 }
+  local unread_style = { color = { red = 1.0, green = 0.0, blue = 0.0, alpha = 1.0 } }
   local pull_requests = get_pull_requests()
   local menu_table = {}
   local unread = false
@@ -135,4 +135,4 @@ end
 local pull_requests_menu = hs.menubar.new()
 
 -- Set timer and fire first one immediately
-hs.timer.doEvery(30, function() update_menu(pull_requests_menu) end):fire()
+hs.timer.doEvery(60, function() update_menu(pull_requests_menu) end):fire()
