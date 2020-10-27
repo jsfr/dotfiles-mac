@@ -7,54 +7,50 @@ local username = "jsfr"
 local token = keychain.password_from_keychain("github_api_token")
 
 local query = [[
-  {
-    viewer {
-      pullRequests(first: 100, states: OPEN) {
-        edges {
-          node {
-            repository {
-              nameWithOwner
-            }
-            url
-            title
-            isReadByViewer
+{
+  search(query: \\\"sort:updated-desc type:pr state:open involves:]] .. username .. [[\\\", type: ISSUE, first: 100) {
+    edges {
+      node {
+        ... on PullRequest {
+          author {
+            login
           }
-        }
-      }
-    }
-    search(query: \\\"type:pr state:open review-requested:]] .. username .. [[\\\", type: ISSUE, first: 100) {
-      edges {
-        node {
-          ... on PullRequest {
-            repository {
-              nameWithOwner
+          url
+          title
+          isReadByViewer
+          reviewDecision
+          reviewRequests(first: 100) {
+            edges {
+              node {
+                requestedReviewer {
+                  ... on User {
+                    login
+                  }
+                }
+              }
             }
-            url
-            title
-            isReadByViewer
           }
         }
       }
     }
   }
+}
 ]]
 
 local url = "https://api.github.com/graphql"
 
-local function map(func, array)
-  local new_array = {}
-  for i,v in ipairs(array) do
-    new_array[i] = func(v)
-  end
-  return new_array
+local function has_requested_review(node)
+  return node.node.requestedReviewer.login == username
 end
 
 local function map_node(node)
   return {
-    repository = node.node.repository.nameWithOwner,
     title = node.node.title,
     url = node.node.url,
-    unread = not node.node.isReadByViewer
+    unread = not node.node.isReadByViewer,
+    reviewDecision = node.node.reviewDecision,
+    reviewRequested = hs.fnutils.some(node.node.reviewRequests.edges, has_requested_review),
+    author = node.node.author.login
   }
 end
 
@@ -71,14 +67,17 @@ local function get_pull_requests()
 
   result = JSON:decode(result)
 
-  local own_prs = map(map_node, result.data.viewer.pullRequests.edges)
-  local review_requested = map(map_node, result.data.search.edges)
-  local total_count = #own_prs + #review_requested
+  local pull_requests = hs.fnutils.imap(result.data.search.edges, map_node)
+
+  local total_count = #pull_requests
 
   return {
     total_count = total_count,
-    own_prs = own_prs,
-    review_requested = review_requested
+    users_prs = hs.fnutils.ifilter(pull_requests, function(x) return x.author == username end),
+    review_requests = hs.fnutils.ifilter(pull_requests, function(x)
+      return x.reviewRequested and x.author ~= username
+    end),
+    involved = hs.fnutils.ifilter(pull_requests, function(x) return not x.reviewRequested and x.author ~= username end)
   }
 end
 
@@ -88,8 +87,10 @@ local function update_menu(menu)
   local pull_requests = get_pull_requests()
   local menu_table = {}
   local unread = false
+  local approved = "APPROVED"
+  local changes_requested = "CHANGES_REQUESTED"
 
-  for _, pull_request in pairs(pull_requests.own_prs) do
+  for _, pull_request in pairs(pull_requests.users_prs) do
     local title = pull_request.title
 
     if (pull_request.unread) then
@@ -99,15 +100,18 @@ local function update_menu(menu)
 
     table.insert(menu_table, {
         title = title,
-        fn = function() hs.urlevent.openURL(pull_request.url) end
+        fn = function() hs.urlevent.openURL(pull_request.url) end,
+        state = (pull_request.reviewDecision == changes_requested and "mixed") or
+                (pull_request.reviewDecision == approved and "on") or
+                "off"
       })
   end
 
-  if (#pull_requests.own_prs > 0 and #pull_requests.review_requested > 0) then
+  if (#pull_requests.users_prs > 0 and (#pull_requests.review_requests > 0 or #pull_requests.involved > 0)) then
     table.insert(menu_table, { title = "-" })
   end
 
-  for _, pull_request in pairs(pull_requests.review_requested) do
+  for _, pull_request in pairs(pull_requests.review_requests) do
     local title = pull_request.title
 
     if (pull_request.unread) then
@@ -117,10 +121,33 @@ local function update_menu(menu)
 
     table.insert(menu_table, {
         title = title,
-        fn = function() hs.urlevent.openURL(pull_request.url) end
+        fn = function() hs.urlevent.openURL(pull_request.url) end,
+        state = (pull_request.reviewDecision == changes_requested and "mixed") or
+                (pull_request.reviewDecision == approved and "on") or
+                "off"
       })
   end
 
+  if (#pull_requests.review_requests > 0 and #pull_requests.involved > 0) then
+    table.insert(menu_table, { title = "-" })
+  end
+
+  for _, pull_request in pairs(pull_requests.involved) do
+    local title = pull_request.title
+
+    if (pull_request.unread) then
+      unread = true
+      title = hs.styledtext.new(title, unread_style)
+    end
+
+    table.insert(menu_table, {
+        title = title,
+        fn = function() hs.urlevent.openURL(pull_request.url) end,
+        state = (pull_request.reviewDecision == changes_requested and "mixed") or
+                (pull_request.reviewDecision == approved and "on") or
+                "off"
+      })
+  end
 
   local menu_title = '[PRs: ' .. pull_requests.total_count .. ']'
 
@@ -134,5 +161,13 @@ end
 
 local pull_requests_menu = hs.menubar.new()
 
--- Set timer and fire first one immediately
-hs.timer.doEvery(60, function() update_menu(pull_requests_menu) end):fire()
+local PullRequests = {}
+
+local timer = hs.timer.new(hs.timer.minutes(1), function() update_menu(pull_requests_menu) end, true)
+
+function PullRequests.start()
+  timer:start()
+  timer:fire()
+end
+
+return PullRequests

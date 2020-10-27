@@ -26,5 +26,17 @@ local function updateOnWake(event)
     end
 end
 
-hs.timer.doAt("00:00", "1h", setNextWallpaper):fire()
-hs.caffeinate.watcher.new(updateOnWake):start()
+local timer = hs.timer.new(hs.timer.hours(1), setNextWallpaper, true)
+local watcher = hs.caffeinate.watcher.new(updateOnWake)
+
+local Bitday = {}
+
+function Bitday.start ()
+    setNextWallpaper()
+    local date = os.date("*t")
+    local nextTrigger = hs.timer.hours(1) - (hs.timer.minutes(date.min) + date.sec)
+    timer:setNextTrigger(nextTrigger)
+    watcher:start()
+end
+
+return Bitday
