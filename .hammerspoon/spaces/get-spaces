@@ -10,10 +10,10 @@ yabai -m query --spaces |
         | reduce .[] as \$i (
         {shift: 0, focused: 0, spaces: []};
                 if \$i.\"native-fullscreen\" == 1 then
-                        {shift: (.shift + 1), focused: .focused, spaces: (.spaces + [\"'f'\"])}
+                        {shift: (.shift + 1), focused: .focused, spaces: (.spaces + [\"f\"])}
                 elif \$i.focused == 1 then
-                        {shift: .shift, focused: (\$i.index - .shift | tostring), spaces: (.spaces + [\$i.index - .shift | tostring])}
+                        {shift: .shift, focused: (\$i.index - .shift), spaces: (.spaces + [\$i.index - .shift])}
                 else
-                        {shift: .shift, focused: .focused, spaces: (.spaces + [\$i.index - .shift | tostring])}
+                        {shift: .shift, focused: .focused, spaces: (.spaces + [\$i.index - .shift])}
                 end
         )"

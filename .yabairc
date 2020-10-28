@@ -43,11 +43,6 @@ yabai -m rule --add app="^CopyQ" grid=10:10:3:2:4:5
 # Signals
 yabai -m signal --add event=application_launched app="^Music$" action="killall -9 Music && osascript -e 'display notification \"I just killed Music.app\"'"
 
-## refresh my hammerspoon space widget when the space changes
-yabai -m signal --add event=space_changed action="~/.local/bin/update-spaces"
-yabai -m signal --add event=application_launched app="^Slack$" action="sleep 3 && ~/.local/bin/update-spaces"
-yabai -m signal --add event=application_launched app="^Signal$" action="sleep 3 && ~/.local/bin/update-spaces"
-
 ## go through all spaces to pick up all windows
 active_space=$(yabai -m query --spaces --space | jq -r ".index")
 last_space=$(yabai -m query --spaces | jq -r "[.[] | .index] | max")

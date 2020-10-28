@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-hs -c "spaces.update()"

@@ -163,11 +163,11 @@ local pull_requests_menu = hs.menubar.new()
 
 local PullRequests = {}
 
-local timer = hs.timer.new(hs.timer.minutes(1), function() update_menu(pull_requests_menu) end, true)
+PullRequests.timer = hs.timer.new(hs.timer.minutes(1), function() update_menu(pull_requests_menu) end, true)
 
 function PullRequests.start()
-  timer:start()
-  timer:fire()
+  PullRequests.timer:start()
+  PullRequests.timer:fire()
 end
 
 return PullRequests

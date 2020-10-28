@@ -17,9 +17,10 @@ let g:coc_global_extensions = [
       \ 'coc-rust-analyzer',
       \ 'coc-elixir',
       \ 'coc-prettier',
-      \ 'coc-solargraph',
-      \ 'coc-deno'
+      \ 'coc-solargraph'
       \]
+      " \ 'coc-deno'
+      " \]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.

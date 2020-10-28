@@ -7,17 +7,17 @@ local inactive_color = { red = 0.35, green = 0.37, blue = 0.39, alpha = 1.0 }
 local active_style = { font = space_font, baselineOffset = -10.0 }
 local inactive_style = { font = space_font, baselineOffset = -10.0, color = inactive_color }
 local space_icons = {
-  ["1"] = 'e',
-  ["2"] = 'f',
-  ["3"] = 'g',
-  ["4"] = 'i',
-  ["5"] = 'j',
-  ["6"] = 'k',
-  ["7"] = 'l',
-  ["8"] = 'm',
-  ["9"] = 'n',
-  ["10"] = 'o',
-  ["'f'"] = 'a'
+  [1] = 'e',
+  [2] = 'f',
+  [3] = 'g',
+  [4] = 'i',
+  [5] = 'j',
+  [6] = 'k',
+  [7] = 'l',
+  [8] = 'm',
+  [9] = 'n',
+  [10] = 'o',
+  ["f"] = 'a'
 }
 
 local spaces_menu = hs.menubar.new()
@@ -48,10 +48,30 @@ function Spaces.update()
   local cmd = hs.fs.pathToAbsolute("./spaces/get-spaces")
 
   Spaces.task = hs.task.new(cmd, function(_, stdOut, _)
-      local result = JSON:decode(stdOut)
+    local result = JSON:decode(stdOut)
+    if (result ~= nil) then
       update(result.spaces, result.focused)
     end
-    ):start()
+  end):start()
 end
+
+Spaces.app_watcher = hs.application.watcher.new(function(_, event, _)
+  if (event == hs.application.watcher.deactivated or
+      event == hs.application.watcher.launched or
+      event == hs.application.watcher.terminated) then
+    Spaces.update()
+  end
+end)
+
+Spaces.space_watcher = hs.spaces.watcher.new(function(_)
+  Spaces.update()
+end)
+
+function Spaces.start()
+  Spaces.app_watcher:start()
+  Spaces.space_watcher:start()
+  Spaces.update()
+end
+
 
 return Spaces
