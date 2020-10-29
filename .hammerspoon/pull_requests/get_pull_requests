@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+
+username="$1"
+token="$2"
+
+url="https://api.github.com/graphql"
+query="
+{
+  search(query: \"sort:updated-desc type:pr state:open involves:$username\", type: ISSUE, first: 100) {
+    edges {
+      node {
+        ... on PullRequest {
+          author {
+            login
+          }
+          url
+          title
+          isReadByViewer
+          reviewDecision
+          reviewRequests(first: 100) {
+            edges {
+              node {
+                requestedReviewer {
+                  ... on User {
+                    login
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+"
+
+http post $url Authorization:"bearer $token" query="$query" -b --ignore-stdin
