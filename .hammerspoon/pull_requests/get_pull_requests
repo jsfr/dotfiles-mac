@@ -35,4 +35,4 @@ query="
 }
 "
 
-http post $url Authorization:"bearer $token" query="$query" -b --ignore-stdin
+/usr/local/bin/http post $url Authorization:"bearer $token" query="$query" -b --ignore-stdin
