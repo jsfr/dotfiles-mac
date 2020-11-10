@@ -18,7 +18,7 @@ end
 
 local function setNextWallpaper()
     local date = os.date("*t")
-    local number = (((math.floor(date.hour/2) % 12) + 10) % 12) + 1
+    local number = (((math.floor(date.hour/2) % 12) + 11) % 12) + 1
 
     local wallpaperName = string.format("%02d", number)
 
