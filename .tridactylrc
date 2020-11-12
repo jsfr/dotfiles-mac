@@ -12,6 +12,7 @@ set followpagepatterns.prev Previous
 " Binds
 unbindurl feedly.com j
 unbindurl feedly.com k
+unbindurl feedly.com s
 
 " Subconfig Settings
 seturl www.google.com followpagepatterns.next Next

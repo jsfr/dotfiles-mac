@@ -12,6 +12,7 @@ tap "jsfr/jsfr" # urlview
 tap "koekeishiya/formulae" # yabai + skhd
 tap "ms-jpq/sad" # sad
 tap "srkomodo/tap" # shadowfox updater
+tap "homebrew/cask-fonts"
 
 # Brews
 brew "age"
@@ -90,7 +91,6 @@ cask "discord"
 cask "docker"
 cask "figma"
 cask "firefox"
-cask "font-jetbrains-mono"
 cask "google-backup-and-sync"
 cask "google-chrome"
 cask "hammerspoon"
@@ -102,7 +102,6 @@ cask "mullvadvpn"
 cask "ngrok"
 cask "notion"
 cask "pocket-casts"
-cask "rcdefaultapp"
 cask "react-native-debugger"
 cask "sensiblesidebuttons"
 cask "signal"
@@ -112,3 +111,4 @@ cask "steam"
 cask "transmission"
 cask "virtualbox"
 cask "bartender"
+cask "font-jetbrains-mono"

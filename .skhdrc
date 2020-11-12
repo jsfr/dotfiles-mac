@@ -23,7 +23,7 @@ ctrl + lalt - i : open -a /Applications/IntelliJ\ IDEA\ CE.app
 ctrl + lalt - n : open -a /Applications/Notion.app
 ctrl + lalt - m : open -a /Applications/Mimestream.app
 ctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
-cmd - d : ~/Repos/rmenu/rmenu_launch -fn "JetBrains Mono" -H 30
+cmd - d : /Users/jens/.local/bin/rmenu_launch -fn "JetBrains Mono" -H 30
 
 # quit focused app
 shift + cmd - q : osascript -e "quit app \"$(yabai -m query --windows --window | jq -r .app)\""

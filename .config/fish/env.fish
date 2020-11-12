@@ -39,7 +39,7 @@ if test -z "$PATH_EXPORTED"
                 "$GOPATH/bin" \
                 "$HOME/.cargo/bin" \
                 "$HOME/.local/bin" \
-                "$HOME/Repos/pleo/pleo/bin" \
+                "$HOME/Repos/github.com/pleo-io/pleo/bin" \
                 "/usr/local/opt/node@12/bin" \
                 "/usr/local/sbin"
     set -x PATH_EXPORTED "exported"
