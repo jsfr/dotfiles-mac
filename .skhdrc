@@ -22,6 +22,7 @@ ctrl + lalt - s : open -a /Applications/Slack.app
 ctrl + lalt - i : open -a /Applications/IntelliJ\ IDEA\ CE.app
 ctrl + lalt - n : open -a /Applications/Notion.app
 ctrl + lalt - m : open -a /Applications/Mimestream.app
+ctrl + lalt - z : open -a /Applications/zoom.us.app
 ctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - d : /Users/jens/.local/bin/rmenu_launch -fn "JetBrains Mono" -H 30
 
@@ -87,7 +88,7 @@ lalt - 7      : yabai -m space --focus 7
 lalt - 8      : yabai -m space --focus 8
 lalt - 9      : yabai -m space --focus 9
 lalt - 0      : yabai -m space --focus 10
-lalt - 0x1B   : ~/.local/bin/focus-next-fullscreen.sh
+lalt - 0x1B   : ~/.local/bin/focus-next-fullscreen
 
 # Resize regions similar to the behavior known from the i3 window manager
 resizer < h : yabai -m window --resize left:-20:0  ; yabai -m window --resize right:-20:0

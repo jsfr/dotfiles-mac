@@ -283,7 +283,7 @@ colors:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
- program: /bin/bash
+ program: /bin/dash
  args:
    - -l
    - -c
