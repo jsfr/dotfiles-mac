@@ -1,7 +1,9 @@
 -- luacheck: globals token spaces pull_requests
 require('auto_reload')
-require('url_handler')
+-- require('url_handler')
 require('hs.ipc')
+
+require('auto_clicker')
 
 token = require('token')
 
