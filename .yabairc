@@ -46,14 +46,14 @@ yabai -m config window_gap                   05
 
 # Rules
 yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" layer=above manage=off sticky=on
-yabai -m rule --add app="^Tandem$" layer=above manage=off sticky=on
 yabai -m rule --add app="^Finder$" title="^(Copy)?$" layer=above manage=off
 yabai -m rule --add app="^System Preferences$" layer=above manage=off
 yabai -m rule --add app="^Music$" layer=below manage=off
 yabai -m rule --add app="^Slack$" space=10
 yabai -m rule --add app="^Signal$" space=9
 yabai -m rule --add app="^Steam$" manage=off
-yabai -m rule --add app="^CopyQ" grid=10:10:3:2:4:5
+# yabai -m rule --add app="^CopyQ" grid=10:10:3:2:4:5
+yabai -m rule --add app="^rmenu$" manage=off border=off layer=above
 
 ## go through all spaces to pick up all windows
 active_space=$(yabai -m query --spaces --space | jq -r ".index")

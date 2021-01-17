@@ -73,45 +73,6 @@ nmap ]c <Plug>(GitGutterNextHunk)
 " Clever-f setup
 let g:clever_f_fix_key_direction = 1
 
-" Ale general
-nmap [l <Plug>(ale_previous_wrap_error)
-nmap ]l <Plug>(ale_next_wrap_error)
-nmap [L <Plug>(ale_first)
-nmap ]L <Plug>(ale_last)
-
-" Coc
-" Typescript, Javascript, JSX, TSX
-au FileType typescriptreact,typescript,javascript,javascriptreact,rust nmap [l <Plug>(coc-diagnostic-prev-error)
-au FileType typescriptreact,typescript,javascript,javascriptreact,rust nmap ]l <Plug>(coc-diagnostic-next-error)
-au FileType typescriptreact,typescript,javascript,javascriptreact,rust nmap [L :lfirst<cr>
-au FileType typescriptreact,typescript,javascript,javascriptreact,rust nmap ]L :llast<cr>
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gf <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
-" Remap for do codeAction of current line
-nmap <leader>ac <Plug>(coc-codeaction)
-" Fix autofix problem of current line
-nmap <leader>qf <Plug>(coc-fix-current)
-nmap <leader>cr :CocRestart<CR>
-
 command! Dotfiles
   \ call fzf#run(fzf#wrap({
   \     'source': 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME ls-files',
@@ -120,3 +81,7 @@ command! Dotfiles
   \ }))
 
 nmap <leader>. :Dotfiles<CR>
+
+" Use jj to exit modes
+ino jj <esc>
+cno jj <c-c>

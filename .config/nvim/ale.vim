@@ -14,3 +14,9 @@ let g:ale_fixers.sh               = ['shfmt']
 let g:ale_fixers.python           = ['black']
 
 let g:ale_fix_on_save             = 1
+
+" Keybindings
+nmap [l <Plug>(ale_previous_wrap_error)
+nmap ]l <Plug>(ale_next_wrap_error)
+nmap [L <Plug>(ale_first)
+nmap ]L <Plug>(ale_last)
