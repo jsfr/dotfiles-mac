@@ -34,6 +34,7 @@ lalt + cmd - p : hs -c "token.token_keystroke(\"pleo_admin_staging_token\")"
 
 # "write" the current copied text
 lalt + cmd - v : sleep 1 ; skhd -t "$(pbpaste)"
+# lalt + cmd - v : sleep 1 ; osascript -e 'tell application "System Events" to keystroke the clipboard as text'
 
 # restart yabai
 lalt + cmd - r : brew services restart yabai
