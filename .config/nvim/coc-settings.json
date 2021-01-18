@@ -1,0 +1,11 @@
+{
+        "coc.preferences.extensionUpdateCheck": "weekly",
+        "coc.preferences.formatOnSaveFiletypes": [
+                "rust",
+                "toml",
+                "json",
+                "jsonc"
+        ],
+        "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+        "rust-analyzer.procMacro.enable": true
+}

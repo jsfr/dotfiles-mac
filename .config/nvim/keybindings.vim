@@ -24,8 +24,6 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>, :Dirvish $MYVIMRC<CR>
-nnoremap <leader>h :noh<CR>
-nnoremap <leader>n :noh<CR>
 
 " Use ; for commands.
 nnoremap ; :
@@ -47,23 +45,8 @@ cnoreabbrev rg Rg
 " make it easier to save with git
 cnoreabbrev gw Gw
 
-" incsearch setup
-let g:incsearch#auto_nohlsearch = 1
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-
-" vim-easy-align
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+" vim-slash setup
+noremap <plug>(slash-after) zz
 
 " gitgutter setup
 let g:gitgutter_map_keys = 0

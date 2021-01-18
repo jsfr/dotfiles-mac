@@ -13,7 +13,8 @@ let g:coc_global_extensions = [
       \ 'coc-rust-analyzer',
       \ 'coc-tabnine',
       \ 'coc-json',
-      \ 'coc-toml'
+      \ 'coc-toml',
+      \ 'coc-pairs'
       "\ 'coc-tsserver',
       "\ 'coc-yaml',
       "\ 'coc-html',
