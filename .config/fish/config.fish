@@ -14,7 +14,6 @@ alias cfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # define abbreviations
 function abbreviations
-  abbr cask "brew cask"
   abbr k "kubectl"
   abbr pr "gh pr"
 end
