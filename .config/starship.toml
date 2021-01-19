@@ -12,7 +12,7 @@ disabled = true
 [custom.dotfiles]
 description = "Shows the current number of dotfile changes that have yet to be committed"
 command = """ /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l  """
-when = """ test "$HOME" = "$PWD" """
+when = """ test "$HOME" = "$PWD"; and test (/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l) -ge 1 """
 symbol = "%"
 
 [custom.desks]
