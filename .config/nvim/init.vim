@@ -21,13 +21,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim', { 'on': 'GV' }
 Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/vim-slash'
 Plug 'justinmk/vim-dirvish'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'mhinz/vim-startify'
 Plug 'rhysd/clever-f.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'tommcdo/vim-lion'
+Plug 'haya14busa/incsearch.vim'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -47,7 +47,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-jdaddy'
-Plug 'tpope/vim-endwise'
 
 " Linting and Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -67,3 +66,4 @@ source ~/.config/nvim/completion.vim
 source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/keybindings.vim
 source ~/.config/nvim/folds.vim
+source ~/.config/nvim/search.vim

@@ -80,4 +80,9 @@ if type -q deno
   source ~/.deno_completions.fish
 end
 
+if type -q just
+  just --completions fish > ~/.just_completions.fish
+  source ~/.just_completions.fish
+end
+
 starship init fish | source
