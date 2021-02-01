@@ -50,6 +50,7 @@ Plug 'tpope/vim-jdaddy'
 
 " Linting and Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
 
 " 70+ syntax plugs
 Plug 'sheerun/vim-polyglot'

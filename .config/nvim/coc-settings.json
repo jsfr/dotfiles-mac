@@ -7,5 +7,9 @@
                 "jsonc"
         ],
         "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-        "rust-analyzer.procMacro.enable": true
+        "rust-analyzer.procMacro.enable": true,
+        "diagnostic-languageserver.filetypes": {
+                "sh": "shellcheck"
+        },
+        "diagnostic-languageserver.mergeConfig": true
 }
