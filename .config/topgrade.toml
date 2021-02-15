@@ -15,6 +15,6 @@ disable = ["emacs", "go", "gem"]
 # "Admin privileges" = "/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add"
 
 # Custom commands
-[commands]
+# [commands]
 # "Code signer" = "~/bin/code_signer.sh"
 # "Shadowfox" = "shadowfox -generate-uuids -profile-index 0 -set-dark-theme && echo \"Firefox dark theme has been re-applied\""

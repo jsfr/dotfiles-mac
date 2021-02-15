@@ -1,8 +1,6 @@
 # Taps
 tap "AdoptOpenJDK/openjdk" # java
 tap "buo/cask-upgrade" # cask upgrade tool, used by topgrade
-tap "fabianishere/personal" # pam_reattach to allow use of pam_tid within tmux
-tap "filippo.io/age", "https://filippo.io/age" # age
 tap "holgerbrandl/tap" # kscript
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -14,9 +12,10 @@ tap "jsfr/jsfr" # urlview
 tap "koekeishiya/formulae" # yabai + skhd
 tap "ms-jpq/sad" # sad
 tap "srkomodo/tap" # shadowfox updater
+tap "bufbuild/buf"
 
 # Brews
-brew "age"
+brew "buf"
 brew "atool"
 brew "aws-iam-authenticator"
 brew "awscli"
@@ -39,15 +38,16 @@ brew "gh"
 brew "git"
 brew "git-delta"
 brew "git-extras"
-brew "glfw"
 brew "go"
 brew "gradle"
 brew "grv"
 brew "htop"
 brew "httpie"
+brew "hyperfine"
 brew "iperf3"
 brew "jq"
 brew "jsfr/jsfr/urlview", args: ["HEAD"]
+brew "just"
 brew "kotlin"
 brew "ktlint"
 brew "kubectl"
@@ -60,12 +60,12 @@ brew "mosh"
 brew "n"
 brew "neovim"
 brew "nss"
-brew "pam_reattach"
 brew "pgcli"
 brew "pipx"
 brew "postgresql"
 brew "protobuf"
 brew "python"
+brew "rargs"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
 brew "sad"
@@ -91,16 +91,17 @@ cask "discord"
 cask "docker"
 cask "firefox"
 cask "font-jetbrains-mono"
-cask "google-backup-and-sync"
 cask "google-chrome"
 cask "hammerspoon"
 cask "insomnia"
+cask "insync"
 cask "intellij-idea-ce"
 cask "maccy"
 cask "mullvadvpn"
 cask "ngrok"
 cask "notion"
 cask "onyx"
+cask "plex-media-server"
 cask "pocket-casts"
 cask "signal"
 cask "slack"
@@ -112,4 +113,3 @@ cask "tableplus"
 cask "transmission"
 cask "virtualbox"
 cask "zoom"
-
