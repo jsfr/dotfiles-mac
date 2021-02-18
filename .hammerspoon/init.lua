@@ -1,9 +1,6 @@
 -- luacheck: globals token spaces pull_requests
 require('auto_reload')
--- require('url_handler')
 require('hs.ipc')
-
-require('auto_clicker')
 
 token = require('token')
 
@@ -12,6 +9,3 @@ pull_requests.start()
 
 spaces = require('spaces')
 spaces.start()
-
--- bitday = require('bitday')
--- bitday.start()
