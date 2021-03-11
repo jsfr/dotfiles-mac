@@ -15,8 +15,8 @@ let g:coc_global_extensions = [
       \ 'coc-toml',
       \ 'coc-diagnostic',
       \ 'coc-pairs',
-      \ 'coc-snippets'
-      "\ 'coc-tsserver',
+      \ 'coc-snippets',
+      \ 'coc-tsserver',
       "\ 'coc-yaml',
       "\ 'coc-html',
       "\ 'coc-css',

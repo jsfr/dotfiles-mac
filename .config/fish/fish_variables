@@ -6,9 +6,9 @@ SETUVAR Z_DATA:/Users/jens/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/jens/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/jens\x24
 SETUVAR __fish_initialized:3100
-SETUVAR _fish_abbr_cask:brew\x20cask
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_pr:gh\x20pr
+SETUVAR _fish_abbr_zap:brew\x20uninstall\x20\x2d\x2dforce\x20\x2d\x2dzap
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:/Users/jens/\x2econfig/fish/completions/kubectl\x2efish
 SETUVAR _fisher_jethrokuan_2F_z_files:/Users/jens/\x2econfig/fish/functions/__z\x2efish\x1e/Users/jens/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/jens/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/jens/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/jens/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/jens/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/jens/\x2econfig/fish/completions/fisher\x2efish

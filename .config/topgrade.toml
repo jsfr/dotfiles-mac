@@ -5,7 +5,7 @@
 #]
 
 # Same options as the command line flag
-disable = ["emacs", "go", "gem"]
+disable = ["emacs", "gem"]
 
 # List of remote machines with Topgrade installed on them
 #remote_topgrades = ["toothless", "pi", "parnas"]
@@ -15,6 +15,7 @@ disable = ["emacs", "go", "gem"]
 # "Admin privileges" = "/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add"
 
 # Custom commands
-# [commands]
+[commands]
+"pnpm" = "pnpm up --latest -g"
 # "Code signer" = "~/bin/code_signer.sh"
 # "Shadowfox" = "shadowfox -generate-uuids -profile-index 0 -set-dark-theme && echo \"Firefox dark theme has been re-applied\""

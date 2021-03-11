@@ -57,3 +57,5 @@
     diffFilter = delta --color-only
 ; [diff-so-fancy]
 ;     useUnicodeRuler = false
+[init]
+	defaultBranch = main

@@ -16,6 +16,7 @@ alias cfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 function abbreviations
   abbr k "kubectl"
   abbr pr "gh pr"
+  abbr zap "brew uninstall --force --zap"
 end
 abbreviations
 
@@ -75,10 +76,10 @@ if type -q desk
   test -n "$DESK_ENV"; and source "$DESK_ENV"; or true
 end
 
-if type -q deno
-  deno completions fish > ~/.deno_completions.fish
-  source ~/.deno_completions.fish
-end
+# if type -q deno
+#   deno completions fish > ~/.deno_completions.fish
+#   source ~/.deno_completions.fish
+# end
 
 if type -q just
   just --completions fish > ~/.just_completions.fish
