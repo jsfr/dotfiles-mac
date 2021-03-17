@@ -22,7 +22,6 @@
     cb = create-branch -r
     db = delete-branch
     wip = commit -m "wip" --no-verify
-    sm = "!git co master && git up && git co - && git merge master"
 [core]
     editor = nvim
     ; pager = diff-so-fancy | less --tabs=2 -RFX

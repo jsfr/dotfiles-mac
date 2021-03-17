@@ -8,24 +8,16 @@ set updatetime=300
 set shortmess+=c
 
 let g:coc_global_extensions = [
-      \ 'coc-vimlsp',
-      \ 'coc-rust-analyzer',
-      \ 'coc-tabnine',
-      \ 'coc-json',
-      \ 'coc-toml',
       \ 'coc-diagnostic',
+      \ 'coc-go',
+      \ 'coc-json',
       \ 'coc-pairs',
+      \ 'coc-rust-analyzer',
       \ 'coc-snippets',
+      \ 'coc-tabnine',
+      \ 'coc-toml',
       \ 'coc-tsserver',
-      "\ 'coc-yaml',
-      "\ 'coc-html',
-      "\ 'coc-css',
-      "\ 'coc-json',
-      "\ 'coc-eslint',
-      "\ 'coc-stylelintplus',
-      "\ 'coc-elixir',
-      "\ 'coc-prettier',
-      "\ 'coc-solargraph',
+      \ 'coc-vimlsp'
       \]
 
 " Use tab for trigger completion with characters ahead and navigate.

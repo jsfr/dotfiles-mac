@@ -1,0 +1,11 @@
+#!/usr/bin/env fish
+
+function get_branch
+  if git branch | grep -q -w main
+    echo main
+  else
+    echo master
+  end
+end
+
+git co (get_branch) && git up && git co - && git merge (get_branch)
