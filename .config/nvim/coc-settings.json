@@ -4,12 +4,13 @@
                 "rust",
                 "toml",
                 "json",
-                "jsonc"
+                "jsonc",
+                "go"
         ],
-        "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-        "rust-analyzer.procMacro.enable": true,
         "diagnostic-languageserver.filetypes": {
                 "sh": "shellcheck"
         },
-        "diagnostic-languageserver.mergeConfig": true
+        "diagnostic-languageserver.mergeConfig": true,
+        "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+        "rust-analyzer.procMacro.enable": true
 }
