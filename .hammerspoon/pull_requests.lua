@@ -7,34 +7,41 @@ local username = "jsfr"
 local token = keychain.password_from_keychain("github_api_token")
 
 local function has_requested_review(node)
-  return node.node.requestedReviewer.login == username
+  return node and node.requestedReviewer and node.requestedReviewer.login == username
+end
+
+local function is_assignee(node)
+  return node and node.login == username
 end
 
 local function map_node(node)
   return {
-    title = node.node.title,
-    url = node.node.url,
-    unread = not node.node.isReadByViewer,
-    reviewDecision = node.node.reviewDecision,
-    reviewRequested = hs.fnutils.some(node.node.reviewRequests.edges, has_requested_review),
-    author = node.node.author.login
+    title = node.title,
+    url = node.url,
+    unread = not node.isReadByViewer,
+    reviewDecision = node.reviewDecision,
+    reviewRequested = hs.fnutils.some(node.reviewRequests.nodes, has_requested_review),
+    author = node.author.login,
+    isAssignee = hs.fnutils.some(node.assignees.nodes, is_assignee)
   }
 end
 
 local function get_pull_requests(onResult)
   local callback = function(_, stdOut, _)
     local result = JSON:decode(stdOut)
-    local pull_requests = hs.fnutils.imap(result.data.search.edges, map_node)
+    local pull_requests = hs.fnutils.imap(result.data.search.nodes, map_node)
     local total_count = #pull_requests
 
     onResult({
         total_count = total_count,
-        users_prs = hs.fnutils.ifilter(pull_requests, function(x) return x.author == username end),
+        users_prs = hs.fnutils.ifilter(pull_requests, function(x)
+          return x.author == username or (x.isAssignee and not x.reviewRequested)
+        end),
         review_requests = hs.fnutils.ifilter(pull_requests, function(x)
           return x.reviewRequested and x.author ~= username
         end),
         involved = hs.fnutils.ifilter(pull_requests, function(x)
-          return not x.reviewRequested and x.author ~= username
+          return not x.reviewRequested and x.author ~= username and not x.isAssignee
         end)
       })
   end

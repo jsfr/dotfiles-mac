@@ -10,4 +10,4 @@ url="https://api.github.com/graphql"
   -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: bearer $token" \
-  --data '{"query": "query ActivePullRequests($query: String!) { search(query: $query, type: ISSUE, first: 100) { edges { node { ... on PullRequest { author { login } url title isReadByViewer reviewDecision reviewRequests(first: 100) { edges { node { requestedReviewer { ... on User { login } } } } } } } } } }", "variables": { "query": "sort:updated-desc type:pr state:open involves:'$username'" } }'
+  --data '{"query": "query ActivePullRequests($query: String!) { search(query: $query, type: ISSUE, first: 100) { nodes { ... on PullRequest { author { login } url title isReadByViewer reviewDecision reviewRequests(first: 100) { nodes { requestedReviewer { ... on User { login } } } } assignees(first: 100) { nodes { login } } } } } }", "variables": { "query": "sort:updated-desc type:pr state:open involves:'$username'" } }'
