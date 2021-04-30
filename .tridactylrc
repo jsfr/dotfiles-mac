@@ -17,5 +17,8 @@ unbindurl feedly.com s
 " Subconfig Settings
 seturl www.google.com followpagepatterns.next Next
 
+" Create mapping to open current url in another container
+bind cow composite get_current_url | tabopen -c work -w ; tabclose #
+
 " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
 " vim: set filetype=tridactyl

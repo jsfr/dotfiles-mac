@@ -288,6 +288,12 @@ shell:
    - -l
    - -c
    -  "tmux -S ~/.tmux-session new-session -s alacritty -A"
+# shell:
+#   program: /bin/dash
+#   args:
+#     - -l
+#     - -c
+#     - "SHELL=/usr/local/bin/fish abduco -A zellij-session zellij"
 
 # Startup directory
 #

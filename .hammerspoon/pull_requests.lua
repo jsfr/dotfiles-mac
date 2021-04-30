@@ -19,6 +19,7 @@ local function map_node(node)
     title = node.title,
     url = node.url,
     unread = not node.isReadByViewer,
+    draft = node.isDraft,
     reviewDecision = node.reviewDecision,
     reviewRequested = hs.fnutils.some(node.reviewRequests.nodes, has_requested_review),
     author = node.author.login,
@@ -51,6 +52,15 @@ local function get_pull_requests(onResult)
   hs.task.new(cmd, callback, {username, token}):start()
 end
 
+local function get_title(pull_request)
+  local title = pull_request.title
+
+  if pull_request.draft then
+    title = "[Draft] " .. title
+  end
+
+  return title
+end
 
 local function update_menu(menu)
   local unread_style = { color = { red = 1.0, green = 0.0, blue = 0.0, alpha = 1.0 } }
@@ -62,7 +72,7 @@ local function update_menu(menu)
     local changes_requested = "CHANGES_REQUESTED"
 
     for _, pull_request in pairs(pull_requests.users_prs) do
-      local title = pull_request.title
+      local title = get_title(pull_request)
 
       if (pull_request.unread) then
         unread = true
@@ -83,7 +93,7 @@ local function update_menu(menu)
     end
 
     for _, pull_request in pairs(pull_requests.review_requests) do
-      local title = pull_request.title
+      local title = get_title(pull_request)
 
       if (pull_request.unread) then
         unread = true
@@ -104,7 +114,7 @@ local function update_menu(menu)
     end
 
     for _, pull_request in pairs(pull_requests.involved) do
-      local title = pull_request.title
+      local title = get_title(pull_request)
 
       if (pull_request.unread) then
         unread = true

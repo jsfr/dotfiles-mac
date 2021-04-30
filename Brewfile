@@ -1,9 +1,11 @@
 # Taps
 tap "AdoptOpenJDK/openjdk" # java
+tap "bufbuild/buf"
 tap "buo/cask-upgrade" # cask upgrade tool, used by topgrade
 tap "holgerbrandl/tap" # kscript
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers" # yubico
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
@@ -12,20 +14,21 @@ tap "jsfr/jsfr" # urlview
 tap "koekeishiya/formulae" # yabai + skhd
 tap "ms-jpq/sad" # sad
 tap "srkomodo/tap" # shadowfox updater
-tap "bufbuild/buf"
+tap "wez/wezterm" # wezterm
 
 # Brews
-brew "buf"
+brew "abduco"
 brew "atool"
 brew "aws-iam-authenticator"
 brew "awscli"
 brew "bash"
 brew "bat"
+brew "buf"
 brew "cocoapods"
+brew "codemod"
 brew "coreutils"
 brew "dash"
 brew "datamash"
-brew "deno"
 brew "desk"
 brew "direnv"
 brew "docker-clean"
@@ -79,6 +82,7 @@ brew "tmux"
 brew "topgrade"
 brew "vault"
 brew "watch"
+brew "wezterm"
 brew "yabai"
 
 # Casks
@@ -103,13 +107,16 @@ cask "notion"
 cask "onyx"
 cask "plex-media-server"
 cask "pocket-casts"
+cask "qmk-toolbox"
 cask "signal"
 cask "slack"
 cask "spotify"
 cask "steam"
 cask "steermouse"
 cask "sublime-merge"
+cask "swiftdefaultappsprefpane"
 cask "tableplus"
 cask "transmission"
 cask "virtualbox"
+cask "yubico-yubikey-manager"
 cask "zoom"
