@@ -16,6 +16,7 @@ default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
 # app bindings
+shift + lalt - return : wezterm
 lalt - return   : open -a /Applications/Alacritty.app
 ctrl + lalt - e : open -a /Applications/Firefox.app
 ctrl + lalt - s : open -a /Applications/Slack.app
