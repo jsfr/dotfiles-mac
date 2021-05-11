@@ -29,6 +29,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'tommcdo/vim-lion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'knsh14/vim-github-link'
+Plug 'JRasmusBm/vim-peculiar'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'

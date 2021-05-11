@@ -25,6 +25,12 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>, :Dirvish $MYVIMRC<CR>
 
+" vim-peculiar
+nmap <leader>nv <Plug>PeculiarV
+nmap <leader>ng <Plug>PeculiarG
+nmap <leader>nn <Plug>PeculiarN
+nmap <leader>nr <Plug>PeculiarR
+
 " Use ; for commands.
 nnoremap ; :
 vnoremap ; :

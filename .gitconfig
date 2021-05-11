@@ -10,9 +10,12 @@
     up = pull --all --rebase --autostash
     p = push
     s = status -sb
-    co = checkout
+    ; co = checkout
+    sw = switch
+    re = restore
     a = add
     aa = add -A
+    upd = "!git a -u && git yolo && git p"
     d = diff
     dc = diff --cached
     l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short --graph
@@ -22,9 +25,9 @@
     cb = create-branch -r
     db = delete-branch
     wip = commit -m "wip" --no-verify
+    default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
 [core]
     editor = nvim
-    ; pager = diff-so-fancy | less --tabs=2 -RFX
     pager = delta --theme="base16"
 [color "diff-highlight"]
     oldNormal = red bold
