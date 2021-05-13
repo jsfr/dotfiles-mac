@@ -14,7 +14,6 @@ tap "jsfr/jsfr" # urlview
 tap "koekeishiya/formulae" # yabai + skhd
 tap "ms-jpq/sad" # sad
 tap "srkomodo/tap" # shadowfox updater
-tap "wez/wezterm" # wezterm
 
 # Brews
 brew "abduco"
@@ -77,12 +76,12 @@ brew "shellcheck"
 brew "shfmt"
 brew "skhd"
 brew "starship"
+brew "tealdeer"
 brew "terraform"
 brew "tmux"
 brew "topgrade"
 brew "vault"
 brew "watch"
-brew "wezterm"
 brew "yabai"
 
 # Casks
@@ -100,10 +99,10 @@ cask "hammerspoon"
 cask "insomnia"
 cask "insync"
 cask "intellij-idea-ce"
+cask "linear-linear"
 cask "maccy"
 cask "mullvadvpn"
 cask "ngrok"
-cask "notion"
 cask "onyx"
 cask "plex-media-server"
 cask "pocket-casts"

@@ -6,26 +6,25 @@
 [push]
     default = current
 [alias]
-    c = commit
-    up = pull --all --rebase --autostash
-    p = push
-    s = status -sb
-    ; co = checkout
-    sw = switch
-    re = restore
     a = add
     aa = add -A
-    upd = "!git a -u && git yolo && git p"
-    d = diff
-    dc = diff --cached
-    l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short --graph
-    yolo = "!git commit -m \"YOLO: `curl -s http://whatthecommit.com/index.txt`\""
-    st = stash
     batman = "!git commit -m \"Batman! (this commit has no parents)\""
+    c = commit
     cb = create-branch -r
+    d = diff
     db = delete-branch
+    dc = diff --cached
+    default-branch = "!git remote show origin | grep 'HEAD branch' | cut -d ' ' -f 5"
+    l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short --graph
+    p = push
+    re = restore
+    s = status -sb
+    st = stash
+    sw = switch
+    up = pull --all --rebase --autostash
+    upd = "!git a -u && git yolo && git p"
     wip = commit -m "wip" --no-verify
-    default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+    yolo = "!git commit -m \"YOLO: `curl -s http://whatthecommit.com/index.txt`\""
 [core]
     editor = nvim
     pager = delta --theme="base16"
@@ -57,7 +56,5 @@
     autocorrect = 1
 [interactive]
     diffFilter = delta --color-only
-; [diff-so-fancy]
-;     useUnicodeRuler = false
 [init]
 	defaultBranch = main

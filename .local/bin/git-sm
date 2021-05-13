@@ -1,11 +1,4 @@
 #!/usr/bin/env fish
 
-function get_branch
-  if git branch | grep -q -w main
-    echo main
-  else
-    echo master
-  end
-end
-
-git co (get_branch) && git up && git co - && git merge (get_branch)
+set -l default_branch (git default-branch)
+git co "$default_branch" && git up && git co - && git merge "$default_branch"
