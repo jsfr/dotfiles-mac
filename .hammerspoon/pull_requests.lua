@@ -126,7 +126,6 @@ end
 local function on_result(menu, pull_requests)
   set_menu_title(menu, pull_requests)
   set_menu_table(menu, pull_requests)
-  print("a hoy")
 end
 
 local PullRequests = {}
