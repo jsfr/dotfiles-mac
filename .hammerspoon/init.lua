@@ -5,7 +5,7 @@ require("hs.ipc")
 token = require("token")
 
 pull_requests = require("pull_requests")
-pull_requests.start()
+pull_requests.update()
 
 spaces = require("spaces")
-spaces.start()
+spaces.update()

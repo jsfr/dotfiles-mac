@@ -55,23 +55,4 @@ function Spaces.update()
   end):start()
 end
 
-Spaces.app_watcher = hs.application.watcher.new(function(_, event, _)
-  if (event == hs.application.watcher.deactivated or
-      event == hs.application.watcher.launched or
-      event == hs.application.watcher.terminated) then
-    Spaces.update()
-  end
-end)
-
-Spaces.space_watcher = hs.spaces.watcher.new(function(_)
-  Spaces.update()
-end)
-
-function Spaces.start()
-  Spaces.app_watcher:start()
-  Spaces.space_watcher:start()
-  Spaces.update()
-end
-
-
 return Spaces

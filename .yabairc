@@ -58,6 +58,10 @@ yabai -m rule --add app="^rmenu$" manage=off border=off layer=above
 
 ## restart Hammerspoon
 hs -c "hs.reload()"
+yabai -m signal --add event=application_launched action="hs -c 'spaces.update()'"
+yabai -m signal --add event=application_deactivated action="hs -c 'spaces.update()'"
+yabai -m signal --add event=application_terminated action="hs -c 'spaces.update()'"
+yabai -m signal --add event=space_changed action="hs -c 'spaces.update()'"
 
 ## go through all spaces to pick up all windows
 active_space=$(yabai -m query --spaces --space | jq -r ".index")

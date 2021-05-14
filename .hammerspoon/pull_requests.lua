@@ -7,6 +7,7 @@ local username = "jsfr"
 local token = keychain.password_from_keychain("github_api_token")
 
 local unread_style = { color = { red = 1.0, green = 0.0, blue = 0.0, alpha = 1.0 } }
+local empty_style = { color = { red = 0.5, green = 0.5, blue = 0.5, alpha = 1.0 } }
 
 local function has_requested_review(node)
   return node and node.requestedReviewer and node.requestedReviewer.login == username
@@ -74,32 +75,45 @@ local function get_menu_line(pull_request)
   }
 end
 
-local function on_result(menu, pull_requests)
+local function set_menu_table(menu, pull_requests)
   local menu_table = {}
+  local separator = { title = "-" }
+  local empty_block = { title = hs.styledtext.new("n/a", empty_style), disabled = true }
 
-  for _, pull_request in pairs(pull_requests.users_prs) do
-    table.insert(menu_table, get_menu_line(pull_request))
+  if (#pull_requests.users_prs > 0) then
+    for _, pull_request in pairs(pull_requests.users_prs) do
+      table.insert(menu_table, get_menu_line(pull_request))
+    end
+  else 
+    table.insert(menu_table, empty_block)
+  end 
+
+  -- Separator
+  table.insert(menu_table, separator)
+
+  if (#pull_requests.review_requests > 0) then
+    for _, pull_request in pairs(pull_requests.review_requests) do
+      table.insert(menu_table, get_menu_line(pull_request))
+    end
+  else
+    table.insert(menu_table, empty_block)
   end
 
-  if (#pull_requests.users_prs > 0 and (#pull_requests.review_requests > 0 or #pull_requests.involved > 0)) then
-    table.insert(menu_table, { title = "-" })
-  end
+  -- Separator
+  table.insert(menu_table, separator)
 
-  for _, pull_request in pairs(pull_requests.review_requests) do
-    table.insert(menu_table, get_menu_line(pull_request))
-  end
-
-  if (#pull_requests.review_requests > 0 and #pull_requests.involved > 0) then
-    table.insert(menu_table, { title = "-" })
-  end
-
-  for _, pull_request in pairs(pull_requests.involved) do
-    table.insert(menu_table, get_menu_line(pull_request))
+  if (#pull_requests.involved > 0) then
+    for _, pull_request in pairs(pull_requests.involved) do
+      table.insert(menu_table, get_menu_line(pull_request))
+    end
+  else 
+    table.insert(menu_table, empty_block)
   end
 
   menu:setMenu(menu_table)
+end
 
-
+local function set_menu_title(menu, pull_requests)
   local menu_title = "[PRs: " .. pull_requests.total_count .. "]"
 
   if (pull_requests.unread) then
@@ -109,9 +123,16 @@ local function on_result(menu, pull_requests)
   menu:setTitle(menu_title)
 end
 
+local function on_result(menu, pull_requests)
+  set_menu_title(menu, pull_requests)
+  set_menu_table(menu, pull_requests)
+  print("a hoy")
+end
+
 local PullRequests = {}
 PullRequests.menu_item = hs.menubar.new()
-PullRequests.timer = hs.timer.new(hs.timer.minutes(1), function() get_pull_requests(PullRequests.menu_item, on_result) end, true)
-PullRequests.start = function() PullRequests.timer:start(); PullRequests.timer:fire() end
+-- PullRequests.timer = hs.timer.new(hs.timer.minutes(1), function() get_pull_requests(PullRequests.menu_item, on_result) end, true)
+-- PullRequests.start = function() PullRequests.timer:start(); PullRequests.timer:fire() end
+PullRequests.update = function() get_pull_requests(PullRequests.menu_item, on_result) end
 
 return PullRequests
