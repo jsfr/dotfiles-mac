@@ -20,5 +20,8 @@ seturl www.google.com followpagepatterns.next Next
 " Create mapping to open current url in another container
 bind cow composite get_current_url | tabopen -c work -w ; tabclose #
 
+" Bind semicolon to open excmd for input (similar to nnoremap ; :)
+bind ; fillcmdline_notrail
+
 " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
 " vim: set filetype=tridactyl

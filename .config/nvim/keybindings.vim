@@ -22,14 +22,7 @@ nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>g :GFiles?<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>, :Dirvish $MYVIMRC<CR>
-
-" vim-peculiar
-nmap <leader>nv <Plug>PeculiarV
-nmap <leader>ng <Plug>PeculiarG
-nmap <leader>nn <Plug>PeculiarN
-nmap <leader>nr <Plug>PeculiarR
 
 " Use ; for commands.
 nnoremap ; :
@@ -50,9 +43,6 @@ cnoreabbrev rg Rg
 
 " make it easier to save with git
 cnoreabbrev gw Gw
-
-" vim-slash setup
-noremap <plug>(slash-after) zz
 
 " gitgutter setup
 let g:gitgutter_map_keys = 0
