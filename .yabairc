@@ -45,19 +45,21 @@ yabai -m config right_padding                10
 yabai -m config window_gap                   05
 
 # Rules
-yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" layer=above manage=off sticky=on border=off
+yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" border=off layer=above manage=off sticky=on
 yabai -m rule --add app="^Finder$" title="^(Copy)?$" layer=above manage=off
 yabai -m rule --add app="^System Preferences$" layer=above manage=off
-yabai -m rule --add app="^Music$" layer=below manage=off
-yabai -m rule --add app="^Slack$" space=10
-yabai -m rule --add app="^Signal$" space=8
-yabai -m rule --add app="^Mimestream$" space=9
-yabai -m rule --add app="^Steam$" manage=off border=off layer=above
-yabai -m rule --add app="^Macro$" manage=off border=off
-yabai -m rule --add app="^rmenu$" manage=off border=off layer=above
+yabai -m rule --add app="^Steam$" border=off layer=above manage=off
+yabai -m rule --add app="^Macro$" border=off manage=off
+yabai -m rule --add app="^rmenu$" border=off layer=above manage=off
+
+yabai -m rule --add app="^Signal$" space=^8
+yabai -m rule --add app="^Mimestream$" space=^9
+yabai -m rule --add app="^Slack$" space=^10
 
 ## restart Hammerspoon
 hs -c "hs.reload()"
+
+## update spaces menubar item when changing space or moving an application
 yabai -m signal --add event=application_launched action="hs -c 'spaces.update()'"
 yabai -m signal --add event=application_deactivated action="hs -c 'spaces.update()'"
 yabai -m signal --add event=application_terminated action="hs -c 'spaces.update()'"
