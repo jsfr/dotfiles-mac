@@ -57,19 +57,6 @@ let g:endwise_no_mappings = v:true
 inoremap <expr> <Plug>CustomCocCR Auto_complete_on_enter()
 imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
 
-" " Set gorgeous colors for marked lines to sane, readable combinations 
-" " working with any colorscheme
-au VimEnter,BufEnter,ColorScheme *
-      \ exec "hi! CocInfoLine
-      \ guifg=".(&background=='light'?'#808000':'#ffff00')."
-      \ guibg=".(&background=='light'?'#ffff00':'#555500') |
-      \ exec "hi! CocWarningLine
-      \ guifg=".(&background=='light'?'#808000':'#ffff00')."
-      \ guibg=".(&background=='light'?'#ffff00':'#555500') |
-      \ exec "hi! CocErrorLine
-      \ guifg=".(&background=='light'?'#ff0000':'#ff0000')."
-      \ guibg=".(&background=='light'?'#ffcccc':'#550000')
-
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
