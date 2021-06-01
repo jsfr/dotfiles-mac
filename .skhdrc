@@ -122,4 +122,4 @@ lalt - w : yabai -m window --toggle split
 lalt - t : yabai -m window --toggle float ; yabai -m window --grid 4:4:1:1:2:2
 
 # toggle sticky, topmost and resize to picture-in-picture size
-lalt - p : yabai -m window --toggle sticky ; yabai -m window --grid 10:10:7:7:3:3
+lalt - p : yabai -m window --toggle sticky ; yabai -m window --grid 10:10:7:7:3:3 ; yabai -m window --toggle topmost

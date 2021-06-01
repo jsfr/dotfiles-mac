@@ -69,17 +69,12 @@ if type -q $docker_completions
 end
 
 # Source environment
-source ~/.config/fish/env.fish
+fenv source ~/.profile
 
 # Hook for desk activation
 if type -q desk
   test -n "$DESK_ENV"; and source "$DESK_ENV"; or true
 end
-
-# if type -q deno
-#   deno completions fish > ~/.deno_completions.fish
-#   source ~/.deno_completions.fish
-# end
 
 if type -q just
   just --completions fish > ~/.just_completions.fish

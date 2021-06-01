@@ -1,4 +1,4 @@
 #!/usr/bin/env fish
 
 set -l default_branch (git default-branch)
-git co "$default_branch" && git up && git co - && git merge "$default_branch"
+git sw "$default_branch" && git up && git sw - && git merge "$default_branch"
