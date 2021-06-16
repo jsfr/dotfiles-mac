@@ -446,7 +446,7 @@ shell:
 #   args:
 #     - -l
 #     - -c
-#     - "SHELL=/usr/local/bin/fish abduco -A zellij-session zellij"
+#     - "zellij list-sessions | grep alacritty && zellij attach --force alacritty || SHELL=/usr/local/bin/fish zellij -s alacritty"
 
 # Startup directory
 #

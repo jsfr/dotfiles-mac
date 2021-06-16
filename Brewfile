@@ -13,10 +13,10 @@ tap "homebrew/services"
 tap "jsfr/jsfr" # urlview
 tap "koekeishiya/formulae" # yabai + skhd
 tap "ms-jpq/sad" # sad
+tap "nextdns/tap" # NextDNS
 tap "srkomodo/tap" # shadowfox updater
 
 # Brews
-brew "abduco"
 brew "atool"
 brew "aws-iam-authenticator"
 brew "awscli"
@@ -34,6 +34,7 @@ brew "docker-clean"
 brew "elixir"
 brew "exa"
 brew "fd"
+brew "fennel"
 brew "fish"
 brew "fzf"
 brew "gh"
@@ -54,14 +55,17 @@ brew "kotlin"
 brew "ktlint"
 brew "kubectl"
 brew "libqalculate"
+brew "luajit", args: ["HEAD"]
 brew "magic-wormhole"
 brew "mas"
 brew "mkcert"
 brew "mkcert"
 brew "mosh"
 brew "n"
-brew "neovim"
+brew "neovim", args: ["HEAD"]
+brew "nextdns"
 brew "nss"
+brew "oath-toolkit"
 brew "pgcli"
 brew "pipx"
 brew "postgresql"
@@ -88,6 +92,7 @@ brew "yabai"
 cask "1password"
 cask "adoptopenjdk11"
 cask "alacritty"
+cask "android-platform-tools"
 cask "aws-vault"
 cask "bartender"
 cask "discord"

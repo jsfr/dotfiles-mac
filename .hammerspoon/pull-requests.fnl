@@ -13,6 +13,12 @@
     (. node :assignees :nodes)
     #(= (?. $1 :login) username)))
 
+(fn show-pull-request? [node]
+  "Checks if a PR should be filtered out or kept based on ignore list"
+  (let [ignore-list ["https://github.com/scikit-build/scikit-build/pull/519"]
+        in-list? #(not (= (?. node :url) $1))]
+    (hs.fnutils.some ignore-list in-list?)))
+
 (fn get-pull-request [node]
   "Map a GraphQL PR node to a table with various information"
   {:title (. node :title)
@@ -79,6 +85,7 @@
   (let [pull-requests (-> body
                           (hs.json.decode)
                           (?. :data :search :nodes)
+                          (hs.fnutils.ifilter show-pull-request?)
                           (hs.fnutils.imap get-pull-request))
         total-count (length pull-requests)
         unread? (hs.fnutils.some pull-requests #(. $1 :unread?))
