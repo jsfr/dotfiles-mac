@@ -1,14 +1,4 @@
 (module magic.plugin.auto-pairs
-  {autoload {nvim aniseed.nvim}
-   require-macros [magic.macros]})
+  {autoload {ap nvim-autopairs}})
 
-(defn setup []
-  (let [auto-pairs nvim.g.AutoPairs]
-    (tset auto-pairs "'" nil)
-    (tset auto-pairs "`" nil)
-    (set nvim.b.AutoPairs auto-pairs)))
-
-(augroup auto-pairs-config
-  (nvim.ex.autocmd
-    :FileType "clojure,fennel,scheme"
-    (.. "call v:lua.require('" *module-name* "').setup()")))
+(ap.setup {:enable_check_bracket_line false})

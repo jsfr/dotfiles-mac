@@ -1,6 +1,7 @@
 (module magic.init
   {autoload {plugin magic.plugin
-             m magic.mapping}})
+             nvim aniseed.nvim
+             vimp vimp}})
 
 ;;; Mappings
 
@@ -8,44 +9,46 @@
 (set vim.g.maplocalleader ",")
 
 ;; Map semicolon to colon (access to ex-mode)
-(m.noremap :n ";" ":")
-(m.noremap :v ";" ":")
+(vimp.nnoremap ";" ":")
+(vimp.vnoremap ";" ":")
 
 ;; jj escape sequence
-(m.noremap :i :jj :<esc>)
-(m.noremap :c :jj :<c-c>)
-(m.noremap :t :jj :<c-\><c-n>)
-
-;; Tab to go to last active buffer
-(m.noremap :n :<tab> (.. ":call v:lua." (plugin.req :mru-buffer) "['mru-buffer']()<cr>"))
+(vimp.inoremap :jj :<esc>)
+(vimp.cnoremap :jj :<c-c>)
+(vimp.tnoremap :jj :<c-\><c-n>)
 
 ;; Spacemacs inspired keybings
-(m.noremap :n :<leader>w= :<C-W>=)
-[m.noremap :n :<leader>wq :<C-w>q]
-(m.noremap :n :<leader>wc :<C-w>q)
-(m.noremap :n :<leader>wd :<C-w>q)
-(m.noremap :n :<leader>w/ ":vsplit<cr>")
-(m.noremap :n :<leader>w- ":split<cr>")
-(m.noremap :n :<leader>w\| :<C-W>\|)
-(m.noremap :n :<leader>w_ :<C-W>_)
-(m.noremap :n :<leader>f ":Files<cr>")
-(m.noremap :n :<leader>p ":GFiles<cr>")
-(m.noremap :n :<leader>g ":GFiles?<cr>")
-(m.noremap :n :<leader>d ":bd<CR>")
-(m.noremap :n :<leader>b ":Buffers<cr>")
-(m.noremap :n "<leader>," ":Dirvish $MYVIMRC<cr>")
+(vimp.nnoremap :<leader>w= :<C-W>=)
+[vimp.nnoremap :<leader>wq :<C-w>q]
+(vimp.nnoremap :<leader>wc :<C-w>q)
+(vimp.nnoremap :<leader>wd :<C-w>q)
+(vimp.nnoremap :<leader>w/ :<Cmd>vsplit<cr>)
+(vimp.nnoremap :<leader>w- :<Cmd>split<cr>)
+(vimp.nnoremap :<leader>w\| :<C-W>\|)
+(vimp.nnoremap :<leader>w_ :<C-W>_)
+(vimp.nnoremap :<leader>f :<Cmd>Files<cr>)
+(vimp.nnoremap :<leader>p :<Cmd>GFiles<cr>)
+(vimp.nnoremap :<leader>g :<Cmd>GFiles?<cr>)
+(vimp.nnoremap :<leader>d :<Cmd>bd<CR>)
+(vimp.nnoremap :<leader>b :<Cmd>Buffers<cr>)
+(vimp.nnoremap "<leader>," "<Cmd>Dirvish $MYVIMRC<cr>")
 
 ;; Indent entire buffer
-(m.map "" :<leader>= "mzgg=G`z" {})
+(vimp.nnoremap :<leader>= "mzgg=G`z")
 
 ;; search for current highlight
-(m.noremap :v "\\" "yq/p<CR>N")
+(vimp.vnoremap :\ :yq/p<cr>N)
 
-; " make it easier to search with rg
-; cnoreabbrev rg Rg
-
-; " make it easier to save with git
-; cnoreabbrev gw Gw
+;; Tab to go to last active buffer
+(defn mru-buffer []
+  (-> :#
+      (vim.fn.bufnr)
+      (vim.fn.buflisted)
+      (= 1)
+      (if
+        (vim.cmd "b #")
+        (vim.cmd "bprev"))))
+(vimp.nnoremap :<tab> mru-buffer)
 
 ;;; Plugins
 
@@ -55,17 +58,26 @@
                        :config (plugin.req :color-scheme)}
 
   ;; Syntax
+  :nvim-treesitter/nvim-treesitter {:run #((nvim.ex.TSUpdate))
+                                    :config (plugin.req :treesitter)}
 
   ;; Configure neovim
   :wbthomason/packer.nvim {}
   :Olical/aniseed {}
+  :svermeulen/vimpeccable {:as :vimp}
+
+  ;; REPL for Lisp (e.g. Fennel)
+  :Olical/conjure {}
 
   ;; Tmux
   :christoomey/vim-tmux-navigator {}
   :tmux-plugins/vim-tmux-focus-events {}
 
   ;; Linting and Completion
-  :hrsh7th/nvim-compe {}
+  :hrsh7th/nvim-compe {:config (plugin.req :completion)}
+  :tami5/compe-conjure {}
+  :neovim/nvim-lspconfig {}
+  :kabouzeid/nvim-lspinstall {:config (plugin.req :lspinstall)}
 
   ;; Misc
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
@@ -74,12 +86,15 @@
   :direnv/direnv.vim {}
   :editorconfig/editorconfig-vim {}
   :haya14busa/incsearch.vim {:config (plugin.req :incsearch)}
-  :itchyny/lightline.vim {:config (plugin.req :statusline)}
-  :jiangmiao/auto-pairs {:config (plugin.req :auto-pairs)}
+  :itchyny/lightline.vim {:requires :josa42/nvim-lightline-lsp
+                          :config (plugin.req :statusline)}
+  :windwp/nvim-autopairs {:config (plugin.req :auto-pairs)}
   :junegunn/fzf.vim {:requires :junegunn/fzf
+                     :run (. vim.fn :fzf#install)
                      :config (plugin.req :fzf)}
   :justinmk/vim-dirvish {:config (plugin.req :dirvish)}
-  :mbbill/undotree {:config (plugin.req :undotree)}
+  :mbbill/undotree {:keys [:U]
+                    :config (plugin.req :undotree)}
   :mhinz/vim-startify {}
   :rhysd/clever-f.vim {:config (plugin.req :clever-f)}
   :terryma/vim-expand-region {:config (plugin.req :expand-region)}

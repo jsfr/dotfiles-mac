@@ -1,5 +1,5 @@
 (module magic.plugin.expand-region
-  {autoload {m magic.mapping}})
+  {autoload {vimp vimp}})
 
-(m.map :v :v "<plug>(expand_region_expand)" {})
-(m.map :v :<C-v> "<plug>(expand_region_shrink)" {})
+(vimp.vmap :v "<Plug>(expand_region_expand)")
+(vimp.vmap :<C-v> "<Plug>(expand_region_shrink)")

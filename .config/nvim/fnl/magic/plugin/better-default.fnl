@@ -27,7 +27,8 @@
   [:textwidth 0]
   [:timeout false]
   [:timeoutlen 350]
-  [:updatetime 2000])
+  [:updatetime 2000]
+  [:showmode false])
 
 (augroup better-default-config
   (nvim.ex.autocmd :InsertEnter "*" "set timeout")

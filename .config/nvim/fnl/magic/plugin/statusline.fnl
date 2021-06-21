@@ -1,20 +1,12 @@
 (module magic.plugin.statusline
-  {})
+  {require {gruvbox gruvbox}})
 
-(set vim.o.showmode false)
+(set vim.g.lightline {
+                      :active {:left [[:mode :paste]
+                                      [:readonly :relativepath :modified]]
+                               :right [[:lineinfo]
+                                       [:lsp_info :lsp_hints :lsp_errors :lsp_warnings :lsp_ok]
+                                       [:lsp_status]
+                                       [:filetype]]}})
 
-; TODO finish this
-; (set vim.g.lightline)
-; let g:lightline = {
-;       \ 'colorscheme': 'seoul256',
-;       \ 'active': {
-;       \     'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
-;       \     'right': [ ['lineinfo'], ['cocstatus'], ['filetype'] ]
-;       \ },
-;       \ 'component_function': {
-;       \     'cocstatus': 'coc#status'
-;       \ }
-; \ }
-
-; " Use autocmd to force lightline update.
-; autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+(vim.cmd "call lightline#lsp#register()")
