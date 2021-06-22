@@ -73,11 +73,14 @@
   :christoomey/vim-tmux-navigator {}
   :tmux-plugins/vim-tmux-focus-events {}
 
-  ;; Linting and Completion
+  ;; Linting, Completion and Formatting
   :hrsh7th/nvim-compe {:config (plugin.req :completion)}
   :tami5/compe-conjure {}
   :neovim/nvim-lspconfig {}
   :kabouzeid/nvim-lspinstall {:config (plugin.req :lspinstall)}
+  :hrsh7th/vim-vsnip {}
+  :rafamadriz/friendly-snippets {}
+  :lukas-reineke/format.nvim {:config (plugin.req :format)}
 
   ;; Misc
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
@@ -99,6 +102,7 @@
   :rhysd/clever-f.vim {:config (plugin.req :clever-f)}
   :terryma/vim-expand-region {:config (plugin.req :expand-region)}
   :liuchengxu/vim-better-default {:config (plugin.req :better-default)}
+  :folke/which-key.nvim {:config (plugin.req :which-key)}
   :tpope/vim-abolish {:cmd [:Subvert :Abolish]}
   :tpope/vim-commentary {}
   :tpope/vim-eunuch {}

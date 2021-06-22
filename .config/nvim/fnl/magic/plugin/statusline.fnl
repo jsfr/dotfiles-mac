@@ -1,5 +1,5 @@
 (module magic.plugin.statusline
-  {require {gruvbox gruvbox}})
+  {})
 
 (set vim.g.lightline {
                       :active {:left [[:mode :paste]

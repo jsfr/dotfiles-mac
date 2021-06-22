@@ -10,7 +10,7 @@
   (buf_set_keymap :n :gd "<Cmd>lua vim.lsp.buf.definition()<CR>" opts)
   (buf_set_keymap :n :K "<Cmd>lua vim.lsp.buf.hover()<CR>" opts)
   (buf_set_keymap :n :gi "<Cmd>lua vim.lsp.buf.implementation()<CR>" opts)
-  (buf_set_keymap :n :<C-k> "<Cmd>lua vim.lsp.buf.signature_help()<CR>" opts)
+  (buf_set_keymap :n :<localleader>k "<Cmd>lua vim.lsp.buf.signature_help()<CR>" opts)
   (buf_set_keymap :n :<localleader>wa "<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>" opts)
   (buf_set_keymap :n :<localleader>wr "<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>" opts)
   (buf_set_keymap :n :<localleader>wl "<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>" opts)

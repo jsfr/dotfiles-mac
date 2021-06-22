@@ -21,6 +21,7 @@
                    :calc true
                    :nvim_lsp true
                    :nvim_lua true
+                   :vsnip true
                    :conjure true}})
 
 (defn- t [str]
@@ -35,23 +36,36 @@
       true
       false)))
 
+(defn- pum-visible? []
+  (= (vim.fn.pumvisible) 1))
+
+(defn- snip-available? []
+  (= (vim.fn.call "vsnip#available" [1]) 1))
+
+(defn- snip-jumpable? []
+  (= (vim.fn.call "vsnip#jumpable" [-1]) 1))
+
 (defn- tab-complete []
-  (if (= (vim.fn.pumvisible) 1)
+  (if (pum-visible?)
     (t :<C-n>)
+    (snip-available?)
+    (t "<Plug>(vsnip-expand-or-jump)")
     (back-space?)
     (t :<Tab>)
     ((. vim.fn :compe#complete))))
 
 (defn- s-tab-complete []
-  (if (= (vim.fn.pumvisible) 1)
+  (if (pum-visible?)
     (t :<C-p>)
-    ; If <S-Tab> is not working in your terminal, change it to <C-h>
+    (snip-jumpable?)
+    (t "<Plug>(vsnip-jump-prev)")
     (t :<S-Tab>)))
 
 (tset _G :tab_complete tab-complete)
 (tset _G :s_tab_complete s-tab-complete)
 
-(vim.api.nvim_set_keymap :i :<Tab>   (.. "v:lua.tab_complete()") {:expr true})
-(vim.api.nvim_set_keymap :s :<Tab>   (.. "v:lua.tab_complete()") {:expr true})
+(vim.api.nvim_set_keymap :i :<Tab>   (.. "v:lua.tab_complete()")   {:expr true})
+(vim.api.nvim_set_keymap :s :<Tab>   (.. "v:lua.tab_complete()")   {:expr true})
 (vim.api.nvim_set_keymap :i :<S-Tab> (.. "v:lua.s_tab_complete()") {:expr true})
 (vim.api.nvim_set_keymap :s :<S-Tab> (.. "v:lua.s_tab_complete()") {:expr true})
+(vim.api.nvim_set_keymap :i :<CR>    "compe#confirm('<CR>')"       {:expr true :silent true})

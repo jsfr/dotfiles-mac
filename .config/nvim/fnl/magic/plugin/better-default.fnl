@@ -22,7 +22,7 @@
   [:mouse :a]
   [:shell :/bin/bash]
   [:showbreak "↳\\_"]
-  [:spell true]
+  [:spell false]
   [:termguicolors true]
   [:textwidth 0]
   [:timeout false]
