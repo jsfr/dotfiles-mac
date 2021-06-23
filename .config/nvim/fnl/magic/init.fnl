@@ -70,8 +70,7 @@
   :Olical/conjure {}
 
   ;; Tmux
-  :christoomey/vim-tmux-navigator {}
-  :tmux-plugins/vim-tmux-focus-events {}
+  :numToStr/Navigator.nvim {:config (plugin.req :navigator)}
 
   ;; Linting, Completion and Formatting
   :hrsh7th/nvim-compe {:config (plugin.req :completion)}
