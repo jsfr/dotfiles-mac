@@ -1,6 +1,7 @@
 (module magic.plugin.completion
   {autoload {c compe
-             vimp vimp}})
+             vimp vimp
+             npairs nvim-autopairs}})
 
 (set vim.o.completeopt "menuone,noselect")
 
@@ -45,6 +46,9 @@
 (defn- snip-jumpable? []
   (= (vim.fn.call "vsnip#jumpable" [-1]) 1))
 
+(defn- complete-info-selected? []
+  (~= (. (vim.fn.complete_info) :selected) -1))
+
 (defn- tab-complete []
   (if (pum-visible?)
     (t :<C-n>)
@@ -61,11 +65,21 @@
     (t "<Plug>(vsnip-jump-prev)")
     (t :<S-Tab>)))
 
+(defn- completion-confirm-key []
+  (let [esc (npairs.esc :<cr>)
+        confirm (. vim.fn :compe#confirm)] 
+    (if (pum-visible?)
+      (if (complete-info-selected?)
+        (confirm esc)
+        esc)
+      (npairs.autopairs_cr))))
+
 (tset _G :tab_complete tab-complete)
 (tset _G :s_tab_complete s-tab-complete)
+(tset _G :completion_confirm_key completion-confirm-key)
 
-(vim.api.nvim_set_keymap :i :<Tab>   (.. "v:lua.tab_complete()")   {:expr true})
-(vim.api.nvim_set_keymap :s :<Tab>   (.. "v:lua.tab_complete()")   {:expr true})
-(vim.api.nvim_set_keymap :i :<S-Tab> (.. "v:lua.s_tab_complete()") {:expr true})
-(vim.api.nvim_set_keymap :s :<S-Tab> (.. "v:lua.s_tab_complete()") {:expr true})
-(vim.api.nvim_set_keymap :i :<CR>    "compe#confirm('<CR>')"       {:expr true :silent true})
+(vim.api.nvim_set_keymap :i :<Tab>   (.. "v:lua.tab_complete()")           {:expr true})
+(vim.api.nvim_set_keymap :s :<Tab>   (.. "v:lua.tab_complete()")           {:expr true})
+(vim.api.nvim_set_keymap :i :<S-Tab> (.. "v:lua.s_tab_complete()")         {:expr true})
+(vim.api.nvim_set_keymap :s :<S-Tab> (.. "v:lua.s_tab_complete()")         {:expr true})
+(vim.api.nvim_set_keymap :i :<CR>    (.. "v:lua.completion_confirm_key()") {:expr true :silent true})

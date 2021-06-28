@@ -81,7 +81,13 @@
   :rafamadriz/friendly-snippets {}
   :lukas-reineke/format.nvim {:config (plugin.req :format)}
 
+  ;; Selectors
+  :junegunn/fzf.vim {:requires :junegunn/fzf
+                     :run (. vim.fn :fzf#install)
+                     :config (plugin.req :fzf)}
+
   ;; Misc
+  :famiu/bufdelete.nvim {}
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
                             :config (plugin.req :gitsigns)}
   :dbakker/vim-projectroot {:config (plugin.req :projectroot)}
@@ -91,9 +97,6 @@
   :itchyny/lightline.vim {:requires :josa42/nvim-lightline-lsp
                           :config (plugin.req :statusline)}
   :windwp/nvim-autopairs {:config (plugin.req :auto-pairs)}
-  :junegunn/fzf.vim {:requires :junegunn/fzf
-                     :run (. vim.fn :fzf#install)
-                     :config (plugin.req :fzf)}
   :justinmk/vim-dirvish {:config (plugin.req :dirvish)}
   :mbbill/undotree {:keys [:U]
                     :config (plugin.req :undotree)}

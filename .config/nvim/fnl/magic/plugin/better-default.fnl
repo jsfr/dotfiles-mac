@@ -30,7 +30,5 @@
   [:updatetime 2000]
   [:showmode false])
 
-(augroup better-default-config
-  (nvim.ex.autocmd :InsertEnter "*" "set timeout")
-  (nvim.ex.autocmd :InsertLeave "*" "set notimeout"))
-
+(nvim.ex.autocmd :InsertEnter "*" "set timeout ttimeout")
+(nvim.ex.autocmd :InsertLeave "*" "set notimeout nottimeout")
