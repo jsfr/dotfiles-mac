@@ -7,6 +7,4 @@
     (when (~= ft :help)
       (vim.fn.ProjectRootCD))))
 
-(augroup projectroot-config 
-  (nvim.ex.autocmd :BufEnter "*" 
-                   (.. "call v:lua.require('" *module-name* "')['auto-project-root-cd']()")))
+(augroup projectroot-config (nvim.ex.autocmd :BufEnter "*" (.. "call v:lua.require('" *module-name* "')['auto-project-root-cd']()")))

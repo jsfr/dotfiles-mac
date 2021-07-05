@@ -1,54 +1,6 @@
 (module magic.init
   {autoload {plugin magic.plugin
-             nvim aniseed.nvim
-             vimp vimp}})
-
-;;; Mappings
-
-(set vim.g.mapleader " ")
-(set vim.g.maplocalleader ",")
-
-;; Map semicolon to colon (access to ex-mode)
-(vimp.nnoremap ";" ":")
-(vimp.vnoremap ";" ":")
-
-;; jj escape sequence
-(vimp.inoremap :jj :<esc>)
-(vimp.cnoremap :jj :<c-c>)
-(vimp.tnoremap :jj :<c-\><c-n>)
-
-;; Spacemacs inspired keybings
-(vimp.nnoremap :<leader>w= :<C-W>=)
-[vimp.nnoremap :<leader>wq :<C-w>q]
-(vimp.nnoremap :<leader>wc :<C-w>q)
-(vimp.nnoremap :<leader>wd :<C-w>q)
-(vimp.nnoremap :<leader>w/ :<Cmd>vsplit<cr>)
-(vimp.nnoremap :<leader>w- :<Cmd>split<cr>)
-(vimp.nnoremap :<leader>w\| :<C-W>\|)
-(vimp.nnoremap :<leader>w_ :<C-W>_)
-(vimp.nnoremap :<leader>f :<Cmd>Files<cr>)
-(vimp.nnoremap :<leader>p :<Cmd>GFiles<cr>)
-(vimp.nnoremap :<leader>g :<Cmd>GFiles?<cr>)
-(vimp.nnoremap :<leader>d :<Cmd>bd<CR>)
-(vimp.nnoremap :<leader>b :<Cmd>Buffers<cr>)
-(vimp.nnoremap "<leader>," "<Cmd>Dirvish $MYVIMRC<cr>")
-
-;; Indent entire buffer
-(vimp.nnoremap :<leader>= "mzgg=G`z")
-
-;; search for current highlight
-(vimp.vnoremap :\ :yq/p<cr>N)
-
-;; Tab to go to last active buffer
-(defn mru-buffer []
-  (-> :#
-      (vim.fn.bufnr)
-      (vim.fn.buflisted)
-      (= 1)
-      (if
-        (vim.cmd "b #")
-        (vim.cmd "bprev"))))
-(vimp.nnoremap :<tab> mru-buffer)
+             nvim aniseed.nvim}})
 
 ;;; Plugins
 
@@ -58,7 +10,7 @@
                        :config (plugin.req :color-scheme)}
 
   ;; Syntax
-  :nvim-treesitter/nvim-treesitter {:run #((nvim.ex.TSUpdate))
+  :nvim-treesitter/nvim-treesitter {:run ":TSUpdateSync"
                                     :config (plugin.req :treesitter)}
 
   ;; Configure neovim
@@ -68,10 +20,10 @@
 
   ;; REPL for Lisp (e.g. Fennel)
   :Olical/conjure {}
-
+ 
   ;; Tmux
   :numToStr/Navigator.nvim {:config (plugin.req :navigator)}
-
+ 
   ;; Linting, Completion and Formatting
   :hrsh7th/nvim-compe {:config (plugin.req :completion)}
   :tami5/compe-conjure {}
@@ -79,13 +31,16 @@
   :kabouzeid/nvim-lspinstall {:config (plugin.req :lspinstall)}
   :hrsh7th/vim-vsnip {}
   :rafamadriz/friendly-snippets {}
-  :lukas-reineke/format.nvim {:config (plugin.req :format)}
+  :mhartington/formatter.nvim {:config (plugin.req :format)}
 
+  ;; Documentation generation
+  :kkoomen/vim-doge {:run ":call :doge#install"
+                     :config (plugin.req :doge)}
+ 
   ;; Selectors
   :junegunn/fzf.vim {:requires :junegunn/fzf
-                     :run (. vim.fn :fzf#install)
-                     :config (plugin.req :fzf)}
-
+                     :run ":call :fzf#install"}
+ 
   ;; Misc
   :famiu/bufdelete.nvim {}
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
@@ -113,4 +68,8 @@
   :tpope/vim-sleuth {}
   :tpope/vim-surround {}
   :tpope/vim-unimpaired {}
+  :knsh14/vim-github-link {}
   )
+
+;; Mappings
+(require :magic.mappings)
