@@ -69,6 +69,7 @@
   :tpope/vim-sleuth {}
   :tpope/vim-surround {}
   :tpope/vim-unimpaired {}
+  :tpope/vim-jdaddy {}
   :knsh14/vim-github-link {}
   )
 
