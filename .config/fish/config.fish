@@ -71,6 +71,9 @@ end
 # Source environment
 fenv source ~/.profile
 
+# Source NixOS
+fenv source $HOME/.nix-profile/etc/profile.d/nix.sh
+
 # Hook for desk activation
 if type -q desk
   test -n "$DESK_ENV"; and source "$DESK_ENV"; or true

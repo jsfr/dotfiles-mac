@@ -71,6 +71,8 @@
   :tpope/vim-unimpaired {}
   :tpope/vim-jdaddy {}
   :knsh14/vim-github-link {}
+  :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
+                             :config (plugin.req :todo-comments)}
   )
 
 ;; Mappings
