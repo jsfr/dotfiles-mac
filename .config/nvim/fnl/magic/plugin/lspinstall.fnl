@@ -26,10 +26,13 @@
 
 (defn setup-servers []
   (li.setup)
-  (let [server-names (li.installed_servers)
-        servers (core.map #(. lc $1) server-names)]
-    (each [_ server (pairs servers)]
-      (server.setup {:on_attach on-attach}))))
+  (let [server-names (li.installed_servers)]
+    (each [_ server-name (pairs server-names)]
+      (let [server (. lc server-name)]
+        (if (= server-name :efm)
+         (server.setup {:on_attach on-attach
+                        :filetypes [:typescript]})
+         (server.setup {:on_attach on-attach}))))))
 
 (defn post-install-hook []
   (setup-servers)
