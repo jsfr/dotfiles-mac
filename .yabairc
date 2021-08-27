@@ -51,6 +51,7 @@ yabai -m rule --add app="^System Preferences$" layer=above manage=off
 yabai -m rule --add app="^Steam$" border=off layer=above manage=off
 yabai -m rule --add app="^Macro$" border=off manage=off
 yabai -m rule --add app="^rmenu$" border=off layer=above manage=off
+yabai -m rule --add app="^Joplin$" layer=above manage=off
 
 yabai -m rule --add app="^Signal$" space=^8
 yabai -m rule --add app="^Mimestream$" space=^9
