@@ -68,6 +68,9 @@ if type -q $docker_completions
   source $docker_completions
 end
 
+# Enable zoxide
+zoxide init fish | source
+
 # Source environment
 fenv source ~/.profile
 
