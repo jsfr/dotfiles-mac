@@ -4,12 +4,8 @@
 <dict>
 	<key>Label</key>
 	<string>com.zerowidth.launched.pull_requests_update</string>
-	<key>ProgramArguments</key>
-	<array>
-		<string>sh</string>
-		<string>-c</string>
-		<string>/usr/local/bin/hs -c "pull_requests.update()"</string>
-	</array>
+	<key>Program</key>
+	<string>/Users/jens/.local/bin/update-pull-requests.sh</string>
 	<key>StartInterval</key>
 	<integer>60</integer>
 </dict>

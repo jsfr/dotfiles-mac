@@ -506,7 +506,7 @@ shell:
 #   args:
 #     - -l
 #     - -c
-#     - "zellij list-sessions | grep alacritty && zellij attach --force alacritty || SHELL=/usr/local/bin/fish zellij -s alacritty"
+#     - "SHELL=/usr/local/bin/fish zellij attach -c alacritty"
 
 # Startup directory
 #

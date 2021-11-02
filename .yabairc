@@ -49,7 +49,6 @@ yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" border=off laye
 yabai -m rule --add app="^Finder$" title="^(Copy)?$" layer=above manage=off
 yabai -m rule --add app="^System Preferences$" layer=above manage=off
 yabai -m rule --add app="^Steam$" border=off layer=above manage=off
-yabai -m rule --add app="^Macro$" border=off manage=off sticky=on layer=above
 yabai -m rule --add app="^rmenu$" border=off layer=above manage=off
 yabai -m rule --add app="^Joplin$" layer=above manage=off grid=5:5:1:1:3:3
 

@@ -37,13 +37,13 @@
   :mhartington/formatter.nvim {:config (plugin.req :format)}
 
   ;; Documentation generation
-  :kkoomen/vim-doge {:run ":call :doge#install"
+  :kkoomen/vim-doge {:run ":call doge#install()"
                      :config (plugin.req :doge)}
  
   ;; Selectors
   :junegunn/fzf.vim {:requires :junegunn/fzf
-                     :run ":call :fzf#install"}
- 
+                     :run ":call fzf#install()"}
+
   ;; Misc
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
                             :config (plugin.req :gitsigns)}
