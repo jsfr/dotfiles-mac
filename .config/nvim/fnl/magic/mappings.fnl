@@ -28,7 +28,7 @@
 (vimp.nnoremap :<leader>f :<Cmd>Files<cr>)
 (vimp.nnoremap :<leader>p :<Cmd>GFiles<cr>)
 (vimp.nnoremap :<leader>g :<Cmd>GFiles?<cr>)
-(vimp.nnoremap :<leader>d :<Cmd>bd<CR>)
+(vimp.nnoremap :<leader>d :<Cmd>Bdelete<CR>)
 (vimp.nnoremap :<leader>b :<Cmd>Buffers<cr>)
 (vimp.nnoremap "<leader>," "<Cmd>Dirvish $MYVIMRC<cr>")
 

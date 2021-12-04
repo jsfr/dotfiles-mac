@@ -1,9 +1,12 @@
 (module magic.plugin.lspinstall
   {autoload {core aniseed.core
-             li lspinstall
-             lc lspconfig}})
+             lsp-installer nvim-lsp-installer
+             lspconfig lspconfig
+             cmp_nvim_lsp cmp_nvim_lsp}})
 
-(defn on-attach [client bufnr]
+(local capabilities (cmp_nvim_lsp.update_capabilities (vim.lsp.protocol.make_client_capabilities)))
+
+(defn- on-attach [client bufnr]
   (let [buf-set-keymap #(vim.api.nvim_buf_set_keymap bufnr $...)
         opts {:noremap true :silent true}]
   (buf_set_keymap :n :gD "<Cmd>lua vim.lsp.buf.declaration()<CR>" opts)
@@ -24,19 +27,8 @@
   (buf_set_keymap :n :<localleader>q "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>" opts)
   (buf_set_keymap :n :<localleader>f "<Cmd>lua vim.lsp.buf.formatting()<CR>" opts)))
 
-(defn setup-servers []
-  (li.setup)
-  (let [server-names (li.installed_servers)]
-    (each [_ server-name (pairs server-names)]
-      (let [server (. lc server-name)]
-        (if (= server-name :efm)
-         (server.setup {:on_attach on-attach
-                        :filetypes [:typescript]})
-         (server.setup {:on_attach on-attach}))))))
+(defn- setup-server [server]
+  (server:setup {:capabilities capabilities
+                 :on_attach on-attach}))
 
-(defn post-install-hook []
-  (setup-servers)
-  (vim.cmd "bufdo e"))
-
-(setup-servers)
-(set li.post_install_hook post-install-hook)
+(lsp-installer.on_server_ready setup-server)
