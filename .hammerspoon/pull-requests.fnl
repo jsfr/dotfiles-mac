@@ -1,5 +1,6 @@
 (local unread-style {:color {:red 1.0 :green 0.0 :blue 0.0 :alpha 1.0}})
 (local username :jsfr)
+(local ignore-list ["https://github.com/scikit-build/scikit-build/pull/519"])
 
 (fn review-requested? [node]
   "Check if a PR has been requested to be reviewed by the user"
@@ -15,8 +16,7 @@
 
 (fn show-pull-request? [node]
   "Checks if a PR should be filtered out or kept based on ignore list"
-  (let [ignore-list ["https://github.com/scikit-build/scikit-build/pull/519"]
-        in-list? #(not (= (?. node :url) $1))]
+  (let [in-list? #(not (= (?. node :url) $1))]
     (hs.fnutils.some ignore-list in-list?)))
 
 (fn get-pull-request [node]

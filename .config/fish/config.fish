@@ -73,6 +73,7 @@ zoxide init fish | source
 
 # Source environment
 fenv source ~/.profile
+fenv source ~/.ghcup/env
 
 # Hook for desk activation
 if type -q desk
