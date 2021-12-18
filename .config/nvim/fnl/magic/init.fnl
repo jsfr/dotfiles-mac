@@ -25,18 +25,20 @@
  
   ;; Tmux
   :numToStr/Navigator.nvim {:config (plugin.req :navigator)}
- 
-  ;; Linting, Completion, Snippets
-  :PaterJason/cmp-conjure {}
-  :hrsh7th/cmp-buffer {}
-  :hrsh7th/cmp-path {}
-  :hrsh7th/cmp-cmdline {}
-  :hrsh7th/cmp-vsnip {}
-  :hrsh7th/vim-vsnip {}
-  :rafamadriz/friendly-snippets {}
-  :hrsh7th/cmp-nvim-lsp {}
+
+  ;; LSP
   :williamboman/nvim-lsp-installer {:requires :neovim/nvim-lspconfig
                                     :config (plugin.req :lsp)}
+
+  ;; Snippets
+  :hrsh7th/vim-vsnip {}
+  :rafamadriz/friendly-snippets {}
+ 
+  ;; Completion
+  :hrsh7th/cmp-vsnip {}
+  :hrsh7th/cmp-nvim-lsp {}
+  :PaterJason/cmp-conjure {}
+  :hrsh7th/cmp-buffer {}
   :hrsh7th/nvim-cmp {:config (plugin.req :completion)}
 
   ;; Mini.vim
@@ -50,7 +52,6 @@
                      :run ":call fzf#install()"}
 
   ;; Misc
-  :famiu/bufdelete.nvim {}
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
                             :config (plugin.req :gitsigns)}
   :dbakker/vim-projectroot {:config (plugin.req :projectroot)}
@@ -76,6 +77,7 @@
   :knsh14/vim-github-link {}
   :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
                              :config (plugin.req :todo-comments)}
+  :beauwilliams/focus.nvim {:config (plugin.req :focus)}
   )
 
 ;; Mappings

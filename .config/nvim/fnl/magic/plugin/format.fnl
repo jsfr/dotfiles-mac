@@ -3,17 +3,25 @@
              nvim aniseed.nvim}
    require-macros [magic.macros]})
 
-(let [typescript (fn [] {:exe :prettier
-                         :args [:--stdin-filepath (vim.api.nvim_buf_get_name 0)
-                                :--parser :typescript]
-                         :stdin true})
-      filetype {:typescript [typescript]}
-      config {:filetype filetype}]
-  (f.setup config))
+(defn- file-path []
+  (vim.api.nvim_buf_get_name 0))
 
-(vim.api.nvim_exec
-  (.. "augroup FormatAutogroup\n" 
-      "autocmd!\n" 
-      "autocmd BufWritePost *.ts FormatWrite\n"
-      "augroup END")
-  true)
+(defn- typescript-config []
+  {:exe :prettier
+   :args [:--stdin-filepath (file-path)
+          :--parser :typescript]
+   :stdin true})
+
+(defn- zig-config []
+  {:exe :zig
+   :args [:fmt (file-path)]
+   :stdin false})
+
+(f.setup {:filetype {:typescript [typescript-config]
+                     :zig [zig-config]}})
+
+(let [commands (.. "augroup FormatAutogroup\n" 
+                   "autocmd!\n" 
+                   "autocmd BufWritePost *.ts,*.zig FormatWrite\n"
+                   "augroup END")]
+  (vim.api.nvim_exec commands true))

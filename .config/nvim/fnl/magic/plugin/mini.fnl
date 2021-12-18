@@ -1,8 +1,9 @@
 (module magic.plugin.mini
-  {autoload {mcomment mini.comment
+  {autoload {vimp vimp
+             mcomment mini.comment
              mjump mini.jump
-             mpairs mini.pairs}})
-
+             mpairs mini.pairs
+             mbufremove mini.bufremove}})
 
 (mcomment.setup {:mappings {:comment :gc
                            :comment_line :gcc
@@ -16,3 +17,5 @@
              :highlight_delay 250})
 
 (mpairs.setup {})
+
+(mbufremove.setup {})
