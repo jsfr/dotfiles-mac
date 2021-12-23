@@ -26,8 +26,10 @@ export LC_ALL="$LANG"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export GOPATH="$HOME/go"
+export N_PREFIX="$HOME/.n"
+export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/Repos/github.com/pleo-io/pleo/bin:/usr/local/sbin:$N_PREFIX/bin"
 
-JAVA_HOME=$(/usr/libexec/java_home -v 11)
+JAVA_HOME=$(/usr/libexec/java_home -v 17)
 export JAVA_HOME="$JAVA_HOME"
 
 export HOMEBREW_GITHUB_API_TOKEN_PATH="$HOME/.homebrew_github_token"
@@ -44,9 +46,5 @@ RUST_SYS_ROOT=$(rustc --print sysroot)
 export RUST_SRC_PATH="$RUST_SYS_ROOT/lib/rustlib/src/rust/src"
 
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-
-export N_PREFIX="$HOME/.n"
-
-export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/Repos/github.com/pleo-io/pleo/bin:/usr/local/sbin:$N_PREFIX/bin"
 
 export ENV_EXPORTED="exported"

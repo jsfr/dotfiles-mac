@@ -496,7 +496,7 @@ colors:
 #  args:
 #    - --login
 shell:
- program: /bin/dash
+ program: /bin/bash
  args:
    - -l
    - -c
