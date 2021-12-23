@@ -18,27 +18,13 @@
 
 ;; Spacemacs inspired keybings
 (vimp.nnoremap :<leader>w= :<C-W>=)
-(vimp.nnoremap :<leader>wd :<C-w>q)
+(vimp.nnoremap :<leader>wc :<C-w>q)
 (vimp.nnoremap :<leader>w/ :<Cmd>vsplit<cr>)
 (vimp.nnoremap :<leader>w- :<Cmd>split<cr>)
 (vimp.nnoremap :<leader>w\| :<C-W>\|)
 (vimp.nnoremap :<leader>w_ :<C-W>_)
-(vimp.nnoremap :<leader>f :<Cmd>Files<cr>)
-(vimp.nnoremap :<leader>p :<Cmd>GFiles<cr>)
-(vimp.nnoremap :<leader>g :<Cmd>GFiles?<cr>)
-(vimp.nnoremap :<leader>B :<Cmd>Buffers<cr>)
 (vimp.nnoremap "<leader>," "<Cmd>Dirvish $MYVIMRC<cr>")
-(vimp.nnoremap :<leader>bd "<Cmd>lua MiniBufremove.delete(0, false)<cr>")
-
-;; Quick access to all dotfiles
-(defn dotfiles []
-  (nvim.command (..
-                  "call fzf#run(fzf#wrap({"
-                  "'source': 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME ls-files',"
-                  "'sink': 'e',"
-                  "'dir': '$HOME'"
-                  "}))")))
-(vimp.nnoremap :<leader>. dotfiles)
+(vimp.nnoremap :<leader>d "<Cmd>lua MiniBufremove.delete(0, false)<cr>")
 
 ;; Indent entire buffer
 (vimp.nnoremap :<leader>= "mzgg=G`z")

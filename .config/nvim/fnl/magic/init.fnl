@@ -7,65 +7,60 @@
 (plugin.use
   ;; Set a theme
   :npxbr/gruvbox.nvim {:requires :rktjmp/lush.nvim
-                       :config (plugin.req :color-scheme)}
+                       :mod :color-scheme}
 
   ;; Syntax
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdateSync"
-                                    :config (plugin.req :treesitter)}
-  :NoahTheDuke/vim-just {}
-  :zah/nim.vim {}
+                                    :mod :treesitter}
 
   ;; Configure neovim
   :wbthomason/packer.nvim {}
   :Olical/aniseed {}
   :svermeulen/vimpeccable {:as :vimp}
-
-  ;; REPL for Lisp (e.g. Fennel)
-  :Olical/conjure {}
  
   ;; Tmux
-  :numToStr/Navigator.nvim {:config (plugin.req :navigator)}
+  :numToStr/Navigator.nvim {:mod :navigator}
 
   ;; LSP
   :williamboman/nvim-lsp-installer {:requires :neovim/nvim-lspconfig
-                                    :config (plugin.req :lsp)}
+                                    :mod :lsp}
 
-  ;; Snippets
-  :hrsh7th/vim-vsnip {}
-  :rafamadriz/friendly-snippets {}
- 
   ;; Completion
-  :hrsh7th/cmp-vsnip {}
+  :hrsh7th/cmp-vsnip {:requires [[:hrsh7th/vim-vsnip]
+                                 [:rafamadriz/friendly-snippets]]}
   :hrsh7th/cmp-nvim-lsp {}
-  :PaterJason/cmp-conjure {}
   :hrsh7th/cmp-buffer {}
-  :hrsh7th/nvim-cmp {:config (plugin.req :completion)}
+  :hrsh7th/cmp-path {}
+  :hrsh7th/nvim-cmp {:mod :completion}
 
   ;; Mini.vim
-  :echasnovski/mini.nvim {:config (plugin.req :mini)}
+  :echasnovski/mini.nvim {:mod :mini}
 
   ;; Formatting
-  :mhartington/formatter.nvim {:config (plugin.req :format)}
+  :mhartington/formatter.nvim {:mod :format}
 
   ;; Selectors
-  :junegunn/fzf.vim {:requires :junegunn/fzf
-                     :run ":call fzf#install()"}
+  :mfussenegger/nvim-fzy {:mod :selector}
+
+  ;; Distraction-free writing 
+  :folke/zen-mode.nvim {:requires :folke/twilight.nvim
+                        :mod :zen-mode}
 
   ;; Misc
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
-                            :config (plugin.req :gitsigns)}
-  :dbakker/vim-projectroot {:config (plugin.req :projectroot)}
+                            :mod :gitsigns}
+  :dbakker/vim-projectroot {:mod :projectroot}
   :direnv/direnv.vim {}
   :editorconfig/editorconfig-vim {}
-  :haya14busa/incsearch.vim {:config (plugin.req :incsearch)}
+  :haya14busa/incsearch.vim {:mod :incsearch}
   :itchyny/lightline.vim {:requires :josa42/nvim-lightline-lsp
-                          :config (plugin.req :statusline)}
-  :justinmk/vim-dirvish {:config (plugin.req :dirvish)}
+                          :mod :statusline}
+  :justinmk/vim-dirvish {:mod :dirvish}
   :mbbill/undotree {:keys [:U]
                     :config (plugin.req :undotree)}
   :mhinz/vim-startify {}
-  :terryma/vim-expand-region {:config (plugin.req :expand-region)}
-  :liuchengxu/vim-better-default {:config (plugin.req :better-default)}
+  :terryma/vim-expand-region {:mod :expand-region}
+  :liuchengxu/vim-better-default {:mod :better-default}
   :tpope/vim-abolish {:cmd [:Subvert :Abolish]}
   :tpope/vim-eunuch {}
   :tpope/vim-surround {}
@@ -76,8 +71,8 @@
   :tpope/vim-jdaddy {}
   :knsh14/vim-github-link {}
   :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
-                             :config (plugin.req :todo-comments)}
-  :beauwilliams/focus.nvim {:config (plugin.req :focus)}
+                             :mod :todo-comments}
+  :beauwilliams/focus.nvim {:mod :focus}
   )
 
 ;; Mappings

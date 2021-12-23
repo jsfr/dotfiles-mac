@@ -5,5 +5,5 @@
 (set vim.g.undotree_SetFocusWhenToggle 1)
 
 ; Show undotree
-(vimp.nnoremap :U :<Cmd>UndotreeToggle<cr>)
+(vimp.nnoremap [:override] :U :<Cmd>UndotreeToggle<cr>)
 

@@ -48,4 +48,4 @@
             :sources [{:name :nvim_lsp}
                       {:name :vsnip}
                       {:name :buffer}
-                      {:name :conjure}]})
+                      {:name :path}]})

@@ -1,13 +1,12 @@
 (module magic.plugin.lspinstall
   {autoload {core aniseed.core
+             nvim aniseed.nvim
              lsp-installer nvim-lsp-installer
              lspconfig lspconfig
              cmp_nvim_lsp cmp_nvim_lsp}})
 
-(local capabilities (cmp_nvim_lsp.update_capabilities (vim.lsp.protocol.make_client_capabilities)))
-
 (defn- on-attach [client bufnr]
-  (let [buf-set-keymap #(vim.api.nvim_buf_set_keymap bufnr $...)
+  (let [buf-set-keymap #(nvim.buf_set_keymap bufnr $...)
         opts {:noremap true :silent true}]
     (buf_set_keymap :n :gD "<Cmd>lua vim.lsp.buf.declaration()<CR>" opts)
     (buf_set_keymap :n :gd "<Cmd>lua vim.lsp.buf.definition()<CR>" opts)
@@ -30,6 +29,8 @@
 (defn- merge-tables [tbl1 tbl2]
   (each [key value (pairs tbl2)]
     (tset tbl1 key value)))
+
+(local capabilities (cmp_nvim_lsp.update_capabilities (vim.lsp.protocol.make_client_capabilities)))
 
 (defn- setup-server [server]
   (let [default-opts {:capabilities capabilities

@@ -4,7 +4,7 @@
    require-macros [magic.macros]})
 
 (defn- file-path []
-  (vim.api.nvim_buf_get_name 0))
+  (nvim.buf_get_name 0))
 
 (defn- typescript-config []
   {:exe :prettier
@@ -24,4 +24,4 @@
                    "autocmd!\n" 
                    "autocmd BufWritePost *.ts,*.zig FormatWrite\n"
                    "augroup END")]
-  (vim.api.nvim_exec commands true))
+  (nvim.exec commands true))
