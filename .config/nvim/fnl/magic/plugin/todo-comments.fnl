@@ -1,4 +1,4 @@
 (module magic.plugin.todo-comments
   {autoload {tc todo-comments}})
 
-(tc.setup)
+(tc.setup {:keywords {:TODO {:icon "T "}}})

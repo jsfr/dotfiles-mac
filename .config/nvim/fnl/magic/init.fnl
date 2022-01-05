@@ -27,7 +27,7 @@
   :Olical/conjure {:ft [:fennel]}
 
   ;; Tmux
-  :numToStr/Navigator.nvim {:mod :navigator}
+  :numToStr/Navigator.nvim {:mod :tmux}
 
   ;; LSP
   :williamboman/nvim-lsp-installer {:requires :neovim/nvim-lspconfig
@@ -68,7 +68,6 @@
   :tamago324/lir.nvim {:mod :file-explorer}
   :mbbill/undotree {:keys [:U]
                     :config (plugin.req :undotree)}
-  :mhinz/vim-startify {}
   :terryma/vim-expand-region {:mod :expand-region}
   :tpope/vim-abolish {:cmd [:Subvert :Abolish]}
   :tpope/vim-eunuch {}
@@ -77,7 +76,7 @@
   :tpope/vim-repeat {}
   :tpope/vim-sleuth {}
   :tpope/vim-jdaddy {}
-  :knsh14/vim-github-link {:cmd [:GetCommitLink :GetCurrentBranchLink :GetCurrentCommitLink]}
+  :ruifm/gitlinker.nvim {:mod :gitlinker}
   :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
                              :mod :todo-comments}
   )

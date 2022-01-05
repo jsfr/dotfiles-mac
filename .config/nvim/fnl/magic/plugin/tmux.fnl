@@ -1,4 +1,4 @@
-(module magic.plugin.navigator
+(module magic.plugin.tmux
   {autoload {nav Navigator
              vimp vimp}})
 

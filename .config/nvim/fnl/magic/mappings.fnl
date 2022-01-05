@@ -22,7 +22,14 @@
   (vimp.nnoremap :<leader>w- :<Cmd>split<cr>)
   (vimp.nnoremap :<leader>w\| :<C-W>\|)
   (vimp.nnoremap :<leader>w_ :<C-W>_)
-  (vimp.nnoremap :<leader>d "<Cmd>lua MiniBufremove.delete(0, false)<cr>")
+
+  ;; Delete current buffer, keeping layout unless the buffer was a help buffer
+  (defn delete-buffer []
+    (let [buftype (nvim.buf_get_option 0 :buftype)]
+      (if (vim.tbl_contains [:help :quickfix] buftype) 
+        (nvim.buf_delete 0 {})
+        (MiniBufremove.delete 0 false))))
+  (vimp.nnoremap :<leader>d delete-buffer)
 
   ;; Indent entire buffer
   (vimp.nnoremap :<leader>= "mzgg=G`z")

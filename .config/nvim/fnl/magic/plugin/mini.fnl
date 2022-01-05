@@ -1,25 +1,28 @@
 (module magic.plugin.mini
   {autoload {vimp vimp
              nvim aniseed.nvim
-             mcomment mini.comment
-             mjump mini.jump
-             mpairs mini.pairs
-             mbufremove mini.bufremove}
+             mini-comment mini.comment
+             mini-jump mini.jump
+             mini-pairs mini.pairs
+             mini-bufremove mini.bufremove
+             mini-starter mini.starter}
    require-macros [magic.macros]})
 
-(mcomment.setup {:mappings {:comment :gc
+(mini-comment.setup {:mappings {:comment :gc
                            :comment_line :gcc
                            :textobject :gc}})
 (augroup mini-comment
          (nvim.ex.autocmd :Filetype "just" "setlocal commentstring=#\\ %s"))
 
-(mjump.setup {:mappings {:forward :f
+(mini-jump.setup {:mappings {:forward :f
                         :backward :F
                         :forward_till :t
                         :backward_till :T
                         :repeat_jump ""}
              :highlight_delay 250})
 
-(mpairs.setup {})
+(mini-pairs.setup {})
 
-(mbufremove.setup {})
+(mini-bufremove.setup {})
+
+(mini-starter.setup {})
