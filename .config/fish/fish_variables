@@ -8,8 +8,7 @@ SETUVAR _fish_abbr_zap:brew\x20uninstall\x20\x2d\x2dforce\x20\x2d\x2dzap
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:/Users/jens/\x2econfig/fish/completions/kubectl\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/jens/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/jens/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_laughedelic_2F_pisces_files:/Users/jens/\x2econfig/fish/functions/_pisces_append\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_backspace\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_bind_pair\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_complete\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_insert_identical\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_insert_left\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_insert_right\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_jump\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_lookup\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_remove\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_should_insert\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_skip\x2efish\x1e/Users/jens/\x2econfig/fish/conf\x2ed/pisces\x2efish
-SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_foreign_2D_env_files:/Users/jens/\x2econfig/fish/functions/fenv\x2eapply\x2efish\x1e/Users/jens/\x2econfig/fish/functions/fenv\x2efish\x1e/Users/jens/\x2econfig/fish/functions/fenv\x2emain\x2efish\x1e/Users/jens/\x2econfig/fish/functions/fenv\x2eparse\x2eafter\x2efish\x1e/Users/jens/\x2econfig/fish/functions/fenv\x2eparse\x2ebefore\x2efish\x1e/Users/jens/\x2econfig/fish/functions/fenv\x2eparse\x2ediff\x2efish\x1e/Users/jens/\x2econfig/fish/functions/fenv\x2eparse\x2edivider\x2efish
-SETUVAR _fisher_plugins:evanlucas/fish\x2dkubectl\x2dcompletions\x1elaughedelic/pisces\x1ejorgebucaran/fisher\x1eoh\x2dmy\x2dfish/plugin\x2dforeign\x2denv
+SETUVAR _fisher_plugins:evanlucas/fish\x2dkubectl\x2dcompletions\x1elaughedelic/pisces\x1ejorgebucaran/fisher
 SETUVAR base16_theme:oceanicnext
 SETUVAR fish_color_autosuggestion:4F5B66
 SETUVAR fish_color_cancel:\x2dr
@@ -34,7 +33,6 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3d4F5B
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_greeting:
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:yellow\x1e\x2d\x2ddim

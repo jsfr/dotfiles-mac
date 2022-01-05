@@ -1,6 +1,6 @@
 # install fisherman if not present
 if not functions -q fisher
-  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME $HOME/.config
   curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
   fish -c fisher
 end
@@ -19,17 +19,6 @@ function abbreviations
   abbr zap "brew uninstall --force --zap"
 end
 abbreviations
-
-# Add direnv hooks
-if type -q direnv
-  # eval (direnv hook fish)
-  function __direnv_export_eval_preexec --on-event fish_preexec;
-          "/usr/local/bin/direnv" export fish | source;
-  end
-  function __direnv_export_eval_prompt  --on-event fish_prompt;
-          "/usr/local/bin/direnv" export fish | source;
-  end
-end
 
 # Typing !! will fill in the last used command
 function bind_bang
@@ -68,21 +57,32 @@ if type -q $docker_completions
   source $docker_completions
 end
 
-# Enable zoxide
-zoxide init fish | source
+# Add direnv hooks
+if type -q direnv
+  direnv hook fish | source
+end
 
-# Source environment
-fenv source ~/.profile
-fenv source ~/.ghcup/env
+# Enable zoxide
+if type -q zoxide
+  zoxide init fish | source
+end
 
 # Hook for desk activation
-if type -q desk
-  test -n "$DESK_ENV"; and source "$DESK_ENV"; or true
+if type -q desk && test -n "$DESK_ENV"
+  source "$DESK_ENV"
 end
 
+# Add just completions
 if type -q just
-  just --completions fish > ~/.just_completions.fish
-  source ~/.just_completions.fish
+  set just_completions "$HOME/.just_completions.fish"
+  if ! type -q $just_completions
+    just --completions fish > $just_completions
+  end
+  source $just_completions
 end
 
+# Source environment
+source "$HOME/.config/fish/env.fish"
+
+# Initialize prompt
 starship init fish | source

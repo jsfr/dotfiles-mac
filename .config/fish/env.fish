@@ -3,7 +3,7 @@ if test -n "$ENV_EXPORTED"
     exit 0
 end
 
-set -x PAGER less
+set -x PAGER "less"
 set -x FZF_DEFAULT_COMMAND "fd -It f"
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
@@ -25,7 +25,8 @@ set -x LC_ALL $LANG
 
 set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x GOPATH "$HOME/go"
-set -x JAVA_HOME (/usr/libexec/java_home -v 11)
+set -x N_PREFIX="$HOME/.n"
+set -x JAVA_HOME (/usr/libexec/java_home -v 17)
 
 set -x HOMEBREW_GITHUB_API_TOKEN_PATH "$HOME/.homebrew_github_token"
 if test -e $HOMEBREW_GITHUB_API_TOKEN_PATH
