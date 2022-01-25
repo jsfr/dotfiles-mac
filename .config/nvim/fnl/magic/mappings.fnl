@@ -23,6 +23,9 @@
   (vimp.nnoremap :<leader>w\| :<C-W>\|)
   (vimp.nnoremap :<leader>w_ :<C-W>_)
 
+  (vimp.inoremap :<Tab> :<C-t>)
+  (vimp.inoremap :<S-Tab> :<C-d>)
+
   ;; Delete current buffer, keeping layout unless the buffer was a help buffer
   (defn delete-buffer []
     (let [buftype (nvim.buf_get_option 0 :buftype)]

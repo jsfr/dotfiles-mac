@@ -5,7 +5,8 @@
              mini-jump mini.jump
              mini-pairs mini.pairs
              mini-bufremove mini.bufremove
-             mini-starter mini.starter}
+             mini-starter mini.starter
+             mini-surround mini.surround}
    require-macros [magic.macros]})
 
 (mini-comment.setup {:mappings {:comment :gc
@@ -26,3 +27,11 @@
 (mini-bufremove.setup {})
 
 (mini-starter.setup {})
+
+(mini-surround.setup {:mappings {:add :S
+                                 :delete :ds
+                                 :find ""
+                                 :find_left ""
+                                 :highlight ""
+                                 :replace :cs
+                                 :update_n_lines ""}})

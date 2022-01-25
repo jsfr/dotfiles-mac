@@ -62,7 +62,7 @@
   :dbakker/vim-projectroot {:mod :projectroot}
   :direnv/direnv.vim {}
   :editorconfig/editorconfig-vim {}
-  :haya14busa/incsearch.vim {:mod :incsearch}
+  :kevinhwang91/nvim-hlslens {:mod :search}
   :itchyny/lightline.vim {:requires :josa42/nvim-lightline-lsp
                           :mod :statusline}
   :tamago324/lir.nvim {:mod :file-explorer}
@@ -71,7 +71,6 @@
   :terryma/vim-expand-region {:mod :expand-region}
   :tpope/vim-abolish {:cmd [:Subvert :Abolish]}
   :tpope/vim-eunuch {}
-  :tpope/vim-surround {}
   :tpope/vim-fugitive {}
   :tpope/vim-repeat {}
   :tpope/vim-sleuth {}
@@ -79,4 +78,6 @@
   :ruifm/gitlinker.nvim {:mod :gitlinker}
   :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
                              :mod :todo-comments}
+  :chentau/marks.nvim {:mod :marks}
+  :dkarter/bullets.vim {}
   )

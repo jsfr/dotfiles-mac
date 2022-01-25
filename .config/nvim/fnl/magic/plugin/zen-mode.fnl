@@ -3,4 +3,6 @@
              twilight twilight}})
 
 (twilight.setup)
-(zen-mode.setup)
+(zen-mode.setup {:on_open (fn [] (do
+                                   (set vim.wo.wrap true)
+                                   (set vim.wo.linebreak true)))})
