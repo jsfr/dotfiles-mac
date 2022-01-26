@@ -1,5 +1,8 @@
 (require :hs.ipc)
 
+(when (not (hs.ipc.cliStatus))
+  (hs.ipc.cliInstall))
+
 (global reload (require :auto-reload))
 (reload.start)
 
