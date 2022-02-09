@@ -9,6 +9,8 @@
 (global spaces (require :spaces))
 
 (global pull_requests (require :pull-requests))
+(global pull_requests_timer (hs.timer.new 60 pull_requests.update))
+(pull_requests_timer:start)
 
 (global no_music (require :no-music))
 (no_music.start)

@@ -68,7 +68,7 @@
     [:updatetime 2000]
     [:wildmode "list:longest,full"]
     [:winminheight 0]
-    [:wrap false]
+    [:wrap true]
     )
   (nvim.ex.autocmd :InsertEnter "*" "set timeout ttimeout")
   (nvim.ex.autocmd :InsertLeave "*" "set notimeout nottimeout"))

@@ -1,5 +1,5 @@
 (fn callback [app-name event-type application]
-  (when (and (= app-name "Music") (= event-type hs.application.watcher.launching))
+  (when (and (= app-name :Music) (= event-type hs.application.watcher.launching))
     (application:kill9)
     (print "Music.app tried to launch. Killed.")))
 
