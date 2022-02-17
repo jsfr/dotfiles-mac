@@ -16,16 +16,15 @@ default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
 # app bindings
-shift + lalt - return : wezterm
-lalt - return   : open -a /Applications/Alacritty.app
-ctrl + lalt - e : open -a /Applications/Firefox.app
-ctrl + lalt - s : open -a /Applications/Slack.app
-ctrl + lalt - i : open -a /Applications/IntelliJ\ IDEA\ CE.app
-ctrl + lalt - n : open -a /Applications/Notion.app
-ctrl + lalt - m : open -a /Applications/Mimestream.app
-ctrl + lalt - z : open -a /Applications/zoom.us.app
-ctrl + lalt - a : open -a /Applications/Signal.app
-ctrl + lalt - j : open -a /Applications/Joplin.app
+lalt - return   : ~/.local/bin/open-and-focus.sh Alacritty
+ctrl + lalt - e : ~/.local/bin/open-and-focus.sh Firefox
+ctrl + lalt - s : ~/.local/bin/open-and-focus.sh Slack
+ctrl + lalt - i : ~/.local/bin/open-and-focus.sh IntelliJ\ IDEA\ CE
+ctrl + lalt - n : ~/.local/bin/open-and-focus.sh Notion
+ctrl + lalt - m : ~/.local/bin/open-and-focus.sh Mimestream
+ctrl + lalt - z : ~/.local/bin/open-and-focus.sh zoom.us
+ctrl + lalt - a : ~/.local/bin/open-and-focus.sh Signal
+ctrl + lalt - j : ~/.local/bin/open-and-focus.sh Joplin
 ctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - d : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 
