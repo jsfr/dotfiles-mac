@@ -12,6 +12,7 @@ resizer < return ; default
 # disable regular macos keybindings
 default, resizer < cmd - q :
 default, resizer < cmd - m :
+default, resizer < cmd - h :
 default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
@@ -24,7 +25,7 @@ ctrl + lalt - n : ~/.local/bin/open-and-focus.sh Notion
 ctrl + lalt - m : ~/.local/bin/open-and-focus.sh Mimestream
 ctrl + lalt - z : ~/.local/bin/open-and-focus.sh zoom.us
 ctrl + lalt - a : ~/.local/bin/open-and-focus.sh Signal
-ctrl + lalt - j : ~/.local/bin/open-and-focus.sh Joplin
+ctrl + lalt - l : ~/.local/bin/open-and-focus.sh Linear
 ctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - d : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 
