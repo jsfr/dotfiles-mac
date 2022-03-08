@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -euxo pipefail
 
 HOSTNAME=kukunochi
 
@@ -32,20 +33,12 @@ brew services start skhd
 brew services start yabai
 sudo yabai --install-sa
 
-# Add keychain entry for hammerspoon pull request widget
-# TODO
-
-# Add keychain entry for hammerspoon 2fa module
-# TODO
-
 # Install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Install native module for tridactyl
-read -p "To use .tridactylrc open Firefox and run :nativeinstall. Then press Enter to continue" </dev/tty
-
 # Install tpm plugins
-# TODO
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
 
 # Speed up the keyboard
 defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
@@ -60,3 +53,19 @@ npm install -g snyk
 
 # Install pipx packages
 pipx install git-delete-merged-branches
+
+# Clone and install rmenu
+mkdir -p ~/Repos/github.com/jsfr
+cd ~/Repos/github.com/jsfr
+git clone git@github.com:jsfr/rmenu.git
+just install
+cd ~
+
+# Set up k8s, aws-vault, vault and keychain
+read -p "Set up k8s, aws-vault, vault and keychain. Then press Enter to continue" </dev/tty
+
+# Add keychain entry for hammerspoon pull request widget
+read -p "Set up a Github Token for Hammerspoon PR widget. Then press Enter to continue" </dev/tty
+
+# Install native module for tridactyl
+read -p "To use .tridactylrc open Firefox and run :nativeinstall. Then press Enter to continue" </dev/tty

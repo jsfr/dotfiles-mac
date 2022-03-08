@@ -33,7 +33,7 @@ cmd - d : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --b
 shift + cmd - q : osascript -e "quit app \"$(yabai -m query --windows --window | jq -r .app)\""
 
 # get 2fa token for pleo dev/staging
-lalt + cmd - p : skhd -t "$(security find-generic-password -ws 'pleo_admin_staging_token' | rargs oathtool -b --totp {})"
+# lalt + cmd - p : skhd -t "$(security find-generic-password -ws 'pleo_admin_staging_token' | rargs oathtool -b --totp {})"
 
 # "write" the current copied text
 lalt + cmd - v : sleep 1 ; skhd -t "$(pbpaste)"

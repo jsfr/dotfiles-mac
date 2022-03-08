@@ -39,6 +39,7 @@ brew "gradle"
 brew "htop"
 brew "httpie"
 brew "jq"
+brew "just"
 brew "kotlin"
 brew "ktlint"
 brew "kubectl"
@@ -91,5 +92,9 @@ cask "spotify"
 cask "steam"
 cask "steermouse"
 cask "temurin"
+cask "todoist"
 cask "yubico-yubikey-manager"
 cask "zoom"
+
+# 'mas install'
+mas "Meeter", id: 1510445899
