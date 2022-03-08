@@ -27,7 +27,7 @@
     yolo = "!git commit -m \"YOLO: `curl -s http://whatthecommit.com/index.txt`\""
 [core]
     editor = nvim
-    pager = delta --theme="base16"
+    pager = delta --syntax-theme="base16"
 [color "diff-highlight"]
     oldNormal = red bold
     oldHighlight = red bold 52

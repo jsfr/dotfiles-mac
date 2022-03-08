@@ -26,6 +26,10 @@
   :svermeulen/vimpeccable {:as :vimp}
   :Olical/conjure {:ft [:fennel]}
 
+  ;; Neorg
+  :nvim-neorg/neorg {:requires :nvim-lua/plenary.nvim
+                     :mod :neorg}
+
   ;; Tmux
   :numToStr/Navigator.nvim {:mod :tmux}
 

@@ -10,9 +10,10 @@ set theme dark
 set followpagepatterns.prev Previous
 
 " Binds
-unbindurl feedly.com j
-unbindurl feedly.com k
-unbindurl feedly.com s
+unbindurl inoreader.com j
+unbindurl inoreader.com k
+unbindurl inoreader.com v
+unbindurl inoreader.com s
 
 " Subconfig Settings
 seturl www.google.com followpagepatterns.next Next
