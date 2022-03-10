@@ -93,8 +93,5 @@ cask "steam"
 cask "steermouse"
 cask "temurin"
 cask "todoist"
-cask "yubico-yubikey-manager"
+# cask "yubico-yubikey-manager"
 cask "zoom"
-
-# 'mas install'
-mas "Meeter", id: 1510445899

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-yabai="/usr/local/bin/yabai"
-jq="/usr/local/bin/jq"
+yabai="/opt/homebrew/bin/yabai"
+jq="/opt/homebrew/bin/jq"
 
 number_of_sticky_windows=$(
         $yabai -m query --windows |

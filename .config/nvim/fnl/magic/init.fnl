@@ -26,10 +26,6 @@
   :svermeulen/vimpeccable {:as :vimp}
   :Olical/conjure {:ft [:fennel]}
 
-  ;; Neorg
-  :nvim-neorg/neorg {:requires :nvim-lua/plenary.nvim
-                     :mod :neorg}
-
   ;; Tmux
   :numToStr/Navigator.nvim {:mod :tmux}
 
@@ -54,11 +50,9 @@
   :mhartington/formatter.nvim {:mod :format}
 
   ;; Selectors
-  :mfussenegger/nvim-fzy {:mod :selector}
-
-  ;; Distraction-free writing
-  :folke/zen-mode.nvim {:requires :folke/twilight.nvim
-                        :mod :zen-mode}
+  ; :mfussenegger/nvim-fzy {:mod :selector}
+  :junegunn/fzf.vim {:requires :junegunn/fzf
+                     :mod :selector}
 
   ;; Misc
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim

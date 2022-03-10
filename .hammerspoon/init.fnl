@@ -16,9 +16,8 @@
 (global keep_rmenu_focus (require :keep-rmenu-focus))
 (keep_rmenu_focus.start)
 
-(global url_handler (require :url-handler))
-(url_handler.start)
-
 (global pull_requests (require :pull-requests))
 (global pull_requests_timer (hs.timer.new 60 pull_requests.update))
 (pull_requests_timer:start)
+
+(global keychain (require :keychain))

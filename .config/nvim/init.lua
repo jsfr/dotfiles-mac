@@ -1,3 +1,4 @@
+
 -- Welcome to your magic kit!
 -- This is the first file Neovim will load.
 -- We'll ensure we have a plugin manager and Aniseed.
@@ -11,7 +12,7 @@ local fmt = string.format
 -- Work out where our plugins will be stored.
 local pack_path = fn.stdpath("data") .. "/site/pack"
 
-local function ensure (user, repo)
+function ensure (user, repo)
   -- Ensures a given github.com/USER/REPO is cloned in the pack/packer/start directory.
   local install_path = fmt("%s/packer/start/%s", pack_path, repo, repo)
   if fn.empty(fn.glob(install_path)) > 0 then
@@ -29,7 +30,7 @@ ensure("Olical", "aniseed")
 -- Enable Aniseed's automatic compilation and loading of Fennel source code.
 -- Aniseed looks for this when it's loaded then loads the rest of your
 -- configuration if it's set.
-vim.g["aniseed#env"] = {module = "magic.init", compile = false}
+vim.g["aniseed#env"] = {module = "magic.init"}
 
 -- Now head to fnl/magic/init.fnl to continue your journey.
 -- Try pressing gf on the file path to [g]o to the [f]ile.
