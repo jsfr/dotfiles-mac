@@ -5,7 +5,7 @@
 #]
 
 # Same options as the command line flag
-disable = ["emacs", "gem"]
+disable = ["emacs", "gem", "pnpm"]
 
 # List of remote machines with Topgrade installed on them
 #remote_topgrades = ["toothless", "pi", "parnas"]

@@ -1,6 +1,7 @@
 (local unread-style {:color {:red 1.0 :green 0.0 :blue 0.0 :alpha 1.0}})
 (local username :jsfr)
 (local ignore-list [:https://github.com/pleo-io/product-web/pull/5837])
+(local logger (hs.logger.new :pull-requests))
 
 (fn review-requested? [node]
   "Check if a PR has been requested to be reviewed by the user"
@@ -92,6 +93,8 @@
         menu-title (get-menu-title total-count unread?)
         pull-request-blocks (split-pull-requests pull-requests)
         menu-table (get-menu-table pull-request-blocks)]
+    (when (= (length pull-requests) 0)
+      (logger.i body))
     (menu-item:setTitle menu-title)
     (menu-item:setMenu menu-table)))
 
