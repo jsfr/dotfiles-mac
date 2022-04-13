@@ -3,12 +3,8 @@
 (when (not (hs.ipc.cliStatus))
   (hs.ipc.cliInstall))
 
-(set hs.logger.defaultLogLevel :info)
-
 (global reload (require :auto-reload))
 (reload.start)
-
-(global spaces (require :spaces))
 
 (global no_music (require :no-music))
 (no_music.start)
@@ -16,8 +12,12 @@
 (global keep_rmenu_focus (require :keep-rmenu-focus))
 (keep_rmenu_focus.start)
 
-(global pull_requests (require :pull-requests))
-(global pull_requests_timer (hs.timer.new 60 pull_requests.update))
-(pull_requests_timer:start)
-
-(global keychain (require :keychain))
+(hs.loadSpoon :SpoonInstall)
+(set spoon.SpoonInstall.repos.jsfr {:url "https://github.com/jsfr/Spoons"
+                                    :desc "Personal Spoon repository of Jens Fredskov"
+                                    :branch :main})
+(spoon.SpoonInstall:andUse :PullRequests {:config {:username :jsfr
+                                                   :keychainItem :github_api_token}
+                                          :repo :jsfr
+                                          :start true})
+(spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})

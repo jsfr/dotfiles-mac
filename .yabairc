@@ -59,10 +59,10 @@ yabai -m rule --add app="^Slack$" space=^10
 # hs -c "hs.reload()"
 
 ## update spaces menubar item when changing space or moving an application
-yabai -m signal --add event=application_launched    action="hs -A -c 'spaces.update()'"
-yabai -m signal --add event=application_deactivated action="hs -A -c 'spaces.update()'"
-yabai -m signal --add event=application_terminated  action="hs -A -c 'spaces.update()'"
-yabai -m signal --add event=space_changed           action="hs -A -c 'spaces.update()'"
+yabai -m signal --add event=application_launched    action="hs -A -c 'spoon.YabaiSpaces.update()'"
+yabai -m signal --add event=application_deactivated action="hs -A -c 'spoon.YabaiSpaces.update()'"
+yabai -m signal --add event=application_terminated  action="hs -A -c 'spoon.YabaiSpaces.update()'"
+yabai -m signal --add event=space_changed           action="hs -A -c 'spoon.YabaiSpaces.update()'"
 
 ## go through all spaces to pick up all windows
 active_space=$(yabai -m query --spaces --space | jq -r ".index")

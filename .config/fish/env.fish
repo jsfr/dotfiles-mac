@@ -33,11 +33,6 @@ if test -e $HOMEBREW_GITHUB_API_TOKEN_PATH
     set -x HOMEBREW_GITHUB_API_TOKEN (cat $HOMEBREW_GITHUB_API_TOKEN_PATH)
 end
 
-set -x NPM_TOKEN_PATH "$HOME/.npm_token"
-if test -e $NPM_TOKEN_PATH
-    set -x NPM_TOKEN (cat $NPM_TOKEN_PATH)
-end
-
 set -x RUST_SRC_PATH (rustc --print sysroot)"/lib/rustlib/src/rust/src"
 set -x ANDROID_HOME "$HOME/Library/Android/sdk"
 set -x N_PREFIX "$HOME/.n"
