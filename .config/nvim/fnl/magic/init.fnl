@@ -18,7 +18,7 @@
   ;; Syntax
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdateSync"
                                     :mod :treesitter}
-  :NoahTheDuke/vim-just {:ft [:just]}
+  
 
   ;; Configure neovim
   :wbthomason/packer.nvim {}

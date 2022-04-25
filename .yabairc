@@ -55,19 +55,13 @@ yabai -m rule --add app="^Signal$" space=^8
 yabai -m rule --add app="^Mimestream$" space=^9
 yabai -m rule --add app="^Slack$" space=^10
 
-## restart Hammerspoon
-# hs -c "hs.reload()"
+## Add signals for Hammerspoon Yabai Widget
+hs -c "spoon.YabaiSpaces:add_signals()"
 
-## update spaces menubar item when changing space or moving an application
-yabai -m signal --add event=application_launched    action="hs -A -c 'spoon.YabaiSpaces.update()'"
-yabai -m signal --add event=application_deactivated action="hs -A -c 'spoon.YabaiSpaces.update()'"
-yabai -m signal --add event=application_terminated  action="hs -A -c 'spoon.YabaiSpaces.update()'"
-yabai -m signal --add event=space_changed           action="hs -A -c 'spoon.YabaiSpaces.update()'"
-
-## go through all spaces to pick up all windows
+# go through all spaces to pick up all windows
 active_space=$(yabai -m query --spaces --space | jq -r ".index")
 last_space=$(yabai -m query --spaces | jq -r "[.[] | .index] | max")
-for i in $(seq 1 "$last_space"); do yabai -m space --focus "$i"; done
+for i in $(seq 1 "$last_space"); do yabai -m space --focus "$i"; sleep 0.1; done
 yabai -m space --focus "$active_space"
 
 echo "yabai configuration loaded.."

@@ -1,6 +1,7 @@
 (module magic.plugin.treesitter
-  {autoload {ts nvim-treesitter.configs}})
+  {autoload {configs nvim-treesitter.configs}})
 
-(ts.setup {:ensure_installed :maintained
-           :highlight {:enable true}
-           :indent {:enable true}})
+(configs.setup {:ensure_installed :all
+                :ignore_install [:phpdoc]
+                :highlight {:enable true}
+                :indent {:enable true}})

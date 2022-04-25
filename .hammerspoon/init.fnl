@@ -1,7 +1,7 @@
 (require :hs.ipc)
 
-(when (not (hs.ipc.cliStatus))
-  (hs.ipc.cliInstall))
+; (when (not (hs.ipc.cliStatus))
+;   (hs.ipc.cliInstall :/opt/homebrew))
 
 (global reload (require :auto-reload))
 (reload.start)
