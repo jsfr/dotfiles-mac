@@ -26,19 +26,28 @@
     (buf_set_keymap :n :<localleader>q "<Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>" opts)
     (buf_set_keymap :n :<localleader>f "<Cmd>lua vim.lsp.buf.formatting()<CR>" opts)))
 
-(defn- merge-tables [tbl1 tbl2]
-  (each [key value (pairs tbl2)]
-    (tset tbl1 key value)))
-
 (local capabilities (cmp_nvim_lsp.update_capabilities (vim.lsp.protocol.make_client_capabilities)))
 
-(defn- setup-server [server]
-  (let [default-opts {:capabilities capabilities
-                      :on_attach on-attach}
-        all-server-opts {:efm {:filetypes [:typescript]}}
-        server-opts (. all-server-opts server)]
-    (when (~= server-opts nil)
-      (merge-tables default-opts server-opts))
-    (server:setup default-opts)))
+(lsp-installer.setup {:ensure_installed [:gopls :denols :tsserver :efm :rust_analyzer :jsonls]
+                      :automatic_installation true})
 
-(lsp-installer.on_server_ready setup-server)
+(lspconfig.gopls.setup {:capabilities capabilities
+                        :on_attach on-attach})
+
+(lspconfig.rust_analyzer.setup {:capabilities capabilities
+                                :on_attach on-attach})
+
+(lspconfig.jsonls.setup {:capabilities capabilities
+                        :on_attach on-attach})
+
+(lspconfig.denols.setup {:capabilities capabilities
+                         :on_attach on-attach
+                         :root_dir (lspconfig.util.root_pattern :deno.json)})
+
+(lspconfig.tsserver.setup {:capabilities capabilities
+                           :on_attach on-attach
+                           :root_dir (lspconfig.util.root_pattern :package.json)})
+
+(lspconfig.efm.setup {:capabilities capabilities
+                      :on_attach on-attach
+                      :filetypes [:typescript]})

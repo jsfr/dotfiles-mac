@@ -10,17 +10,17 @@
    require-macros [magic.macros]})
 
 (mini-comment.setup {:mappings {:comment :gc
-                           :comment_line :gcc
-                           :textobject :gc}})
+                                :comment_line :gcc
+                                :textobject :gc}})
 (augroup mini-comment
          (nvim.ex.autocmd :Filetype "just" "setlocal commentstring=#\\ %s"))
 
 (mini-jump.setup {:mappings {:forward :f
-                        :backward :F
-                        :forward_till :t
-                        :backward_till :T
-                        :repeat_jump ""}
-             :highlight_delay 250})
+                             :backward :F
+                             :forward_till :t
+                             :backward_till :T
+                             :repeat_jump ""}
+                  :delay {:highlight 250}})
 
 (mini-pairs.setup {})
 

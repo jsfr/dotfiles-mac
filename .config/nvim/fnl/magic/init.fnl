@@ -24,7 +24,7 @@
   :wbthomason/packer.nvim {}
   :Olical/aniseed {}
   :svermeulen/vimpeccable {:as :vimp}
-  :Olical/conjure {:ft [:fennel]}
+  ; :Olical/conjure {:ft [:fennel]}
 
   ;; Tmux
   :numToStr/Navigator.nvim {:mod :tmux}
@@ -57,7 +57,7 @@
   ;; Misc
   :lewis6991/gitsigns.nvim {:requires :nvim-lua/plenary.nvim
                             :mod :gitsigns}
-  :dbakker/vim-projectroot {:mod :projectroot}
+  :ahmedkhalf/project.nvim {:mod :projectroot}
   :direnv/direnv.vim {}
   :editorconfig/editorconfig-vim {}
   :kevinhwang91/nvim-hlslens {:mod :search}
