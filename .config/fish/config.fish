@@ -72,6 +72,11 @@ if type -q desk && test -n "$DESK_ENV"
   source "$DESK_ENV"
 end
 
+# Enable mcfly
+if type -q mcfly
+  mcfly init fish | source
+end
+
 # Add just completions
 if type -q just
   set just_completions "$HOME/.just_completions.fish"
@@ -82,7 +87,8 @@ if type -q just
 end
 
 # Source environment
-source "$HOME/.config/fish/env.fish"
+# source "$HOME/.config/fish/env.fish"
+bash2env source "$HOME/.profile"
 
 # Initialize prompt
 starship init fish | source

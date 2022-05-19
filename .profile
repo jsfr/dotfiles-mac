@@ -23,28 +23,24 @@ export LC_MEASUREMENT="$LANG"
 export LC_IDENTIFICATION="$LANG"
 export LC_ALL="$LANG"
 
-export XDG_CONFIG_HOME="$HOME/.config"
-
-export GOPATH="$HOME/go"
-export N_PREFIX="$HOME/.n"
-export PATH="$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/Repos/github.com/pleo-io/pleo/bin:/usr/local/sbin:$N_PREFIX/bin"
-
-JAVA_HOME=$(/usr/libexec/java_home -v 17)
-export JAVA_HOME="$JAVA_HOME"
-
 export HOMEBREW_GITHUB_API_TOKEN_PATH="$HOME/.homebrew_github_token"
 if [[ -f $HOMEBREW_GITHUB_API_TOKEN_PATH ]]; then
     export HOMEBREW_GITHUB_API_TOKEN=$(cat $HOMEBREW_GITHUB_API_TOKEN_PATH)
 fi
 
-export NPM_TOKEN_PATH="$HOME/.npm_token"
-if [[ -f $NPM_TOKEN_PATH ]]; then
-    export NPM_TOKEN=$(cat $NPM_TOKEN_PATH)
-fi
-
-RUST_SYS_ROOT=$(rustc --print sysroot)
-export RUST_SRC_PATH="$RUST_SYS_ROOT/lib/rustlib/src/rust/src"
-
+export XDG_CONFIG_HOME="$HOME/.config"
+export GOPATH="$HOME/go"
+export N_PREFIX="$HOME/.n"
+export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+
+export PATH="\
+    :$PATH\
+    :$GOPATH/bin\
+    :$HOME/.cargo/bin\
+    :$HOME/.local/bin\
+    :$HOME/Repos/github.com/pleo-io/pleo/bin\
+    :$N_PREFIX/bin"
 
 export ENV_EXPORTED="exported"

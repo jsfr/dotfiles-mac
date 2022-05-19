@@ -76,6 +76,5 @@
   :ruifm/gitlinker.nvim {:mod :gitlinker}
   :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
                              :mod :todo-comments}
-  :chentau/marks.nvim {:mod :marks}
   :dkarter/bullets.vim {}
   )

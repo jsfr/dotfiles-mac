@@ -1,10 +1,8 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 [package]
 disabled = true
-
-# [git_status]
-# ahead.value = "↑"
-# behind.value = "↓"
-# diverged.value = "⤭ "
 
 [cmd_duration]
 disabled = true
@@ -15,10 +13,8 @@ command = """ /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" stat
 when = """ test "$HOME" = "$PWD"; and test (/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l) -ge 1 """
 symbol = "%"
 
-[custom.desks]
-description = "Shows the current desk files that have been sourced"
-command = """ echo "$DESK_NAME" """
-when = """ test -n "$DESK_NAME"  """
+[env_var.DESK_NAME]
+variable = "DESK_NAME"
 symbol = "◲"
 style = "bold green"
-format = "in [$symbol $output]($style) "
+format = "in [$symbol $env_value]($style) "

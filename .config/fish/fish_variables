@@ -5,10 +5,11 @@ SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_pr:gh\x20pr
 SETUVAR _fish_abbr_zap:brew\x20uninstall\x20\x2d\x2dforce\x20\x2d\x2dzap
+SETUVAR _fisher_EHfive_2F_fish_2D_bash2env_files:/Users/jens/\x2econfig/fish/functions/__bash2env\x2esh\x1e/Users/jens/\x2econfig/fish/functions/bash2env\x2efish
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:/Users/jens/\x2econfig/fish/completions/kubectl\x2efish
+SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:/Users/jens/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e/Users/jens/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/jens/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/jens/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_laughedelic_2F_pisces_files:/Users/jens/\x2econfig/fish/functions/_pisces_append\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_backspace\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_bind_pair\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_complete\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_insert_identical\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_insert_left\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_insert_right\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_jump\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_lookup\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_remove\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_should_insert\x2efish\x1e/Users/jens/\x2econfig/fish/functions/_pisces_skip\x2efish\x1e/Users/jens/\x2econfig/fish/conf\x2ed/pisces\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1elaughedelic/pisces
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1ejorgebucaran/autopair\x2efish\x1eEHfive/fish\x2dbash2env
 SETUVAR base16_theme:oceanicnext
 SETUVAR fish_color_autosuggestion:4F5B66
 SETUVAR fish_color_cancel:\x2dr
@@ -39,4 +40,3 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2d\x2ddim
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR pisces_pairs:\x28\x2c\x29\x1e\x5b\x2c\x5d\x1e\x7b\x2c\x7d\x1e\x22\x2c\x22\x1e\x27\x2c\x27
