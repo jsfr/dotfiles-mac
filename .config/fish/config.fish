@@ -20,25 +20,6 @@ function abbreviations
 end
 abbreviations
 
-# Typing !! will fill in the last used command
-function bind_bang
-  switch (commandline -t)
-    case "!"
-      commandline -t $history[1]; commandline -f repaint
-    case "*"
-      commandline -i !
-  end
-end
-
-# Automatically add slashes as needed when putting multiple dots in a row.
-# This allows to easily go back multiple directories.
-function bind_dot
-  if string match -qr "^(\.\./)*\.\.\$" (commandline -b)
-    commandline -i /
-  end
-  commandline -i .
-end
-
 # define custom keybindings
 function fish_user_key_bindings
   bind \ej history-search-forward
@@ -47,8 +28,6 @@ function fish_user_key_bindings
   bind \eh backward-char
   bind \ew forward-word
   bind \eb backward-word
-  bind ! bind_bang
-  bind . bind_dot
 end
 
 # Source docker completions

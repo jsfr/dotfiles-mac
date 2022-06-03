@@ -16,7 +16,9 @@
   :rebelot/kanagawa.nvim {:mod :color-scheme}
 
   ;; Syntax
-  :nvim-treesitter/nvim-treesitter {:run ":TSUpdateSync"
+  :NoahTheDuke/vim-just {}
+  :nvim-treesitter/nvim-treesitter {:requires :IndianBoy42/tree-sitter-just
+                                    :run ":TSUpdateSync"
                                     :mod :treesitter}
   
 

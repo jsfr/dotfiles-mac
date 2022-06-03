@@ -34,13 +34,8 @@ export N_PREFIX="$HOME/.n"
 export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+export FW_CONFIG_DIR="$XDG_CONFIG_HOME/fw"
 
-export PATH="\
-    :$PATH\
-    :$GOPATH/bin\
-    :$HOME/.cargo/bin\
-    :$HOME/.local/bin\
-    :$HOME/Repos/github.com/pleo-io/pleo/bin\
-    :$N_PREFIX/bin"
+export PATH=":$PATH:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/Repos/github.com/pleo-io/pleo/bin:$N_PREFIX/bin"
 
 export ENV_EXPORTED="exported"

@@ -28,6 +28,7 @@ ctrl + lalt - a : open -a Signal
 ctrl + lalt - l : open -a Linear
 ctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - d : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
+cmd + shift - d : env GITHUB_ORG=pleo-io rmenu_repos --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 
 
 # quit focused app
