@@ -17,6 +17,7 @@
 
   ;; Syntax
   :NoahTheDuke/vim-just {}
+  :tridactyl/vim-tridactyl {}
   :nvim-treesitter/nvim-treesitter {:requires :IndianBoy42/tree-sitter-just
                                     :run ":TSUpdateSync"
                                     :mod :treesitter}
@@ -52,7 +53,6 @@
   :mhartington/formatter.nvim {:mod :format}
 
   ;; Selectors
-  ; :mfussenegger/nvim-fzy {:mod :selector}
   :junegunn/fzf.vim {:requires :junegunn/fzf
                      :mod :selector}
 
@@ -79,4 +79,5 @@
   :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
                              :mod :todo-comments}
   :dkarter/bullets.vim {}
+  :bronson/vim-visual-star-search {}
   )

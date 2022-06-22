@@ -1,0 +1,43 @@
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
+
+" General Settings
+set update.lastchecktime 1602170263822
+set update.lastnaggedversion 1.20.0
+set update.nag true
+set update.nagwait 7
+set update.checkintervalsecs 86400
+set configversion 2.0
+set newtab about:blank
+set theme dark
+" Sane hinting mode
+set hintfiltermode vimperator-reflow
+set hintnames numeric
+" Defaults to 300ms but I'm a 'move fast and close the wrong tabs' kinda chap
+set hintdelay 100
+
+" Binds
+unbindurl inoreader.com j
+unbindurl inoreader.com k
+unbindurl inoreader.com v
+unbindurl inoreader.com s
+
+" Create mapping to open current url in another container
+bind cow recontain work
+
+" Bind semicolon to open excmd for input (similar to nnoremap ; :)
+bind ; fillcmdline_notrail
+
+" Redirects
+autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www.reddit.com", "teddit.net")
+autocmd DocStart ^http(s?)://medium.com js tri.excmds.urlmodify("-t", "medium.com", "scribe.rip")
+autocmd DocStart ^http(s?)://twitter.com js tri.excmds.urlmodify("-t", "twitter.com", "nitter.net")
+autocmd DocStart ^http(s?)://www.youtube.com js tri.excmds.urlmodify("-t", "www.youtube.com", "piped.kavin.rocks")
+autocmd DocStart ^http(s?)://linear.app/.* composite js document.location.href.replace(/http(?:s?):\/\/linear.app\/(.*)/, "linear://$1") | shellescape | exclaim_quiet open | tabclose
+
+" Inject Google Translate
+" This (clearly) is remotely hosted code. Google will be sent the whole
+" contents of the page you are on if you run `:translate`
+" From https://github.com/jeremiahlee/page-translator
+command translate js let googleTranslateCallback = document.createElement('script'); googleTranslateCallback.innerHTML = "function googleTranslateElementInit(){ new google.translate.TranslateElement(); }"; document.body.insertBefore(googleTranslateCallback, document.body.firstChild); let googleTranslateScript = document.createElement('script'); googleTranslateScript.charset="UTF-8"; googleTranslateScript.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&tl=&sl=&hl="; document.body.insertBefore(googleTranslateScript, document.body.firstChild);
+

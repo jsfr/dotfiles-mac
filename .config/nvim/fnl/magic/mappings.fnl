@@ -48,9 +48,6 @@
   (vimp.vmap :j :gj)
   (vimp.vmap :k :gk)
 
-  ;; search for current highlight
-  (vimp.vnoremap :\ :yq/p<cr>N)
-
   ;; Tab to go to last active buffer
   (defn mru-buffer []
     (-> :#

@@ -1,18 +1,13 @@
-# Additional git repositories to pull
-#git_repos = [
-#    "~/src/*/",
-#    "~/.config/something"
-#]
-
 # Same options as the command line flag
-disable = ["emacs", "gem", "pnpm"]
-
-# List of remote machines with Topgrade installed on them
-#remote_topgrades = ["toothless", "pi", "parnas"]
-
-# Commands to run before anything
-# [pre_commands]
-# "Admin privileges" = "/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add"
+disable = ["emacs", "gem", "vim"]
 
 # Custom commands
-# [commands]
+[commands]
+"Neovim (Packer + Aniseed)" = "/Users/jens/.local/bin/sync-nvim"
+
+# Additional git repositories to pull
+[git]
+max_concurrency = 5
+repos = [
+    "~/Repos/github.com/pleo-io/*"
+]
