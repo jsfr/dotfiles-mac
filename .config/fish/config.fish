@@ -56,6 +56,11 @@ if type -q mcfly
   mcfly init fish | source
 end
 
+# Source completions for OpsLevel
+if type -q opslevel
+  opslevel completion fish | source
+end
+
 # Add just completions
 if type -q just
   set just_completions "$HOME/.just_completions.fish"

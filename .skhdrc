@@ -16,6 +16,10 @@ default, resizer < cmd - h :
 default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
+# Rebind some keys
+0x0A : skhd -k "0x32"
+shift - 0x0A : skhd -k "shift - 0x32"
+
 # app bindings
 lalt - return   : open -a Alacritty
 ctrl + lalt - e : open -a Firefox
@@ -79,10 +83,12 @@ shift + lalt - 0 : yabai -m window --space 10
 # send window to desktop and follow focus
 shift + lalt - escape : yabai -m window --space recent ; yabai -m space --focus recent
 shift + lalt - 0x32   : yabai -m window --space recent ; yabai -m space --focus recent
+shift + lalt - 0x0A   : yabai -m window --space recent ; yabai -m space --focus recent
 
 # focus desktop
 lalt - escape : yabai -m space --focus recent
 lalt - 0x32   : yabai -m space --focus recent
+lalt - 0x0A   : yabai -m space --focus recent
 lalt - 1      : yabai -m space --focus 1
 lalt - 2      : yabai -m space --focus 2
 lalt - 3      : yabai -m space --focus 3

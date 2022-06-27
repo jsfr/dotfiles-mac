@@ -6,8 +6,8 @@ disable = ["emacs", "gem", "vim"]
 "Neovim (Packer + Aniseed)" = "/Users/jens/.local/bin/sync-nvim"
 
 # Additional git repositories to pull
-[git]
-max_concurrency = 5
-repos = [
-    "~/Repos/github.com/pleo-io/*"
-]
+# [git]
+# max_concurrency = 5
+# repos = [
+#     "~/Repos/github.com/pleo-io/*"
+# ]
