@@ -530,17 +530,11 @@ colors:
 #  args:
 #    - --login
 shell:
- program: /bin/bash
+ program: /opt/homebrew/bin/bash
  args:
    - -l
    - -c
    -  "tmux -S ~/.tmux-session new-session -s alacritty -A"
-# shell:
-#   program: /bin/dash
-#   args:
-#     - -l
-#     - -c
-#     - "SHELL=/usr/local/bin/fish zellij attach -c alacritty"
 
 # Startup directory
 #

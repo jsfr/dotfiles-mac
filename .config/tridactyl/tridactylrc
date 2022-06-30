@@ -50,6 +50,7 @@ autocontain -s pagerduty.com Work
 autocontain -s app.datadoghq.eu Work
 autocontain -s pleo.zoom.us Work
 autocontain -s tella.tv Work
+autocontain -s env0.com Work
 
 autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking

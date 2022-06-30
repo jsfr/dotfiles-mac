@@ -16,21 +16,22 @@ default, resizer < cmd - h :
 default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
-# Rebind some keys
-0x0A : skhd -k "0x32"
-shift - 0x0A : skhd -k "shift - 0x32"
+rctrl - h : skhd -k "left"
+rctrl - l : skhd -k "right"
+rctrl - j : skhd -k "down"
+rctrl - k : skhd -k "up"
 
 # app bindings
 lalt - return   : open -a Alacritty
-ctrl + lalt - e : open -a Firefox
-ctrl + lalt - s : open -a Slack
-ctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
-ctrl + lalt - n : open -a Notion
-ctrl + lalt - m : open -a Mimestream
-ctrl + lalt - z : open -a zoom.us
-ctrl + lalt - a : open -a Signal
-ctrl + lalt - l : open -a Linear
-ctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
+lctrl + lalt - e : open -a Firefox
+lctrl + lalt - s : open -a Slack
+lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
+lctrl + lalt - n : open -a Notion
+lctrl + lalt - m : open -a Mimestream
+lctrl + lalt - z : open -a zoom.us
+lctrl + lalt - a : open -a Signal
+lctrl + lalt - l : open -a Linear
+lctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - d : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 cmd + shift - d : env GITHUB_ORG=pleo-io rmenu_repos --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 
