@@ -10,7 +10,8 @@ set fish_greeting ""
 
 # define aliases
 alias ls="ls -1FvG"
-alias cfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cfg="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias tf="terraform"
 
 # define abbreviations
 function abbreviations

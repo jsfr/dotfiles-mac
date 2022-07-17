@@ -28,10 +28,30 @@
 
 (local capabilities (cmp_nvim_lsp.update_capabilities (vim.lsp.protocol.make_client_capabilities)))
 
-(lsp-installer.setup {:ensure_installed [:gopls :denols :tsserver :efm :rust_analyzer :jsonls :taplo :kotlin_language_server]
+(lsp-installer.setup {:ensure_installed [:bashls
+                                         :denols
+                                         :efm
+                                         :gopls
+                                         :jsonls
+                                         :kotlin_language_server
+                                         :rust_analyzer 
+                                         :taplo 
+                                         :terraformls
+                                         :tflint
+                                         :tsserver
+                                         :yamlls]
                       :automatic_installation true})
 
-(lspconfig.taplo.setup {:capabilities capabilities
+(lspconfig.bashls.setup {:capabilities capabilities
+                        :on_attach on-attach})
+
+(lspconfig.terraformls.setup {:capabilities capabilities
+                        :on_attach on-attach})
+
+(lspconfig.tflint.setup {:capabilities capabilities
+                        :on_attach on-attach})
+
+(lspconfig.yamlls.setup {:capabilities capabilities
                         :on_attach on-attach})
 
 (lspconfig.kotlin_language_server.setup {:capabilities capabilities
