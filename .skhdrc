@@ -16,11 +16,6 @@ default, resizer < cmd - h :
 default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
-rctrl - h : skhd -k "left"
-rctrl - l : skhd -k "right"
-rctrl - j : skhd -k "down"
-rctrl - k : skhd -k "up"
-
 # app bindings
 lalt - return   : open -a Alacritty
 lctrl + lalt - e : open -a Firefox
@@ -35,6 +30,11 @@ lctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - d : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 cmd + shift - d : env GITHUB_ORG=pleo-io rmenu_repos --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 
+# use rctrl as a poor mans hyper
+rctrl - j : skhd -k "down"
+rctrl - k : skhd -k "up"
+rctrl - h : skhd -k "left"
+rctrl - l : skhd -k "right"
 
 # quit focused app
 shift + cmd - q : osascript -e "quit app \"$(yabai -m query --windows --window | jq -r .app)\""
