@@ -31,11 +31,12 @@
 (lsp-installer.setup {:ensure_installed [:bashls
                                          :denols
                                          :efm
+                                         :golangci_lint_ls
                                          :gopls
                                          :jsonls
                                          :kotlin_language_server
-                                         :rust_analyzer 
-                                         :taplo 
+                                         :rust_analyzer
+                                         :taplo
                                          :terraformls
                                          :tflint
                                          :tsserver
@@ -43,37 +44,43 @@
                       :automatic_installation true})
 
 (lspconfig.bashls.setup {:capabilities capabilities
-                        :on_attach on-attach})
-
-(lspconfig.terraformls.setup {:capabilities capabilities
-                        :on_attach on-attach})
-
-(lspconfig.tflint.setup {:capabilities capabilities
-                        :on_attach on-attach})
-
-(lspconfig.yamlls.setup {:capabilities capabilities
-                        :on_attach on-attach})
-
-(lspconfig.kotlin_language_server.setup {:capabilities capabilities
-                        :on_attach on-attach})
-
-(lspconfig.gopls.setup {:capabilities capabilities
-                        :on_attach on-attach})
-
-(lspconfig.rust_analyzer.setup {:capabilities capabilities
-                                :on_attach on-attach})
-
-(lspconfig.jsonls.setup {:capabilities capabilities
-                        :on_attach on-attach})
+                         :on_attach on-attach})
 
 (lspconfig.denols.setup {:capabilities capabilities
                          :on_attach on-attach
                          :root_dir (lspconfig.util.root_pattern :deno.json)})
 
+(lspconfig.efm.setup {:capabilities capabilities
+                      :on_attach on-attach
+                      :filetypes [:typescript]})
+
+(lspconfig.golangci_lint_ls.setup {:capabilities capabilities
+                        :on_attach on-attach})
+
+(lspconfig.gopls.setup {:capabilities capabilities
+                        :on_attach on-attach})
+
+(lspconfig.jsonls.setup {:capabilities capabilities
+                         :on_attach on-attach})
+
+(lspconfig.kotlin_language_server.setup {:capabilities capabilities
+                                         :on_attach on-attach})
+
+(lspconfig.rust_analyzer.setup {:capabilities capabilities
+                                :on_attach on-attach})
+
+(lspconfig.taplo.setup {:capabilities capabilities
+                                :on_attach on-attach})
+
+(lspconfig.terraformls.setup {:capabilities capabilities
+                              :on_attach on-attach})
+
+(lspconfig.tflint.setup {:capabilities capabilities
+                         :on_attach on-attach})
+
 (lspconfig.tsserver.setup {:capabilities capabilities
                            :on_attach on-attach
                            :root_dir (lspconfig.util.root_pattern :package.json)})
 
-(lspconfig.efm.setup {:capabilities capabilities
-                      :on_attach on-attach
-                      :filetypes [:typescript]})
+(lspconfig.yamlls.setup {:capabilities capabilities
+                         :on_attach on-attach})

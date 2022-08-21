@@ -1,0 +1,74 @@
+{
+    "title": "Keybindings for Pok3r",
+    "rules": [
+        {
+            "description": "Change left_shift+esc to tilde",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "grave_accent_and_tilde",
+                        "modifiers": [
+                            "left_shift"
+                        ]
+                    }
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "device_if",
+                    "identifiers": [
+                        {
+                            "vendor_id": 3897,
+                            "product_id": 1560,
+                            "description": "Pok3r V2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Change hyper+esc to backtick",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_shift",
+                                "left_command",
+                                "left_option",
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "grave_accent_and_tilde",
+                        "modifiers": []
+                    }
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "device_if",
+                    "identifiers": [
+                        {
+                            "vendor_id": 3897,
+                            "product_id": 1560,
+                            "description": "Pok3r V2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

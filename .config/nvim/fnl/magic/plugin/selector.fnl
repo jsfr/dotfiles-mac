@@ -3,7 +3,7 @@
 
 (defn- dotfiles []
   (vim.fn.call "fzf#run"
-               [{:source "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME ls-files"
+               [{:source "git --git-dir=/Users/jens/.dotfiles/ --work-tree=$HOME ls-files"
                  :sink :e}]))
 
 (vimp.nnoremap [:silent] :<leader>fa ":Files<cr>")

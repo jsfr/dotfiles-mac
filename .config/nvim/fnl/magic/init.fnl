@@ -78,6 +78,8 @@
   :ruifm/gitlinker.nvim {:mod :gitlinker}
   :folke/todo-comments.nvim {:requires :nvim-lua/plenary.nvim
                              :mod :todo-comments}
-  :dkarter/bullets.vim {}
+  ; :dkarter/bullets.vim {}
   :bronson/vim-visual-star-search {}
+  :windwp/nvim-spectre {:requires :nvim-lua/plenary.nvim
+                        :mod :search-replace}
   )

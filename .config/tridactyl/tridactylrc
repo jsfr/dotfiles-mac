@@ -47,13 +47,11 @@ autocontain -s app.datadoghq.eu Work
 autocontain -s pleo.zoom.us Work
 autocontain -s tella.tv Work
 autocontain -s env0.com Work
+autocontain -s pleo-sso.awsapps.com Work
 
 autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking
 autocontain -s heap.dk Banking
-
-autocontain -s pleoprod.signin.aws.amazon.com Production
-autocontain -s pleodev.signin.aws.amazon.com Staging
 
 autocontain -s linkedin.com LinkedIn
 

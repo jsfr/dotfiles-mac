@@ -4,6 +4,7 @@ disable = ["emacs", "gem", "vim"]
 # Custom commands
 [commands]
 "Neovim (Packer + Aniseed)" = "/Users/jens/.local/bin/sync-nvim"
+"Golang tools" = "/Users/jens/go/bin/gup update"
 
 # Additional git repositories to pull
 # [git]
