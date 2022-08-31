@@ -1,28 +1,28 @@
-(module magic.plugin.completion
-  {autoload {cmp cmp
-             nvim aniseed.nvim}})
+(import-macros {: set!} :hibiscus.vim)
 
-(set vim.o.completeopt "menu,menuone,noselect")
+(local cmp (require :cmp))
 
-(defn- snippet-fn [args]
+(set! completeopt "menu,menuone,noselect")
+
+(fn snippet-fn [args]
   (vim.fn.call "vsnip#anonymous" [args.body]))
 
-(defn- vsnip-available? []
+(fn vsnip-available? []
   (= (vim.fn.call "vsnip#available" [1]) 1))
 
-(defn- snip-jumpable? []
+(fn snip-jumpable? []
   (= (vim.fn.call "vsnip#jumpable" [-1]) 1))
 
-(defn- feedkey [key mode]
-  (nvim.feedkeys (nvim.replace_termcodes key true true true) mode true))
+(fn feedkey [key mode]
+  (vim.api.nvim_feedkeys (vim.api.nvim_replace_termcodes key true true true) mode true))
 
-(defn- has-words-before? []
-  (let [(line col) (unpack (nvim.win_get_cursor 0))
-        line-range (. (nvim.buf_get_lines 0 (- line 1) line true) 1)]
+(fn has-words-before? []
+  (let [(line col) (unpack (vim.api.nvim_win_get_cursor 0))
+        line-range (. (vim.api.nvim_buf_get_lines 0 (- line 1) line true) 1)]
     (and (~= col 0)
          (= (: (line-range:sub col col) :match :%s) nil))))
 
-(defn- tab-complete [fallback]
+(fn tab-complete [fallback]
   (if (cmp.visible)
     (cmp.select_next_item)
     (vsnip-available?)
@@ -31,7 +31,7 @@
     (cmp.complete)
     (fallback)))
 
-(defn- s-tab-complete [fallback]
+(fn s-tab-complete [fallback]
   (if (cmp.visible)
     (cmp.select_prev_item)
     (snip-jumpable?)

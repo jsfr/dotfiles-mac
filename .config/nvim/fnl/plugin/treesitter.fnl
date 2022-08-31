@@ -1,6 +1,5 @@
-(module magic.plugin.treesitter
-  {autoload {configs nvim-treesitter.configs
-             just tree-sitter-just}})
+(local configs (require :nvim-treesitter.configs))
+(local just (require :tree-sitter-just))
 
 (configs.setup {:ensure_installed :all
                 :ignore_install [:phpdoc]

@@ -1,12 +1,12 @@
-(module magic.plugin.file-explorer
-  {autoload {vimp vimp
-             lir lir
-             actions lir.actions
-             float lir.float}})
+(import-macros {: g! : map!} :hibiscus.vim)
+
+(local lir (require :lir))
+(local actions (require :lir.actions))
+(local float (require :lir.float))
 
 ; Disable netrw when invoked with $ nvim /path/to/directory
-(set vim.g.loaded_netrw 1)
-(set vim.g.loaded_netrwPlugin 1)
+(g! loaded_netrw 1)
+(g! loaded_netrwPlugin 1)
 
 (lir.setup {:show_hidden_files true
             :devicons_enable false
@@ -21,7 +21,5 @@
                        :y actions.yank_path
                        :. actions.toggle_show_hidden}})
 
-
-
-(vimp.nnoremap "<leader>," (fn [] (float.init (.. vim.env.XDG_CONFIG_HOME :/nvim/fnl/magic))))
-(vimp.nnoremap :- float.init)
+(map! [n] "<leader>," '(float.init (.. vim.env.XDG_CONFIG_HOME :/nvim)))
+(map! [n] :- 'float.init)
