@@ -46,6 +46,7 @@
                       :<S-Tab> (cmp.mapping s-tab-complete [:i :s])
                       :<CR> (cmp.mapping.confirm {:select false})}
             :sources [{:name :nvim_lsp}
+                      {:name :conjure}
                       {:name :vsnip}
-                      {:name :buffer}
-                      {:name :path}]})
+                      {:name :path}
+                      {:name :buffer}]})

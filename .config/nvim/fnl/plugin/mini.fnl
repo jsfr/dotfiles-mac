@@ -25,12 +25,13 @@
 (mini-bufremove.setup {})
 
 ;; Delete current buffer, keeping layout unless the buffer was a help buffer
-(fn delete-buffer []
+(fn delete-buffer [close-window?]
   (let [buftype (vim.api.nvim_buf_get_option 0 :buftype)]
-    (if (vim.tbl_contains [:help :quickfix] buftype)
+    (if (or close-window? (vim.tbl_contains [:help :quickfix] buftype))
       (vim.api.nvim_buf_delete 0 {})
       (mini-bufremove.delete 0 false))))
-(map! [n] :<leader>d 'delete-buffer)
+(map! [n] :<leader>d '(delete-buffer false))
+(map! [n] :<leader>x '(delete-buffer true))
 
 (mini-starter.setup {})
 
