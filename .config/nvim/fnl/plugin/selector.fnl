@@ -1,12 +1,16 @@
 (import-macros {: map!} :hibiscus.vim)
 
-(fn dotfiles []
-  (vim.fn.call "fzf#run"
-               [{:source "git --git-dir=/Users/jens/.dotfiles/ --work-tree=$HOME ls-files"
-                 :sink :e}]))
+(local fzf (require :fzf-lua))
 
-(map! [n] :<leader>fa ":Files<cr>")
-(map! [n] :<leader>ff ":GitFiles<cr>")
-(map! [n] :<leader>fg ":GitFiles?<cr>")
-(map! [n] :<leader>fb ":Buffers<cr>")
-(map! [n] :<leader>. dotfiles)
+(fn dotfiles []
+  (vim.fn.call "fzf#run" [{:source "git --git-dir=$HOME/.dotfiles/ ls-files" :sink "function()"}]))
+
+(map! [n] :<leader>fa 'fzf.files)
+(map! [n] :<leader>ff 'fzf.git_files)
+(map! [n] :<leader>fg 'fzf.git_status)
+
+(map! [n] :<leader>fb 'fzf.buffers)
+
+(map! [n] :<leader>. '(fzf.git_files {:prompt "Dotfiles>"
+                                      :git_dir "~/.dotfiles/"
+                                      :git_worktree "~/"}))

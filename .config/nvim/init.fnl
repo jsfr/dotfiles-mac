@@ -65,14 +65,13 @@
         :module :plugin/format)
 
   ;; Selectors
-  (use! :junegunn/fzf.vim
-        :requires :junegunn/fzf
+  (use! :ibhagwan/fzf-lua
         :module :plugin/selector)
 
   ;; Misc
   (use! :lewis6991/gitsigns.nvim
         :requires :nvim-lua/plenary.nvim 
-        :config #(let [gitsigns (require :gitsigns)] (gitsigns.setup)))
+        :module :plugin/gitsigns)
   (use! :ahmedkhalf/project.nvim
         :config #(let [project-nvim (require :project_nvim)] (project-nvim.setup {})))
   (use! :direnv/direnv.vim)

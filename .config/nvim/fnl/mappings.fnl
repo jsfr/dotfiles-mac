@@ -3,20 +3,14 @@
 (g! mapleader " ")
 (g! maplocalleader ",")
 
-;; Map semicolon to colon (access to ex-mode)
-(map! [nv] ";" ":")
-
 ;; jj escape sequence
 (map! [i] :jj :<esc>)
 (map! [c] :jj :<c-c>)
-; (vimp.tnoremap :jj :<c-\><c-n>)
 
 ;; Spacemacs inspired keybings
-(map! [n] :<leader>w= :<C-W>=)
-(map! [n] :<leader>wc :<C-w>q)
-(map! [n] :<leader>w/ :<Cmd>vsplit<cr>)
-(map! [n] :<leader>w- :<Cmd>split<cr>)
-(map! [n] :<leader>w\| :<C-W>\|)
+(map! [n] :<leader>c :<C-w>q)
+(map! [n] :<leader>/ :<Cmd>vsplit<cr>)
+(map! [n] :<leader>- :<Cmd>split<cr>)
 (map! [n] :<leader>w_ :<C-W>_)
 
 (map! [i] :<Tab> :<C-t>)
