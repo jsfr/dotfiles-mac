@@ -2,7 +2,7 @@
 
 (local gitsigns (require :gitsigns))
 
-(gitsigns.setup)
+(gitsigns.setup {:worktrees [{:toplevel vim.env.HOME :gitdir (.. vim.env.HOME :/.dotfiles)}]})
 
 (map! [n] "]c" 'gitsigns.next_hunk)
 (map! [n] "[c" 'gitsigns.prev_hunk)

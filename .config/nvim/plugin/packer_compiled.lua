@@ -277,11 +277,6 @@ _G.packer_plugins = {
     path = "/Users/jens/.local/share/nvim/site/pack/packer/start/vim-expand-region",
     url = "https://github.com/terryma/vim-expand-region"
   },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/Users/jens/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
-  },
   ["vim-just"] = {
     loaded = true,
     path = "/Users/jens/.local/share/nvim/site/pack/packer/start/vim-just",
@@ -291,17 +286,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jens/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
-  },
-  ["vim-sexp"] = {
-    loaded = true,
-    path = "/Users/jens/.local/share/nvim/site/pack/packer/start/vim-sexp",
-    url = "https://github.com/guns/vim-sexp"
-  },
-  ["vim-sexp-mappings-for-regular-people"] = {
-    config = { "\27LJ\2\nZ\0\0\2\0\4\0\0066\0\0\0009\0\1\0'\1\3\0=\1\2\0+\0\0\0L\0\2\0*clojure,scheme,lisp,timl,fennel,janet\19sexp_filetypes\6g\bvim\0" },
-    loaded = true,
-    path = "/Users/jens/.local/share/nvim/site/pack/packer/start/vim-sexp-mappings-for-regular-people",
-    url = "https://github.com/tpope/vim-sexp-mappings-for-regular-people"
   },
   ["vim-sleuth"] = {
     loaded = true,
@@ -326,18 +310,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: vim-expand-region
-time([[Config for vim-expand-region]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\25plugin/expand-region\frequire\0", "config", "vim-expand-region")
-time([[Config for vim-expand-region]], false)
--- Config for: kanagawa.nvim
-time([[Config for kanagawa.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0046\0\0\0009\0\1\0'\2\2\0D\0\2\0\25colorscheme kanagawa\bcmd\bvim\0", "config", "kanagawa.nvim")
-time([[Config for kanagawa.nvim]], false)
--- Config for: lightline.vim
-time([[Config for lightline.vim]], true)
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\22plugin/statusline\frequire\0", "config", "lightline.vim")
-time([[Config for lightline.vim]], false)
+-- Config for: nvim-hlslens
+time([[Config for nvim-hlslens]], true)
+try_loadstring("\27LJ\2\nQ\0\0\4\0\4\0\0066\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0D\1\2\0\1\0\2\14calm_down\2\17nearest_only\2\nsetup\fhlslens\frequire\0", "config", "nvim-hlslens")
+time([[Config for nvim-hlslens]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\20plugin/gitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+-- Config for: Navigator.nvim
+time([[Config for Navigator.nvim]], true)
+try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\16plugin/tmux\frequire\0", "config", "Navigator.nvim")
+time([[Config for Navigator.nvim]], false)
 -- Config for: nvim-spectre
 time([[Config for nvim-spectre]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\26plugin/search-replace\frequire\0", "config", "nvim-spectre")
@@ -346,22 +330,18 @@ time([[Config for nvim-spectre]], false)
 time([[Config for project.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\4\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\1\2\0004\3\0\0D\1\2\0\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
 time([[Config for project.nvim]], false)
--- Config for: vim-sexp-mappings-for-regular-people
-time([[Config for vim-sexp-mappings-for-regular-people]], true)
-try_loadstring("\27LJ\2\nZ\0\0\2\0\4\0\0066\0\0\0009\0\1\0'\1\3\0=\1\2\0+\0\0\0L\0\2\0*clojure,scheme,lisp,timl,fennel,janet\19sexp_filetypes\6g\bvim\0", "config", "vim-sexp-mappings-for-regular-people")
-time([[Config for vim-sexp-mappings-for-regular-people]], false)
--- Config for: lsp-setup.nvim
-time([[Config for lsp-setup.nvim]], true)
-try_loadstring("\27LJ\2\n&\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\15plugin/lsp\frequire\0", "config", "lsp-setup.nvim")
-time([[Config for lsp-setup.nvim]], false)
--- Config for: Navigator.nvim
-time([[Config for Navigator.nvim]], true)
-try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\16plugin/tmux\frequire\0", "config", "Navigator.nvim")
-time([[Config for Navigator.nvim]], false)
 -- Config for: fzf-lua
 time([[Config for fzf-lua]], true)
 try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\20plugin/selector\frequire\0", "config", "fzf-lua")
 time([[Config for fzf-lua]], false)
+-- Config for: lightline.vim
+time([[Config for lightline.vim]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\22plugin/statusline\frequire\0", "config", "lightline.vim")
+time([[Config for lightline.vim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\22plugin/treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: mini.nvim
 time([[Config for mini.nvim]], true)
 try_loadstring("\27LJ\2\n'\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\16plugin/mini\frequire\0", "config", "mini.nvim")
@@ -370,6 +350,10 @@ time([[Config for mini.nvim]], false)
 time([[Config for gitlinker.nvim]], true)
 try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0056\0\0\0'\2\1\0B\0\2\0029\1\2\0D\1\1\0\nsetup\14gitlinker\frequire\0", "config", "gitlinker.nvim")
 time([[Config for gitlinker.nvim]], false)
+-- Config for: lir.nvim
+time([[Config for lir.nvim]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\25plugin/file-explorer\frequire\0", "config", "lir.nvim")
+time([[Config for lir.nvim]], false)
 -- Config for: formatter.nvim
 time([[Config for formatter.nvim]], true)
 try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\18plugin/format\frequire\0", "config", "formatter.nvim")
@@ -378,27 +362,23 @@ time([[Config for formatter.nvim]], false)
 time([[Config for nvim-cmp]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\22plugin/completion\frequire\0", "config", "nvim-cmp")
 time([[Config for nvim-cmp]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n+\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\20plugin/gitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: lir.nvim
-time([[Config for lir.nvim]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\25plugin/file-explorer\frequire\0", "config", "lir.nvim")
-time([[Config for lir.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\22plugin/treesitter\frequire\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: nvim-hlslens
-time([[Config for nvim-hlslens]], true)
-try_loadstring("\27LJ\2\nQ\0\0\4\0\4\0\0066\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0D\1\2\0\1\0\2\14calm_down\2\17nearest_only\2\nsetup\fhlslens\frequire\0", "config", "nvim-hlslens")
-time([[Config for nvim-hlslens]], false)
+-- Config for: vim-expand-region
+time([[Config for vim-expand-region]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\25plugin/expand-region\frequire\0", "config", "vim-expand-region")
+time([[Config for vim-expand-region]], false)
+-- Config for: lsp-setup.nvim
+time([[Config for lsp-setup.nvim]], true)
+try_loadstring("\27LJ\2\n&\0\0\3\0\2\0\0036\0\0\0'\2\1\0D\0\2\0\15plugin/lsp\frequire\0", "config", "lsp-setup.nvim")
+time([[Config for lsp-setup.nvim]], false)
+-- Config for: kanagawa.nvim
+time([[Config for kanagawa.nvim]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0046\0\0\0009\0\1\0'\2\2\0D\0\2\0\25colorscheme kanagawa\bcmd\bvim\0", "config", "kanagawa.nvim")
+time([[Config for kanagawa.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Abolish lua require("packer.load")({'vim-abolish'}, { cmd = "Abolish", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Subvert lua require("packer.load")({'vim-abolish'}, { cmd = "Subvert", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Abolish lua require("packer.load")({'vim-abolish'}, { cmd = "Abolish", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads

@@ -56,9 +56,10 @@
         :module :plugin/mini)
 
   ;; Sexp
-  (use! :tpope/vim-sexp-mappings-for-regular-people
-        :requires [:guns/vim-sexp]
-        :config #(g! sexp_filetypes "clojure,scheme,lisp,timl,fennel,janet"))
+  ; (use! :tpope/vim-sexp-mappings-for-regular-people
+  ;       :requires [:guns/vim-sexp]
+  ;       :config #(g! sexp_filetypes "clojure,scheme,lisp,timl,fennel,janet")
+  ;       :ft [:fennel])
 
   ;; Formatting
   (use! :mhartington/formatter.nvim 
@@ -90,7 +91,6 @@
   (use! :tpope/vim-abolish
         :cmd [:Subvert :Abolish])
   (use! :tpope/vim-eunuch)
-  (use! :tpope/vim-fugitive)
   (use! :tpope/vim-repeat)
   (use! :tpope/vim-sleuth)
   (use! :ruifm/gitlinker.nvim

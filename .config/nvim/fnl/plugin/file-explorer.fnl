@@ -10,7 +10,7 @@
 
 (lir.setup {:show_hidden_files true
             :devicons_enable false
-            :mappings {:<CR> actions.edit
+            :mappings {:<CR> #(actions.edit {:modified_split_command :edit})
                        :- actions.up
                        :<Esc> actions.quit
                        :q actions.quit
