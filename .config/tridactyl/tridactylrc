@@ -48,6 +48,7 @@ autocontain -s pleo.zoom.us Work
 autocontain -s tella.tv Work
 autocontain -s env0.com Work
 autocontain -s pleo-sso.awsapps.com Work
+autocontain -s pleo.okta.com Work
 
 autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking

@@ -1,4 +1,4 @@
-(import-macros {: g!} :hibiscus.vim)
+(import-macros {: g! : color!} :hibiscus.vim)
 
 ;;; Defaults
 (require :defaults)
@@ -15,7 +15,7 @@
 
   ;; Set a theme
   (use! :rebelot/kanagawa.nvim
-        :config #(vim.cmd "colorscheme kanagawa"))
+        :config #(color! :kanagawa))
 
   ;; Syntax
   (use! :NoahTheDuke/vim-just)
@@ -32,8 +32,8 @@
   ;; LSP
   (use! :junnplus/lsp-setup.nvim
         :requires [:neovim/nvim-lspconfig
-                    :williamboman/mason.nvim
-                    :williamboman/mason-lspconfig.nvim]
+                   :williamboman/mason.nvim
+                   :williamboman/mason-lspconfig.nvim]
         :module :plugin/lsp)
 
   ;; Snippets
@@ -54,12 +54,6 @@
   ;; Mini.vim
   (use! :echasnovski/mini.nvim
         :module :plugin/mini)
-
-  ;; Sexp
-  ; (use! :tpope/vim-sexp-mappings-for-regular-people
-  ;       :requires [:guns/vim-sexp]
-  ;       :config #(g! sexp_filetypes "clojure,scheme,lisp,timl,fennel,janet")
-  ;       :ft [:fennel])
 
   ;; Formatting
   (use! :mhartington/formatter.nvim 
