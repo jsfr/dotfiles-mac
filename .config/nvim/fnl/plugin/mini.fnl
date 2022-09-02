@@ -11,7 +11,7 @@
                                 :comment_line :gcc
                                 :textobject :gc}})
 (augroup! :mini-comment
-          [[Filetype] :just "setlocal commentstring=#\\ %s"])
+          [[Filetype] [:just :fish] "setlocal commentstring=#\\ %s"])
 
 (mini-jump.setup {:mappings {:forward :f
                              :backward :F
