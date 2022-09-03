@@ -9,9 +9,10 @@
 (require-macros :hibiscus.packer)
 (packer-setup)
 (packer
-  ;; Self-manage tangerine and hibiscus
+  ;; Self-manage tangerine, hibiscus and impatient
   (use! :udayvir-singh/tangerine.nvim)
   (use! :udayvir-singh/hibiscus.nvim)
+  (use! :lewis6991/impatient.nvim)
 
   ;; Set a theme
   (use! :rebelot/kanagawa.nvim
@@ -63,17 +64,37 @@
   (use! :ibhagwan/fzf-lua
         :module :plugin/selector)
 
-  ;; Misc
-  (use! :lewis6991/gitsigns.nvim
-        :requires :nvim-lua/plenary.nvim 
-        :module :plugin/gitsigns)
-  (use! :ahmedkhalf/project.nvim
-        :config #(let [project-nvim (require :project_nvim)] (project-nvim.setup {})))
-  (use! :direnv/direnv.vim)
-  (use! :editorconfig/editorconfig-vim)
+  ;; Search and Replace
+  (use! :windwp/nvim-spectre
+        :requires :nvim-lua/plenary.nvim
+        :module :plugin/search-replace)
+  (use! :bronson/vim-visual-star-search)
+  (use! :tpope/vim-abolish
+        :cmd [:Subvert :Abolish])
   (use! :kevinhwang91/nvim-hlslens
         :config #(let [hlslens (require :hlslens)] (hlslens.setup {:calm_down true
                                                                    :nearest_only true})))
+  (use :dyng/ctrlsf.vim)
+
+  ;; File explorer
+  (use! :tamago324/lir.nvim 
+        :requires [:nvim-lua/plenary.nvim]
+        :module :plugin/file-explorer)
+
+  ;; Git
+  (use! :lewis6991/gitsigns.nvim
+        :requires :nvim-lua/plenary.nvim 
+        :module :plugin/gitsigns)
+  (use! :ruifm/gitlinker.nvim
+        :config #(let [gitlinker (require :gitlinker)] (gitlinker.setup)))
+
+  ;; Project env
+  (use! :ahmedkhalf/project.nvim
+        :config #(let [project-nvim (require :project_nvim)] (project-nvim.setup {})))
+  (use! :editorconfig/editorconfig-vim)
+  (use! :direnv/direnv.vim)
+
+  ;; Misc
   (use! :itchyny/lightline.vim
         :requires :josa42/nvim-lightline-lsp
         :module :plugin/statusline)
@@ -82,18 +103,9 @@
         :module :plugin/undotree)
   (use! :terryma/vim-expand-region
         :module :plugin/expand-region)
-  (use! :tpope/vim-abolish
-        :cmd [:Subvert :Abolish])
   (use! :tpope/vim-eunuch)
   (use! :tpope/vim-repeat)
-  (use! :tpope/vim-sleuth)
-  (use! :ruifm/gitlinker.nvim
-        :config #(let [gitlinker (require :gitlinker)] (gitlinker.setup)))
-  (use! :bronson/vim-visual-star-search)
-  (use! :windwp/nvim-spectre
-        :requires :nvim-lua/plenary.nvim
-        :module :plugin/search-replace)
-  (use! :tamago324/lir.nvim 
-        :requires [:nvim-lua/plenary.nvim]
-        :module :plugin/file-explorer)
+  ; (use! :tpope/vim-sleuth)
+  (use! :nmac427/guess-indent.nvim
+        :config #(let [gs (require :guess-indent)] (gs.setup)))
   )

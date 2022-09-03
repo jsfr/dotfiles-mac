@@ -8,9 +8,9 @@
 (map! [c] :jj :<c-c>)
 
 ;; Spacemacs inspired keybings
-(map! [n] :<leader>c :<C-w>q)
-(map! [n] :<leader>/ :<Cmd>vsplit<cr>)
-(map! [n] :<leader>- :<Cmd>split<cr>)
+(map! [n] :<leader>wc :<C-w>q)
+(map! [n] :<leader>w/ :<Cmd>vsplit<cr>)
+(map! [n] :<leader>w- :<Cmd>split<cr>)
 (map! [n] :<leader>w_ :<C-W>_)
 
 (map! [i] :<Tab> :<C-t>)

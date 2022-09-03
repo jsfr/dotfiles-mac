@@ -12,5 +12,6 @@
                                       :git_dir (.. vim.env.HOME :/.dotfiles)
                                       :git_worktree vim.env.HOME}))
 ; TODO work in progress
-; (vim.fn.cnoabbrev)
-; (command! :Rg fzf)
+(vim.cmd "cnoreabbrev <expr> rg (getcmdtype() == ':') ? 'Rg' : 'rg'")
+(fn rg [opts] (fzf.grep {:search opts.args}))
+(command! [:nargs 1] :Rg 'rg)

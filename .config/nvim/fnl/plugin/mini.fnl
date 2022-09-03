@@ -1,18 +1,14 @@
 (import-macros {: augroup! : map!} :hibiscus.vim)
 
 (local mini-comment (require :mini.comment))
-(local mini-jump (require :mini.jump))
-(local mini-pairs (require :mini.pairs))
-(local mini-bufremove (require :mini.bufremove))
-(local mini-starter (require :mini.starter))
-(local mini-surround (require :mini.surround))
-
 (mini-comment.setup {:mappings {:comment :gc
                                 :comment_line :gcc
                                 :textobject :gc}})
 (augroup! :mini-comment
           [[Filetype] [:just :fish] "setlocal commentstring=#\\ %s"])
 
+
+(local mini-jump (require :mini.jump))
 (mini-jump.setup {:mappings {:forward :f
                              :backward :F
                              :forward_till :t
@@ -20,10 +16,13 @@
                              :repeat_jump ""}
                   :delay {:highlight 250}})
 
+
+(local mini-pairs (require :mini.pairs))
 (mini-pairs.setup {})
 
-(mini-bufremove.setup {})
 
+(local mini-bufremove (require :mini.bufremove))
+(mini-bufremove.setup {})
 ;; Delete current buffer, keeping layout unless the buffer was a help buffer
 (fn delete-buffer [close-window?]
   (let [buftype (vim.api.nvim_buf_get_option 0 :buftype)]
@@ -33,8 +32,12 @@
 (map! [n] :<leader>d '(delete-buffer false))
 (map! [n] :<leader>x '(delete-buffer true))
 
-(mini-starter.setup {})
 
+(local mini-starter (require :mini.starter))
+(mini-starter.setup {:query_updaters "abcdefghijklmnopqrstuvwxyz0123456789_."})
+
+
+(local mini-surround (require :mini.surround))
 (mini-surround.setup {:mappings {:add :S
                                  :delete :ds
                                  :find ""
