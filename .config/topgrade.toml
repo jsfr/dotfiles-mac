@@ -3,12 +3,10 @@ disable = ["emacs", "gem", "vim"]
 
 # Custom commands
 [commands]
-"Neovim (Packer + Aniseed)" = "/Users/jens/.local/bin/sync-nvim"
-"Golang tools" = "/Users/jens/go/bin/gup update"
+"Neovim (packer)" = "/Users/jens/.local/bin/,update-nvim"
+"Golang tools (gup)" = "/Users/jens/go/bin/gup update"
 
 # Additional git repositories to pull
-# [git]
-# max_concurrency = 5
-# repos = [
-#     "~/Repos/github.com/pleo-io/*"
-# ]
+[git]
+max_concurrency = 5
+repos = ["~/Repos/github.com/pleo-io/pleo"]

@@ -39,9 +39,6 @@ hyper - l : skhd -k "right"
 # quit focused app
 shift + cmd - q : osascript -e "quit app \"$(yabai -m query --windows --window | jq -r .app)\""
 
-# get 2fa token for pleo dev/staging
-# lalt + cmd - p : skhd -t "$(security find-generic-password -ws 'pleo_admin_staging_token' | rargs oathtool -b --totp {})"
-
 # "write" the current copied text
 lalt + cmd - v : sleep 1 ; skhd -t "$(pbpaste)"
 
@@ -100,7 +97,7 @@ lalt - 7      : yabai -m space --focus 7
 lalt - 8      : yabai -m space --focus 8
 lalt - 9      : yabai -m space --focus 9
 lalt - 0      : yabai -m space --focus 10
-lalt - 0x1B   : ~/.local/bin/focus-next-fullscreen
+lalt - 0x1B   : ~/.local/bin/,yabai-focus-next-fullscreen
 
 # Resize regions similar to the behavior known from the i3 window manager
 resizer < h : yabai -m window --resize left:-20:0  ; yabai -m window --resize right:-20:0
