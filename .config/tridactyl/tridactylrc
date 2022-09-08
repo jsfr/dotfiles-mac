@@ -27,7 +27,7 @@ autocmd DocStart ^http(s?)://medium.com urlmodify -t medium.com scribe.rip
 autocmd DocStart ^http(s?)://twitter.com urlmodify -t twitter.com nitter.net
 autocmd DocStart ^http(s?)://www.youtube.com urlmodify -t www.youtube.com piped.kavin.rocks
 autocmd DocStart ^http(s?)://linear.app/ composite js document.location.href.replace(/http(?:s?):\/\/linear.app\/(.*)/, "linear://$1") | shellescape | exclaim_quiet open | tabclose
-autocmd DocStart ^http(s?)://www.notion.so/pleo composite js document.location.href.replace(/http(?:s?):\/\/www.notion.so\/(.*)/, "notion://$1") | shellescape | exclaim_quiet open | tabclose
+" autocmd DocStart ^http(s?)://www.notion.so/pleo composite js document.location.href.replace(/http(?:s?):\/\/www.notion.so\/(.*)/, "notion://$1") | shellescape | exclaim_quiet open | tabclose
 
 command translate js -r translate.js
 
@@ -49,6 +49,7 @@ autocontain -s tella.tv Work
 autocontain -s env0.com Work
 autocontain -s pleo-sso.awsapps.com Work
 autocontain -s pleo.okta.com Work
+autocontain -u ^https?://github\.com/pleo-io Work
 
 autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking

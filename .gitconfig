@@ -1,6 +1,6 @@
 [user]
-	name = Jens Fredskov
-	email = jsfr@users.noreply.github.com
+    name = Jens Fredskov
+    email = jsfr@users.noreply.github.com
 [credential]
     helper = cache
 [push]
@@ -25,6 +25,7 @@
     upd = "!git a -u && git yolo && git p"
     wip = commit -m "wip" --no-verify
     yolo = "!git commit -m \"YOLO: `curl -s http://whatthecommit.com/index.txt`\""
+    dft = difftool
 [core]
     editor = nvim
     pager = delta --syntax-theme="base16"
@@ -57,4 +58,12 @@
 [interactive]
     diffFilter = delta --color-only
 [init]
-	defaultBranch = main
+    defaultBranch = main
+; [diff]
+;     external = difft
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true

@@ -72,8 +72,7 @@
   (use! :tpope/vim-abolish
         :cmd [:Subvert :Abolish])
   (use! :kevinhwang91/nvim-hlslens
-        :config #(let [hlslens (require :hlslens)] (hlslens.setup {:calm_down true
-                                                                   :nearest_only true})))
+        :config #(let [pkg (require :hlslens)] (pkg.setup {:calm_down true :nearest_only true})))
   (use :dyng/ctrlsf.vim)
 
   ;; File explorer
@@ -86,11 +85,11 @@
         :requires :nvim-lua/plenary.nvim 
         :module :plugin/gitsigns)
   (use! :ruifm/gitlinker.nvim
-        :config #(let [gitlinker (require :gitlinker)] (gitlinker.setup)))
+        :config #(let [pkg (require :gitlinker)] (pkg.setup)))
 
   ;; Project env
   (use! :ahmedkhalf/project.nvim
-        :config #(let [project-nvim (require :project_nvim)] (project-nvim.setup {})))
+        :config #(let [pkg (require :project_nvim)] (pkg.setup {})))
   (use! :editorconfig/editorconfig-vim)
   (use! :direnv/direnv.vim)
 
@@ -107,5 +106,7 @@
   (use! :tpope/vim-repeat)
   ; (use! :tpope/vim-sleuth)
   (use! :nmac427/guess-indent.nvim
-        :config #(let [gs (require :guess-indent)] (gs.setup)))
+        :config #(let [pkg (require :guess-indent)] (pkg.setup)))
+  (use! :luukvbaal/stabilize.nvim
+        :config #(let [pkg (require :stabilize)] (pkg.setup)))
   )
