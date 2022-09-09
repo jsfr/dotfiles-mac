@@ -11,10 +11,11 @@
     batman = "!git commit -m \"Batman! (this commit has no parents)\""
     c = commit
     cb = create-branch -r
+    echo = "!echo $(git default-branch); echo"
     d = diff
     db = delete-branch
     dc = diff --cached
-    default-branch = "!git remote show origin | grep 'HEAD branch' | cut -d ' ' -f 5"
+    default-branch ="!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
     l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short --graph
     p = push
     re = restore
@@ -59,8 +60,6 @@
     diffFilter = delta --color-only
 [init]
     defaultBranch = main
-; [diff]
-;     external = difft
 [difftool]
     prompt = false
 [difftool "difftastic"]

@@ -1,14 +1,16 @@
-#!/usr/bin/env bash
-
-# set codesigning certificate name here (default: yabai-cert)
-export YABAI_CERT=
+#!/usr/bin/env fish
 
 # stop yabai
 brew services stop koekeishiya/formulae/yabai
 
+# remove old accessibility permission
+sudo tccutil -r /opt/homebrew/Cellar/yabai/HEAD-*/bin/yabai 
+
 # reinstall yabai
 brew reinstall koekeishiya/formulae/yabai
-codesign -fs "${YABAI_CERT:-yabai-cert}" "$(brew --prefix yabai)/bin/yabai"
+
+# sign the binary
+codesign -fs yabai-cert (brew --prefix yabai)"/bin/yabai"
 
 # uninstall the scripting addition
 sudo yabai --uninstall-sa

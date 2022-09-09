@@ -32,7 +32,8 @@ fi
 export GOPATH="$HOME/go"
 export N_PREFIX="$HOME/.n"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$N_PREFIX/bin:$PATH"
+export PYENV_SHIMS="$(pyenv root)/shims"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$N_PREFIX/bin:$PYENV_SHIMS:$PATH"
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 export XDG_CONFIG_HOME="$HOME/.config"
