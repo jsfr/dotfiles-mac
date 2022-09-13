@@ -112,3 +112,6 @@ cask "temurin17"
 cask "todoist"
 cask "yubico-yubikey-manager"
 cask "zoom"
+
+# App store
+mas "Okta Verify", id: 490179405

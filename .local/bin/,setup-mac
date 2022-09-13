@@ -21,7 +21,7 @@ gh auth login
 gh ssh-key add ~/.ssh/id_ed25519.pub -t "${USER}@${HOSTNAME}"
 
 # Run setup dotfiles
-curl -Lks https://raw.githubusercontent.com/jsfr/dotfiles-mac/master/.local/bin/setup-dotfiles | /bin/bash
+curl -Lks https://raw.githubusercontent.com/jsfr/dotfiles-mac/master/.local/bin/,setup-dotfiles | /bin/bash
 
 # Install all packages managed by brewfile
 brew bundle install
@@ -29,16 +29,13 @@ brew bundle install
 # Start skhd
 brew services start skhd
 
-# Start yabai
-brew services start yabai
-sudo yabai --install-sa
-
-# Install rustup
+# Install rustup and rust packages
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install cargo-update
 
 # Install tpm plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-~/.tmux/plugins/tpm/bin/install_plugins
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+~/.config/tmux/plugins/tpm/bin/install_plugins
 
 # Speed up the keyboard
 defaults write -g InitialKeyRepeat -int 15 # normal minimum is 15 (225 ms)
@@ -50,9 +47,11 @@ n lts
 # Install NPM packages
 npm install -g yarn
 npm install -g snyk
+npm install -g aws-sso-credentials-getter
 
 # Install pipx packages
 pipx install git-delete-merged-branches
+pipx install virtualfish
 
 # Clone and install rmenu
 mkdir -p ~/Repos/github.com/jsfr
@@ -61,11 +60,11 @@ git clone git@github.com:jsfr/rmenu.git
 just install
 cd ~
 
-# Set up k8s, aws-vault, vault and keychain
-read -p "Set up k8s, aws-vault, vault and keychain. Then press Enter to continue" </dev/tty
+# Install native module for tridactyl
+curl -fsSl https://raw.githubusercontent.com/tridactyl/native_messenger/master/installers/install.sh -o /tmp/trinativeinstall.sh && sh /tmp/trinativeinstall.sh 1.22.1
 
 # Add keychain entry for hammerspoon pull request widget
 read -p "Set up a Github Token for Hammerspoon PR widget. Then press Enter to continue" </dev/tty
 
-# Install native module for tridactyl
-read -p "To use .tridactylrc open Firefox and run :nativeinstall. Then press Enter to continue" </dev/tty
+# Set up k8s, aws-vault, vault and keychain
+read -p "Yabai is installed, follow the guide for system protection and automatic loading https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection" </dev/tty
