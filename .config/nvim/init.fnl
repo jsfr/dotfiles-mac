@@ -21,6 +21,7 @@
   ;; Syntax
   (use! :NoahTheDuke/vim-just)
   (use! :tridactyl/vim-tridactyl)
+  (use! :bakpakin/fennel.vim)
   (use! :nvim-treesitter/nvim-treesitter
         :requires [:IndianBoy42/tree-sitter-just]
         :run ":TSUpdateSync"
@@ -104,9 +105,8 @@
         :module :plugin/expand-region)
   (use! :tpope/vim-eunuch)
   (use! :tpope/vim-repeat)
-  ; (use! :tpope/vim-sleuth)
   (use! :nmac427/guess-indent.nvim
         :config #(let [pkg (require :guess-indent)] (pkg.setup)))
   (use! :luukvbaal/stabilize.nvim
         :config #(let [pkg (require :stabilize)] (pkg.setup)))
-  )
+)
