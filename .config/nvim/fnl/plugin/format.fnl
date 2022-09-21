@@ -21,3 +21,5 @@
 
 (augroup! :FormatAutoGroup
           [[BufWritePost] [zig typescript] :FormatWrite])
+
+{}

@@ -7,3 +7,5 @@
                 :indent {:enable true}})
 
 (just.setup {})
+
+{}

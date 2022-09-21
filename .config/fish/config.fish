@@ -18,6 +18,7 @@ function abbreviations
   abbr k "kubectl"
   abbr pr "gh pr"
   abbr zap "brew uninstall --force --zap"
+  abbr aum "gh pr edit --add-label \"automerge\""
 end
 abbreviations
 

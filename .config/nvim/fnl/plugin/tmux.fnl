@@ -9,4 +9,6 @@
 (map! [n] :<C-k> 'nav.up)
 (map! [n] :<C-l> 'nav.right)
 (map! [n] :<C-j> 'nav.down)
-(map! [n] :<C-\> 'nav.previous)
+(map! [n] :<C-Tab> 'nav.previous)
+
+{}

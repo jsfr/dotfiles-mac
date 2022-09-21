@@ -50,3 +50,5 @@
                       {:name :vsnip}
                       {:name :path}
                       {:name :buffer}]})
+
+{}

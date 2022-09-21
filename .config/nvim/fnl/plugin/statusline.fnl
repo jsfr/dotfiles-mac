@@ -8,3 +8,5 @@
                                 [:filetype]]}})
 
 (vim.cmd "call lightline#lsp#register()")
+
+{}

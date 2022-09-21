@@ -23,3 +23,5 @@
 
 (map! [n] "<leader>," '(float.init (.. vim.env.XDG_CONFIG_HOME :/nvim)))
 (map! [n] :- 'float.init)
+
+{}

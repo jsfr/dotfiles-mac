@@ -5,3 +5,5 @@
 
 ; Show undotree
 (map! [n] :U :<Cmd>UndotreeToggle<cr>)
+
+{}

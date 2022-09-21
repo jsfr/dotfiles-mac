@@ -2,6 +2,8 @@
 # VERSION: 3.0
 SETUVAR Z_DATA_DIR:/Users/jens/\x2elocal/share/z
 SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_aum:gh\x20pr\x20edit\x20\x2d\x2dadd\x2dlabel\x20\x22automerge\x22
+SETUVAR _fish_abbr_autom:gh\x20pr\x20edit\x20\x2d\x2dadd\x2dlabel\x20\x22automerge\x22
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_pr:gh\x20pr
 SETUVAR _fish_abbr_zap:brew\x20uninstall\x20\x2d\x2dforce\x20\x2d\x2dzap

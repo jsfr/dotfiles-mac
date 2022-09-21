@@ -6,3 +6,5 @@
 
 (map! [n] "]c" 'gitsigns.next_hunk)
 (map! [n] "[c" 'gitsigns.prev_hunk)
+
+{}

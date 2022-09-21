@@ -11,7 +11,9 @@
 (map! [n] :<leader>. '(fzf.git_files {:prompt "Dotfiles>"
                                       :git_dir (.. vim.env.HOME :/.dotfiles)
                                       :git_worktree vim.env.HOME}))
-; TODO work in progress
+
 (vim.cmd "cnoreabbrev <expr> rg (getcmdtype() == ':') ? 'Rg' : 'rg'")
 (fn rg [opts] (fzf.grep {:search opts.args}))
 (command! [:nargs 1] :Rg 'rg)
+
+{}
