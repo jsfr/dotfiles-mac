@@ -17,7 +17,7 @@
                              "]d"       "lua vim.diagnostic.goto_next()"}
                   :servers {:bashls {}
                             :denols {:root_dir (lspconfig.util.root_pattern :deno.json)}
-                            :efm {:filetypes [:typescript]}
+                            :efm {}
                             :golangci_lint_ls {}
                             :gopls {}
                             :jsonls {}
