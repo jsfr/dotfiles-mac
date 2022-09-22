@@ -1,5 +1,34 @@
 (local lspconfig (require :lspconfig))
 (local lsp-setup (require :lsp-setup))
+(local {: builtins : generator &as null-ls} (require :null-ls))
+(local {: diagnostics &as helpers} (require :null-ls.helpers))
+
+(local typos (let [on-output (diagnostics.from_pattern ":(%d+):(%d+): (.*)" [:row :col :message])
+                   args {:command :typos
+                         :args ["--format" "brief" "-"]
+                         :to_stdin true
+                         :from_stderr true
+                         :format :line
+                         :on_output on-output}
+                   generator (null-ls.generator args)]
+               {:name :typos
+                :method null-ls.methods.DIAGNOSTICS
+                :filetypes {}
+                :generator generator}))
+
+
+(null-ls.setup {:debug false
+                :sources [;; Diagnostics
+                          builtins.diagnostics.eslint
+                          builtins.diagnostics.hadolint
+                          builtins.diagnostics.fish
+                          builtins.diagnostics.actionlint
+                          typos
+
+                          ;; Formatters
+                          builtins.formatting.zigfmt
+                          builtins.formatting.prettier
+                          builtins.formatting.fixjson]})
 
 (lsp-setup.setup {:default_mappings false
                   :mappings {:gD "lua vim.lsp.buf.declaration()"

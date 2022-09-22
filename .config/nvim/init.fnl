@@ -36,13 +36,15 @@
         :module :plugin/tmux)
 
   ;; LSP and Formatting
-  (use! :jose-elias-alvarez/null-ls.nvim
-        :requires [:nvim-lua/plenary.nvim]
-        :module :plugin/null-ls)
+  ; (use! :jose-elias-alvarez/null-ls.nvim
+  ;       :requires [:nvim-lua/plenary.nvim]
+  ;       :module :plugin/null-ls)
   (use! :junnplus/lsp-setup.nvim
         :requires [:neovim/nvim-lspconfig
                    :williamboman/mason.nvim
-                   :williamboman/mason-lspconfig.nvim]
+                   :williamboman/mason-lspconfig.nvim
+                   :jose-elias-alvarez/null-ls.nvim
+                   :nvim-lua/plenary.nvim]
         :module :plugin/lsp)
 
   ;; Snippets
