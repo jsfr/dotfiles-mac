@@ -1,4 +1,5 @@
 (import-macros {: g! : color!} :hibiscus.vim)
+(require-macros :hibiscus.packer)
 
 ;;; Defaults
 (require :defaults)
@@ -6,8 +7,11 @@
 ;;; Mappings
 (require :mappings)
 
-(require-macros :hibiscus.packer)
+;;; Setup packer
 (packer-setup)
+
+;;; Add packages
+;; fnlfmt: skip
 (packer
   ;; Self-manage tangerine, hibiscus and impatient
   (use! :udayvir-singh/tangerine.nvim)
@@ -31,7 +35,10 @@
   (use! :numToStr/Navigator.nvim 
         :module :plugin/tmux)
 
-  ;; LSP
+  ;; LSP and Formatting
+  (use! :jose-elias-alvarez/null-ls.nvim
+        :requires [:nvim-lua/plenary.nvim]
+        :module :plugin/null-ls)
   (use! :junnplus/lsp-setup.nvim
         :requires [:neovim/nvim-lspconfig
                    :williamboman/mason.nvim
@@ -56,10 +63,6 @@
   ;; Mini.vim
   (use! :echasnovski/mini.nvim
         :module :plugin/mini)
-
-  ;; Formatting
-  (use! :mhartington/formatter.nvim 
-        :module :plugin/format)
 
   ;; Selectors
   (use! :ibhagwan/fzf-lua
