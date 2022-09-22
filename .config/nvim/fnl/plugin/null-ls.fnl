@@ -30,7 +30,6 @@
                           typos
                           ;; Formatters
                           null-ls.builtins.formatting.zigfmt
-                          null-ls.builtins.formatting.fnlfmt
                           null-ls.builtins.formatting.prettier
                           null-ls.builtins.formatting.fixjson]}
                :on_attach on-attach)
