@@ -14,6 +14,7 @@ tap "nextdns/tap" # NextDNS
 tap "opslevel/tap"
 
 # Brews
+brew "actionlint"
 brew "asciidoctor"
 brew "atool"
 brew "aws-iam-authenticator"
@@ -42,6 +43,7 @@ brew "gnu-sed"
 brew "go"
 brew "golangci-lint"
 brew "gradle"
+brew "hadolint"
 brew "htop"
 brew "httpie"
 brew "hyperfine"
