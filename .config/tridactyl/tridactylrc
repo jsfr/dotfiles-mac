@@ -22,7 +22,7 @@ bind ; fillcmdline_notrail
 
 " Redirects
 unset autocmds
-autocmd DocStart ^http(s?)://www.reddit.com urlmodify -t www.reddit.com libredd.it
+autocmd DocStart ^http(s?)://www.reddit.com urlmodify -t www.reddit.com teddit.net
 autocmd DocStart ^http(s?)://medium.com urlmodify -t medium.com scribe.rip
 autocmd DocStart ^http(s?)://twitter.com urlmodify -t twitter.com nitter.net
 autocmd DocStart ^http(s?)://www.youtube.com urlmodify -t www.youtube.com piped.kavin.rocks

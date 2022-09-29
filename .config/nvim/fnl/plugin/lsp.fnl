@@ -44,7 +44,8 @@
                           builtins.diagnostics.eslint
                           builtins.diagnostics.hadolint
                           builtins.diagnostics.fish
-                          builtins.diagnostics.actionlint
+                          (builtins.diagnostics.actionlint.with {:extra_args ["--config-file"
+                                                                              (.. vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
                           typos
 
                           ;; Formatters

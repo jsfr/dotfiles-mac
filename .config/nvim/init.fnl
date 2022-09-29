@@ -100,6 +100,7 @@
   (use! :direnv/direnv.vim)
 
   ;; Misc
+  (use! :vimwiki/vimwiki)
   (use! :itchyny/lightline.vim
         :requires :josa42/nvim-lightline-lsp
         :module :plugin/statusline)
