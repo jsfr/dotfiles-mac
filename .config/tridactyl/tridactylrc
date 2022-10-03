@@ -3,7 +3,7 @@
 
 " General Settings
 set newtab about:blank
-set theme dark
+set theme auto
 set hintfiltermode vimperator-reflow
 set hintnames numeric
 set hintdelay 100

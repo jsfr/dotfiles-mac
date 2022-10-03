@@ -47,4 +47,7 @@
                                  :replace :cs
                                  :update_n_lines ""}})
 
+(local mini-align (require :mini.align))
+(mini-align.setup)
+
 {}

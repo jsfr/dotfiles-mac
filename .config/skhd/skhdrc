@@ -17,7 +17,7 @@ default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
 # app bindings
-lalt - return   : open -a Alacritty
+lalt - return    : open -a Alacritty
 lctrl + lalt - e : open -a Firefox
 lctrl + lalt - s : open -a Slack
 lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
@@ -27,8 +27,11 @@ lctrl + lalt - z : open -a zoom.us
 lctrl + lalt - a : open -a Signal
 lctrl + lalt - l : open -a Linear
 lctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
-cmd - d : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
-cmd + shift - d : env GITHUB_ORG=pleo-io rmenu_repos --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
+cmd - escape     : open -a Mission\ Control
+cmd - 0x32       : open -a Mission\ Control
+cmd - 0x0A       : open -a Mission\ Control
+cmd - d          : rmenu_launch --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
+cmd + shift - d  : env GITHUB_ORG=pleo-io rmenu_repos --font-size 13 --height 30 --foreground-normal d0d0d0 --background-normal 3a3a3a --background-selection 85add4 --prompt ❯
 
 # use rctrl as a poor mans hyper
 hyper - j : skhd -k "down"

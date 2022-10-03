@@ -40,3 +40,4 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 export ENV_EXPORTED="exported"
+. "$HOME/.cargo/env"
