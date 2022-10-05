@@ -41,6 +41,9 @@ hyper - l : skhd -k "right"
 # quit focused app
 shift + cmd - q : osascript -e "quit app \"$(yabai -m query --windows --window | jq -r .app)\""
 
+# lock screen
+lalt + cmd - l : skhd -k "ctrl + cmd - q"
+
 # "write" the current copied text
 lalt + cmd - v : sleep 1 ; skhd -t "$(pbpaste)"
 
