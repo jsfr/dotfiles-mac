@@ -21,7 +21,6 @@ lalt - return    : open -a Alacritty
 lctrl + lalt - e : open -a Firefox
 lctrl + lalt - s : open -a Slack
 lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
-lctrl + lalt - n : open -a Notion
 lctrl + lalt - m : open -a Mimestream
 lctrl + lalt - z : open -a zoom.us
 lctrl + lalt - a : open -a Signal
