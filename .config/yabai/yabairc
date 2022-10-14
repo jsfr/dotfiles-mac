@@ -1,16 +1,6 @@
 #!/usr/bin/env sh
 
-# the scripting-addition must be loaded manually if
-# you are running yabai on macOS Big Sur. Uncomment
-# the following line to have the injection performed
-# when the config is executed during startup.
-#
-# for this to work you must configure sudo such that
-# it will be able to run the command without password
-#
-# see this wiki page for information:
-#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
-
+# load scripting additions
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
@@ -49,19 +39,18 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
-# Rules
-yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" border=off layer=above manage=off sticky=on
+# rules
 yabai -m rule --add app="^Finder$" title="^(Copy)?$" layer=above manage=off
 yabai -m rule --add app="^System Preferences$" layer=above manage=off
 yabai -m rule --add app="^Steam$" border=off layer=above manage=off
-yabai -m rule --add app="^rmenu$" border=off layer=above manage=off
+yabai -m rule --add app="^rmenu$" border=off layer=above manage=off sticky=on
 yabai -m rule --add app="^Access$" border=off layer=above manage=off
 
 yabai -m rule --add app="^Signal$" space=^8
 yabai -m rule --add app="^Mimestream$" space=^9
 yabai -m rule --add app="^Slack$" space=^10
 
-## Add signals for Hammerspoon Yabai Widget
+## add signals for hammerspoon yabai widget
 hs -c "spoon.YabaiSpaces:add_signals()"
 
 # go through all spaces to pick up all windows

@@ -18,7 +18,7 @@
     (vim.keymap.set :n :<leader>k vim.lsp.buf.signature_help bufopts)
     (vim.keymap.set :n :<leader>rn vim.lsp.buf.rename bufopts)
     (vim.keymap.set :n :<leader>ca vim.lsp.buf.code_action bufopts)
-    (vim.keymap.set :n :<leader>f vim.lsp.buf.formatting bufopts)
+    (vim.keymap.set :n :<leader>f vim.lsp.buf.format bufopts)
     (vim.keymap.set :n :<leader>e vim.diagnostic.open_float bufopts)
     (vim.keymap.set :n "[d" vim.diagnostic.goto_prev bufopts)
     (vim.keymap.set :n "]d" vim.diagnostic.goto_next bufopts)
@@ -41,7 +41,7 @@
 (null-ls.setup {:debug false
                 :on_attach on-attach
                 :sources [;; Diagnostics
-                          builtins.diagnostics.eslint
+                          ; builtins.diagnostics.eslint
                           builtins.diagnostics.hadolint
                           builtins.diagnostics.fish
                           (builtins.diagnostics.actionlint.with {:extra_args ["--config-file"
@@ -50,23 +50,27 @@
 
                           ;; Formatters
                           builtins.formatting.zigfmt
-                          builtins.formatting.prettier
-                          builtins.formatting.fixjson]})
+                          ; builtins.formatting.prettier
+                          ; builtins.formatting.fixjson
+                          ]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
-                  :servers {:bashls {}
+                  :servers {
+                            :bashls {}
                             :denols {:root_dir (lspconfig.util.root_pattern :deno.json)}
                             :golangci_lint_ls {}
                             :gopls {}
                             :jsonls {}
                             :kotlin_language_server {}
+                            :pyright {}
                             :rust_analyzer {}
                             :taplo {}
                             :terraformls {}
                             :tflint {}
                             :tsserver {:root_dir (lspconfig.util.root_pattern :package.json)}
                             :yamlls {}
-                            :zls {}}})
+                            :zls {}
+                            }})
 
 {}

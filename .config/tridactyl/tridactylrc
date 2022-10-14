@@ -28,6 +28,7 @@ autocmd DocStart ^http(s?)://linear.app/ composite js document.location.href.rep
 command translate js -r translate.js
 
 unset autocontain
+
 autocontain -s opslevel.com Work
 autocontain -s app.humaans.io Work 
 autocontain -s app.ledgy.com Work
@@ -46,10 +47,13 @@ autocontain -s env0.com Work
 autocontain -s pleo-sso.awsapps.com Work
 autocontain -s pleo.okta.com Work
 autocontain -u ^https?://github\.com/pleo-io Work
+autocontain -s metabase.pleo.io Work
+autocontain -s krisp.ai Work
 
 autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking
 autocontain -s heap.dk Banking
+autocontain -s topdanmark.dk Banking
 
 autocontain -s linkedin.com LinkedIn
 

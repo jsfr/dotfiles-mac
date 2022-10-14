@@ -35,10 +35,16 @@
   (use! :numToStr/Navigator.nvim 
         :module :plugin/tmux)
 
+  ;; UI
+  (use! :itchyny/lightline.vim
+        :requires :josa42/nvim-lightline-lsp
+        :module :plugin/statusline)
+  (use! :gelguy/wilder.nvim
+        :module :plugin/cmdline)
+  (use! :stevearc/dressing.nvim
+        :config #(let [pkg (require :dressing)] (pkg.setup)))
+
   ;; LSP and Formatting
-  ; (use! :jose-elias-alvarez/null-ls.nvim
-  ;       :requires [:nvim-lua/plenary.nvim]
-  ;       :module :plugin/null-ls)
   (use! :junnplus/lsp-setup.nvim
         :requires [:neovim/nvim-lspconfig
                    :williamboman/mason.nvim
@@ -101,9 +107,6 @@
 
   ;; Misc
   (use! :vimwiki/vimwiki)
-  (use! :itchyny/lightline.vim
-        :requires :josa42/nvim-lightline-lsp
-        :module :plugin/statusline)
   (use! :mbbill/undotree
         :keys [:U]
         :module :plugin/undotree)
