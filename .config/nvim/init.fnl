@@ -103,7 +103,7 @@
   (use! :ahmedkhalf/project.nvim
         :config #(let [pkg (require :project_nvim)] (pkg.setup {})))
   (use! :editorconfig/editorconfig-vim)
-  (use! :direnv/direnv.vim)
+  ; (use! :direnv/direnv.vim)
 
   ;; Misc
   (use! :vimwiki/vimwiki)

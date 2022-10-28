@@ -18,19 +18,20 @@ default, resizer < shift + cmd - 0x30 :
 
 # app bindings
 lalt - return    : open -a Alacritty
-lctrl + lalt - e : open -a Firefox
-lctrl + lalt - s : open -a Slack
-lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
-lctrl + lalt - m : open -a Mimestream
-lctrl + lalt - z : open -a zoom.us
 lctrl + lalt - a : open -a Signal
+lctrl + lalt - e : open -a Firefox
+lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
 lctrl + lalt - l : open -a Linear
+lctrl + lalt - m : open -a Mimestream
+lctrl + lalt - s : open -a Slack
+lctrl + lalt - t : open -a Todoist
+lctrl + lalt - z : open -a zoom.us
 lctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control
 cmd - 0x0A       : open -a Mission\ Control
 cmd - d          : rmenu_launch --prompt ❯
-cmd + shift - d  : env GITHUB_ORG=pleo-io rmenu_repos --prompt ❯
+cmd + shift - d  : env GITHUB_ORGS="pleo-io\npleo-oss\njsfr" rmenu_repos --prompt ❯
 
 # use rctrl as a poor mans hyper
 hyper - j : skhd -k "down"
