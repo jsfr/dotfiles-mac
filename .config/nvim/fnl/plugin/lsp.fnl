@@ -5,6 +5,7 @@
 (local utils (require :lsp-setup.utils))
 (local {: builtins : generator &as null-ls} (require :null-ls))
 (local {: diagnostics &as helpers} (require :null-ls.helpers))
+(local schemastore (require :schemastore))
 
 (fn on-attach [client bufnr]
   (utils.format_on_save client)
@@ -37,21 +38,10 @@
                 :filetypes {}
                 :generator generator}))
 
-
-(null-ls.setup {:debug false
+(null-ls.setup {
                 :on_attach on-attach
-                :sources [;; Diagnostics
-                          ; builtins.diagnostics.eslint
-                          ; builtins.diagnostics.hadolint
-                          ; builtins.diagnostics.fish
-                          ; (builtins.diagnostics.actionlint.with {:extra_args ["--config-file"
-                          ;                                                     (.. vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
+                :sources [
                           typos
-
-                          ;; Formatters
-                          ; builtins.formatting.zigfmt
-                          ; builtins.formatting.prettier
-                          ; builtins.formatting.fixjson
                           ]})
 
 (lsp-setup.setup {:default_mappings false
@@ -61,7 +51,8 @@
                             :denols {:root_dir (lspconfig.util.root_pattern :deno.json)}
                             :golangci_lint_ls {}
                             :gopls {}
-                            :jsonls {}
+                            :jsonls {:settings {:json {:schemas (schemastore.json.schemas)
+                                                       :validate {:enable true}}}}
                             :kotlin_language_server {}
                             :pyright {}
                             :rust_analyzer {}
@@ -69,7 +60,10 @@
                             :terraformls {}
                             :tflint {}
                             :tsserver {:root_dir (lspconfig.util.root_pattern :package.json)}
-                            :yamlls {}
+                            :yamlls {:settings {:yaml {:schemas {"https://raw.githubusercontent.com/pleo-oss/file-distributor/main/src/template-schema.json" "/.github/templates.yaml"
+                                                                 "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
+                                                       :schemaStore {:enable true
+                                                                     :url "https://www.schemastore.org/api/json/catalog.json"}}}}
                             :zls {}
                             }})
 

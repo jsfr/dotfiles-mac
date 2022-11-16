@@ -47,6 +47,7 @@ autocontain -s env0.com Work
 autocontain -s pleo-sso.awsapps.com Work
 autocontain -s pleo.okta.com Work
 autocontain -u ^https?://github\.com/pleo-io Work
+autocontain -u ^https?://github\.com/orgs/pleo-io Work
 autocontain -s metabase.pleo.io Work
 autocontain -s krisp.ai Work
 

@@ -49,6 +49,7 @@
         :requires [:neovim/nvim-lspconfig
                    :williamboman/mason.nvim
                    :williamboman/mason-lspconfig.nvim
+                   :b0o/schemastore.nvim
                    :jose-elias-alvarez/null-ls.nvim
                    :nvim-lua/plenary.nvim]
         :module :plugin/lsp)

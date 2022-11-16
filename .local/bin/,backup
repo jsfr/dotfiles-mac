@@ -5,10 +5,11 @@ BACKUP="$HOME/backup"
 rm -r "$BACKUP"
 mkdir "$BACKUP"
 
-npm list -g --json | jq -r '.dependencies | keys | .[]' > "$BACKUP/npm.txt"
+pnpm list -g --json | jq -r '.dependencies | keys | .[]' > "$BACKUP/pnpm.txt"
 gup list | awk -F '[ @]' '{print $2}' > "$BACKUP/go.txt"
 pipx list --json | jq -r '.venvs | keys | .[]' > "$BACKUP/pipx.txt"
 cargo install --list | grep ":" | awk '{print $1}' > "$BACKUP/cargo.txt"
+volta list --format plain > "$BACKUP/volta.txt" 
 
 mkdir "$BACKUP/ssh"
 cp -r ~/.ssh/id* "$BACKUP/ssh/"

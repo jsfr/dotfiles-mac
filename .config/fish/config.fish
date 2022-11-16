@@ -32,6 +32,10 @@ function fish_user_key_bindings
   bind \eb backward-word
 end
 
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
+
 # Source docker completions
 set docker_completions "/Applications/Docker.app/Contents/Resources/etc/docker.fish-completion"
 if type -q $docker_completions
