@@ -42,6 +42,7 @@
                 :on_attach on-attach
                 :sources [
                           typos
+                          (builtins.diagnostics.actionlint.with {:extra_args [(.. "-config-file=" vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
                           ]})
 
 (lsp-setup.setup {:default_mappings false

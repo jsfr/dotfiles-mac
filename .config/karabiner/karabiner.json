@@ -30,11 +30,11 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
+                                        "key_code": "right_shift",
                                         "modifiers": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_option"
+                                            "right_command",
+                                            "right_control",
+                                            "right_option"
                                         ]
                                     }
                                 ],
@@ -96,10 +96,10 @@
                                     "key_code": "escape",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_shift",
-                                            "left_command",
-                                            "left_option",
-                                            "left_control"
+                                            "right_shift",
+                                            "right_command",
+                                            "right_option",
+                                            "right_control"
                                         ]
                                     }
                                 },

@@ -1,8 +1,6 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-command_timeout = 1000
-
 [package]
 disabled = true
 
@@ -12,8 +10,9 @@ disabled = true
 [custom.dotfiles]
 description = "Shows the current number of dotfile changes that have yet to be committed"
 command = """ /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l  """
-when = """ test "$HOME" = "$PWD"; and test (/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l) -ge 1 """
+when = """ test "$HOME" = "$PWD" && test $(/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l) -ge 1 """
 symbol = "%"
+shell = "dash"
 
 [env_var.DESK_NAME]
 variable = "DESK_NAME"

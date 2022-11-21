@@ -21,3 +21,4 @@
                                           :repo :jsfr
                                           :start true})
 (spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})
+(spoon.SpoonInstall:andUse :Emojis {:hotkeys {:toggle [["alt"] ";"]}})
