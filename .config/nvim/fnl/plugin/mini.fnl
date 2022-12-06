@@ -16,9 +16,8 @@
                              :repeat_jump ""}
                   :delay {:highlight 250}})
 
-
-(local mini-pairs (require :mini.pairs))
-(mini-pairs.setup {})
+; (local mini-pairs (require :mini.pairs))
+; (mini-pairs.setup {})
 
 
 (local mini-bufremove (require :mini.bufremove))

@@ -11,7 +11,6 @@ set fish_greeting ""
 # define aliases
 alias ls="ls -1FvG"
 alias cfg="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias tf="terraform"
 
 # define abbreviations
 function abbreviations
@@ -19,6 +18,11 @@ function abbreviations
   abbr pr "gh pr"
   abbr zap "brew uninstall --force --zap"
   abbr aum "gh pr edit --add-label \"automerge\""
+  abbr npm "pnpm"
+  abbr npx "pnpx"
+  abbr p "pnpm"
+  abbr px "pnpx"
+  abbr tf "terraform"
 end
 abbreviations
 
@@ -76,8 +80,7 @@ if type -q just
   source $just_completions
 end
 
-# Source environment
-# source "$HOME/.config/fish/env.fish"
+# Source environment variables
 bash2env source "$HOME/.profile"
 
 # Initialize prompt

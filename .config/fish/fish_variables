@@ -5,7 +5,12 @@ SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_aum:gh\x20pr\x20edit\x20\x2d\x2dadd\x2dlabel\x20\x22automerge\x22
 SETUVAR _fish_abbr_autom:gh\x20pr\x20edit\x20\x2d\x2dadd\x2dlabel\x20\x22automerge\x22
 SETUVAR _fish_abbr_k:kubectl
+SETUVAR _fish_abbr_npm:pnpm
+SETUVAR _fish_abbr_npx:pnpx
+SETUVAR _fish_abbr_p:pnpm
 SETUVAR _fish_abbr_pr:gh\x20pr
+SETUVAR _fish_abbr_px:pnpx
+SETUVAR _fish_abbr_tf:terraform
 SETUVAR _fish_abbr_zap:brew\x20uninstall\x20\x2d\x2dforce\x20\x2d\x2dzap
 SETUVAR _fisher_ehfive_2F_fish_2D_bash2env_files:\x7e/\x2econfig/fish/functions/__bash2env\x2esh\x1e\x7e/\x2econfig/fish/functions/bash2env\x2efish
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:\x7e/\x2econfig/fish/completions/kubectl\x2efish

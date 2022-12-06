@@ -1,6 +1,8 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+command_timeout = 1000
+
 [package]
 disabled = true
 
@@ -13,6 +15,7 @@ command = """ /usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" stat
 when = """ test "$HOME" = "$PWD" && test $(/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME" status -s | wc -l) -ge 1 """
 symbol = "%"
 shell = "dash"
+ignore_timeout = true
 
 [env_var.DESK_NAME]
 variable = "DESK_NAME"

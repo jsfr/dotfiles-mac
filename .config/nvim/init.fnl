@@ -51,7 +51,8 @@
                    :williamboman/mason-lspconfig.nvim
                    :b0o/schemastore.nvim
                    :jose-elias-alvarez/null-ls.nvim
-                   :nvim-lua/plenary.nvim]
+                   :nvim-lua/plenary.nvim
+                   :simrat39/rust-tools.nvim]
         :module :plugin/lsp)
 
   ;; Snippets
@@ -61,7 +62,8 @@
   ;; Completion
   (use! :Olical/conjure)
   (use! :hrsh7th/nvim-cmp
-        :requires [:hrsh7th/cmp-nvim-lsp
+        :requires [:windwp/nvim-autopairs
+                   :hrsh7th/cmp-nvim-lsp
                    :hrsh7th/cmp-buffer
                    :hrsh7th/cmp-path
                    :hrsh7th/cmp-vsnip
@@ -119,4 +121,6 @@
         :config #(let [pkg (require :guess-indent)] (pkg.setup)))
   (use! :luukvbaal/stabilize.nvim
         :config #(let [pkg (require :stabilize)] (pkg.setup)))
+  (use! :anuvyklack/pretty-fold.nvim
+        :module :plugin/fold)
 )

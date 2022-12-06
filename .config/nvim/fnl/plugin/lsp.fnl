@@ -6,6 +6,7 @@
 (local {: builtins : generator &as null-ls} (require :null-ls))
 (local {: diagnostics &as helpers} (require :null-ls.helpers))
 (local schemastore (require :schemastore))
+(local rust-tools (require :lsp-setup.rust-tools))
 
 (fn on-attach [client bufnr]
   (utils.format_on_save client)
@@ -56,7 +57,8 @@
                                                        :validate {:enable true}}}}
                             :kotlin_language_server {}
                             :pyright {}
-                            :rust_analyzer {}
+                            :rust_analyzer (rust-tools.setup {:server {:settings {:rust-analyzer {:cargo {:loadOutDirsFromCheck true}
+                                                                                                  :procMacro {:enable true}}}}})
                             :taplo {}
                             :terraformls {}
                             :tflint {}

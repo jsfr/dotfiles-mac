@@ -1,6 +1,6 @@
 {
 	"dependencies": {
 		"aws-sso-credentials-getter": "^1.2.2",
-		"snyk": "^1.1061.0"
+		"snyk": "^1.1064.0"
 	}
 }
