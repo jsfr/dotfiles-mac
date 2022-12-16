@@ -1,8 +1,6 @@
 (import-macros {: set!} :hibiscus.vim)
 
 (local cmp (require :cmp))
-(local autopairs (require :nvim-autopairs))
-(local cmp-autopairs (require :nvim-autopairs.completion.cmp))
 
 (set! completeopt "menu,menuone,noselect")
 
@@ -52,9 +50,5 @@
                       {:name :vsnip}
                       {:name :path}
                       {:name :buffer}]})
-
-(autopairs.setup {})
-
-(cmp.event:on :confirm_done (cmp-autopairs.on_confirm_done))
 
 {}

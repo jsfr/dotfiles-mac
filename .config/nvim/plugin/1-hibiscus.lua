@@ -1,5 +1,5 @@
 -- pick your plugin manager, default [standalone]
-local pack = "tangerine" or "packer" or "paq"
+local pack = "packer"
 
 local function bootstrap (url)
   local name = url:gsub(".*/", "")

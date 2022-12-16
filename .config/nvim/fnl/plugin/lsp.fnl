@@ -44,6 +44,7 @@
                 :sources [
                           typos
                           (builtins.diagnostics.actionlint.with {:extra_args [(.. "-config-file=" vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
+                          builtins.formatting.prettierd
                           ]})
 
 (lsp-setup.setup {:default_mappings false

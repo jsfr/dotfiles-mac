@@ -1,6 +1,6 @@
 -- 1. Create file plugin/0-tangerine.lua to bootstrap tangerine:
 -- pick your plugin manager, default [standalone]
-local pack = "tangerine" or "packer" or "paq"
+local pack = "packer"
 
 local function bootstrap (url)
 	local name = url:gsub(".*/", "")
@@ -28,7 +28,6 @@ require "tangerine".setup {
 	rtpdirs = {
 		"plugin",
 		"colors",
-		"$HOME/mydir" -- absolute paths are also supported
 	},
 
 	compiler = {
