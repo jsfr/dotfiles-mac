@@ -1,10 +1,16 @@
 # Same options as the command line flag
 disable = ["emacs", "gem", "vim"]
+no_retry = true
+pre_sudo = true
+assume_yes = true
 
 # Custom commands
 [commands]
 "Neovim (packer)" = "/Users/jens/.local/bin/,update-nvim"
 "Golang tools (gup)" = "/Users/jens/go/bin/gup update"
+
+[post_commands]
+"Update Yabai Sha" = "/Users/jens/.local/bin/,update-yabai"
 
 # Additional git repositories to pull
 [git]

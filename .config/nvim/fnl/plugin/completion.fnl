@@ -1,6 +1,7 @@
 (import-macros {: set!} :hibiscus.vim)
 
 (local cmp (require :cmp))
+(local compare (require :cmp.config.compare))
 
 (set! completeopt "menu,menuone,noselect")
 
@@ -38,6 +39,43 @@
     (feedkey "<Plug>(vsnip-jump-prev)" "")
     (fallback)))
 
+(local kind-icons {:Text ""
+                   :Method ""
+                   :Function ""
+                   :Constructor ""
+                   :Field ""
+                   :Variable ""
+                   :Class "ﴯ"
+                   :Interface ""
+                   :Module ""
+                   :Property "ﰠ"
+                   :Unit ""
+                   :Value ""
+                   :Enum ""
+                   :Keyword ""
+                   :Snippet ""
+                   :Color ""
+                   :File ""
+                   :Reference ""
+                   :Folder ""
+                   :EnumMember ""
+                   :Constant ""
+                   :Struct ""
+                   :Event ""
+                   :Operator ""
+                   :TypeParameter ""})
+
+(local menu-items {:nvim_lsp "[lsp]"
+                   :conjure "[con]"
+                   :vsnip "[vsn]"
+                   :path "[pat]"
+                   :buffer "[buf]"})
+
+(fn format-menu [entry vim-item]
+  (set vim-item.kind (string.format "%s %s" (. kind-icons vim-item.kind) vim-item.kind))
+  (set vim-item.menu (. menu-items entry.source.name))
+  vim-item)
+
 (cmp.setup {:snippet {:expand snippet-fn}
             :preselect false
             :mapping {:<C-b> (cmp.mapping (cmp.mapping.scroll_docs -4) [:i :c])
@@ -45,10 +83,17 @@
                       :<Tab> (cmp.mapping tab-complete [:i :s])
                       :<S-Tab> (cmp.mapping s-tab-complete [:i :s])
                       :<CR> (cmp.mapping.confirm {:select false})}
-            :sources [{:name :nvim_lsp}
+            :sources [{:name :nvim_lsp :max_item_count 30}
                       {:name :conjure}
                       {:name :vsnip}
                       {:name :path}
-                      {:name :buffer}]})
+                      {:name :buffer :keyword_length 3}]
+            :formatting {:format format-menu}
+            :sorting {:comparators [compare.locality
+                                    compare.recently_used
+                                    compare.score
+                                    compare.offset
+                                    compare.order]}
+            })
 
 {}

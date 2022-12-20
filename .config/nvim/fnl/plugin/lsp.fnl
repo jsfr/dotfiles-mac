@@ -1,4 +1,4 @@
-(import-macros {: map!} :hibiscus.vim)
+(import-macros {: map! : augroup!} :hibiscus.vim)
 
 (local lspconfig (require :lspconfig))
 (local lsp-setup (require :lsp-setup))
@@ -41,11 +41,9 @@
 
 (null-ls.setup {
                 :on_attach on-attach
-                :sources [
-                          typos
+                :sources [typos
                           (builtins.diagnostics.actionlint.with {:extra_args [(.. "-config-file=" vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
-                          builtins.formatting.prettierd
-                          ]})
+                          builtins.formatting.prettierd]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
@@ -58,7 +56,8 @@
                                                        :validate {:enable true}}}}
                             :kotlin_language_server {}
                             :pyright {}
-                            :rust_analyzer (rust-tools.setup {:server {:settings {:rust-analyzer {:cargo {:loadOutDirsFromCheck true}
+                            :rust_analyzer (rust-tools.setup {:tools {:inlay_hints: {:auto true}}
+                                                              :server {:settings {:rust-analyzer {:cargo {:loadOutDirsFromCheck true}
                                                                                                   :procMacro {:enable true}}}}})
                             :taplo {}
                             :terraformls {}

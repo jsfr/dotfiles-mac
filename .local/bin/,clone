@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir -p 
+
+https://github.com/redhat-developer/yaml-language-server

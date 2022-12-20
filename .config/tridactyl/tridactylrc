@@ -49,7 +49,8 @@ autocontain -s pleo.okta.com Work
 autocontain -u ^https?://github\.com/pleo-io Work
 autocontain -u ^https?://github\.com/orgs/pleo-io Work
 autocontain -s metabase.pleo.io Work
-autocontain -s krisp.ai Work
+autocontain -s incident.io Work
+autocontain -s swarmia.com Work
 
 autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking

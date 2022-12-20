@@ -105,6 +105,7 @@
   (use! :direnv/direnv.vim)
 
   ;; Misc
+  (use! :mong8se/actually.nvim)
   (use! :vimwiki/vimwiki)
   (use! :mbbill/undotree
         :keys [:U]

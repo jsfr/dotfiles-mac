@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+user="jens"
+yabai_path=$(which yabai)
+command="${yabai_path} --load-sa"
+shasum=$(shasum -a 256 "${yabai_path}" | awk -F ' ' '{print $1}')
+sudo_file="/etc/sudoers.d/yabai"
+
+echo "${user} ALL = (root) NOPASSWD: sha256:${shasum} ${command}" | sudo EDITOR='tee' visudo -f "${sudo_file}"
