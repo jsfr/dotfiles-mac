@@ -26,8 +26,7 @@ require "tangerine".setup {
 
 	-- compile files in &rtp
 	rtpdirs = {
-		"plugin",
-		"colors",
+		"plugin"
 	},
 
 	compiler = {
