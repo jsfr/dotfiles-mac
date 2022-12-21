@@ -1,6 +1,6 @@
 -- 1. Create file plugin/0-tangerine.lua to bootstrap tangerine:
 -- pick your plugin manager, default [standalone]
-local pack = "packer"
+local pack = "paqs"
 
 local function bootstrap (url)
 	local name = url:gsub(".*/", "")

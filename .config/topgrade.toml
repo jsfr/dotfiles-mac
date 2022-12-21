@@ -6,7 +6,7 @@ assume_yes = true
 
 # Custom commands
 [commands]
-"Neovim (packer)" = "/Users/jens/.local/bin/,update-nvim"
+# "Neovim (packer)" = "/Users/jens/.local/bin/,update-nvim"
 "Golang tools (gup)" = "/Users/jens/go/bin/gup update"
 
 [post_commands]

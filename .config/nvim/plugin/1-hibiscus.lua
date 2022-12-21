@@ -1,5 +1,5 @@
 -- pick your plugin manager, default [standalone]
-local pack = "packer"
+local pack = "paqs"
 
 local function bootstrap (url)
   local name = url:gsub(".*/", "")
@@ -16,3 +16,5 @@ local function bootstrap (url)
 end
 
 bootstrap "https://github.com/udayvir-singh/hibiscus.nvim"
+
+bootstrap "https://github.com/savq/paq-nvim"
