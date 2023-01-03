@@ -25,7 +25,7 @@
     up = pull --all --rebase --autostash
     upd = "!git a -u && git yolo && git p"
     wip = commit -m "wip" --no-verify
-    yolo = "!git commit -m \"YOLO: `curl -s http://whatthecommit.com/index.txt`\""
+    yolo = "!git commit -m \"YOLO: `curl -s https://whatthecommit.com/index.txt`\""
     dft = difftool
 [core]
     editor = nvim
