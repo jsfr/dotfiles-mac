@@ -28,6 +28,9 @@
    :requires [:IndianBoy42/tree-sitter-just]
    :run #(vim.cmd :TSUpdateSync)
    :config #(require :plugin/treesitter)]
+  [:https://github.com/koka-lang/koka
+   :opt true
+   :config #(vim.cmd "packadd koka/support/vim")]
 
   ;; Tmux
   [:numToStr/Navigator.nvim 
@@ -44,13 +47,14 @@
 
   ;; LSP and Formatting
   [:junnplus/lsp-setup.nvim
-   :requires [:neovim/nvim-lspconfig
-              :williamboman/mason.nvim
-              :williamboman/mason-lspconfig.nvim
-              :b0o/schemastore.nvim
+   :requires [:b0o/schemastore.nvim
               :jose-elias-alvarez/null-ls.nvim
+              :neovim/nvim-lspconfig
               :nvim-lua/plenary.nvim
-              :simrat39/rust-tools.nvim]
+              :poljar/typos.nvim
+              :simrat39/rust-tools.nvim
+              :williamboman/mason-lspconfig.nvim
+              :williamboman/mason.nvim ]
    :config #(require :plugin/lsp)]
 
   ;; Snippets

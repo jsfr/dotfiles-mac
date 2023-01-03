@@ -7,6 +7,7 @@
 (local {: diagnostics &as helpers} (require :null-ls.helpers))
 (local schemastore (require :schemastore))
 (local rust-tools (require :lsp-setup.rust-tools))
+(local typos (require :typos))
 
 (fn on-attach [client bufnr]
   (utils.format_on_save client)
@@ -26,22 +27,10 @@
     (vim.keymap.set :n "]d" vim.diagnostic.goto_next bufopts)
     (vim.keymap.set :n :<localleader>q vim.diagnostic.setqflist bufopts)))
 
-(local typos (let [on-output (diagnostics.from_pattern ":(%d+):(%d+): (.*)" [:row :col :message])
-                   args {:command :typos
-                         :args ["--format" "brief" "-"]
-                         :to_stdin true
-                         :from_stderr true
-                         :format :line
-                         :on_output on-output}
-                   generator (null-ls.generator args)]
-               {:name :typos
-                :method null-ls.methods.DIAGNOSTICS
-                :filetypes {}
-                :generator generator}))
-
 (null-ls.setup {
                 :on_attach on-attach
-                :sources [typos
+                :sources [typos.actions
+                          typos.diagnostics
                           (builtins.diagnostics.actionlint.with {:extra_args [(.. "-config-file=" vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
                           builtins.formatting.prettierd]})
 

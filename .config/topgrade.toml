@@ -1,5 +1,5 @@
 # Same options as the command line flag
-disable = ["emacs", "gem", "vim"]
+disable = ["emacs", "gem", "vim", "system"]
 no_retry = true
 pre_sudo = true
 assume_yes = true

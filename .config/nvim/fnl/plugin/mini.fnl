@@ -18,6 +18,10 @@
 
 (local mini-pairs (require :mini.pairs))
 (mini-pairs.setup {})
+(augroup! :mini-pairs-rust
+          [[Filetype] [:rust] #(do
+                                 (mini-pairs.map_buf 0 :i :< {:action :open :pair :<> :neigh_pattern "[:]." :register {:cr false}})
+                                 (mini-pairs.map_buf 0 :i :> {:action :close :pair :<> :register {:cr false}}))])
 
 (local mini-bufremove (require :mini.bufremove))
 (mini-bufremove.setup {})
