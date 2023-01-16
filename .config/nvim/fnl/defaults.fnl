@@ -50,7 +50,8 @@
   [:tabstop 4]
   [:termguicolors true]
   [:textwidth 0]
-  [:timeout true]
+  [:timeout false]
+  [:ttimeout false]
   [:timeoutlen 350]
   [:undodir "/tmp//,."]
   [:undofile true]
@@ -61,6 +62,6 @@
   [:winminheight 0]
   [:wrap true])
 
-; (augroup! :timeout-group 
-;           [[InsertEnter] "*" "set timeout ttimeout"]
-;           [[InsertLeave] "*" "set notimeout nottimeout"])
+(augroup! :timeout-group
+          [[InsertEnter] "*" "set timeout ttimeout"]
+          [[InsertLeave] "*" "set notimeout nottimeout"])

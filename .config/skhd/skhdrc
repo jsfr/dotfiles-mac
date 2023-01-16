@@ -19,7 +19,7 @@ default, resizer < shift + cmd - 0x30 :
 # app bindings
 lalt - return    : open -a Alacritty
 lctrl + lalt - a : open -a Signal
-lctrl + lalt - e : open -a Firefox
+lctrl + lalt - e : open -a Arc
 lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
 lctrl + lalt - l : open -a Linear
 lctrl + lalt - m : open -a Mimestream
@@ -31,7 +31,7 @@ cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control
 cmd - 0x0A       : open -a Mission\ Control
 cmd - d          : rmenu_launch --prompt ❯
-cmd + shift - d  : env GITHUB_ORGS="pleo-io\npleo-oss\njsfr" rmenu_repos --prompt ❯
+cmd + shift - d  : env GITHUB_ORGS="pleo-io\njsfr" rmenu_repos --prompt ❯
 
 # use rctrl as a poor mans hyper
 rcmd + rshift + ralt + rctrl - j : skhd -k "down"

@@ -1,9 +1,16 @@
-# install fisherman if not present
-if not functions -q fisher
-  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME $HOME/.config
-  curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-  fish -c fisher
-end
+# install fundle if not present
+if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
+
+# add plugins
+fundle plugin 'jorgebucaran/fisher'
+fundle plugin 'evanlucas/fish-kubectl-completions'
+fundle plugin 'jorgebucaran/autopair.fish'
+fundle plugin 'EHfive/fish-bash2env'
+fundle plugin 'nickeb96/puffer-fish'
+fundle plugin 'oh-my-fish/plugin-aws'
+
+# initialize fundle
+fundle init
 
 # remove welcome message
 set fish_greeting ""
@@ -18,8 +25,6 @@ function abbreviations
   abbr pr "gh pr"
   abbr zap "brew uninstall --force --zap"
   abbr aum "gh pr edit --add-label \"automerge\""
-  abbr npm "pnpm"
-  abbr npx "pnpx"
   abbr p "pnpm"
   abbr px "pnpx"
   abbr tf "terraform"
@@ -56,32 +61,29 @@ if type -q zoxide
   zoxide init fish | source
 end
 
-# Hook for desk activation
-if type -q desk && test -n "$DESK_ENV"
-  source "$DESK_ENV"
-end
-
 # Enable mcfly
 if type -q mcfly
   mcfly init fish | source
 end
 
-# Source completions for OpsLevel
-if type -q opslevel
-  opslevel completion fish | source
+# Enable asdf
+set asdf_exec "/opt/homebrew/opt/asdf/libexec/asdf.fish"
+if type -q $asdf_exec
+  source $asdf_exec
 end
 
 # Add just completions
 if type -q just
-  set just_completions "$HOME/.just_completions.fish"
-  if ! type -q $just_completions
-    just --completions fish > $just_completions
-  end
-  source $just_completions
+  just --completions fish | source 
 end
 
 # Source environment variables
 bash2env source "$HOME/.profile"
+
+# Hook for desk activation
+if type -q desk && test -n "$DESK_ENV"
+  source "$DESK_ENV"
+end
 
 # Initialize prompt
 starship init fish | source

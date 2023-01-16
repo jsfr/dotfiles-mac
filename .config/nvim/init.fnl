@@ -116,6 +116,11 @@
    :config #(let [pkg (require :stabilize)] (pkg.setup))]
   [:anuvyklack/pretty-fold.nvim
    :config #(require :plugin/fold)]
+  [:folke/trouble.nvim
+   :requires [:kyazdani42/nvim-web-devicons]
+   :config #(let [pkg (require :trouble)] (pkg.setup))]
+  [:folke/todo-comments.nvim
+   :config #(let [pkg (require :todo-comments)] (pkg.setup))]
 ])
 
 {}
