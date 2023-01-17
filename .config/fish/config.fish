@@ -8,6 +8,8 @@ fundle plugin 'jorgebucaran/autopair.fish'
 fundle plugin 'EHfive/fish-bash2env'
 fundle plugin 'nickeb96/puffer-fish'
 fundle plugin 'oh-my-fish/plugin-aws'
+fundle plugin 'meaningful-ooo/sponge'
+fundle plugin 'IlanCosman/tide@v5'
 
 # initialize fundle
 fundle init
@@ -81,9 +83,4 @@ end
 bash2env source "$HOME/.profile"
 
 # Hook for desk activation
-if type -q desk && test -n "$DESK_ENV"
-  source "$DESK_ENV"
-end
-
-# Initialize prompt
-starship init fish | source
+test -n "$DESK_ENV"; and . "$DESK_ENV"; or true

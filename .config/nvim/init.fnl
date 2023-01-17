@@ -86,7 +86,6 @@
    :config #(require :plugin/search-replace)]
   [:bronson/vim-visual-star-search]
   [:tpope/vim-abolish]
-  [:dyng/ctrlsf.vim]
 
   ;; Git
   [:lewis6991/gitsigns.nvim
