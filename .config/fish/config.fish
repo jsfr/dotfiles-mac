@@ -1,5 +1,7 @@
 # install fundle if not present
-if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
+if not functions -q fundle
+  eval (curl -sfL https://git.io/fundle-install)
+end
 
 # add plugins
 fundle plugin 'jorgebucaran/fisher'
@@ -44,13 +46,9 @@ function fish_user_key_bindings
 end
 
 # tabtab source for packages
-# uninstall by removing these lines
-[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
-
-# Source docker completions
-set docker_completions "/Applications/Docker.app/Contents/Resources/etc/docker.fish-completion"
-if type -q $docker_completions
-  source $docker_completions
+set tabtab_source ~/.config/tabtab/fish/__tabtab.fish
+if test -f $tabtab_source
+  source $tabtab_source
 end
 
 # Add direnv hooks
@@ -69,8 +67,8 @@ if type -q mcfly
 end
 
 # Enable asdf
-set asdf_exec "/opt/homebrew/opt/asdf/libexec/asdf.fish"
-if type -q $asdf_exec
+set asdf_exec /opt/homebrew/opt/asdf/libexec/asdf.fish
+if test -f $asdf_exec
   source $asdf_exec
 end
 
@@ -83,4 +81,6 @@ end
 bash2env source "$HOME/.profile"
 
 # Hook for desk activation
-test -n "$DESK_ENV"; and . "$DESK_ENV"; or true
+if test -n $DESK_ENV
+  source $DESK_ENV
+end

@@ -6,9 +6,6 @@
 (global reload (require :auto-reload))
 (reload.start)
 
-; (global no_music (require :no-music))
-; (no_music.start)
-
 (global keep_rmenu_focus (require :keep-rmenu-focus))
 (keep_rmenu_focus.start)
 
@@ -20,5 +17,4 @@
                                                    :keychainItem :github_api_token}
                                           :repo :jsfr
                                           :start true})
-; (spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})
-; (spoon.SpoonInstall:andUse :Emojis {:hotkeys {:toggle [["alt"] ";"]}})
+(spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})
