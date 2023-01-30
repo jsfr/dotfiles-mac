@@ -32,7 +32,9 @@
                 :sources [typos.actions
                           typos.diagnostics
                           (builtins.diagnostics.actionlint.with {:extra_args [(.. "-config-file=" vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
-                          builtins.formatting.prettierd]})
+                          builtins.diagnostics.eslint_d
+                          builtins.formatting.prettierd
+                          builtins.diagnostics.fish]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
