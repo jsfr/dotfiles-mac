@@ -17,4 +17,4 @@
                                                    :keychainItem :github_api_token}
                                           :repo :jsfr
                                           :start true})
-(spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})
+; (spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})

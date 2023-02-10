@@ -53,7 +53,7 @@ yabai -m rule --add app="^Mimestream$" space=^9
 yabai -m rule --add app="^Slack$" space=^10
 
 ## add signals for hammerspoon yabai widget
-hs -c "spoon.YabaiSpaces:add_signals()"
+# hs -c "spoon.YabaiSpaces:add_signals()"
 
 # go through all spaces to pick up all windows
 active_space=$(yabai -m query --spaces --space | jq -r ".index")

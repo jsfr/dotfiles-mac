@@ -27,9 +27,8 @@ if [[ -z $ENV_EXPORTED ]]; then
 
     export GOPATH="$HOME/go"
     export ANDROID_HOME="$HOME/Library/Android/sdk"
-    export VOLTA_HOME="$HOME/.volta"
     export PNPM_HOME="$HOME/Library/pnpm"
-    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$VOLTA_HOME/bin:$PNPM_HOME:$PATH"
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PNPM_HOME:$PATH"
 
     export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
     export XDG_CONFIG_HOME="$HOME/.config"

@@ -3,11 +3,11 @@
 (local lspconfig (require :lspconfig))
 (local lsp-setup (require :lsp-setup))
 (local utils (require :lsp-setup.utils))
-(local {: builtins : generator &as null-ls} (require :null-ls))
-(local {: diagnostics &as helpers} (require :null-ls.helpers))
+; (local {: builtins : generator &as null-ls} (require :null-ls))
+; (local {: diagnostics &as helpers} (require :null-ls.helpers))
 (local schemastore (require :schemastore))
 (local rust-tools (require :lsp-setup.rust-tools))
-(local typos (require :typos))
+; (local typos (require :typos))
 
 (fn on-attach [client bufnr]
   (utils.format_on_save client)
@@ -27,14 +27,14 @@
     (vim.keymap.set :n "]d" vim.diagnostic.goto_next bufopts)
     (vim.keymap.set :n :<localleader>q vim.diagnostic.setqflist bufopts)))
 
-(null-ls.setup {
-                :on_attach on-attach
-                :sources [typos.actions
-                          typos.diagnostics
-                          (builtins.diagnostics.actionlint.with {:extra_args [(.. "-config-file=" vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
-                          builtins.diagnostics.eslint_d
-                          builtins.formatting.prettierd
-                          builtins.diagnostics.fish]})
+; (null-ls.setup {
+;                 :on_attach on-attach
+;                 :sources [typos.actions
+;                           typos.diagnostics
+;                           (builtins.diagnostics.actionlint.with {:extra_args [(.. "-config-file=" vim.env.XDG_CONFIG_HOME "/actionlint/actionlint.yaml")]})
+;                           builtins.diagnostics.eslint_d
+;                           builtins.formatting.prettierd
+;                           builtins.diagnostics.fish]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
