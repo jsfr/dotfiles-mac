@@ -21,7 +21,6 @@ set fish_greeting ""
 
 # define aliases
 alias ls="ls -1FvG"
-alias cfg="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # define abbreviations
 function abbreviations
@@ -79,6 +78,9 @@ end
 
 # Source environment variables
 bash2env source "$HOME/.profile"
+
+# Automatically set GIT_DIR and GIT_WORK_TREE when in the home directory
+_check_dotfiles_gitdir
 
 # Hook for desk activation
 if test -n $DESK_ENV

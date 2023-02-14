@@ -21,7 +21,7 @@ lalt - return    : open -a Alacritty
 lctrl + lalt - a : open -a Signal
 lctrl + lalt - e : open -a Arc
 lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
-lctrl + lalt - l : open -a Linear
+lctrl + lalt - l : open -a Logseq
 lctrl + lalt - m : open -a Mimestream
 lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist

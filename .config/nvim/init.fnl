@@ -102,7 +102,7 @@
 
   ;; Misc
   [:mong8se/actually.nvim]
-  [:vimwiki/vimwiki]
+  ; [:vimwiki/vimwiki]
   [:mbbill/undotree
    :config #(require :plugin/undotree)]
   [:terryma/vim-expand-region

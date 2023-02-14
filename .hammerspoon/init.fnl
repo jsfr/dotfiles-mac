@@ -6,8 +6,11 @@
 (global reload (require :auto-reload))
 (reload.start)
 
-(global keep_rmenu_focus (require :keep-rmenu-focus))
-(keep_rmenu_focus.start)
+(global no-music (require :no-music))
+(no-music.start)
+
+(global keep-rmenu-focus (require :keep-rmenu-focus))
+(keep-rmenu-focus.start)
 
 (hs.loadSpoon :SpoonInstall)
 (set spoon.SpoonInstall.repos.jsfr {:url "https://github.com/jsfr/Spoons"
@@ -17,4 +20,4 @@
                                                    :keychainItem :github_api_token}
                                           :repo :jsfr
                                           :start true})
-; (spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})
+(spoon.SpoonInstall:andUse :YabaiSpaces {:repo :jsfr})
