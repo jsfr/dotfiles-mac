@@ -3,11 +3,9 @@ tap "buo/cask-upgrade" # cask upgrade tool, used by topgrade
 tap "cantino/mcfly"
 tap "cristianoliveira/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-drivers" # yubico
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "koekeishiya/formulae" # yabai + skhd
 tap "opslevel/tap"

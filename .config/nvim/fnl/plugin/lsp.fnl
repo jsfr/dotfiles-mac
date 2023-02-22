@@ -54,7 +54,7 @@
                             :terraformls {}
                             :tflint {}
                             :tsserver {:root_dir (lspconfig.util.root_pattern :package.json)}
-                            :yamlls {:settings {:yaml {:schemas {"https://raw.githubusercontent.com/pleo-oss/file-distributor/main/src/template-schema.json" "/.github/templates.yaml"
+                            :yamlls {:settings {:yaml {:schemas {"https://raw.githubusercontent.com/pleo-io/file-distributor/main/src/files-schema.json" "/.github/templates.yaml"
                                                                  "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
                                                        :schemaStore {:enable true
                                                                      :url "https://www.schemastore.org/api/json/catalog.json"}}}}
