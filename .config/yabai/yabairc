@@ -47,6 +47,7 @@ yabai -m rule --add app="^rmenu$" border=off layer=above manage=off sticky=on
 yabai -m rule --add app="^Access$" border=off layer=above manage=off
 yabai -m rule --add app="^SongsOfConquest$" border=off manage=off
 yabai -m rule --add app="^GOG Galaxy.*$" border=off manage=off
+yabai -m rule --add app="^Okta Verify.*$" manage=off
 
 yabai -m rule --add app="^Signal$" space=^8
 yabai -m rule --add app="^Mimestream$" space=^9

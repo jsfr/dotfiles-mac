@@ -1,9 +1,11 @@
 {
 	"dependencies": {
-		"@fsouza/prettierd": "^0.23.2",
+		"@fsouza/prettierd": "^0.23.3",
 		"aws-sso-credentials-getter": "^1.2.2",
 		"eslint_d": "^12.2.1",
-		"snyk": "^1.1109.0",
-		"typescript": "^4.9.5"
+		"live-server": "^1.2.2",
+		"snyk": "^1.1114.0",
+		"typescript": "^4.9.5",
+		"yarn": "^1.22.19"
 	}
 }
