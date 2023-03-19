@@ -26,6 +26,9 @@ nnoremap <leader>p :action SearchEverywhere<CR>
 
 nnoremap gr :action FindUsages<CR>
 
+vnoremap <leader>ca :action ShowIntentionActions<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
 vnoremap - :action ActivateProjectToolWindow<CR>
 nnoremap - :action ActivateProjectToolWindow<CR>
 
