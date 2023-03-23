@@ -28,8 +28,8 @@ if [[ -z $ENV_EXPORTED ]]; then
     export GOPATH="$HOME/go"
     export ANDROID_HOME="$HOME/Library/Android/sdk"
     export PNPM_HOME="$HOME/Library/pnpm"
-    export BUN_HOME="$HOME/.bun/bin"
-    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PNPM_HOME:$BUN_HOME:$PATH"
+    export BUN_BIN="$HOME/.bun/bin"
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PNPM_HOME:$BUN_BIN:$PATH"
 
     export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
     export XDG_CONFIG_HOME="$HOME/.config"
