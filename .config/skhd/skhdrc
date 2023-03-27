@@ -20,7 +20,7 @@ default, resizer < shift + cmd - 0x30 :
 lalt - return    : open -a Alacritty
 lctrl + lalt - a : open -a Signal
 lctrl + lalt - e : open -a Arc
-lctrl + lalt - i : open -a IntelliJ\ IDEA\ CE
+lctrl + lalt - i : open -a IntelliJ\ IDEA
 lctrl + lalt - l : open -a Logseq
 lctrl + lalt - m : open -a Mimestream
 lctrl + lalt - s : open -a Slack
