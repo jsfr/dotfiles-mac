@@ -490,9 +490,9 @@ colors:
 #  args:
 #    - --login
 shell:
- program: /opt/homebrew/bin/bash
+ program: /opt/homebrew/bin/fish
  args:
-   - -l
+   # - -l
    - -c
    -  "tmux -S ~/.tmux-session new-session -s alacritty -A"
 
