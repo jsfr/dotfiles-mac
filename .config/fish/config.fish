@@ -12,8 +12,8 @@ fundle plugin 'nickeb96/puffer-fish'
 fundle plugin 'oh-my-fish/plugin-aws'
 fundle plugin 'meaningful-ooo/sponge'
 fundle plugin 'IlanCosman/tide@v5'
-fundle plugin 'oh-my-fish/plugin-foreign-env'
-fundle plugin 'deather/omf-sdk'
+# fundle plugin 'oh-my-fish/plugin-foreign-env'
+# fundle plugin 'deather/omf-sdk'
 
 # initialize fundle
 fundle init

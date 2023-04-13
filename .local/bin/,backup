@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-BACKUP="$HOME/backup"
+set -l BACKUP "$HOME/backup"
 
 rm -r "$BACKUP"
 mkdir "$BACKUP"
@@ -10,6 +10,7 @@ gup list | awk -F '[ @]' '{print $2}' > "$BACKUP/go.txt"
 pipx list --json | jq -r '.venvs | keys | .[]' > "$BACKUP/pipx.txt"
 cargo install --list | grep ":" | awk '{print $1}' > "$BACKUP/cargo.txt"
 asdf list > "$BACKUP/asdf.txt"
+sdk current > "$BACKUP/sdkman.txt"
 
 mkdir "$BACKUP/ssh"
 cp -r ~/.ssh/id* "$BACKUP/ssh/"

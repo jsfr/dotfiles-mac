@@ -26,7 +26,7 @@ if [[ -z $ENV_EXPORTED ]]; then
 
 
     export GOPATH="$HOME/go"
-    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    # export ANDROID_HOME="$HOME/Library/Android/sdk"
     export PNPM_HOME="$HOME/Library/pnpm"
     export BUN_BIN="$HOME/.bun/bin"
     export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PNPM_HOME:$BUN_BIN:$PATH"
