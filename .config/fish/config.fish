@@ -12,8 +12,6 @@ fundle plugin 'nickeb96/puffer-fish'
 fundle plugin 'oh-my-fish/plugin-aws'
 fundle plugin 'meaningful-ooo/sponge'
 fundle plugin 'IlanCosman/tide@v5'
-# fundle plugin 'oh-my-fish/plugin-foreign-env'
-# fundle plugin 'deather/omf-sdk'
 
 # initialize fundle
 fundle init
@@ -30,8 +28,6 @@ function abbreviations
   abbr pr "gh pr"
   abbr zap "brew uninstall --force --zap"
   abbr aum "gh pr edit --add-label \"automerge\""
-  abbr p "pnpm"
-  abbr px "pnpx"
   abbr tf "terraform"
 end
 abbreviations

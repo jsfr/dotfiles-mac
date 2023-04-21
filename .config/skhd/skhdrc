@@ -27,7 +27,8 @@ lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist
 lctrl + lalt - z : open -a zoom.us
 lctrl + lalt - p : open -a 1Password
-lctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
+lctrl + lalt - c : open -a Cron
+# lctrl + lalt - c : open "slack://app?team=T04049B5K&id=ADZ494LHY&tab=home"
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control
 cmd - 0x0A       : open -a Mission\ Control
