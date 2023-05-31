@@ -2,7 +2,7 @@ if [[ -z $ENV_EXPORTED ]]; then
     export PAGER="less"
     export FZF_DEFAULT_COMMAND="fd -It f"
     export EDITOR="nvim"
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
     export LANG="en_US.UTF-8"
     export LC_CTYPE="$LANG"
