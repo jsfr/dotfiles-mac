@@ -1,11 +1,5 @@
 if test -z $DESK_EXPORTED
-    set -x KUBECONFIG $HOME/.kube/config-eks-production
-    set -x VAULT_ADDR http://vault.k8s-product.vault.production.internal
-    set -x AWS_PROFILE production
-
-    open -a Access
-    ssocred production
-
+    ,set-pleo-env production
     set -x DESK_EXPORTED true
 end
 

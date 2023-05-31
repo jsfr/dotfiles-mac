@@ -55,7 +55,7 @@ lalt + cmd - l : skhd -k "ctrl + cmd - q"
 lalt + cmd - v : sleep 1 ; skhd -t "$(pbpaste)"
 
 # restart yabai
-lalt + cmd - r : brew services restart yabai
+lalt + cmd - r : /opt/homebrew/bin/yabai --restart-service
 
 # focus window
 lalt - h : yabai -m window --focus west

@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"@fsouza/prettierd": "^0.23.3",
+		"@fsouza/prettierd": "^0.23.4",
 		"aws-sso-credentials-getter": "^1.2.2",
 		"eslint_d": "^12.2.1",
 		"live-server": "^1.2.2",

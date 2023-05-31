@@ -26,16 +26,15 @@ if [[ -z $ENV_EXPORTED ]]; then
 
 
     export GOPATH="$HOME/go"
-    # export ANDROID_HOME="$HOME/Library/Android/sdk"
     export PNPM_HOME="$HOME/Library/pnpm"
     export BUN_BIN="$HOME/.bun/bin"
-    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PNPM_HOME:$BUN_BIN:$PATH"
+    export POSTGRES_BIN="/opt/homebrew/opt/postgresql@15/bin"
+    export RANCHER_BIN="$HOME/.rd/bin"
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PNPM_HOME:$BUN_BIN:$POSTGRES_BIN:$RANCHER_BIN:$PATH"
 
     export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
     export XDG_CONFIG_HOME="$HOME/.config"
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-
-    export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
 
     export ENV_EXPORTED="exported"
 fi
