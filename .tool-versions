@@ -1,1 +1,3 @@
 nodejs lts
+kubectl 1.22.17
+pnpm 8.6.0

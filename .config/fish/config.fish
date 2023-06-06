@@ -63,12 +63,6 @@ if type -q mcfly
   mcfly init fish | source
 end
 
-# Enable asdf
-set asdf_exec /opt/homebrew/opt/asdf/libexec/asdf.fish
-if test -f $asdf_exec
-  source $asdf_exec
-end
-
 # Add just completions
 if type -q just
   just --completions fish | source 
@@ -76,6 +70,12 @@ end
 
 # Source environment variables
 bash2env source "$HOME/.profile"
+
+# Enable asdf
+set asdf_exec /opt/homebrew/opt/asdf/libexec/asdf.fish
+if test -f $asdf_exec
+  source $asdf_exec
+end
 
 # Automatically set GIT_DIR and GIT_WORK_TREE when in the home directory
 _check_dotfiles_gitdir
