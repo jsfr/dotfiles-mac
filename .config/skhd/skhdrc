@@ -25,7 +25,7 @@ lctrl + lalt - l : open -a Logseq
 lctrl + lalt - m : open -a Mimestream
 lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist
-lctrl + lalt - z : open -a zoom.us
+# lctrl + lalt - z : open -a zoom.us
 lctrl + lalt - p : open -a 1Password
 lctrl + lalt - c : open -a Cron
 cmd - escape     : open -a Mission\ Control

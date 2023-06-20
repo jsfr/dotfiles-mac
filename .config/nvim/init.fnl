@@ -120,6 +120,7 @@
    :config #(let [pkg (require :trouble)] (pkg.setup))]
   [:folke/todo-comments.nvim
    :config #(let [pkg (require :todo-comments)] (pkg.setup))]
+  [:gennaro-tedesco/nvim-jqx]
 ])
 
 {}
