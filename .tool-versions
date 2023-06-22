@@ -1,4 +1,4 @@
-nodejs 20.3.0
+nodejs 20.3.1
 kubectl 1.22.17
-pnpm 8.6.1
-bun 0.6.8
+pnpm 8.6.3
+bun 0.6.9

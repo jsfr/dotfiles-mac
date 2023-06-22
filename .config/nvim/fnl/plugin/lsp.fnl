@@ -6,7 +6,7 @@
 (local {: builtins : generator &as null-ls} (require :null-ls))
 (local {: diagnostics &as helpers} (require :null-ls.helpers))
 (local schemastore (require :schemastore))
-(local rust-tools (require :lsp-setup.rust-tools))
+(local rust-tools (require :rust-tools))
 (local typos (require :typos))
 
 (fn on-attach [client bufnr]

@@ -25,7 +25,7 @@ lctrl + lalt - l : open -a Logseq
 lctrl + lalt - m : open -a Mimestream
 lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist
-# lctrl + lalt - z : open -a zoom.us
+lctrl + lalt - z : pgrep -fi zoom.us && open -a zoom.us
 lctrl + lalt - p : open -a 1Password
 lctrl + lalt - c : open -a Cron
 cmd - escape     : open -a Mission\ Control
@@ -33,16 +33,6 @@ cmd - 0x32       : open -a Mission\ Control
 cmd - 0x0A       : open -a Mission\ Control
 # cmd - d          : rmenu_launch --prompt ❯
 cmd + shift - d  : env GITHUB_ORGS="pleo-io\njsfr" rmenu_repos --prompt ❯
-
-# use rctrl as a poor mans hyper
-# rcmd + rshift + ralt + rctrl - j : skhd -k "down"
-# rcmd + rshift + ralt + rctrl - k : skhd -k "up"
-# rcmd + rshift + ralt + rctrl - h : skhd -k "left"
-# rcmd + rshift + ralt + rctrl - l : skhd -k "right"
-# rcmd + rshift + ralt + rctrl + lshift - j : skhd -k "shift - down"
-# rcmd + rshift + ralt + rctrl + lshift - k : skhd -k "shift - up"
-# rcmd + rshift + ralt + rctrl + lshift - h : skhd -k "shift - left"
-# rcmd + rshift + ralt + rctrl + lshift - l : skhd -k "shift - right"
 
 # quit focused app
 shift + cmd - q : osascript -e "quit app \"$(yabai -m query --windows --window | jq -r .app)\""
