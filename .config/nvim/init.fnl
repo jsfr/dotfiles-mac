@@ -1,5 +1,4 @@
 (import-macros {: g! : color!} :hibiscus.vim)
-(import-macros {: paq!} :paq-macros)
 
 ;;; Defaults
 (require :defaults)
@@ -7,120 +6,110 @@
 ;;; Mappings
 (require :mappings)
 
-;;; Add packages
-(paq!
+(local lazy (require :lazy))
+(lazy.setup
  [
-  ;; Self-manage tangerine, hibiscus, impatient and paq
+  ;; Fennel setup
   [:udayvir-singh/tangerine.nvim]
   [:udayvir-singh/hibiscus.nvim]
-  [:lewis6991/impatient.nvim]
-  [:savq/paq-nvim]
 
-  ;; Set a theme
-  [:rebelot/kanagawa.nvim
-   :config #(color! :kanagawa)]
+  ;; Colorscheme
+  {1 :rebelot/kanagawa.nvim
+   :lazy false
+   :priority 1000
+   :config #(color! :kanagawa)}
 
   ;; Syntax
-  [:NoahTheDuke/vim-just]
   [:tridactyl/vim-tridactyl]
-  [:bakpakin/fennel.vim]
-  [:nvim-treesitter/nvim-treesitter
-   :requires [:IndianBoy42/tree-sitter-just]
-   :run #(vim.cmd :TSUpdateSync)
-   :config #(require :plugin/treesitter)]
-  [:https://github.com/koka-lang/koka
-   :opt true
-   :config #(vim.cmd "packadd koka/support/vim")]
+  {1 :bakpakin/fennel.vim
+   :ft :fennel}
+  {1 :nvim-treesitter/nvim-treesitter
+   :dependencies [{1 :IndianBoy42/tree-sitter-just
+                   :ft :just}]
+   :build #(vim.cmd :TSUpdateSync)
+   :config #(require :plugin/treesitter)}
 
   ;; Tmux
-  [:numToStr/Navigator.nvim 
-   :config #(require :plugin/tmux)]
+  {1 :numToStr/Navigator.nvim 
+   :config #(require :plugin/tmux)}
 
   ;; UI
-  [:itchyny/lightline.vim
-   :requires [:josa42/nvim-lightline-lsp]
-   :config #(require :plugin/statusline)]
-  [:gelguy/wilder.nvim
-   :config #(require :plugin/cmdline)]
-  [:stevearc/dressing.nvim
-   :config #(let [pkg (require :dressing)] (pkg.setup))]
+  {1 :itchyny/lightline.vim
+   :dependencies [:josa42/nvim-lightline-lsp]
+   :config #(require :plugin/statusline)}
+  {1 :gelguy/wilder.nvim
+   :config #(require :plugin/cmdline)}
+  [:stevearc/dressing.nvim]
+  
 
   ;; LSP and Formatting
-  [:junnplus/lsp-setup.nvim
-   :requires [:b0o/schemastore.nvim
-              :jose-elias-alvarez/null-ls.nvim
-              :neovim/nvim-lspconfig
-              :nvim-lua/plenary.nvim
-              :poljar/typos.nvim
-              :simrat39/rust-tools.nvim
-              :williamboman/mason-lspconfig.nvim
-              :williamboman/mason.nvim ]
-   :config #(require :plugin/lsp)]
+  {1 :junnplus/lsp-setup.nvim
+   :dependencies [:b0o/schemastore.nvim
+                  :jose-elias-alvarez/null-ls.nvim
+                  :neovim/nvim-lspconfig
+                  :nvim-lua/plenary.nvim
+                  :poljar/typos.nvim
+                  :simrat39/rust-tools.nvim
+                  :williamboman/mason-lspconfig.nvim
+                  :williamboman/mason.nvim]
+   :config #(require :plugin/lsp)}
 
   ;; Snippets
-  [:hrsh7th/vim-vsnip
-   :requires [:rafamadriz/friendly-snippets]]
+  {1 :hrsh7th/vim-vsnip
+   :dependencies [:rafamadriz/friendly-snippets]}
 
   ;; Completion
-  [:hrsh7th/nvim-cmp
-   :requires [:hrsh7th/cmp-nvim-lsp
-              :hrsh7th/cmp-buffer
-              :hrsh7th/cmp-path
-              :hrsh7th/cmp-vsnip
-              ; :Olical/conjure
-              ; :PaterJason/cmp-conjure
-              ]
-   :config #(require :plugin/completion)]
+  {1 :hrsh7th/nvim-cmp
+   :dependencies [:hrsh7th/cmp-nvim-lsp
+                  :hrsh7th/cmp-buffer
+                  :hrsh7th/cmp-path
+                  :hrsh7th/cmp-vsnip
+                  ]
+   :config #(require :plugin/completion)}
 
   ;; Mini.vim
-  [:echasnovski/mini.nvim
-   :config #(require :plugin/mini)]
+  {1 :echasnovski/mini.nvim
+   :config #(require :plugin/mini)}
 
   ;; Selectors
-  [:ibhagwan/fzf-lua
-   :config #(require :plugin/selector)]
+  {1 :ibhagwan/fzf-lua
+   :config #(require :plugin/selector)}
 
   ;; Search and Replace
-  [:windwp/nvim-spectre
-   :requires [:nvim-lua/plenary.nvim]
-   :config #(require :plugin/search-replace)]
+  {1 :windwp/nvim-spectre
+   :dependencies [:nvim-lua/plenary.nvim]
+   :config #(require :plugin/search-replace)}
   [:bronson/vim-visual-star-search]
   [:tpope/vim-abolish]
 
   ;; Git
-  [:lewis6991/gitsigns.nvim
-   :requires [:nvim-lua/plenary.nvim] 
-   :config #(require :plugin/gitsigns)]
-  [:ruifm/gitlinker.nvim
-   :config #(let [pkg (require :gitlinker)] (pkg.setup))]
+  {1 :lewis6991/gitsigns.nvim
+   :dependencies [:nvim-lua/plenary.nvim] 
+   :config #(require :plugin/gitsigns)}
+  [:ruifm/gitlinker.nvim]
 
   ;; Project env
-  [:ahmedkhalf/project.nvim
-   :config #(let [pkg (require :project_nvim)] (pkg.setup {}))]
+  {1 :ahmedkhalf/project.nvim
+   :main :project_nvim}
   [:editorconfig/editorconfig-vim]
   [:direnv/direnv.vim]
 
   ;; Misc
   [:mong8se/actually.nvim]
-  ; [:vimwiki/vimwiki]
-  [:mbbill/undotree
-   :config #(require :plugin/undotree)]
-  [:terryma/vim-expand-region
-   :config #(require :plugin/expand-region)]
+  {1 :mbbill/undotree
+   :config #(require :plugin/undotree)}
+  {1 :terryma/vim-expand-region
+   :config #(require :plugin/expand-region)}
   [:tpope/vim-eunuch]
   [:tpope/vim-repeat]
-  [:nmac427/guess-indent.nvim
-   :config #(let [pkg (require :guess-indent)] (pkg.setup))]
-  [:luukvbaal/stabilize.nvim
-   :config #(let [pkg (require :stabilize)] (pkg.setup))]
-  [:anuvyklack/pretty-fold.nvim
-   :config #(require :plugin/fold)]
-  [:folke/trouble.nvim
-   :requires [:kyazdani42/nvim-web-devicons]
-   :config #(let [pkg (require :trouble)] (pkg.setup))]
-  [:folke/todo-comments.nvim
-   :config #(let [pkg (require :todo-comments)] (pkg.setup))]
+  [:nmac427/guess-indent.nvim]
+  [:luukvbaal/stabilize.nvim]
+  {1 :anuvyklack/pretty-fold.nvim
+   :config #(require :plugin/fold)}
+  {1 :folke/trouble.nvim
+   :dependencies [:kyazdani42/nvim-web-devicons]}
+  [:folke/todo-comments.nvim]
   [:gennaro-tedesco/nvim-jqx]
-])
+] {:performance {:reset_packpath false}})
 
 {}

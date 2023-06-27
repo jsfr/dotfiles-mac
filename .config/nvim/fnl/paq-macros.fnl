@@ -20,7 +20,7 @@
   [cpkgs configs])
  (local [pkgs configs] (split-pkgs-and-configs input))
  (local output [])
- (table.insert output `((require :paq) ,pkgs))
+ (table.insert output `((require :lazy) ,pkgs))
  (each [_ config (ipairs configs)]
                  (table.insert output `(,config)))
  output
