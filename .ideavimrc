@@ -39,8 +39,8 @@ nnoremap <leader>bd :action VimWindowClose<CR>
 nnoremap gcc :action CommentByLineComment<CR>
 vnoremap gc :<BS><BS><BS><BS><BS>action VimVisualSwapSelections<CR>:action CommentByLineComment<CR><ESC>gv
 
-nnoremap [l :action GotoPreviousError<CR>
-nnoremap ]l :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
 nnoremap <leader>ll :action ShowErrorDescription<CR>
 
 " Moving blocks of text in visual mode

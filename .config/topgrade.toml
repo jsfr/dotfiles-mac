@@ -1,3 +1,4 @@
+[misc]
 # Same options as the command line flag
 disable = ["emacs", "gem", "vim", "system"]
 no_retry = true
