@@ -27,17 +27,17 @@ fi
 eval "$(zoxide init zsh)"
 
 # automatically set git environment for dotfiles 
-_check_dotfiles_gitdir () {
+# remember to disable POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN in .p10k.zsh
+# and to set the worktree of ~/.dotfiles to $HOME by using: git config --local core.worktree $HOME
+_check_dotfiles_gitdir () { 
     emulate -L zsh
 
     local dotfiles_gitdir="${HOME}/.dotfiles"
 
     if [ "${PWD}" = "${HOME}" ]; then
         export GIT_DIR="${dotfiles_gitdir}"
-        export GIT_WORK_TREE="${HOME}"
     else
         [ "$GIT_DIR" = "$dotfiles_gitdir" ] && unset GIT_DIR
-        [ "$GIT_WORK_TREE" = "$HOME" ] && unset GIT_WORK_TREE
     fi
 }
 
