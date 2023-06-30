@@ -6,5 +6,6 @@ zchee/zsh-completions
 marlonrichert/zsh-autocomplete
 mroth/evalcache
 hlissner/zsh-autopair
+Amar1729/yabai-zsh-completions
 
 # vim: ft=zsh sw=4 ts=4 et

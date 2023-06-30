@@ -1,5 +1,5 @@
 nodejs 20.3.1
 kubectl 1.22.17
-pnpm 8.6.3
-bun 0.6.11
+pnpm 8.6.5
+bun 0.6.12
 yarn 1.22.19

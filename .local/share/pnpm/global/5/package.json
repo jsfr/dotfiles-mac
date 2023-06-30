@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"eslint_d": "^12.2.1",
+		"ulid": "^2.3.0",
+		"aws-sso-credentials-getter": "^1.2.2"
+	}
+}

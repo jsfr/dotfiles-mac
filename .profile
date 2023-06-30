@@ -35,7 +35,8 @@ if [[ -z $ENV_EXPORTED ]]; then
 
     export GO_BIN_PATH="$GOPATH/bin"
     export CARGO_BIN_PATH="$HOME/.cargo/bin"
-    export PNPM_BIN_PATH="$HOME/Library/pnpm"
+    export PNPM_HOME="$HOME/Library/pnpm"
+    export PNPM_BIN_PATH="$PNPM_HOME"
     export POSTGRES_BIN_PATH="/opt/homebrew/opt/postgresql@15/bin"
     export RANCHER_BIN_PATH="$HOME/.rd/bin"
     export LOCAL_BIN_PATH="$HOME/.local/bin"

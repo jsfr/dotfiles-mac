@@ -18,7 +18,7 @@ default, resizer < shift + cmd - 0x30 :
 
 # app bindings
 lalt - return    : open -a Alacritty
-lctrl + lalt - a : open -a Signal
+lctrl + lalt - a : open -a Beeper
 lctrl + lalt - e : open -a Arc
 lctrl + lalt - i : open -a IntelliJ\ IDEA
 lctrl + lalt - l : open -a Logseq
