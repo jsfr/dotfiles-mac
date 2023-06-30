@@ -5,3 +5,6 @@ zsh-users/zsh-completions
 zchee/zsh-completions
 marlonrichert/zsh-autocomplete
 mroth/evalcache
+hlissner/zsh-autopair
+
+# vim: ft=zsh sw=4 ts=4 et

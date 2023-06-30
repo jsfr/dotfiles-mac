@@ -2,25 +2,30 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # source profile
-if [ -f ~/.profile ]; then
-    source ~/.profile
+if [ -f "${HOME}/.profile" ]; then
+    source "${HOME}/.profile"
 fi
 
 # Antidote setup
-ANTIDOTE_DIR=${ZDOTDIR:-~}/.antidote
-
-if ! [ -f ${ANTIDOTE_DIR}/antidote.zsh ]; then
+ANTIDOTE_DIR="${ZDOTDIR:-$HOME}/.antidote"
+if ! [ -f "${ANTIDOTE_DIR}/antidote.zsh" ]; then
     git clone --depth=1 https://github.com/mattmc3/antidote.git ${ANTIDOTE_DIR}
 fi
 
 # source antidote
-source ${ANTIDOTE_DIR}/antidote.zsh
+source "${ANTIDOTE_DIR}/antidote.zsh"
 
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+# set plugin configuration
+zstyle ':antidote:bundle' file "${ZDOTDIR:-$HOME}/.zplugins"
+zstyle ':antidote:static' file "${ZDOTDIR:-$HOME}/.zplugins.zsh"
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+zstyle ':antidote:plugin:*' defer-options '-p'
+
+# initialize plugins statically with ${ZDOTDIR:-~}/.zplugins
 antidote load
 
 # initialize atuin
@@ -30,12 +35,12 @@ _evalcache atuin init zsh
 _evalcache zoxide init zsh
 
 # initialize asdf
-source $(brew --prefix asdf)/libexec/asdf.sh
+source "$(brew --prefix asdf)/libexec/asdf.sh"
 
-# automatically set git environment for dotfiles 
+# automatically set git environment for dotfiles
 # remember to disable POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN in .p10k.zsh
 # and to set the worktree of ~/.dotfiles to $HOME by using: git config --local core.worktree $HOME
-_check_dotfiles_gitdir () { 
+_check_dotfiles_gitdir () {
     emulate -L zsh
 
     local dotfiles_gitdir="${HOME}/.dotfiles"
@@ -50,20 +55,13 @@ autoload -U add-zsh-hook
 add-zsh-hook chpwd _check_dotfiles_gitdir
 _check_dotfiles_gitdir
 
-# # completions
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-# autoload -U compinit; compinit
-# # function to easily reload completions
-# _reload_completions () {
-#     rm -f ${HOME}/.zcompdump
-#     compinit
-# }
+# autocomplete
 zstyle ':autocomplete:*' recent-dirs zoxide
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 
+# set options
+setopt autocd
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# bun completions
-[ -s "/Users/jens/.bun/_bun" ] && source "/Users/jens/.bun/_bun"
