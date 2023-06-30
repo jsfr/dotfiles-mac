@@ -8,15 +8,10 @@ skip_notify = true
 
 # Custom commands
 [commands]
-"Golang tools (gup)" = "/Users/jens/go/bin/gup update"
-"Update Lazy.nvim" = "/opt/homebrew/bin/nvim --headless \"+Lazy! sync\" +qa"
-"Update Mason.nvim" = "/opt/homebrew/bin/nvim --headless +MasonUpdate +qa"
-"Update pleo-io/pleo" = "cd /Users/jens/Repos/github.com/pleo-io/pleo && git pull"
+"Golang (gup)" = "/Users/jens/go/bin/gup update"
+"Neovim (lazy.nvim)" = "/opt/homebrew/bin/nvim --headless \"+Lazy! sync\" +qa"
+"Neovim (mason.nvim)" = "/opt/homebrew/bin/nvim --headless +MasonUpdate +qa"
+"Git (pleo-io/pleo)" = "cd /Users/jens/Repos/github.com/pleo-io/pleo && git pull"
 
 [post_commands]
 "Update Yabai Sha" = "/Users/jens/.local/bin/,update-yabai"
-
-# Additional git repositories to pull
-# [git]
-# max_concurrency = 5
-# repos = ["~/Repos/github.com/pleo-io/pleo"]
