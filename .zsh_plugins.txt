@@ -1,5 +1,7 @@
 romkatv/powerlevel10k
-zsh-users/zsh-completions
-belak/zsh-utils path:completion
-Aloxaf/fzf-tab
 zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting
+zsh-users/zsh-completions
+zchee/zsh-completions
+marlonrichert/zsh-autocomplete
+mroth/evalcache

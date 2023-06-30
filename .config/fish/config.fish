@@ -59,8 +59,8 @@ if type -q zoxide
 end
 
 # Enable mcfly
-if type -q mcfly
-  mcfly init fish | source
+if type -q atuin
+  atuin init fish | source
 end
 
 # Add just completions

@@ -32,7 +32,9 @@
                 :sources [typos.actions
                           typos.diagnostics
                           builtins.diagnostics.actionlint
-                          builtins.diagnostics.fish]})
+                          builtins.diagnostics.zsh
+                          builtins.diagnostics.fish
+                          builtins.formatting.beautysh]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
