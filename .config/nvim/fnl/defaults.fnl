@@ -46,6 +46,7 @@
   [:softtabstop 4]
   [:spell false]
   [:splitbelow true]
+  [:splitkeep :screen]
   [:splitright true]
   [:tabstop 4]
   [:termguicolors true]

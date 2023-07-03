@@ -17,24 +17,26 @@
   [:udayvir-singh/tangerine.nvim]
 
   ;; Colorscheme
-  [:rebelot/kanagawa.nvim
+  [:folke/tokyonight.nvim
    :lazy false
    :priority 1000
-   :config #(color! :kanagawa)]
+   :config (fn []
+             (local pkg (require :tokyonight))
+             (pkg.setup {})
+             (color! :tokyonight-storm))]
 
   ;; Syntax
   [:tridactyl/vim-tridactyl]
   [:bakpakin/fennel.vim
    :ft :fennel]
   [:nvim-treesitter/nvim-treesitter
-   :dependencies [{1 :IndianBoy42/tree-sitter-just
-                   :ft :just}]
+   :dependencies [:IndianBoy42/tree-sitter-just]
    :build #(vim.cmd :TSUpdateSync)
    :config #(require :plugin/treesitter)]
 
   ;; Tmux
-  [:numToStr/Navigator.nvim 
-   :config #(require :plugin/tmux)]
+  [:mrjones2014/smart-splits.nvim
+   :config #(require :plugin/smart-splits)]
 
   ;; UI
   [:itchyny/lightline.vim
@@ -66,8 +68,7 @@
    :dependencies [:hrsh7th/cmp-nvim-lsp
                   :hrsh7th/cmp-buffer
                   :hrsh7th/cmp-path
-                  :hrsh7th/cmp-vsnip
-                  ]
+                  :hrsh7th/cmp-vsnip]
    :config #(require :plugin/completion)]
 
   ;; Mini.vim
@@ -95,26 +96,41 @@
 
   ;; Project env
   [:ahmedkhalf/project.nvim
-   :main :project_nvim]
+   :main :project_nvim
+   :opts {}]
   [:editorconfig/editorconfig-vim]
   [:direnv/direnv.vim]
 
   ;; Misc
-  [:mong8se/actually.nvim]
+
+  [:Wansmer/treesj
+   :keys [:<space>m :<space>j :<space>s]
+   :dependencies [:nvim-treesitter/nvim-treesitter]
+   :opts {}]
+  [:mong8se/actually.nvim
+   :lazy false
+   :priority 1000]
   [:mbbill/undotree
    :config #(require :plugin/undotree)]
   [:terryma/vim-expand-region
    :config #(require :plugin/expand-region)]
   [:tpope/vim-eunuch]
   [:tpope/vim-repeat]
-  [:nmac427/guess-indent.nvim]
-  [:luukvbaal/stabilize.nvim]
+  [:nmac427/guess-indent.nvim
+   :main :guess-indent
+   :opts {}]
   [:anuvyklack/pretty-fold.nvim
-   :config #(require :plugin/fold)]
+   :main :pretty-fold
+   :opts {}
+   :lazy true
+   :event :VeryLazy]
   [:folke/trouble.nvim
-   :dependencies [:kyazdani42/nvim-web-devicons]]
-  [:folke/todo-comments.nvim]
-  [:gennaro-tedesco/nvim-jqx]
+   :dependencies [:kyazdani42/nvim-web-devicons]
+   :lazy true
+   :event :VeryLazy]
+  [:folke/todo-comments.nvim
+   :lazy true
+   :event :VeryLazy]
 ] {:defaults {:lazy false}
    :install {:colorscheme [:kanagawa]}
    :performance {:reset_packpath false}})

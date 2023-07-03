@@ -63,5 +63,9 @@ bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 # set options
 setopt autocd
 
+# aliases
+alias cask="brew install --cask"
+alias zap="brew uninstall --force --zap"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
