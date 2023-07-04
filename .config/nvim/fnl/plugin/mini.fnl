@@ -32,8 +32,8 @@
     (if (or (<= bufcount 2) (vim.tbl_contains [:help :quickfix] buftype))
       (vim.api.nvim_buf_delete 0 {})
       (mini-bufremove.delete 0 false))))
-(map! [n] :<leader>d '(delete-buffer))
-(map! [n] :<leader>x '(vim.api.nvim_buf_delete 0 {}))
+(map! [n] :<leader>d delete-buffer)
+(map! [n] :<leader>x (fn [] (vim.api.nvim_buf_delete 0 {})))
 
 
 (local mini-starter (require :mini.starter))

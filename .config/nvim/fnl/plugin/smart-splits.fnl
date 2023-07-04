@@ -3,10 +3,10 @@
 (local ss (require :smart-splits))
 
 ;; resizing splits
-(map! [n] :<A-h> ss.resize_left)
-(map! [n] :<A-j> ss.resize_down)
-(map! [n] :<A-k> ss.resize_up)
-(map! [n] :<A-l> ss.resize_right)
+(map! [n] :<C-S-H> ss.resize_left)
+(map! [n] :<C-S-J> ss.resize_down)
+(map! [n] :<C-S-K> ss.resize_up)
+(map! [n] :<C-S-L> ss.resize_right)
 
 ;; moving between splits
 (map! [n] :<C-h> ss.move_cursor_left)

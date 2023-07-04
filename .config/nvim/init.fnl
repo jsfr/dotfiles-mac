@@ -123,14 +123,11 @@
   [:anuvyklack/pretty-fold.nvim
    :main :pretty-fold
    :opts {}
-   :lazy true
    :event :VeryLazy]
   [:folke/trouble.nvim
    :dependencies [:kyazdani42/nvim-web-devicons]
-   :lazy true
    :event :VeryLazy]
   [:folke/todo-comments.nvim
-   :lazy true
    :event :VeryLazy]
 ] {:defaults {:lazy false}
    :install {:colorscheme [:tokyonight-storm]}

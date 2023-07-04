@@ -43,4 +43,4 @@
       (if
         (vim.cmd "b #")
         (vim.cmd "bprev"))))
-(map! [n] :<tab> 'mru-buffer)
+(map! [n] :<tab> mru-buffer)
