@@ -40,6 +40,16 @@ config.keys = {
     mods = "CTRL",
     action = wezterm.action.OpenLinkAtMouseCursor,
   },
+  {
+    key = '/',
+    mods = 'SUPER|SHIFT',
+    action = wezterm.action.SplitHorizontal({domain = 'CurrentPaneDomain'}),
+  },
+  {
+    key = '-',
+    mods = 'SUPER|SHIFT',
+    action = wezterm.action.SplitVertical({domain = 'CurrentPaneDomain'}),
+  },
   table.unpack(smart_splits.keys)
 }
 

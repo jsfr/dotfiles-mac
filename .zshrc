@@ -34,6 +34,9 @@ _evalcache atuin init zsh
 # initialize zoxide, must come _after_ compinit
 _evalcache zoxide init zsh
 
+# add wezterm zsh completions
+_evalcache wezterm shell-completion --shell zsh
+
 # initialize asdf
 source "$(brew --prefix asdf)/libexec/asdf.sh"
 

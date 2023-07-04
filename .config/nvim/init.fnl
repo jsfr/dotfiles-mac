@@ -45,6 +45,7 @@
   [:gelguy/wilder.nvim
    :config #(require :plugin/cmdline)]
   [:stevearc/dressing.nvim]
+  [:shortcuts/no-neck-pain.nvim]
   
 
   ;; LSP and Formatting
@@ -80,9 +81,9 @@
    :config #(require :plugin/selector)]
 
   ;; Search and Replace
-  [:windwp/nvim-spectre
-   :dependencies [:nvim-lua/plenary.nvim]
-   :config #(require :plugin/search-replace)]
+  ; [:windwp/nvim-spectre
+  ;  :dependencies [:nvim-lua/plenary.nvim]
+  ;  :config #(require :plugin/search-replace)]
   [:bronson/vim-visual-star-search]
   [:tpope/vim-abolish]
 
@@ -132,7 +133,7 @@
    :lazy true
    :event :VeryLazy]
 ] {:defaults {:lazy false}
-   :install {:colorscheme [:kanagawa]}
+   :install {:colorscheme [:tokyonight-storm]}
    :performance {:reset_packpath false}})
 
 {}

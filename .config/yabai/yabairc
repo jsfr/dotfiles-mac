@@ -50,6 +50,7 @@ yabai -m rule --add app='^GOG Galaxy.*$' border=off manage=off
 yabai -m rule --add app='^Okta Verify.*$' manage=off layer=above
 
 yabai -m rule --add app='^Signal$' space=^8
+yabai -m rule --add app='^Beeper$' space=^8
 yabai -m rule --add app='^Mimestream$' space=^9
 yabai -m rule --add app='^Cron$' space=^9
 yabai -m rule --add app='^Slack$' space=^10
@@ -62,5 +63,8 @@ active_space=$(yabai -m query --spaces --space | jq -r ".index")
 last_space=$(yabai -m query --spaces | jq -r "[.[] | .index] | max")
 for i in $(seq 1 "$last_space"); do yabai -m space --focus "$i"; sleep 0.1; done
 yabai -m space --focus "$active_space"
+
+# remap § to "Grave Accent and Tilde (`~)"
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000035}]}'
 
 echo "yabai configuration loaded.."
