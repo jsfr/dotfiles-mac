@@ -1,6 +1,9 @@
 local wezterm = require("wezterm")
 local config = {}
 
+local font = wezterm.font("MonoLisa Trial")
+local font_size = 13.0
+
 -- Window
 config.window_decorations = "RESIZE"
 
@@ -8,13 +11,13 @@ config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
 -- config.tab_bar_at_bottom = true
 config.window_frame = {
-  font = wezterm.font("JetBrainsMono Nerd Font"),
-  font_size = 13.0,
+  font = font,
+  font_size = font_size,
 }
 
 -- Font
-config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13.0
+config.font = font
+config.font_size = font_size
 
 -- Theme
 config.color_scheme = "tokyonight_storm"
@@ -28,7 +31,6 @@ config.cell_width = 0.9
 config.scrollback_lines = 10000
 
 -- Keybindings
-local smart_splits = require("smart-splits")
 config.keys = {
   {
     key = "k",
@@ -41,16 +43,24 @@ config.keys = {
     action = wezterm.action.OpenLinkAtMouseCursor,
   },
   {
-    key = '/',
-    mods = 'SUPER|SHIFT',
-    action = wezterm.action.SplitHorizontal({domain = 'CurrentPaneDomain'}),
+    key = "/",
+    mods = "SUPER|SHIFT",
+    action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
   },
   {
-    key = '-',
-    mods = 'SUPER|SHIFT',
-    action = wezterm.action.SplitVertical({domain = 'CurrentPaneDomain'}),
+    key = "-",
+    mods = "SUPER|SHIFT",
+    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
-  table.unpack(smart_splits.keys)
 }
+
+local function append_table(src_tbl, dst_tbl)
+  table.move(src_tbl, 1, #src_tbl, #dst_tbl + 1, dst_tbl)
+  return dst_tbl
+end
+
+-- smart-splits.nvim setup
+local ss = require("smart-splits")
+append_table(ss.keys, config.keys)
 
 return config

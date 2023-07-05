@@ -48,6 +48,7 @@
   [:splitbelow true]
   [:splitkeep :screen]
   [:splitright true]
+  [:swapfile false]
   [:tabstop 4]
   [:termguicolors true]
   [:textwidth 0]

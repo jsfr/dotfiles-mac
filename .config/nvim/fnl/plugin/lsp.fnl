@@ -34,7 +34,8 @@
                           builtins.diagnostics.actionlint
                           builtins.diagnostics.zsh
                           builtins.diagnostics.fish
-                          builtins.formatting.beautysh]})
+                          builtins.formatting.beautysh
+                          builtins.code_actions.ltrs]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
@@ -61,6 +62,8 @@
                                                                      :url "https://www.schemastore.org/api/json/catalog.json"}}}}
                             :zls {}
                             :nil_ls {}
+                            :lua_ls {}
+                            :marksman {}
                             }})
 
 {}
