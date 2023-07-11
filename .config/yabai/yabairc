@@ -64,7 +64,4 @@ last_space=$(yabai -m query --spaces | jq -r "[.[] | .index] | max")
 for i in $(seq 1 "$last_space"); do yabai -m space --focus "$i"; sleep 0.1; done
 yabai -m space --focus "$active_space"
 
-# remap § to "Grave Accent and Tilde (`~)"
-hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000035}]}'
-
 echo "yabai configuration loaded.."

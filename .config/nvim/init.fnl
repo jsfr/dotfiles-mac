@@ -26,26 +26,30 @@
              (color! :tokyonight-storm))]
 
   ;; Syntax
-  [:tridactyl/vim-tridactyl]
   [:bakpakin/fennel.vim
    :ft :fennel]
+  [:NoahTheDuke/vim-just
+   :ft :just]
   [:nvim-treesitter/nvim-treesitter
-   :dependencies [:IndianBoy42/tree-sitter-just]
    :build #(vim.cmd :TSUpdateSync)
    :config #(require :plugin/treesitter)]
 
   ;; Tmux
   [:mrjones2014/smart-splits.nvim
-   :config #(require :plugin/smart-splits)]
+   :config #(require :plugin/smart-splits)
+   :event :VeryLazy]
 
   ;; UI
   [:itchyny/lightline.vim
    :dependencies [:josa42/nvim-lightline-lsp]
    :config #(require :plugin/statusline)]
   [:gelguy/wilder.nvim
-   :config #(require :plugin/cmdline)]
-  [:stevearc/dressing.nvim]
-  [:shortcuts/no-neck-pain.nvim]
+   :config #(require :plugin/cmdline)
+   :event :VeryLazy]
+  [:stevearc/dressing.nvim
+   :opts {}]
+  [:shortcuts/no-neck-pain.nvim
+   :event :VeryLazy]
   
 
   ;; LSP and Formatting
@@ -58,11 +62,13 @@
                   :simrat39/rust-tools.nvim
                   :williamboman/mason-lspconfig.nvim
                   :williamboman/mason.nvim]
-   :config #(require :plugin/lsp)]
+   :config #(require :plugin/lsp)
+   :event :VeryLazy]
 
   ;; Snippets
   [:hrsh7th/vim-vsnip
-   :dependencies [:rafamadriz/friendly-snippets]]
+   :dependencies [:rafamadriz/friendly-snippets]
+   :event :VeryLazy]
 
   ;; Completion
   [:hrsh7th/nvim-cmp
@@ -70,7 +76,8 @@
                   :hrsh7th/cmp-buffer
                   :hrsh7th/cmp-path
                   :hrsh7th/cmp-vsnip]
-   :config #(require :plugin/completion)]
+   :config #(require :plugin/completion)
+   :event :VeryLazy]
 
   ;; Mini.vim
   [:echasnovski/mini.nvim
@@ -78,22 +85,30 @@
 
   ;; Selectors
   [:ibhagwan/fzf-lua
-   :config #(require :plugin/selector)]
+   :config #(require :plugin/selector)
+   :event :VeryLazy]
 
   ;; Search and Replace
   ; [:windwp/nvim-spectre
   ;  :dependencies [:nvim-lua/plenary.nvim]
   ;  :config #(require :plugin/search-replace)]
-  [:bronson/vim-visual-star-search]
-  [:tpope/vim-abolish]
+  [:bronson/vim-visual-star-search
+   :event :VeryLazy]
+  ; [:tpope/vim-abolish]
 
   ;; Git
   [:lewis6991/gitsigns.nvim
    :dependencies [:nvim-lua/plenary.nvim] 
-   :config #(require :plugin/gitsigns)]
-  [:ruifm/gitlinker.nvim]
+   :config #(require :plugin/gitsigns)
+   :event :VeryLazy]
+  [:ruifm/gitlinker.nvim
+   :dependencies [:nvim-lua/plenary.nvim]
+   :main :gitlinker
+   :opts {}
+   :keys [:<space>gy]]
   [:kdheepak/lazygit.nvim
-   :dependencies [:nvim-lua/plenary.nvim]]
+   :dependencies [:nvim-lua/plenary.nvim]
+   :event :VeryLazy]
 
   ;; Project env
   [:ahmedkhalf/project.nvim
@@ -105,18 +120,22 @@
   ;; Misc
 
   [:Wansmer/treesj
-   :keys [:<space>m :<space>j :<space>s]
    :dependencies [:nvim-treesitter/nvim-treesitter]
-   :opts {}]
+   :opts {}
+   :keys [:<space>m :<space>j :<space>s]]
   [:mong8se/actually.nvim
    :lazy false
    :priority 1000]
   [:mbbill/undotree
-   :config #(require :plugin/undotree)]
+   :config #(require :plugin/undotree)
+   :keys [:U]]
   [:terryma/vim-expand-region
-   :config #(require :plugin/expand-region)]
-  [:tpope/vim-eunuch]
-  [:tpope/vim-repeat]
+   :config #(require :plugin/expand-region)
+   :keys [:v :<C-v>]]
+  [:tpope/vim-eunuch
+   :event :VeryLazy]
+  [:tpope/vim-repeat
+   :event :VeryLazy]
   [:nmac427/guess-indent.nvim
    :main :guess-indent
    :opts {}]

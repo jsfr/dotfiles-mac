@@ -27,15 +27,13 @@
     (vim.keymap.set :n "]d" vim.diagnostic.goto_next bufopts)
     (vim.keymap.set :n :<localleader>q vim.diagnostic.setqflist bufopts)))
 
-(null-ls.setup {
-                :on_attach on-attach
+(null-ls.setup {:on_attach on-attach
                 :sources [typos.actions
                           typos.diagnostics
                           builtins.diagnostics.actionlint
                           builtins.diagnostics.zsh
                           builtins.diagnostics.fish
-                          builtins.formatting.beautysh
-                          builtins.code_actions.ltrs]})
+                          builtins.formatting.beautysh]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach

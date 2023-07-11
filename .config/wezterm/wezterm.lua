@@ -1,7 +1,8 @@
 local wezterm = require("wezterm")
 local config = {}
 
-local font = wezterm.font("MonoLisa Trial")
+-- local font = wezterm.font("MonoLisa Trial")
+local font = wezterm.font("JetBrainsMono Nerd Font")
 local font_size = 13.0
 
 -- Window
@@ -24,7 +25,7 @@ config.color_scheme = "tokyonight_storm"
 
 -- Hotfix for https://github.com/wez/wezterm/issues/3774
 config.freetype_load_target = "Light"
-config.freetype_render_target = "HorizontalLcd"
+-- config.freetype_render_target = "HorizontalLcd"
 config.cell_width = 0.9
 
 -- Scrollback

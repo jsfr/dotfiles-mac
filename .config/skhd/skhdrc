@@ -21,6 +21,7 @@ lalt - return    : open -a WezTerm
 lctrl + lalt - a : open -a Beeper
 lctrl + lalt - e : open -a Arc
 lctrl + lalt - i : open -a IntelliJ\ IDEA
+lctrl + lalt - g : open -a GoLand
 lctrl + lalt - l : open -a Logseq
 lctrl + lalt - m : open -a Mimestream
 lctrl + lalt - s : open -a Slack
