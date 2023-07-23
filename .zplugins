@@ -7,5 +7,6 @@ marlonrichert/zsh-autocomplete
 mroth/evalcache
 hlissner/zsh-autopair
 Amar1729/yabai-zsh-completions
+g-plane/pnpm-shell-completion
 
 # vim: ft=zsh sw=4 ts=4 et

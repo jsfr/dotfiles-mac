@@ -1,6 +1,9 @@
-nodejs 20.3.1
+nodejs 20.4.0
 kubectl 1.22.17
-pnpm 8.6.5
+pnpm 8.6.7
 bun 0.6.12
 yarn 1.22.19
 poetry 1.5.1
+golang system
+just system
+zig system

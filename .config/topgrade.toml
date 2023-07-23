@@ -8,7 +8,7 @@ skip_notify = true
 
 # Custom commands
 [commands]
-"Golang (gup)" = "/Users/jens/go/bin/gup update"
+# "Golang (gup)" = "/Users/jens/go/bin/gup update"
 "Neovim (lazy.nvim)" = "/opt/homebrew/bin/nvim --headless \"+Lazy! sync\" +qa"
 "Neovim (mason.nvim)" = "/opt/homebrew/bin/nvim --headless +MasonUpdate +qa"
 "Git (pleo-io/pleo)" = "cd /Users/jens/Repos/github.com/pleo-io/pleo && git pull"

@@ -9,10 +9,8 @@ set incsearch
 set wrapscan
 set ideajoin
 
-set surround
-
-nnoremap ; :
-vnoremap ; :
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 let mapleader = " "
 
@@ -21,35 +19,29 @@ map Q <Nop>
 
 inoremap jj <Esc>
 
-nnoremap <tab> :action TabSwitchPlugin.SwitchTab<CR>
-nnoremap <leader>p :action SearchEverywhere<CR>
+map <tab> <Action>(TabSwitchPlugin.SwitchTab)
+map <leader>p <Action>(SearchEverywhere)
+map gr <Action>(FindUsages)
+map <leader>ca <Action>(ShowIntentionActions)
+map - <Action>(ActivateProjectToolWindow)
+map <leader>/  <Action>(VimWindowSplitVertical)
+map <leader>-  <Action>(VimWindowSplitHorizontal)
+map <leader>bd <Action>(VimWindowClose)
 
-nnoremap gr :action FindUsages<CR>
+" map gcc <Action>(CommentByLineComment)
+" map gc :<BS><BS><BS><BS><BS>action VimVisualSwapSelections<CR>:action CommentByLineComment<CR><ESC>gv
 
-vnoremap <leader>ca :action ShowIntentionActions<CR>
-nnoremap <leader>ca :action ShowIntentionActions<CR>
-
-vnoremap - :action ActivateProjectToolWindow<CR>
-nnoremap - :action ActivateProjectToolWindow<CR>
-
-nnoremap <leader>/ :action VimWindowSplitVertical<CR>
-nnoremap <leader>- :action VimWindowSplitHorizontal<CR>
-nnoremap <leader>bd :action VimWindowClose<CR>
-
-nnoremap gcc :action CommentByLineComment<CR>
-vnoremap gc :<BS><BS><BS><BS><BS>action VimVisualSwapSelections<CR>:action CommentByLineComment<CR><ESC>gv
-
-nnoremap [d :action GotoPreviousError<CR>
-nnoremap ]d :action GotoNextError<CR>
-nnoremap <leader>ll :action ShowErrorDescription<CR>
+map [d <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
+map <leader>ll <Action>(ShowErrorDescription)
 
 " Moving blocks of text in visual mode
-vnoremap < <gv
-vnoremap > >gv
+map < <gv
+map > >gv
 
 " Indent everything
 noremap <Space>= miggvG=`i
 
-" Wrap to column
-nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
-vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+" " Wrap to column
+" nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+" vmap gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>

@@ -62,8 +62,7 @@
                   :simrat39/rust-tools.nvim
                   :williamboman/mason-lspconfig.nvim
                   :williamboman/mason.nvim]
-   :config #(require :plugin/lsp)
-   :event :VeryLazy]
+   :config #(require :plugin/lsp)]
 
   ;; Snippets
   [:hrsh7th/vim-vsnip
