@@ -6,7 +6,7 @@ rm -r "$BACKUP"
 mkdir "$BACKUP"
 
 pnpm list -g --json | jq -r '.[] | .dependencies | keys | .[]' > "$BACKUP/pnpm.txt"
-gup list | awk -F '[ @]' '{print $2}' > "$BACKUP/go.txt"
+go run github.com/nao1215/gup@latest list | awk -F '[ @]' '{print $2}' > "$BACKUP/go.txt"
 pipx list --json | jq -r '.venvs | keys | .[]' > "$BACKUP/pipx.txt"
 cargo install --list | grep ":" | awk '{print $1}' > "$BACKUP/cargo.txt"
 asdf list > "$BACKUP/asdf.txt"

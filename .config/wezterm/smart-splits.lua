@@ -40,9 +40,9 @@ local function move(key)
     action = w.action_callback(function(win, pane)
       if is_vim(pane) then
         -- pass the keys through to vim/nvim
-        win:perform_action({ SendKey = { key = key, mods = mods } }, pane)
+        win:perform_action(w.action.SendKey({ key = key, mods = mods }), pane)
       else
-        win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
+        win:perform_action(w.action.ActivatePaneDirection(direction_keys[key]), pane)
       end
     end),
   }
@@ -56,9 +56,9 @@ local function resize(key)
     action = w.action_callback(function(win, pane)
       if is_vim(pane) then
         -- pass the keys through to vim/nvim
-        win:perform_action({ SendKey = { key = key, mods = mods } }, pane)
+        win:perform_action(w.action.SendKey({ key = key, mods = mods }), pane)
       else
-        win:perform_action({ AdjustPaneSize = { direction_keys[key], 3 } }, pane)
+        win:perform_action(w.action.AdjustPaneSize({ direction_keys[key], 3 }), pane)
       end
     end),
   }
