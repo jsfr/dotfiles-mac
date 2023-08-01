@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set -l BACKUP "$HOME/backup"
+set -l BACKUP "$HOME/Google Drive/My Drive/backup"
 
 rm -r "$BACKUP"
 mkdir "$BACKUP"

@@ -49,8 +49,18 @@ config.keys = {
     action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
   },
   {
+    key = "/",
+    mods = "CTRL",
+    action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+  },
+  {
     key = "-",
     mods = "SUPER|SHIFT",
+    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+  },
+  {
+    key = "-",
+    mods = "CTRL",
     action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
 }
