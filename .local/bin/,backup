@@ -10,7 +10,8 @@ go run github.com/nao1215/gup@latest list | awk -F '[ @]' '{print $2}' > "$BACKU
 pipx list --json | jq -r '.venvs | keys | .[]' > "$BACKUP/pipx.txt"
 cargo install --list | grep ":" | awk '{print $1}' > "$BACKUP/cargo.txt"
 asdf list > "$BACKUP/asdf.txt"
-# sdk current > "$BACKUP/sdkman.txt"
 
 mkdir "$BACKUP/ssh"
 cp -r ~/.ssh/id* "$BACKUP/ssh/"
+
+zip -r "$BACKUP/arc.zip" $HOME/Library/Application\ Support/Arc/Storable*

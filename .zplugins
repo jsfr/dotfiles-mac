@@ -1,12 +1,17 @@
+# prompt
 romkatv/powerlevel10k
-zsh-users/zsh-autosuggestions
-zdharma-continuum/fast-syntax-highlighting
-zsh-users/zsh-completions
+
+# auto completions
 zchee/zsh-completions
-marlonrichert/zsh-autocomplete
-mroth/evalcache
-hlissner/zsh-autopair
+zsh-users/zsh-completions
 Amar1729/yabai-zsh-completions
 g-plane/pnpm-shell-completion
+
+# tools
+hlissner/zsh-autopair
+zsh-users/zsh-autosuggestions # fish-like auto-suggestions
+marlonrichert/zsh-autocomplete
+mroth/evalcache
+zdharma-continuum/fast-syntax-highlighting
 
 # vim: ft=zsh sw=4 ts=4 et

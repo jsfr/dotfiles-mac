@@ -40,6 +40,9 @@ _evalcache wezterm shell-completion --shell zsh
 # initialize asdf
 source "$(brew --prefix asdf)/libexec/asdf.sh"
 
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+
 # automatically set git environment for dotfiles
 # remember to disable POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN in .p10k.zsh
 # and to set the worktree of ~/.dotfiles to $HOME by using: git config --local core.worktree $HOME
@@ -71,6 +74,7 @@ alias cask="brew install --cask"
 alias zap="brew uninstall --force --zap"
 alias pr="gh pr"
 alias aum="gh pr edit --add-label \"automerge\""
+alias k="kubectl"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -1,9 +1,11 @@
 local wezterm = require("wezterm")
 local config = {}
 
--- local font = wezterm.font("MonoLisa Trial")
 local font = wezterm.font("JetBrainsMono Nerd Font")
 local font_size = 13.0
+
+-- Spawn a fish shell in login mode
+config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 
 -- Window
 config.window_decorations = "RESIZE"

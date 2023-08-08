@@ -1,15 +1,13 @@
 # Taps
 tap "artginzburg/tap" # sudo-touchid
 tap "buo/cask-upgrade" # cask upgrade tool, used by topgrade
-tap "cristianoliveira/tap"
-tap "fluxcd/tap"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
+tap "fluxcd/tap" # flux
+tap "homebrew/bundle" # brew bundle
+tap "homebrew/cask-fonts" # font-jetbrains-mono-nerd-font
+tap "homebrew/cask-versions" # wezterm-nightly
 tap "homebrew/services"
 tap "koekeishiya/formulae" # yabai + skhd
-tap "opslevel/tap"
+tap "opslevel/tap" # opslevel
 
 # Brews
 brew "actionlint"
@@ -93,6 +91,7 @@ brew "zoxide"
 # Casks
 cask "1password"
 cask "affinity-photo"
+cask "arc"
 cask "audacity"
 cask "bartender"
 cask "beeper"

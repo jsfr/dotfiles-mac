@@ -20,6 +20,7 @@ default, resizer < shift + cmd - 0x30 :
 lalt - return    : open -a WezTerm
 lctrl + lalt - a : open -a Beeper
 lctrl + lalt - e : open -a Arc
+# lctrl + lalt - e : open -a Firefox
 lctrl + lalt - i : open -a IntelliJ\ IDEA
 lctrl + lalt - g : open -a GoLand
 lctrl + lalt - l : open -a Logseq

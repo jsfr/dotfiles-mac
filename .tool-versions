@@ -1,7 +1,7 @@
 nodejs 20.4.0
 kubectl 1.22.17
 pnpm 8.6.10
-bun 0.7.0
+bun 0.7.1
 yarn 1.22.19
 poetry 1.5.1
 golang system
