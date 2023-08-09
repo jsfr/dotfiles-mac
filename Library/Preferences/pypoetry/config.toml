@@ -1,1 +1,4 @@
 cache-dir = "/Users/jens/.cache/pypoetry"
+
+[virtualenvs]
+prefer-active-python = true

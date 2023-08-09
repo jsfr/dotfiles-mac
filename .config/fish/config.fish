@@ -8,8 +8,9 @@ fundle plugin 'IlanCosman/tide@v5'
 
 # tools
 fundle plugin 'jorgebucaran/autopair.fish'
-fundle plugin 'meaningful-ooo/sponge' # remove bad history entries
+# fundle plugin 'meaningful-ooo/sponge' # remove bad history entries
 fundle plugin 'markcial/upto' # easily navigate upwards in directories
+fundle plugin 'zzhaolei/transient.fish'
 
 # completions
 # fundle plugin 'oh-my-fish/plugin-aws'
@@ -39,7 +40,8 @@ function fish_user_key_bindings
 end
 
 # enable asdf
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
+# source /opt/homebrew/opt/asdf/libexec/asdf.fish
+bkt --ttl "7days" -- rtx activate fish | source
 
 # enable direnv
 bkt --ttl "7days" -- direnv hook fish | source
