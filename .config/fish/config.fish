@@ -8,8 +8,7 @@ fundle plugin 'IlanCosman/tide@v5'
 
 # tools
 fundle plugin 'jorgebucaran/autopair.fish'
-# fundle plugin 'meaningful-ooo/sponge' # remove bad history entries
-fundle plugin 'markcial/upto' # easily navigate upwards in directories
+fundle plugin 'markcial/upto'
 fundle plugin 'zzhaolei/transient.fish'
 
 # completions
@@ -26,8 +25,9 @@ alias ls="ls -1FvG"
 abbr k "kubectl"
 abbr pr "gh pr"
 abbr zap "brew uninstall --force --zap"
-abbr aum "gh pr edit --add-label \"automerge\""
+abbr aum 'gh pr edit --add-label "automerge"'
 abbr tf "terraform"
+abbr u "upto"
 
 # define custom keybindings
 function fish_user_key_bindings
@@ -39,7 +39,7 @@ function fish_user_key_bindings
     bind \eb backward-word
 end
 
-# enable asdf
+# enable rtx / asdf
 # source /opt/homebrew/opt/asdf/libexec/asdf.fish
 bkt --ttl "7days" -- rtx activate fish | source
 
@@ -60,6 +60,7 @@ bkt --ttl "7days" -- wezterm shell-completion --shell fish | source
 _babelfish "$HOME/.profile" | source
 
 # Hook for desk activation
+set -gx SHELL (which fish)
 if test -n $DESK_ENV
     source $DESK_ENV
 end

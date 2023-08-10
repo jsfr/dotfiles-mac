@@ -6,7 +6,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config                                 \
-    mouse_follows_focus          off            \
+    mouse_follows_focus          on             \
     focus_follows_mouse          off            \
     window_origin_display        default        \
     window_placement             second_child   \
@@ -50,19 +50,22 @@ yabai -m rule --add app='^GOG Galaxy.*$' border=off manage=off
 yabai -m rule --add app='^Okta Verify.*$' manage=off layer=above
 yabai -m rule --add app='^Cron$' title="^Cron$" border=off manage=off
 
-yabai -m rule --add app='^Signal$' space=^8
-yabai -m rule --add app='^Beeper$' space=^8
-yabai -m rule --add app='^Mimestream$' space=^9
-yabai -m rule --add app='^Cron$' space=^9
-yabai -m rule --add app='^Slack$' space=^10
+yabai -m rule --add app='^Signal$' space=7
+yabai -m rule --add app='^Beeper$' space=7
+yabai -m rule --add app='^Mimestream$' space=7
+yabai -m rule --add app='^Cron$' space=8
+yabai -m rule --add app='^Slack$' space=9
 
 ## add signals for hammerspoon yabai widget
 hs -c "spoon.YabaiSpaces:add_signals()"
 
 # go through all spaces to pick up all windows
-active_space=$(yabai -m query --spaces --space | jq -r ".index")
-last_space=$(yabai -m query --spaces | jq -r "[.[] | .index] | max")
-for i in $(seq 1 "$last_space"); do yabai -m space --focus "$i"; sleep 0.1; done
-yabai -m space --focus "$active_space"
+function _yabai_iterate_spaces() {
+    active_space=$(yabai -m query --spaces --space | jq -r ".index")
+    last_space=$(yabai -m query --spaces | jq -r "[.[] | .index] | max")
+    for i in $(seq 1 "$last_space"); do yabai -m space --focus "$i"; sleep 0.1; done
+    yabai -m space --focus "$active_space"
+}
+_yabai_iterate_spaces
 
 echo "yabai configuration loaded.."

@@ -4,7 +4,3 @@ pnpm    8.6.12
 bun     0.7.3
 yarn    1.22.19
 poetry  1.5.1
-golang  system
-just    system
-zig     system
-zigmod  r86

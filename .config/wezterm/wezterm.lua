@@ -5,7 +5,7 @@ local font = wezterm.font("JetBrainsMono Nerd Font")
 local font_size = 13.0
 
 -- Spawn a fish shell in login mode
-config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
+config.default_prog = { '/opt/homebrew/bin/fish' }
 
 -- Window
 config.window_decorations = "RESIZE"
