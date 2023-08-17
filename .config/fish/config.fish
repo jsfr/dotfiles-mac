@@ -18,6 +18,9 @@ fundle plugin 'zzhaolei/transient.fish'
 # initialize fundle
 fundle init
 
+# set $SHELL
+set -gx SHELL (which fish)
+
 # define aliases
 alias ls="ls -1FvG"
 
@@ -60,7 +63,6 @@ bkt --ttl "7days" -- wezterm shell-completion --shell fish | source
 _babelfish "$HOME/.profile" | source
 
 # Hook for desk activation
-set -gx SHELL (which fish)
 if test -n $DESK_ENV
     source $DESK_ENV
 end

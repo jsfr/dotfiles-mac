@@ -1,6 +1,16 @@
 [misc]
 # Same options as the command line flag
-disable = ["emacs", "gem", "vim", "system", "yarn", "helm", "containers", "bun"]
+disable = [
+    "emacs",
+    "gem",
+    "vim",
+    "system",
+    "yarn",
+    "helm",
+    "containers",
+    "bun",
+    "nix",
+]
 no_retry = true
 pre_sudo = true
 assume_yes = true
@@ -8,10 +18,9 @@ skip_notify = true
 
 # Custom commands
 [commands]
-# "Golang (gup)" = "/Users/jens/go/bin/gup update"
-"Neovim (lazy.nvim)" = "/opt/homebrew/bin/nvim --headless \"+Lazy! sync\" +qa"
-"Neovim (mason.nvim)" = "/opt/homebrew/bin/nvim --headless +MasonUpdate +qa"
-# "Git (pleo-io/pleo)" = "cd /Users/jens/Repos/github.com/pleo-io/pleo && git pull"
+"Golang (gup)" = "go run github.com/nao1215/gup@latest update"
+"Neovim (lazy.nvim)" = "nvim --headless \"+Lazy! sync\" +qa"
+"Neovim (mason.nvim)" = "nvim --headless +MasonUpdate +qa"
 "WezTerm Nightly" = "brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 
 [post_commands]
