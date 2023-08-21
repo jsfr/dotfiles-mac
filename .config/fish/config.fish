@@ -59,6 +59,9 @@ bkt --ttl "7days" -- atuin init fish | source
 bkt --ttl "7days" -- just --completions fish | source 
 bkt --ttl "7days" -- wezterm shell-completion --shell fish | source
 
+# Pleo oo script
+source $HOME/Repos/github.com/pleo-io/pleo/bin/oo.fish
+
 # source .profile
 _babelfish "$HOME/.profile" | source
 

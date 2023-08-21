@@ -48,13 +48,13 @@ yabai -m rule --add app='^Access$' border=off layer=above manage=off
 yabai -m rule --add app='^SongsOfConquest$' border=off manage=off
 yabai -m rule --add app='^GOG Galaxy.*$' border=off manage=off
 yabai -m rule --add app='^Okta Verify.*$' manage=off layer=above
-yabai -m rule --add app='^Cron$' title="^Cron$" border=off manage=off
+# yabai -m rule --add app='^Cron$' title="^Cron$" border=off manage=off
 
-yabai -m rule --add app='^Signal$' space=7
-yabai -m rule --add app='^Beeper$' space=7
-yabai -m rule --add app='^Mimestream$' space=7
-yabai -m rule --add app='^Cron$' space=8
-yabai -m rule --add app='^Slack$' space=9
+yabai -m rule --add app='^Signal$' space=^7
+yabai -m rule --add app='^Beeper$' space=^7
+yabai -m rule --add app='^Mimestream$' space=^7
+yabai -m rule --add app='^Cron$' space=^8
+yabai -m rule --add app='^Slack$' space=^9
 
 ## add signals for hammerspoon yabai widget
 hs -c "spoon.YabaiSpaces:add_signals()"
