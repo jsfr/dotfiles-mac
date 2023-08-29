@@ -59,7 +59,7 @@
                                                        :schemaStore {:enable true
                                                                      :url "https://www.schemastore.org/api/json/catalog.json"}}}}
                             :zls {}
-                            :nil_ls {}
+                            ; :nil_ls {}
                             :lua_ls {}
                             :marksman {}
                             }})

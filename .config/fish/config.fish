@@ -59,8 +59,11 @@ bkt --ttl "7days" -- atuin init fish | source
 bkt --ttl "7days" -- just --completions fish | source 
 bkt --ttl "7days" -- wezterm shell-completion --shell fish | source
 
-# Pleo oo script
+# enable pleo oo script
 source $HOME/Repos/github.com/pleo-io/pleo/bin/oo.fish
+
+# enable completions for pnpm
+source $HOME/.config/tabtab/fish/__tabtab.fish
 
 # source .profile
 _babelfish "$HOME/.profile" | source
@@ -70,3 +73,4 @@ if test -n $DESK_ENV
     source $DESK_ENV
 end
 
+export PATH="$PATH:$HOME/.local/bin"

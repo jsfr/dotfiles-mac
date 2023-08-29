@@ -43,7 +43,7 @@ if [[ -z $ENV_EXPORTED ]]; then
     export BREW_BIN_PATH="/opt/homebrew/bin"
     export BREW_SBIN_PATH="/opt/homebrew/sbin"
 
-    export PATH="$RANCHER_BIN_PATH:$BREW_BIN_PATH:$BREW_SBIN_PATH:$GOBIN:$CARGO_BIN_PATH:$LOCAL_BIN_PATH:$PNPM_BIN_PATH:$POSTGRES_BIN_PATH:$PATH"
+    export PATH="$RANCHER_BIN_PATH:$BREW_BIN_PATH:$BREW_SBIN_PATH:$LOCAL_BIN_PATH:$GOBIN:$CARGO_BIN_PATH:$PNPM_BIN_PATH:$POSTGRES_BIN_PATH:$PATH"
 
     export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
