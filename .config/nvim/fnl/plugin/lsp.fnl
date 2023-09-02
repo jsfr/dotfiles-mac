@@ -33,7 +33,10 @@
                           builtins.diagnostics.actionlint
                           builtins.diagnostics.zsh
                           builtins.diagnostics.fish
-                          builtins.formatting.beautysh]})
+                          builtins.formatting.beautysh
+                          builtins.formatting.black
+                          builtins.diagnostics.mypy
+                          ]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
@@ -45,7 +48,6 @@
                             :jsonls {:settings {:json {:schemas (schemastore.json.schemas)
                                                        :validate {:enable true}}}}
                             :kotlin_language_server {}
-                            :pyright {}
                             :rust_analyzer (rust-tools.setup {:tools {:inlay_hints: {:auto true}}
                                                               :server {:settings {:rust-analyzer {:cargo {:loadOutDirsFromCheck true}
                                                                                                   :procMacro {:enable true}}}}})
@@ -59,9 +61,10 @@
                                                        :schemaStore {:enable true
                                                                      :url "https://www.schemastore.org/api/json/catalog.json"}}}}
                             :zls {}
-                            ; :nil_ls {}
                             :lua_ls {}
                             :marksman {}
+                            ; :pylyzer {}
+                            :pylsp {}
                             }})
 
 {}

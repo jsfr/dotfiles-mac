@@ -56,8 +56,14 @@ yabai -m rule --add app='^Mimestream$' space=^7
 yabai -m rule --add app='^Cron$' space=^8
 yabai -m rule --add app='^Slack$' space=^9
 
-## add signals for hammerspoon yabai widget
-hs -c "spoon.YabaiSpaces:add_signals()"
+# Kill the Music.app if it launches because it sucks
+yabai -m signal --add label=kill_music_app event=application_launched app="^Music$" action="killall Music"
+
+# Update swiftbar spaces plugin on changes
+yabai -m signal --add label=swiftbar_1 event=application_launched    action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
+yabai -m signal --add label=swiftbar_2 event=application_deactivated action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
+yabai -m signal --add label=swiftbar_3 event=application_terminated  action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
+yabai -m signal --add label=swiftbar_4 event=space_changed           action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
 
 # go through all spaces to pick up all windows
 function _yabai_iterate_spaces() {

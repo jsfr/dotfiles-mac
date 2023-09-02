@@ -29,7 +29,7 @@ lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist
 lctrl + lalt - z : pgrep -fi zoom.us && open -a zoom.us
 lctrl + lalt - p : open -a 1Password
-lctrl + lalt - c : open -a Cron
+lctrl + lalt - c : open -a Calendar
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control
 cmd - 0x0A       : open -a Mission\ Control
