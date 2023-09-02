@@ -48,7 +48,6 @@ yabai -m rule --add app='^Access$' border=off layer=above manage=off
 yabai -m rule --add app='^SongsOfConquest$' border=off manage=off
 yabai -m rule --add app='^GOG Galaxy.*$' border=off manage=off
 yabai -m rule --add app='^Okta Verify.*$' manage=off layer=above
-# yabai -m rule --add app='^Cron$' title="^Cron$" border=off manage=off
 
 yabai -m rule --add app='^Signal$' space=^7
 yabai -m rule --add app='^Beeper$' space=^7
@@ -60,10 +59,10 @@ yabai -m rule --add app='^Slack$' space=^9
 yabai -m signal --add label=kill_music_app event=application_launched app="^Music$" action="killall Music"
 
 # Update swiftbar spaces plugin on changes
-yabai -m signal --add label=swiftbar_1 event=application_launched    action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
-yabai -m signal --add label=swiftbar_2 event=application_deactivated action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
-yabai -m signal --add label=swiftbar_3 event=application_terminated  action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
-yabai -m signal --add label=swiftbar_4 event=space_changed           action="open 'swiftbar://refreshplugin?name=yabai-spaces'"
+yabai -m signal --add label=swiftbar_1 event=application_launched    action="open -g 'swiftbar://refreshplugin?name=yabai-spaces'"
+yabai -m signal --add label=swiftbar_2 event=application_deactivated action="open -g 'swiftbar://refreshplugin?name=yabai-spaces'"
+yabai -m signal --add label=swiftbar_3 event=application_terminated  action="open -g 'swiftbar://refreshplugin?name=yabai-spaces'"
+yabai -m signal --add label=swiftbar_4 event=space_changed           action="open -g 'swiftbar://refreshplugin?name=yabai-spaces'"
 
 # go through all spaces to pick up all windows
 function _yabai_iterate_spaces() {
