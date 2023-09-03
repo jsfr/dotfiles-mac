@@ -12,4 +12,4 @@
 # <swiftbar.hideDisablePlugin>true</swiftbar.hideDisablePlugin>
 # <swiftbar.hideSwiftBar>false</swiftbar.hideSwiftBar>
 
-echo " | sfimage = function"
+echo " | sfimage = s.circle"

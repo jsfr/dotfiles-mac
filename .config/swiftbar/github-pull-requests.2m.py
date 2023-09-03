@@ -63,33 +63,38 @@ search = f"sort:updated-desc type:pr state:open involves:{username}"
 
 
 def is_author(node):
-    return node["author"]["login"] == username
+    return node.get("author", {}).get("login", "") == username
 
 
 def in_review(node):
-    rs = node["reviewRequests"]["nodes"]
-    return any(r["requestedReviewer"]["login"] == username for r in rs)
+    rs = node.get("reviewRequests", {}).get("nodes", [])
+
+    def login(r):
+        return r.get("requestedReviewer", {}).get("login", "")
+
+    return any(login(r) == username for r in rs)
 
 
 def review_decision_image(node):
-    review_decision = node["reviewDecision"]
+    review_decision = node.get("reviewDecision", "")
     if review_decision == "CHANGES_REQUESTED":
         return "minus.square"
     elif review_decision == "APPROVED":
         return "checkmark.square"
     else:
-        return "greaterthan.square"
+        return "square"
 
 
 def print_pull_request(node):
-    title = node["title"]
-    title = f"[Draft] {title}" if node["isDraft"] else title
+    title = node.get("title", "")
+    title = f"[Draft] {title}" if node.get("isDraft", False) else title
 
     image = review_decision_image(node)
-    url = node["url"]
+    url = node.get("url", "")
 
     output = f"{title} | href = {url} sfimage = {image}"
-    output = f"{output} color = red" if not node["isReadByViewer"] else output
+    output = f"{output} color = red" if not node.get(
+        "isReadByViewer", True) else output
 
     print(output)
 
@@ -107,7 +112,7 @@ def print_sep():
 
 
 def print_header(nodes, total_count):
-    has_unread = any(not node["isReadByViewer"] for node in nodes)
+    has_unread = any(not node.get("isReadByViewer", True) for node in nodes)
     header = f"{total_count} | sfimage = arrow.branch"
     header = f"{header} color = red" if has_unread else header
     print(header)
@@ -148,8 +153,8 @@ if __name__ == "__main__":
         },
     )
     resp = urllib.request.urlopen(req)
-    resp = json.loads(resp.read())["data"]["search"]
-    nodes = resp["nodes"]
-    total_count = resp["issueCount"]
+    resp = json.loads(resp.read()).get("data", {}).get("search", {})
+    nodes = resp.get("nodes", [])
+    total_count = resp.get("issueCount", 0)
 
     print_menu(nodes, total_count)

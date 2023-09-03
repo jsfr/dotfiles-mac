@@ -21,14 +21,18 @@ def print_spaces(spaces, has_sticky_windows):
     shift = 0
 
     if not has_sticky_windows:
-        spaces = [s for s in spaces if len(s["windows"]) > 0 or s["has-focus"]]
+        spaces = [
+            s
+            for s in spaces
+            if len(s.get("windows", [])) > 0 or s.get("has-focus", False)
+        ]
 
     for space in spaces:
         index = space["index"] - shift
-        if space["is-native-fullscreen"]:
+        if space.get("is-native-fullscreen", False):
             icon = ":f.square:"
             shift += 1
-        elif has_sticky_windows or space["has-focus"]:
+        elif has_sticky_windows or space.get("has-focus", False):
             icon = f":{index}.square.fill:"
         else:
             icon = f":{index}.square:"
@@ -39,19 +43,17 @@ def print_spaces(spaces, has_sticky_windows):
 
 if __name__ == "__main__":
     spaces = json.loads(
-        subprocess.run(["yabai", "-m", "query", "--spaces"],
-                       stdout=subprocess.PIPE)
+        subprocess.run(["yabai", "-m", "query", "--spaces"], stdout=subprocess.PIPE)
         .stdout.decode("utf-8")
         .strip()
     )
 
     windows = json.loads(
-        subprocess.run(["yabai", "-m", "query", "--windows"],
-                       stdout=subprocess.PIPE)
+        subprocess.run(["yabai", "-m", "query", "--windows"], stdout=subprocess.PIPE)
         .stdout.decode("utf-8")
         .strip()
     )
 
-    has_sticky_windows = any(w["is-sticky"] for w in windows)
+    has_sticky_windows = any(w.get("is-sticky", False) for w in windows)
 
     print_spaces(spaces, has_sticky_windows)
