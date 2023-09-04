@@ -70,7 +70,12 @@ def in_review(node):
     rs = node.get("reviewRequests", {}).get("nodes", [])
 
     def login(r):
-        return r.get("requestedReviewer", {}).get("login", "")
+        try:
+            return r["requestedReviewer"]["login"]
+        except KeyError:
+            return ""
+        except TypeError:
+            return ""
 
     return any(login(r) == username for r in rs)
 
