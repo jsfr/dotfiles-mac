@@ -51,7 +51,6 @@
   [:shortcuts/no-neck-pain.nvim
    :event :VeryLazy]
   
-
   ;; LSP and Formatting
   [:junnplus/lsp-setup.nvim
    :dependencies [:b0o/schemastore.nvim
@@ -63,6 +62,8 @@
                   :williamboman/mason-lspconfig.nvim
                   :williamboman/mason.nvim]
    :config #(require :plugin/lsp)]
+  [:github/copilot.vim
+   :event :VeryLazy]
 
   ;; Snippets
   [:hrsh7th/vim-vsnip
@@ -118,6 +119,10 @@
 
   ;; Misc
 
+  [:rest-nvim/rest.nvim
+   :dependencies [:nvim-lua/plenary.nvim]
+   :main :rest-nvim
+   :opts {}]
   [:Wansmer/treesj
    :dependencies [:nvim-treesitter/nvim-treesitter]
    :opts {}
