@@ -89,12 +89,8 @@
    :event :VeryLazy]
 
   ;; Search and Replace
-  ; [:windwp/nvim-spectre
-  ;  :dependencies [:nvim-lua/plenary.nvim]
-  ;  :config #(require :plugin/search-replace)]
   [:bronson/vim-visual-star-search
    :event :VeryLazy]
-  ; [:tpope/vim-abolish]
 
   ;; Git
   [:lewis6991/gitsigns.nvim
@@ -118,11 +114,10 @@
   [:direnv/direnv.vim]
 
   ;; Misc
-
   [:rest-nvim/rest.nvim
    :dependencies [:nvim-lua/plenary.nvim]
-   :main :rest-nvim
-   :opts {}]
+   :ft [:http :json]
+   :config #(require :plugin/rest-nvim)]
   [:Wansmer/treesj
    :dependencies [:nvim-treesitter/nvim-treesitter]
    :opts {}
