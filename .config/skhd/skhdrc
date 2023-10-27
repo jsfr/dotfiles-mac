@@ -1,6 +1,6 @@
 # modes
-:: default : yabai -m config active_window_border_color 0xff775759
-:: resizer : yabai -m config active_window_border_color 0xffcb4b16
+:: default : ""
+:: resizer : ""
 
 # enter modes
 shift + lalt - r ; resizer
