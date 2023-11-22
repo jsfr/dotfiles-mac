@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = {}
 
-local font = wezterm.font("JetBrainsMono Nerd Font")
+local font = wezterm.font("JetBrainsMono NFM")
 local font_size = 13.0
 
 -- Spawn a fish shell in login mode

@@ -31,6 +31,7 @@ abbr zap "brew uninstall --force --zap"
 abbr aum 'gh pr edit --add-label "automerge"'
 abbr tf "terraform"
 abbr u "upto"
+abbr gw "./gradlew"
 
 # define custom keybindings
 function fish_user_key_bindings

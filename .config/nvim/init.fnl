@@ -147,6 +147,12 @@
    :event :VeryLazy]
   [:folke/todo-comments.nvim
    :event :VeryLazy]
+  ; [:nathom/filetype.nvim
+  ;  :opts {:overrides {:extensions {:tf :terraform
+  ;                                  :tfvars :terraform
+  ;                                  :tfstate :json}
+  ;                     :function_extensions {:tf #(set vim.bo.commentstring "#%s")}}}
+  ;  :main :filetype]
 ] {:defaults {:lazy false}
    :install {:colorscheme [:tokyonight-storm]}
    :performance {:reset_packpath false}})
