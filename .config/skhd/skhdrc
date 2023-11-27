@@ -18,13 +18,11 @@ default, resizer < shift + cmd - 0x30 :
 
 # app bindings
 lalt - return    : open -a WezTerm
-lctrl + lalt - a : open -a Beeper
+lctrl + lalt - a : open -a Beeper && open -a Signal
 lctrl + lalt - e : open -a Arc
-# lctrl + lalt - e : open -a Firefox
 lctrl + lalt - i : open -a IntelliJ\ IDEA
-lctrl + lalt - g : open -a GoLand
-lctrl + lalt - l : open -a Logseq
-lctrl + lalt - m : open -a Mimestream
+lctrl + lalt - j : open -a Logseq
+lctrl + lalt - l : open -a Linear
 lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist
 lctrl + lalt - z : pgrep -fi zoom.us && open -a zoom.us
