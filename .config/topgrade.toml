@@ -10,6 +10,7 @@ disable = [
     "containers",
     "bun",
     "nix",
+    "git_repos"
 ]
 no_retry = true
 pre_sudo = true

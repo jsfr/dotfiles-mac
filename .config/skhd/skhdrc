@@ -19,7 +19,8 @@ default, resizer < shift + cmd - 0x30 :
 # app bindings
 lalt - return    : open -a WezTerm
 lctrl + lalt - a : open -a Beeper && open -a Signal
-lctrl + lalt - e : open -a Arc
+# lctrl + lalt - e : open -a Arc
+lctrl + lalt - e : open -a Firefox
 lctrl + lalt - i : open -a IntelliJ\ IDEA
 lctrl + lalt - j : open -a Logseq
 lctrl + lalt - l : open -a Linear

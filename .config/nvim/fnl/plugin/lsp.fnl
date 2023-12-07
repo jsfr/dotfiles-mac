@@ -53,7 +53,7 @@
                                                                                                   :procMacro {:enable true}}}}})
                             :taplo {}
                             :terraformls {}
-                            :tflint {}
+                            ; :tflint {}
                             :tsserver {:single_file_support false
                                        :root_dir (lspconfig.util.root_pattern :package.json)}
                             :yamlls {:settings {:yaml {:schemas {"https://raw.githubusercontent.com/pleo-io/file-distributor/main/src/files-schema.json" "/.github/templates.yaml"

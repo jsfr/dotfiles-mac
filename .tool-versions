@@ -1,5 +1,5 @@
-pnpm      8.7.0-2
-bun       0.8.1
+pnpm      8.11.0
+bun       1.0.14
 yarn      1.22.19
-nodejs    20.5.1
-terraform 1.5.6
+nodejs    20.10.0
+terraform 1.5.7

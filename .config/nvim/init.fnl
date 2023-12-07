@@ -62,8 +62,6 @@
                   :williamboman/mason-lspconfig.nvim
                   :williamboman/mason.nvim]
    :config #(require :plugin/lsp)]
-  [:github/copilot.vim
-   :event :VeryLazy]
 
   ;; Snippets
   [:hrsh7th/vim-vsnip
