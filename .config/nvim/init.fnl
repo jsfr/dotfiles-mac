@@ -145,6 +145,11 @@
    :event :VeryLazy]
   [:folke/todo-comments.nvim
    :event :VeryLazy]
+  [:nvim-telescope/telescope.nvim
+   :dependencies [:folke/trouble.nvim]
+   :branch :0.1.x
+   :event :VeryLazy
+   :config #(require :plugin/telescope)]
   ; [:nathom/filetype.nvim
   ;  :opts {:overrides {:extensions {:tf :terraform
   ;                                  :tfvars :terraform
