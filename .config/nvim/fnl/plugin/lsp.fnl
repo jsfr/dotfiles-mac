@@ -8,6 +8,7 @@
 (local schemastore (require :schemastore))
 (local rust-tools (require :rust-tools))
 (local typos (require :typos))
+(local mason-null-ls (require :mason-null-ls))
 
 (fn on-attach [client bufnr]
   ; (utils.format_on_save client)
@@ -26,17 +27,6 @@
     (vim.keymap.set :n "[d" vim.diagnostic.goto_prev bufopts)
     (vim.keymap.set :n "]d" vim.diagnostic.goto_next bufopts)
     (vim.keymap.set :n :<localleader>q vim.diagnostic.setqflist bufopts)))
-
-(null-ls.setup {:on_attach on-attach
-                :sources [typos.actions
-                          typos.diagnostics
-                          builtins.diagnostics.actionlint
-                          builtins.diagnostics.zsh
-                          builtins.diagnostics.fish
-                          builtins.formatting.beautysh
-                          builtins.formatting.black
-                          builtins.diagnostics.mypy
-                          ]})
 
 (lsp-setup.setup {:default_mappings false
                   :on_attach on-attach
@@ -63,8 +53,21 @@
                             :zls {}
                             :lua_ls {}
                             :marksman {}
-                            ; :pylyzer {}
-                            :pylsp {}
-                            }})
+                            :pylsp {}}})
+
+(mason-null-ls.setup {:ensure_installed [:hadolint]
+                      :automatic_installation true
+                      :handlers {}})
+
+(null-ls.setup {:on_attach on-attach
+                :sources [typos.actions
+                          typos.diagnostics
+                          builtins.diagnostics.actionlint
+                          builtins.diagnostics.zsh
+                          builtins.diagnostics.fish
+                          builtins.formatting.beautysh
+                          builtins.formatting.black
+                          builtins.diagnostics.mypy]})
+
 
 {}

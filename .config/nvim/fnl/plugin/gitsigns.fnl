@@ -7,4 +7,6 @@
 (map! [n] "]c" gitsigns.next_hunk)
 (map! [n] "[c" gitsigns.prev_hunk)
 
+(vim.cmd "cnoreabbrev <expr> gs (getcmdtype() == ':') ? 'Gitsigns' : 'gs'")
+
 {}

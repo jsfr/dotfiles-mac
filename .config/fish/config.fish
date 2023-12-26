@@ -10,6 +10,7 @@ fundle plugin 'IlanCosman/tide@v5'
 fundle plugin 'jorgebucaran/autopair.fish'
 fundle plugin 'markcial/upto'
 fundle plugin 'zzhaolei/transient.fish'
+fundle plugin 'g-plane/pnpm-shell-completion'
 
 # completions
 # fundle plugin 'oh-my-fish/plugin-aws'

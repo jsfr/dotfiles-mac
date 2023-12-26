@@ -9,7 +9,7 @@ pnpm list -g --json | jq -r '.[] | .dependencies | keys | .[]' > "$BACKUP/pnpm.t
 go run github.com/nao1215/gup@latest list | awk -F '[ @]' '{print $2}' > "$BACKUP/go.txt"
 pipx list --json | jq -r '.venvs | keys | .[]' > "$BACKUP/pipx.txt"
 cargo install --list | grep ":" | awk '{print $1}' > "$BACKUP/cargo.txt"
-asdf list > "$BACKUP/asdf.txt"
+rtx ls > "$BACKUP/asdf.txt"
 
 mkdir "$BACKUP/ssh"
 cp -r ~/.ssh/id* "$BACKUP/ssh/"

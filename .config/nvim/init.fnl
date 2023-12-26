@@ -59,6 +59,7 @@
                   :nvim-lua/plenary.nvim
                   :poljar/typos.nvim
                   :simrat39/rust-tools.nvim
+                  :jay-babu/mason-null-ls.nvim
                   :williamboman/mason-lspconfig.nvim
                   :williamboman/mason.nvim]
    :config #(require :plugin/lsp)]
@@ -150,12 +151,6 @@
    :branch :0.1.x
    :event :VeryLazy
    :config #(require :plugin/telescope)]
-  ; [:nathom/filetype.nvim
-  ;  :opts {:overrides {:extensions {:tf :terraform
-  ;                                  :tfvars :terraform
-  ;                                  :tfstate :json}
-  ;                     :function_extensions {:tf #(set vim.bo.commentstring "#%s")}}}
-  ;  :main :filetype]
 ] {:defaults {:lazy false}
    :install {:colorscheme [:tokyonight-storm]}
    :performance {:reset_packpath false}})

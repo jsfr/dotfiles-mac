@@ -1,6 +1,6 @@
 {
 	"dependencies": {
-		"@pleo-io/pleo-http-bench": "^1.0.35",
+		"@pleo-io/pleo-http-bench": "^1.0.38",
 		"eslint_d": "^12.2.1",
 		"pretty-json-log": "^1.4.0",
 		"ulid": "^2.3.0"

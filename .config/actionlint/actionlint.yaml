@@ -1,3 +1,4 @@
 self-hosted-runner:
   labels:
     - universal
+    - ubuntu-latest-8-cores

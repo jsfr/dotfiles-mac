@@ -3,8 +3,8 @@
 (local fzf (require :fzf-lua))
 
 (map! [n] :<leader>fa fzf.files)
-(map! [n] :<leader>ff fzf.git_files)
-(map! [n] :<leader>fg fzf.git_status)
+; (map! [n] :<leader>ff fzf.git_files)
+; (map! [n] :<leader>fg fzf.git_status)
 
 (map! [n] :<leader>fb fzf.buffers)
 
