@@ -19,4 +19,6 @@ if test -z "$DESK_EXPORTED"
 
     set -gx KUBECONFIG $HOME/.kube/config_desk
     set -gx DESK_EXPORTED true
+
+    oo
 end

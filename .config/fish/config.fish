@@ -1,23 +1,7 @@
 # install fundle if not present
-if not functions -q fundle
-    eval (curl -sfL https://git.io/fundle-install)
+if not functions -q fisher
+
 end
-
-# prompt
-fundle plugin 'IlanCosman/tide@v5'
-
-# tools
-fundle plugin 'jorgebucaran/autopair.fish'
-fundle plugin 'markcial/upto'
-fundle plugin 'zzhaolei/transient.fish'
-fundle plugin 'g-plane/pnpm-shell-completion'
-
-# completions
-# fundle plugin 'oh-my-fish/plugin-aws'
-# fundle plugin 'evanlucas/fish-kubectl-completions'
-
-# initialize fundle
-fundle init
 
 # set $SHELL
 set -gx SHELL (which fish)
@@ -44,8 +28,7 @@ function fish_user_key_bindings
     bind \eb backward-word
 end
 
-# enable rtx / asdf
-# source /opt/homebrew/opt/asdf/libexec/asdf.fish
+# enable rtx
 bkt --ttl "7days" -- rtx activate fish | source
 
 # enable direnv
@@ -63,9 +46,6 @@ bkt --ttl "7days" -- wezterm shell-completion --shell fish | source
 
 # enable pleo oo script
 source $HOME/Repos/github.com/pleo-io/pleo/bin/oo.fish
-
-# enable completions for pnpm
-source $HOME/.config/tabtab/fish/__tabtab.fish
 
 # source .profile
 _babelfish "$HOME/.profile" | source
