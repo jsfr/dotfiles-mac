@@ -28,8 +28,8 @@ function fish_user_key_bindings
     bind \eb backward-word
 end
 
-# enable rtx
-bkt --ttl "7days" -- rtx activate fish | source
+# enable mise
+bkt --ttl "7days" -- mise activate fish | source
 
 # enable direnv
 bkt --ttl "7days" -- direnv hook fish | source

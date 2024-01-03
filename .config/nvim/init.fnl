@@ -54,7 +54,7 @@
   ;; LSP and Formatting
   [:junnplus/lsp-setup.nvim
    :dependencies [:b0o/schemastore.nvim
-                  :jose-elias-alvarez/null-ls.nvim
+                  :nvimtools/none-ls.nvim
                   :neovim/nvim-lspconfig
                   :nvim-lua/plenary.nvim
                   :poljar/typos.nvim

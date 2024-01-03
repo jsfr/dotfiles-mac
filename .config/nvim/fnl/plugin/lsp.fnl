@@ -43,10 +43,10 @@
                                                                                                   :procMacro {:enable true}}}}})
                             :taplo {}
                             :terraformls {}
-                            ; :tflint {}
+                            :eslint {}
                             :tsserver {:single_file_support false
                                        :root_dir (lspconfig.util.root_pattern :package.json)}
-                            :yamlls {:settings {:yaml {:schemas {"https://raw.githubusercontent.com/pleo-io/file-distributor/main/src/files-schema.json" "/.github/templates.yaml"
+                            :yamlls {:settings {:yaml {:schemas {"/Users/jens/Repos/pleo-io/file-distributor/main/src/files-schema.json" "/.github/templates.yaml"
                                                                  "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
                                                        :schemaStore {:enable true
                                                                      :url "https://www.schemastore.org/api/json/catalog.json"}}}}
@@ -55,19 +55,20 @@
                             :marksman {}
                             :pylsp {}}})
 
-(mason-null-ls.setup {:ensure_installed [:hadolint]
+(mason-null-ls.setup {:ensure_installed [:hadolint
+                                         :actionlint
+                                         :beautysh
+                                         :mypy
+                                         :shellcheck
+                                         :prettier]
                       :automatic_installation true
                       :handlers {}})
 
 (null-ls.setup {:on_attach on-attach
                 :sources [typos.actions
                           typos.diagnostics
-                          builtins.diagnostics.actionlint
                           builtins.diagnostics.zsh
-                          builtins.diagnostics.fish
-                          builtins.formatting.beautysh
-                          builtins.formatting.black
-                          builtins.diagnostics.mypy]})
+                          builtins.diagnostics.fish]})
 
 
 {}
