@@ -19,7 +19,7 @@ config.window_frame = {
 }
 
 -- Font
-config.font = font
+-- config.font = font
 config.font_size = font_size
 
 -- Theme

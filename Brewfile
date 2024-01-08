@@ -2,8 +2,6 @@
 tap "buo/cask-upgrade" # cask upgrade tool, used by topgrade
 tap "fluxcd/tap" # flux
 tap "homebrew/bundle" # brew bundle
-tap "homebrew/cask-fonts" # font-jetbrains-mono-nerd-font
-tap "homebrew/cask-versions" # wezterm-nightly
 tap "homebrew/services"
 tap "koekeishiya/formulae" # yabai + skhd
 tap "opslevel/tap" # opslevel
@@ -116,7 +114,6 @@ cask "elgato-wave-link"
 cask "epic-games"
 cask "firefox"
 cask "flux"
-cask "font-jetbrains-mono-nerd-font"
 cask "insomnia"
 cask "intellij-idea"
 cask "linear-linear"
@@ -139,4 +136,4 @@ cask "temurin17"
 cask "tidal"
 cask "todoist"
 cask "visual-studio-code"
-cask "wezterm-nightly"
+cask "wezterm"

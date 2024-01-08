@@ -2,6 +2,7 @@
 
 (local cmp (require :cmp))
 (local compare (require :cmp.config.compare))
+(local lspkind (require :lspkind))
 
 (set! completeopt "menu,menuone,noselect")
 
@@ -39,42 +40,11 @@
     (feedkey "<Plug>(vsnip-jump-prev)" "")
     (fallback)))
 
-(local kind-icons {:Text ""
-                   :Method ""
-                   :Function ""
-                   :Constructor ""
-                   :Field ""
-                   :Variable ""
-                   :Class "ﴯ"
-                   :Interface ""
-                   :Module ""
-                   :Property "ﰠ"
-                   :Unit ""
-                   :Value ""
-                   :Enum ""
-                   :Keyword ""
-                   :Snippet ""
-                   :Color ""
-                   :File ""
-                   :Reference ""
-                   :Folder ""
-                   :EnumMember ""
-                   :Constant ""
-                   :Struct ""
-                   :Event ""
-                   :Operator ""
-                   :TypeParameter ""})
-
 (local menu-items {:nvim_lsp "[lsp]"
                    :conjure "[con]"
                    :vsnip "[vsn]"
                    :path "[pat]"
                    :buffer "[buf]"})
-
-(fn format-menu [entry vim-item]
-  (set vim-item.kind (string.format "%s %s" (. kind-icons vim-item.kind) vim-item.kind))
-  (set vim-item.menu (. menu-items entry.source.name))
-  vim-item)
 
 (cmp.setup {:snippet {:expand snippet-fn}
             :preselect false
@@ -88,12 +58,21 @@
                       {:name :vsnip}
                       {:name :path}
                       {:name :buffer :keyword_length 3}]
-            :formatting {:format format-menu}
+            :formatting {:format (lspkind.cmp_format)}
             :sorting {:comparators [compare.locality
                                     compare.recently_used
                                     compare.score
                                     compare.offset
-                                    compare.order]}
-            })
+                                    compare.order]}})
+
+(cmp.setup.cmdline ":" {:mapping (cmp.mapping.preset.cmdline)
+                        :sources (cmp.config.sources [{:name :path}
+                                                      {:name :cmdline
+                                                       :option {:ignore_cmds [:Man :!]}}])
+                        :view {:entries {:name :wildmenu
+                                         :separator " · "}}})
+
+(cmp.setup.cmdline :/ {:mapping (cmp.mapping.preset.cmdline)
+                       :sources [{:name :buffer}]})
 
 {}

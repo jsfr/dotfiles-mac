@@ -43,9 +43,6 @@
   [:itchyny/lightline.vim
    :dependencies [:josa42/nvim-lightline-lsp]
    :config #(require :plugin/statusline)]
-  [:gelguy/wilder.nvim
-   :config #(require :plugin/cmdline)
-   :event :VeryLazy]
   [:stevearc/dressing.nvim
    :opts {}]
   [:shortcuts/no-neck-pain.nvim
@@ -74,9 +71,11 @@
    :dependencies [:hrsh7th/cmp-nvim-lsp
                   :hrsh7th/cmp-buffer
                   :hrsh7th/cmp-path
-                  :hrsh7th/cmp-vsnip]
+                  :hrsh7th/cmp-cmdline
+                  :hrsh7th/cmp-vsnip
+                  :onsails/lspkind.nvim]
    :config #(require :plugin/completion)
-   :event :VeryLazy]
+   :event [:InsertEnter :CmdlineEnter]]
 
   ;; Mini.vim
   [:echasnovski/mini.nvim
