@@ -8,9 +8,10 @@
 (telescope.setup {:defaults {:mappings {:i {:<c-t> trouble.open_with_trouble
                                             :<esc> actions.close}
                                         :n {:<c-t> trouble.open_with_trouble}}}})
+(telescope.load_extension :fzy_native)
 
-(map! [n] :<leader>f/ builtin.live_grep)
-(map! [n] :<leader>ff #(builtin.find_files {:hidden true}))
+(map! [n] :<leader>rg builtin.live_grep)
+(map! [n] :<leader>fa #(builtin.find_files {:hidden true}))
 (map! [n] :<leader>ft builtin.treesitter)
-(map! [n] :<leader>f? builtin.git_status)
-(map! [n] :<leader>fg builtin.git_files)
+(map! [n] :<leader>fg builtin.git_status)
+(map! [n] :<leader>ff builtin.git_files)

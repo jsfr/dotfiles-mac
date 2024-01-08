@@ -1,6 +1,6 @@
 # modes
-:: default : ""
-:: resizer : ""
+:: default : borders style=round width=5 hidpi=off active_color=0xff618a57 inactive_color=0x00000000
+:: resizer : borders style=round width=5 hidpi=off active_color=0xffcb4b16 inactive_color=0x00000000
 
 # enter modes
 shift + lalt - r ; resizer

@@ -21,11 +21,11 @@ yabai -m config                                 \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  05             \
-    bottom_padding               05             \
-    left_padding                 05             \
-    right_padding                05             \
-    window_gap                   05             \
+    top_padding                  08             \
+    bottom_padding               08             \
+    left_padding                 08             \
+    right_padding                08             \
+    window_gap                   09             \
     layout                       bsp            \
     mouse_modifier               fn             \
     mouse_action1                move           \
@@ -57,7 +57,7 @@ yabai -m signal --add label=swiftbar_3 event=application_terminated     action="
 yabai -m signal --add label=swiftbar_4 event=space_changed              action="pgrep -fi swiftbar && open -g 'swiftbar://refreshplugin?name=yabai-spaces'"
 
 # go through all spaces to pick up all windows
-function _yabai_iterate_spaces() {
+_yabai_iterate_spaces() {
     active_space=$(yabai -m query --spaces --space | jq -r ".index")
     last_space=$(yabai -m query --spaces | jq -r "[.[] | .index] | max")
     for i in $(seq 1 "$last_space"); do yabai -m space --focus "$i"; sleep 0.1; done
@@ -65,4 +65,5 @@ function _yabai_iterate_spaces() {
 }
 _yabai_iterate_spaces
 
-echo "yabai configuration loaded.."
+# Add borders
+borders style=round width=5 hidpi=off active_color=0xff618a57 inactive_color=0x00000000

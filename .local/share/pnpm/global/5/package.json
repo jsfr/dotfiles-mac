@@ -1,8 +1,8 @@
 {
 	"dependencies": {
-		"@pleo-io/pleo-http-bench": "^1.0.38",
+		"@pleo-io/pleo-http-bench": "^1.0.41",
 		"eslint_d": "^12.2.1",
-		"pretty-json-log": "^1.4.0",
+		"pretty-json-log": "^1.5.0",
 		"ulid": "^2.3.0"
 	}
 }

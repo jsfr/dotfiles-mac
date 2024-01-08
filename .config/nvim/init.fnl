@@ -83,9 +83,17 @@
    :config #(require :plugin/mini)]
 
   ;; Selectors
-  [:ibhagwan/fzf-lua
-   :config #(require :plugin/selector)
+  [:folke/trouble.nvim
+   :dependencies [:kyazdani42/nvim-web-devicons]
    :event :VeryLazy]
+  [:folke/todo-comments.nvim
+   :event :VeryLazy]
+  [:nvim-telescope/telescope.nvim
+   :dependencies [:folke/trouble.nvim
+                  :nvim-telescope/telescope-fzy-native.nvim]
+   :branch :0.1.x
+   :event :VeryLazy
+   :config #(require :plugin/telescope)]
 
   ;; Search and Replace
   [:bronson/vim-visual-star-search
@@ -100,7 +108,7 @@
    :dependencies [:nvim-lua/plenary.nvim]
    :main :gitlinker
    :opts {}
-   :keys [:<space>gy]]
+   :event :VeryLazy]
   [:kdheepak/lazygit.nvim
    :dependencies [:nvim-lua/plenary.nvim]
    :event :VeryLazy]
@@ -141,16 +149,6 @@
    :main :pretty-fold
    :opts {}
    :event :VeryLazy]
-  [:folke/trouble.nvim
-   :dependencies [:kyazdani42/nvim-web-devicons]
-   :event :VeryLazy]
-  [:folke/todo-comments.nvim
-   :event :VeryLazy]
-  [:nvim-telescope/telescope.nvim
-   :dependencies [:folke/trouble.nvim]
-   :branch :0.1.x
-   :event :VeryLazy
-   :config #(require :plugin/telescope)]
 ] {:defaults {:lazy false}
    :install {:colorscheme [:tokyonight-storm]}
    :performance {:reset_packpath false}})

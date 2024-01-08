@@ -9,9 +9,9 @@ tap "koekeishiya/formulae" # yabai + skhd
 tap "opslevel/tap" # opslevel
 tap "jdxcode/tap" # rtx
 tap "pkgxdev/made" # pkgx
+tap "FelixKratz/formulae" # borders
 
 # Brews
-brew "actionlint"
 brew "age"
 brew "aria2"
 brew "asciidoctor"
@@ -23,6 +23,7 @@ brew "aws-sso-util"
 brew "awscli"
 brew "bash"
 brew "blueutil"
+brew "borders"
 brew "coreutils"
 brew "desk"
 brew "difftastic"
@@ -80,6 +81,7 @@ brew "python"
 brew "rargs"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
+brew "rm-improved"
 brew "rtx"
 brew "sd"
 brew "skhd"
@@ -96,7 +98,6 @@ brew "xsv"
 brew "yabai"
 brew "yq"
 brew "zig"
-brew "zls"
 brew "zoxide"
 
 # Casks
