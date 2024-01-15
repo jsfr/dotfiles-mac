@@ -89,7 +89,9 @@
    :event :VeryLazy]
   [:nvim-telescope/telescope.nvim
    :dependencies [:folke/trouble.nvim
+                  :debugloop/telescope-undo.nvim
                   :nvim-telescope/telescope-fzy-native.nvim]
+   :keys [[:U "<cmd>Telescope undo<cr>"]]
    :branch :0.1.x
    :event :VeryLazy
    :config #(require :plugin/telescope)]
@@ -103,8 +105,7 @@
    :dependencies [:nvim-lua/plenary.nvim] 
    :config #(require :plugin/gitsigns)
    :event :VeryLazy]
-  [:ruifm/gitlinker.nvim
-   :dependencies [:nvim-lua/plenary.nvim]
+  [:linrongbin16/gitlinker.nvim
    :main :gitlinker
    :opts {}
    :event :VeryLazy]
@@ -120,10 +121,11 @@
   [:direnv/direnv.vim]
 
   ;; Misc
-  [:rest-nvim/rest.nvim
-   :dependencies [:nvim-lua/plenary.nvim]
-   :ft [:http :json]
-   :config #(require :plugin/rest-nvim)]
+  ["https://git.sr.ht/~nedia/auto-save.nvim"
+   :event :BufReadPre
+   :opts {:events [:InsertLeave :BufLeave]
+          :silent false
+          :exclude_ft []}]
   [:Wansmer/treesj
    :dependencies [:nvim-treesitter/nvim-treesitter]
    :opts {}
@@ -131,9 +133,6 @@
   [:mong8se/actually.nvim
    :lazy false
    :priority 1000]
-  [:mbbill/undotree
-   :config #(require :plugin/undotree)
-   :keys [:U]]
   [:terryma/vim-expand-region
    :config #(require :plugin/expand-region)
    :keys [:v :<C-v>]]

@@ -46,7 +46,7 @@
                             :eslint {}
                             :tsserver {:single_file_support false
                                        :root_dir (lspconfig.util.root_pattern :package.json)}
-                            :yamlls {:settings {:yaml {:schemas {"/Users/jens/Repos/pleo-io/file-distributor/main/src/files-schema.json" "/.github/templates.yaml"
+                            :yamlls {:settings {:yaml {:schemas {"/Users/jens/Repos/github.com/pleo-io/file-distributor/src/files-schema.json" "/.github/templates.yaml"
                                                                  "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
                                                        :schemaStore {:enable true
                                                                      :url "https://www.schemastore.org/api/json/catalog.json"}}}}

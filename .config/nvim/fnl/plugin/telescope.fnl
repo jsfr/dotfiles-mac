@@ -7,8 +7,12 @@
 
 (telescope.setup {:defaults {:mappings {:i {:<c-t> trouble.open_with_trouble
                                             :<esc> actions.close}
-                                        :n {:<c-t> trouble.open_with_trouble}}}})
+                                        :n {:<c-t> trouble.open_with_trouble}}}
+                  :extensions {:undo {}}})
+
+;; Extensions
 (telescope.load_extension :fzy_native)
+(telescope.load_extension :undo)
 
 (map! [n] :<leader>rg builtin.live_grep)
 (map! [n] :<leader>fa #(builtin.find_files {:hidden true}))
