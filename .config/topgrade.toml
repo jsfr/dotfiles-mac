@@ -22,7 +22,6 @@ skip_notify = true
 "Golang (gup)" = "go run github.com/nao1215/gup@latest update"
 "Neovim (lazy.nvim)" = "nvim --headless \"+Lazy! sync\" +qa"
 "Neovim (mason.nvim)" = "nvim --headless +MasonUpdate +qa"
-"WezTerm Nightly" = "brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 
 [post_commands]
 "Update Yabai Sha" = "/Users/jens/.local/bin/,update-yabai"

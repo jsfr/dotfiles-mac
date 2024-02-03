@@ -10,6 +10,7 @@ tap "pkgxdev/made" # pkgx
 tap "FelixKratz/formulae" # borders
 
 # Brews
+brew "dive"
 brew "age"
 brew "aria2"
 brew "asciidoctor"

@@ -19,7 +19,6 @@ default, resizer < shift + cmd - 0x30 :
 # app bindings
 lalt - return    : open -a WezTerm
 lctrl + lalt - a : open -a Beeper && open -a Signal
-# lctrl + lalt - e : open -a Arc
 lctrl + lalt - e : open -a Firefox
 lctrl + lalt - i : open -a IntelliJ\ IDEA
 lctrl + lalt - j : open -a Logseq
@@ -28,11 +27,11 @@ lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist
 lctrl + lalt - z : pgrep -fi zoom.us && open -a zoom.us
 lctrl + lalt - p : open -a 1Password
-lctrl + lalt - c : open -a Cron
+lctrl + lalt - c : open -a Notion\ Calendar
+lctrl + lalt - n : open -a Notion
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control
 cmd - 0x0A       : open -a Mission\ Control
-# cmd - d          : rmenu_launch --prompt ❯
 cmd + shift - d  : env GITHUB_ORGS="pleo-io\njsfr" rmenu_repos --prompt ❯
 
 # quit focused app
@@ -130,6 +129,3 @@ lalt - w : yabai -m window --toggle split
 
 # float / unfloat window and center on screen
 lalt - t : yabai -m window --toggle float ; yabai -m window --grid 4:4:1:1:2:2
-
-# toggle sticky, topmost and resize to picture-in-picture size
-lalt - p : yabai -m window --toggle pip

@@ -44,7 +44,7 @@ yabai -m rule --add app='^Okta Verify.*$' manage=off
 
 yabai -m rule --add app='^Signal$' space=^7
 yabai -m rule --add app='^Beeper$' space=^7
-yabai -m rule --add app='^Cron$' space=^8
+yabai -m rule --add app='^Notion Calendar$' space=^8
 yabai -m rule --add app='^Slack$' space=^9
 
 # Kill the Music.app if it launches because it sucks
