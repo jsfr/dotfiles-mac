@@ -1,7 +1,5 @@
-# install fundle if not present
-if not functions -q fisher
-
-end
+# source .profile
+_babelfish "$HOME/.profile" | source
 
 # set $SHELL
 set -gx SHELL (which fish)
@@ -47,9 +45,6 @@ bkt --ttl "7days" -- wezterm shell-completion --shell fish | source
 
 # enable pleo oo script
 source $HOME/Repos/github.com/pleo-io/pleo/bin/oo.fish
-
-# source .profile
-_babelfish "$HOME/.profile" | source
 
 # Hook for desk activation
 if test -n $DESK_ENV

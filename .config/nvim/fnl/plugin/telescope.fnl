@@ -8,7 +8,9 @@
 (telescope.setup {:defaults {:mappings {:i {:<c-t> trouble.open_with_trouble
                                             :<esc> actions.close}
                                         :n {:<c-t> trouble.open_with_trouble}}}
-                  :extensions {:undo {}}})
+                  :extensions {:undo {:side_by_side true
+                                      :layout_strategy :vertical
+                                      :layout_config {:preview_height 0.8}}}})
 
 ;; Extensions
 (telescope.load_extension :fzy_native)

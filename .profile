@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [[ -z $ENV_EXPORTED ]]; then
     export PAGER="less"
     export FZF_DEFAULT_COMMAND="fd -It f"
@@ -26,7 +28,7 @@ if [[ -z $ENV_EXPORTED ]]; then
 
     export HOMEBREW_GITHUB_API_TOKEN_PATH="$HOME/.homebrew_github_token"
     if [[ -f $HOMEBREW_GITHUB_API_TOKEN_PATH ]]; then
-        export HOMEBREW_GITHUB_API_TOKEN=$(cat $HOMEBREW_GITHUB_API_TOKEN_PATH)
+        export HOMEBREW_GITHUB_API_TOKEN=$(cat "$HOMEBREW_GITHUB_API_TOKEN_PATH")
     fi
 
     export GOPATH="$HOME/go"
@@ -42,8 +44,9 @@ if [[ -z $ENV_EXPORTED ]]; then
     export LOCAL_BIN_PATH="$HOME/.local/bin"
     export BREW_BIN_PATH="/opt/homebrew/bin"
     export BREW_SBIN_PATH="/opt/homebrew/sbin"
+    export PLEO_BIN_PATH="$HOME/Repos/github.com/pleo-io/pleo/bin"
 
-    export PATH="$RANCHER_BIN_PATH:$BREW_BIN_PATH:$BREW_SBIN_PATH:$LOCAL_BIN_PATH:$GOBIN:$CARGO_BIN_PATH:$PNPM_BIN_PATH:$POSTGRES_BIN_PATH:$PATH"
+    export PATH="$RANCHER_BIN_PATH:$BREW_BIN_PATH:$BREW_SBIN_PATH:$LOCAL_BIN_PATH:$GOBIN:$CARGO_BIN_PATH:$PNPM_BIN_PATH:$POSTGRES_BIN_PATH:$PLEO_BIN_PATH:$PATH"
 
     export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
