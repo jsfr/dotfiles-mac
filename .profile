@@ -51,10 +51,7 @@ if [[ -z $ENV_EXPORTED ]]; then
     export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
     export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
-    export BREW_FPATH="/opt/homebrew/share/zsh/site-functions"
-    export FPATH="$BREW_FPATH:$FPATH"
-    export ZSH_EVALCACHE_DIR="$XDG_CACHE_HOME/.zsh-evalcache"
-    export ANTIDOTE_HOME="$XDG_CACHE_HOME/antidote"
+    export BKT_CACHE_DIR="$HOME/.cache"
 
     export ENV_EXPORTED="exported"
 fi

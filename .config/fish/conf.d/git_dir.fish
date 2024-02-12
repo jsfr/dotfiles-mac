@@ -24,4 +24,4 @@ function _check_dotfiles_gitdir --on-variable PWD
 end
 
 # Automatically set GIT_DIR when in the home directory
-_check_dotfiles_gitdir
+# _check_dotfiles_gitdir

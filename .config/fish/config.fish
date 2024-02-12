@@ -27,6 +27,13 @@ function fish_user_key_bindings
     bind \eb backward-word
 end
 
+function starship_transient_prompt_func
+  starship module character
+end
+# enable starship
+bkt --ttl "7days" -- starship init fish | source
+enable_transience
+
 # enable mise
 bkt --ttl "7days" -- mise activate fish | source
 
@@ -50,5 +57,3 @@ source $HOME/Repos/github.com/pleo-io/pleo/bin/oo.fish
 if test -n $DESK_ENV
     source $DESK_ENV
 end
-
-export PATH="$PATH:$HOME/.local/bin"
