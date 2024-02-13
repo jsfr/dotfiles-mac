@@ -5,5 +5,5 @@ OPSLEVEL_API_TOKEN = 'kMO3k5D0ODW33qSw25Wv4BIAuygELBMk6cdk'
 pnpm = "8"
 bun = "1"
 yarn = "1.22.19"
-nodejs = "20"
-terraform = "1.5.7"
+nodejs = "21"
+terraform = "1.5"

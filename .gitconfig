@@ -28,6 +28,7 @@
     upd = "!git a -u && git yolo && git p"
     wip = commit -m "wip" --no-verify
     yolo = "!git commit -m \"YOLO: `curl -s https://whatthecommit.com/index.txt`\""
+    bb = "!better-git-branch.sh"
 [core]
     editor = nvim
     pager = delta --syntax-theme="base16"
@@ -67,3 +68,11 @@
     cmd = difft "$LOCAL" "$REMOTE"
 [pager]
     difftool = true
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[maintenance]
+	repo = /Users/jens/Repos/github.com/pleo-io/kerberos
