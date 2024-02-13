@@ -29,9 +29,11 @@
     wip = commit -m "wip" --no-verify
     yolo = "!git commit -m \"YOLO: `curl -s https://whatthecommit.com/index.txt`\""
     bb = "!better-git-branch.sh"
+	fp = push
 [core]
     editor = nvim
     pager = delta --syntax-theme="base16"
+	fsmonitor = true
 [color "diff-highlight"]
     oldNormal = red bold
     oldHighlight = red bold 52
@@ -70,9 +72,12 @@
     difftool = true
 [rerere]
 	enabled = true
+	autoUpdate = true
 [column]
 	ui = auto
 [branch]
 	sort = -committerdate
 [maintenance]
 	repo = /Users/jens/Repos/github.com/pleo-io/kerberos
+	repo = /Users/jens/Repos/github.com/pleo-io/jvm-commons
+	repo = /Users/jens/Repos/github.com/pleo-io/terraform
