@@ -51,7 +51,7 @@
                                                        :schemaStore {:enable true
                                                                      :url "https://www.schemastore.org/api/json/catalog.json"}}}}
                             :zls {}
-                            :lua_ls {}
+                            :lua_ls {:settings {:Lua {:workspace {:library {"/Users/jens/.hammerspoon/Spoons/EmmyLua.spoon/annotations" true}}}}}
                             :marksman {}
                             :pylsp {}}})
 

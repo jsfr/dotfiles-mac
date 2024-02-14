@@ -8,6 +8,7 @@
 [alias]
     a = add
     aa = add -A
+    au = add -u .
     batman = "!git commit -m \"Batman! (this commit has no parents)\""
     c = commit
     cb = "!git default-branch | xargs -n1 git sw; git up; git create-branch -r"

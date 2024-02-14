@@ -26,7 +26,7 @@ lctrl + lalt - l : open -a Linear
 lctrl + lalt - s : open -a Slack
 lctrl + lalt - t : open -a Todoist
 lctrl + lalt - z : (pgrep -fi zoom.us && open -a zoom.us) || (pgrep -fi meetinone && open -a MeetInOne)
-lctrl + lalt - c : open -a Calendar
+lctrl + lalt - c : open -a Morgen
 lctrl + lalt - n : open -a Notion
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control
