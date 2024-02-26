@@ -12,10 +12,15 @@ config.window_decorations = "RESIZE"
 
 -- Tab bar
 config.use_fancy_tab_bar = false
--- config.tab_bar_at_bottom = true
 config.window_frame = {
   font = font,
   font_size = font_size,
+}
+
+-- Quick-select
+config.quick_select_patterns = {
+  "(?<=password           )\\S+",
+  "(?<=username           )\\S+"
 }
 
 -- Font

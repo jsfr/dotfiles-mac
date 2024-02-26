@@ -5,7 +5,7 @@ _babelfish "$HOME/.profile" | source
 set -gx SHELL (which fish)
 
 # define aliases
-alias ls="ls -1FvG"
+alias ls="eza -1 -F"
 
 # define abbreviations
 abbr k "kubectl"

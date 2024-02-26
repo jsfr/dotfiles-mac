@@ -1,6 +1,7 @@
 [user]
     name = Jens Fredskov
     email = jsfr@users.noreply.github.com
+    signingKey = /Users/jens/.ssh/id_ed25519.pub
 [credential]
     helper = cache
 [push]
@@ -34,52 +35,32 @@
     yolo = "!git commit -m \"`curl -s https://whatthecommit.com/index.txt`\""
 [core]
     editor = nvim
-    pager = delta --syntax-theme="base16"
-	fsmonitor = true
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-[color "diff"]
-    meta = yellow bold
-    commit = green bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = "red bold 52"
-    newNormal = "green bold"
-    newHighlight = "green bold 22"
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-[color "status"]
-    changed = yellow
-    untracked = cyan
+    pager = delta
 [help]
-    autocorrect = 1
-[interactive]
-    diffFilter = delta --color-only
+    autocorrect = prompt
 [init]
     defaultBranch = main
-[difftool]
-    prompt = false
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
-[pager]
-    difftool = true
 [rerere]
-	enabled = true
-	autoUpdate = true
+    enabled = true
+    autoUpdate = true
 [column]
-	ui = auto
+    ui = auto
 [branch]
-	sort = -committerdate
+    sort = -committerdate
 [maintenance]
-	repo = /Users/jens/Repos/github.com/pleo-io/kerberos
-	repo = /Users/jens/Repos/github.com/pleo-io/jvm-commons
-	repo = /Users/jens/Repos/github.com/pleo-io/terraform
+    repo = /Users/jens/Repos/github.com/pleo-io/kerberos
+    repo = /Users/jens/Repos/github.com/pleo-io/jvm-commons
+    repo = /Users/jens/Repos/github.com/pleo-io/terraform
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    side-by-side = true
+[merge]
+    conflictstyle = zdiff3
+[diff]
+    colorMoved = default
+    algorithm = histogram
+[gpg]
+    format = ssh

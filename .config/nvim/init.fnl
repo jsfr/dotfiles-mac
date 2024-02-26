@@ -34,12 +34,10 @@
    :build #(vim.cmd :TSUpdateSync)
    :config #(require :plugin/treesitter)]
 
-  ;; Tmux
+  ;; UI and layout management
   [:mrjones2014/smart-splits.nvim
    :config #(require :plugin/smart-splits)
    :event :VeryLazy]
-
-  ;; UI
   [:itchyny/lightline.vim
    :dependencies [:josa42/nvim-lightline-lsp]
    :config #(require :plugin/statusline)]
@@ -48,18 +46,24 @@
   [:shortcuts/no-neck-pain.nvim
    :event :VeryLazy]
   
-  ;; LSP and Formatting
-  [:junnplus/lsp-setup.nvim
-   :dependencies [:b0o/schemastore.nvim
-                  :nvimtools/none-ls.nvim
+  ;; LSP, lint and formatting
+  [:williamboman/mason.nvim
+   :name :mason
+   :main :mason
+   :opts {}]
+  [:williamboman/mason-lspconfig.nvim
+   :dependencies [:mason
+                  :b0o/schemastore.nvim
                   :neovim/nvim-lspconfig
-                  :nvim-lua/plenary.nvim
-                  :poljar/typos.nvim
-                  :simrat39/rust-tools.nvim
-                  :jay-babu/mason-null-ls.nvim
-                  :williamboman/mason-lspconfig.nvim
-                  :williamboman/mason.nvim]
+                  :nvim-lua/plenary.nvim]
    :config #(require :plugin/lsp)]
+  [:rshkarin/mason-nvim-lint
+   :dependencies [:mason
+                  :mfussenegger/nvim-lint]
+   :config #(require :plugin/lint)]
+  [:mrcjkb/rustaceanvim
+   :version :^4
+   :ft [:rust]]
 
   ;; Snippets
   [:hrsh7th/vim-vsnip
@@ -117,15 +121,14 @@
   [:ahmedkhalf/project.nvim
    :main :project_nvim
    :opts {}]
-  [:editorconfig/editorconfig-vim]
   [:direnv/direnv.vim]
 
   ;; Misc
-  ["https://git.sr.ht/~nedia/auto-save.nvim"
-   :event :BufReadPre
-   :opts {:events [:InsertLeave :BufLeave]
-          :silent false
-          :exclude_ft []}]
+  ; ["https://git.sr.ht/~nedia/auto-save.nvim"
+  ;  :event :BufReadPre
+  ;  :opts {:events [:InsertLeave :BufLeave]
+  ;         :silent false
+  ;         :exclude_ft []}]
   [:Wansmer/treesj
    :dependencies [:nvim-treesitter/nvim-treesitter]
    :opts {}

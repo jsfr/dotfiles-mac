@@ -11,3 +11,6 @@ format = "in [$symbol($env_value)](blue)"
 
 [aws]
 symbol = ""
+
+[kubernetes]
+disabled = false

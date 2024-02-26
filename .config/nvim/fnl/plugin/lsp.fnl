@@ -1,17 +1,8 @@
-(import-macros {: map! : augroup!} :hibiscus.vim)
-
 (local lspconfig (require :lspconfig))
-(local lsp-setup (require :lsp-setup))
-(local utils (require :lsp-setup.utils))
-(local {: builtins : generator &as null-ls} (require :null-ls))
-(local {: diagnostics &as helpers} (require :null-ls.helpers))
+(local mason-lspconfig (require :mason-lspconfig))
 (local schemastore (require :schemastore))
-(local rust-tools (require :rust-tools))
-(local typos (require :typos))
-(local mason-null-ls (require :mason-null-ls))
 
-(fn on-attach [client bufnr]
-  ; (utils.format_on_save client)
+(fn on-attach [_ bufnr]
   (let [bufopts {:noremap true :silent true :buffer bufnr}]
     (vim.keymap.set :n :gD vim.lsp.buf.declaration bufopts)
     (vim.keymap.set :n :gd vim.lsp.buf.definition bufopts)
@@ -28,47 +19,47 @@
     (vim.keymap.set :n "]d" vim.diagnostic.goto_next bufopts)
     (vim.keymap.set :n :<localleader>q vim.diagnostic.setqflist bufopts)))
 
-(lsp-setup.setup {:default_mappings false
-                  :on_attach on-attach
-                  :servers {
-                            :bashls {}
-                            :denols {:root_dir (lspconfig.util.root_pattern :deno.json :deno.jsonc)}
-                            :golangci_lint_ls {}
-                            :gopls {}
-                            :jsonls {:settings {:json {:schemas (schemastore.json.schemas)
-                                                       :validate {:enable true}}}}
-                            :kotlin_language_server {}
-                            :rust_analyzer (rust-tools.setup {:tools {:inlay_hints: {:auto true}}
-                                                              :server {:settings {:rust-analyzer {:cargo {:loadOutDirsFromCheck true}
-                                                                                                  :procMacro {:enable true}}}}})
-                            :taplo {}
-                            :terraformls {}
-                            :eslint {}
-                            :tsserver {:single_file_support false
-                                       :root_dir (lspconfig.util.root_pattern :package.json)}
-                            :yamlls {:settings {:yaml {:schemas {"/Users/jens/Repos/github.com/pleo-io/file-distributor/src/files-schema.json" "/.github/templates.yaml"
-                                                                 "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
-                                                       :schemaStore {:enable true
-                                                                     :url "https://www.schemastore.org/api/json/catalog.json"}}}}
-                            :zls {}
-                            :lua_ls {:settings {:Lua {:workspace {:library {"/Users/jens/.hammerspoon/Spoons/EmmyLua.spoon/annotations" true}}}}}
-                            :marksman {}
-                            :pylsp {}}})
+(local servers {:bashls {}
+                :denols {:root_dir (lspconfig.util.root_pattern :deno.json :deno.jsonc)}
+                :golangci_lint_ls {}
+                :gopls {}
+                :jsonls {:settings {:json {:schemas (schemastore.json.schemas)
+                                           :validate {:enable true}}}}
+                :kotlin_language_server {}
+                :taplo {}
+                :terraformls {}
+                :tflint {}
+                :codeqlls {}
+                :eslint {}
+                :tsserver {:single_file_support false
+                           :root_dir (lspconfig.util.root_pattern :package.json)}
+                :yamlls {:settings {:yaml {:schemas {"/Users/jens/Repos/github.com/pleo-io/file-distributor/src/files-schema.json" "/.github/templates.yaml"
+                                                     "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
+                                           :schemaStore {:enable true
+                                                         :url "https://www.schemastore.org/api/json/catalog.json"}}}}
+                :zls {}
+                :lua_ls {:settings {:Lua {:workspace {:library {"/Users/jens/.hammerspoon/Spoons/EmmyLua.spoon/annotations" true}}}}}
+                :typos_lsp {}
+                :ruff_lsp {}
+                :marksman {}
+                :dockerls {}
+                :fennel_language_server {:settings {:fennel {:diagnostics {:globals [:vim]}}}}
+                :docker_compose_language_service {}})
 
-(mason-null-ls.setup {:ensure_installed [:hadolint
-                                         :actionlint
-                                         :beautysh
-                                         :mypy
-                                         :shellcheck
-                                         :prettier]
-                      :automatic_installation true
-                      :handlers {}})
+(fn get-server-config [server-name]
+  (local config (. servers server-name))
+  (set config.on_attach on-attach)
+  config)
 
-(null-ls.setup {:on_attach on-attach
-                :sources [typos.actions
-                          typos.diagnostics
-                          builtins.diagnostics.zsh
-                          builtins.diagnostics.fish]})
+(fn get-servers []
+  (icollect [server _ (pairs servers)]
+    server))
 
+(fn get-server-setup [server-name]
+  (. (. lspconfig server-name) :setup))
+
+(mason-lspconfig.setup {:ensure_installed (get-servers)
+                        :automatic_installation true})
+(mason-lspconfig.setup_handlers [(fn [server-name] ((get-server-setup server-name) (get-server-config server-name)))])
 
 {}

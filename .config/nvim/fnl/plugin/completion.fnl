@@ -1,10 +1,8 @@
-(import-macros {: set!} :hibiscus.vim)
-
 (local cmp (require :cmp))
 (local compare (require :cmp.config.compare))
 (local lspkind (require :lspkind))
 
-(set! completeopt "menu,menuone,noselect")
+(set vim.o.completeopt "menu,menuone,noselect")
 
 (fn snippet-fn [args]
   (vim.fn.call "vsnip#anonymous" [args.body]))
@@ -39,12 +37,6 @@
     (snip-jumpable?)
     (feedkey "<Plug>(vsnip-jump-prev)" "")
     (fallback)))
-
-(local menu-items {:nvim_lsp "[lsp]"
-                   :conjure "[con]"
-                   :vsnip "[vsn]"
-                   :path "[pat]"
-                   :buffer "[buf]"})
 
 (cmp.setup {:snippet {:expand snippet-fn}
             :preselect false
