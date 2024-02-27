@@ -38,8 +38,8 @@
   [:mrjones2014/smart-splits.nvim
    :config #(require :plugin/smart-splits)
    :event :VeryLazy]
-  [:itchyny/lightline.vim
-   :dependencies [:josa42/nvim-lightline-lsp]
+  [:nvim-lualine/lualine.nvim
+   :dependencies [:nvim-tree/nvim-web-devicons]
    :config #(require :plugin/statusline)]
   [:stevearc/dressing.nvim
    :opts {}]
@@ -124,11 +124,6 @@
   [:direnv/direnv.vim]
 
   ;; Misc
-  ; ["https://git.sr.ht/~nedia/auto-save.nvim"
-  ;  :event :BufReadPre
-  ;  :opts {:events [:InsertLeave :BufLeave]
-  ;         :silent false
-  ;         :exclude_ft []}]
   [:Wansmer/treesj
    :dependencies [:nvim-treesitter/nvim-treesitter]
    :opts {}

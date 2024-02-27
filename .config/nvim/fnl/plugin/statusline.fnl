@@ -1,10 +1,11 @@
-(set vim.g.lightline {:active {:left [[:mode :paste]
-                               [:readonly :relativepath :modified]]
-                        :right [[:lineinfo]
-                                [:lsp_info :lsp_hints :lsp_errors :lsp_warnings :lsp_ok]
-                                [:lsp_status]
-                                [:filetype]]}})
+(local lualine (require :lualine))
 
-(vim.cmd "call lightline#lsp#register()")
+(local lint (require :lint))
+(fn lint-progress []
+  (local linters (lint.get_running))
+  (if (= (length linters) 0) "󰦕" (.. "󱉶 " (table.concat linters ", "))))
+
+(lualine.setup {:options {:theme :tokyonight}
+                :sections {:lualine_b [:branch :diff :diagnostics lint-progress]}})
 
 {}
