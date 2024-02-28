@@ -30,6 +30,8 @@
    :ft :fennel]
   [:NoahTheDuke/vim-just
    :ft :just]
+  [:tridactyl/vim-tridactyl
+   :ft :tridactyl]
   [:nvim-treesitter/nvim-treesitter
    :build #(vim.cmd :TSUpdateSync)
    :config #(require :plugin/treesitter)]

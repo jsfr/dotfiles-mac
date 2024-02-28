@@ -1,5 +1,5 @@
 function _babelfish -a file
-    set -f file_hash (md5 -q -s "$file")
+    set -f file_hash (md5 -q "$file")
     set -f cache_file "$HOME/.cache/babelfish_$file_hash"
 
     if test -e "$cache_file"

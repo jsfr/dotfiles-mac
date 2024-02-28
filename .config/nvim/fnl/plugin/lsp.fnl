@@ -27,6 +27,7 @@
                                            :validate {:enable true}}}}
                 :kotlin_language_server {}
                 :taplo {}
+                :rust_analyzer {:disabled true}
                 :terraformls {}
                 :tflint {}
                 :codeqlls {}
@@ -51,15 +52,21 @@
   (set config.on_attach on-attach)
   config)
 
+(fn get-server-setup-fn [server-name]
+  (. (. lspconfig server-name) :setup))
+
+(fn setup-server [server-name] 
+  (local config (get-server-config server-name))
+  (local setup-fn (get-server-setup-fn server-name))
+  (when (not= config.disabled true)
+      (setup-fn config)))
+
 (fn get-servers []
   (icollect [server _ (pairs servers)]
     server))
 
-(fn get-server-setup [server-name]
-  (. (. lspconfig server-name) :setup))
-
 (mason-lspconfig.setup {:ensure_installed (get-servers)
                         :automatic_installation true})
-(mason-lspconfig.setup_handlers [(fn [server-name] ((get-server-setup server-name) (get-server-config server-name)))])
+(mason-lspconfig.setup_handlers [setup-server])
 
 {}

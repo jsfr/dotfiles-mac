@@ -14,6 +14,11 @@ unbindurl inoreader.com k
 unbindurl inoreader.com v
 unbindurl inoreader.com s
 
+unbind d
+unbind D
+unbind x
+bind x tabclose
+
 " Create mapping to open current url in another container
 bind cow recontain work
 
@@ -23,23 +28,23 @@ unset autocmds
 " autocmd DocStart ^http(s?)://medium.com urlmodify -t medium.com scribe.rip
 " autocmd DocStart ^http(s?)://twitter.com urlmodify -t twitter.com nitter.net
 " autocmd DocStart ^http(s?)://www.youtube.com urlmodify -t www.youtube.com piped.kavin.rocks
-" autocmd DocStart ^http(s?)://linear.app/ composite js document.location.href.replace(/http(?:s?):\/\/linear.app\/(.*)/, "linear://$1") | shellescape | exclaim_quiet open | tabclose
+autocmd DocStart ^http(s?)://linear.app/ composite js document.location.href.replace(/http(?:s?):\/\/linear.app\/(.*)/, "linear://$1") | shellescape | exclaim_quiet open | tabclose
 
-command translate js -r translate.js
+" command translate js -r translate.js
 
 unset autocontain
 
 autocontain -s opslevel.com Work
-autocontain -s app.humaans.io Work 
+autocontain -s app.humaans.io Work
 autocontain -s app.ledgy.com Work
 autocontain -s app.pagerduty.com Work
-autocontain -s app.reclaim.ai Work 
+autocontain -s app.reclaim.ai Work
 autocontain -s app3.greenhouse.io Work
 autocontain -s linear.app Work
-autocontain -s pleo-dk.thanksben.com Work 
-autocontain -s pleo.latticehq.com Work 
-autocontain -s notion.so Work 
-autocontain -s pagerduty.com Work 
+autocontain -s pleo-dk.thanksben.com Work
+autocontain -s pleo.latticehq.com Work
+autocontain -s notion.so Work
+autocontain -s pagerduty.com Work
 autocontain -s app.datadoghq.eu Work
 autocontain -s pleo.zoom.us Work
 autocontain -s tella.tv Work
@@ -56,6 +61,8 @@ autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking
 autocontain -s heap.dk Banking
 autocontain -s topdanmark.dk Banking
+autocontain -s grandhood.dk Banking
+autocontain -s velliv.dk Banking
 
 autocontain -s linkedin.com LinkedIn
 
