@@ -1,0 +1,9 @@
+[tools]
+bun = "1"
+java = "temurin-17"
+node = "20"
+nodejs = "21"
+pnpm = "8"
+terraform = "1.5"
+usage = "latest"
+yarn = "1.22.19"
