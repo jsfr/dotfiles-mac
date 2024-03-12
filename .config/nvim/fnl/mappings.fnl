@@ -23,9 +23,6 @@
 (map! [n] :- :<Cmd>Explore<cr>)
 (map! [n] "<leader>," (.. "<Cmd>Explore " vim.env.XDG_CONFIG_HOME :/nvim<cr>))
 
-;; Indent entire buffer
-(map! [n] :<leader>= "mzgg=G`z")
-
 ;; Visual shifting (does not exit Visual mode)
 (map! [v] :< :<gv)
 (map! [v] :> :>gv)

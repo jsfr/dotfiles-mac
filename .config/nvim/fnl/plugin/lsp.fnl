@@ -20,7 +20,6 @@
     (vim.keymap.set :n :<localleader>q vim.diagnostic.setqflist bufopts)))
 
 (local servers {:bashls {}
-                :denols {:root_dir (lspconfig.util.root_pattern :deno.json :deno.jsonc)}
                 :golangci_lint_ls {}
                 :gopls {}
                 :jsonls {:settings {:json {:schemas (schemastore.json.schemas)
@@ -32,13 +31,11 @@
                 :tflint {}
                 :codeqlls {}
                 :eslint {}
-                :tsserver {:single_file_support false
-                           :root_dir (lspconfig.util.root_pattern :package.json)}
+                :tsserver {:disabled true}
                 :yamlls {:settings {:yaml {:schemas {"/Users/jens/Repos/github.com/pleo-io/file-distributor/src/files-schema.json" "/.github/templates.yaml"
                                                      "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
                                            :schemaStore {:enable true
                                                          :url "https://www.schemastore.org/api/json/catalog.json"}}}}
-                :zls {}
                 :lua_ls {:settings {:Lua {:workspace {:library {"/Users/jens/.hammerspoon/Spoons/EmmyLua.spoon/annotations" true}}}}}
                 :typos_lsp {}
                 :ruff_lsp {}

@@ -21,3 +21,7 @@
 (map! [n] :<leader>ft builtin.treesitter)
 (map! [n] :<leader>fg builtin.git_status)
 (map! [n] :<leader>ff builtin.git_files)
+(map! [n] :<leader>fb builtin.buffers)
+(map! [n] :<leader>fr builtin.registers)
+(map! [n] :<leader>. #(builtin.git_files {:cwd "$HOME/dotfiles"
+                                          :show_untracked true}))

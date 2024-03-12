@@ -52,7 +52,7 @@
     repo = /Users/jens/Repos/github.com/pleo-io/jvm-commons
     repo = /Users/jens/Repos/github.com/pleo-io/terraform
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = riff --color=on
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
@@ -64,3 +64,7 @@
     algorithm = histogram
 [gpg]
     format = ssh
+[pager]
+	diff = riff
+	show = riff
+	log = riff

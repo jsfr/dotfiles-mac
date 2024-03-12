@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -z $ENV_EXPORTED ]]; then
-    export PAGER="less"
+    export PAGER="moar"
     export FZF_DEFAULT_COMMAND="fd -It f"
     export EDITOR="nvim"
 

@@ -54,6 +54,7 @@
    :main :mason
    :opts {}]
   [:williamboman/mason-lspconfig.nvim
+   :name :lsp
    :dependencies [:mason
                   :b0o/schemastore.nvim
                   :neovim/nvim-lspconfig
@@ -64,8 +65,19 @@
                   :mfussenegger/nvim-lint]
    :config #(require :plugin/lint)]
   [:mrcjkb/rustaceanvim
+   :dependencies [:lsp]
    :version :^4
    :ft [:rust]]
+  [:pmizio/typescript-tools.nvim
+   :dependencies [:lsp
+                  :dmmulroy/ts-error-translator.nvim
+                  :nvim-lua/plenary.nvim
+                  :neovim/nvim-lspconfig]
+   :config #(require :plugin/typescript-tools)]
+  [:stevearc/conform.nvim
+   :config #(require :plugin/format)
+   :cmd [:ConformInfo]
+   :keys [[:<leader>= #(let [conform (require :conform)] (conform.format {:async true :lsp_fallback true}))]]]
 
   ;; Snippets
   [:hrsh7th/vim-vsnip
@@ -123,7 +135,6 @@
   [:ahmedkhalf/project.nvim
    :main :project_nvim
    :opts {}]
-  [:direnv/direnv.vim]
 
   ;; Misc
   [:Wansmer/treesj
