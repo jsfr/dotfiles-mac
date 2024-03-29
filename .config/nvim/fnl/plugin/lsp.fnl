@@ -41,6 +41,8 @@
                 :ruff_lsp {}
                 :marksman {}
                 :dockerls {}
+                :htmx {}
+                :html {}
                 :fennel_language_server {:settings {:fennel {:diagnostics {:globals [:vim]}}}}
                 :docker_compose_language_service {}})
 

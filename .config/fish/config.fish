@@ -41,7 +41,7 @@ bkt --ttl "7days" -- mise activate fish | source
 bkt --ttl "7days" -- direnv hook fish | source
 
 # enable zoxide
-bkt --ttl "7days" -- zoxide init fish | source
+bkt --ttl "7days" -- zoxide init fish --cmd cd | source
 
 # enable atuin
 bkt --ttl "7days" -- atuin init fish | source

@@ -33,6 +33,7 @@
   [:tridactyl/vim-tridactyl
    :ft :tridactyl]
   [:nvim-treesitter/nvim-treesitter
+   :dependencies [:windwp/nvim-ts-autotag]
    :build #(vim.cmd :TSUpdateSync)
    :config #(require :plugin/treesitter)]
 
@@ -78,6 +79,12 @@
    :config #(require :plugin/format)
    :cmd [:ConformInfo]
    :keys [[:<leader>= #(let [conform (require :conform)] (conform.format {:async true :lsp_fallback true}))]]]
+
+  [:jay-babu/mason-nvim-dap.nvim
+   :dependencies [:mfussenegger/nvim-dap
+                  :nvim-neotest/nvim-nio
+                  :rcarriga/nvim-dap-ui]
+   :config #(require :plugin/dap)]
 
   ;; Snippets
   [:hrsh7th/vim-vsnip

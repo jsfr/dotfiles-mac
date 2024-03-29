@@ -52,4 +52,7 @@
 (local mini-align (require :mini.align))
 (mini-align.setup)
 
+(local mini-bracketed (require :mini.bracketed))
+(mini-bracketed.setup)
+
 {}

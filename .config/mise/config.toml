@@ -1,7 +1,6 @@
 [tools]
 bun = "1"
 java = "temurin-17"
-node = "20"
 nodejs = "21"
 pnpm = "8"
 terraform = "1.5"

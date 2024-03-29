@@ -16,10 +16,6 @@ unbindurl inoreader.com k
 unbindurl inoreader.com v
 unbindurl inoreader.com s
 
-" unbind d
-" unbind D
-" unbind x
-" bind x tabclose
 unbind J
 unbind K
 bind J tabnext
@@ -28,16 +24,11 @@ bind K tabprev
 " Create mapping to open current url in another container
 bind cow recontain work
 bind cod recontain default
+bind cos recontain shopping
 
 " Redirects
 unset autocmds
-" autocmd DocStart ^http(s?)://www.reddit.com urlmodify -t www.reddit.com teddit.net
-" autocmd DocStart ^http(s?)://medium.com urlmodify -t medium.com scribe.rip
-" autocmd DocStart ^http(s?)://twitter.com urlmodify -t twitter.com nitter.net
-" autocmd DocStart ^http(s?)://www.youtube.com urlmodify -t www.youtube.com piped.kavin.rocks
-" autocmd DocStart ^http(s?)://linear.app/ composite js document.location.href.replace(/http(?:s?):\/\/linear.app\/(.*)/, "linear://$1") | shellescape | exclaim_quiet open | tabclose
-
-" command translate js -r translate.js
+autocmd DocStart ^http(s?)://linear.app/ composite js document.location.href.replace(/http(?:s?):\/\/linear.app\/(.*)/, "linear://$1") | shellescape | exclaim_quiet open | tabclose
 
 unset autocontain
 
