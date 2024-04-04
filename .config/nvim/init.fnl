@@ -1,4 +1,4 @@
-(import-macros {: g! : color!} :hibiscus.vim)
+(import-macros {: color!} :hibiscus.vim)
 (import-macros {: lazy!} :lazy-macros)
 
 ;;; Defaults
@@ -21,8 +21,7 @@
    :lazy false
    :priority 1000
    :config (fn []
-             (local pkg (require :tokyonight))
-             (pkg.setup {})
+             (let [theme (require :tokyonight)] (theme.setup {}))
              (color! :tokyonight-storm))]
 
   ;; Syntax
@@ -78,27 +77,29 @@
   [:stevearc/conform.nvim
    :config #(require :plugin/format)
    :cmd [:ConformInfo]
-   :keys [[:<leader>= #(let [conform (require :conform)] (conform.format {:async true :lsp_fallback true}))]]]
-
-  [:jay-babu/mason-nvim-dap.nvim
-   :dependencies [:mfussenegger/nvim-dap
-                  :nvim-neotest/nvim-nio
-                  :rcarriga/nvim-dap-ui]
-   :config #(require :plugin/dap)]
-
-  ;; Snippets
-  [:hrsh7th/vim-vsnip
-   :dependencies [:rafamadriz/friendly-snippets]
-   :event :VeryLazy]
+   :keys [[:<leader>= #(let [conform (require :conform)]
+                        (conform.format {:async true :lsp_fallback true}))]]]
 
   ;; Completion
+  [:abecodes/tabout.nvim
+   :dependencies [:hrsh7th/nvim-cmp
+                  :nvim-treesitter/nvim-treesitter]
+   :opts {:act_as_shift_tab true
+          :ignore_beginning false}
+   :event [:InsertEnter]]
+  [:L3MON4D3/LuaSnip
+   :lazy true
+   :build "make install_jsregexp"
+   :dependencies [:rafamadriz/friendly-snippets]
+   :config #(let [loader (require "luasnip.loaders.from_vscode")] (loader.lazy_load))]
   [:hrsh7th/nvim-cmp
    :dependencies [:hrsh7th/cmp-nvim-lsp
                   :hrsh7th/cmp-buffer
                   :hrsh7th/cmp-path
                   :hrsh7th/cmp-cmdline
-                  :hrsh7th/cmp-vsnip
-                  :onsails/lspkind.nvim]
+                  :onsails/lspkind.nvim
+                  :saadparwaiz1/cmp_luasnip 
+                  :L3MON4D3/LuaSnip]
    :config #(require :plugin/completion)
    :event [:InsertEnter :CmdlineEnter]]
 

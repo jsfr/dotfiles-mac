@@ -17,12 +17,13 @@ default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
 # app bindings
+hyper - 1      : open -a 1Password
 hyper - a      : open -a Beeper && open -a Signal
 hyper - c      : open -a Notion\ Calendar
 hyper - e      : open -a Firefox
-hyper - i      : open -a IntelliJ\ IDEA
-hyper - j      : open -a Logseq
-hyper - l      : open -a Linear
+# hyper - i      : open -a IntelliJ\ IDEA
+# hyper - j      : open -a Logseq
+hyper - i      : open -a Linear
 hyper - n      : open -a Notion
 hyper - r      : env GITHUB_ORGS="pleo-io\njsfr" rmenu_repos --prompt ❯
 hyper - return : open -a WezTerm

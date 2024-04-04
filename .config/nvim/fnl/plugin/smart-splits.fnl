@@ -15,10 +15,10 @@
 (map! [n] :<C-l> ss.move_cursor_right)
 
 ;; swapping buffers between windows
-(map! [n] :<leader><leader>h ss.swap_buf_left)
-(map! [n] :<leader><leader>j ss.swap_buf_down)
-(map! [n] :<leader><leader>k ss.swap_buf_up)
-(map! [n] :<leader><leader>l ss.swap_buf_right)
+; (map! [n] :<leader><leader>h ss.swap_buf_left)
+; (map! [n] :<leader><leader>j ss.swap_buf_down)
+; (map! [n] :<leader><leader>k ss.swap_buf_up)
+; (map! [n] :<leader><leader>l ss.swap_buf_right)
 
 (ss.setup {:ignored_buftypes {:NvimTree
                               :undotree}})

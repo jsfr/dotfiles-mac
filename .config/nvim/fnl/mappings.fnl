@@ -13,15 +13,10 @@
 (map! [n] :<leader>w- :<Cmd>split<cr>)
 (map! [n] :<leader>w_ :<C-W>_)
 
-;; Use tab to indent and unindent
-(map! [i] :<Tab> :<C-t>)
-(map! [i] :<S-Tab> :<C-d>)
-
 ;; Open netrw in current folder
 (g! netrw_list_hide "^\\./$,^\\.\\./$")
 (g! netrw_hide 1)
 (map! [n] :- :<Cmd>Explore<cr>)
-(map! [n] "<leader>," (.. "<Cmd>Explore " vim.env.XDG_CONFIG_HOME :/nvim<cr>))
 
 ;; Visual shifting (does not exit Visual mode)
 (map! [v] :< :<gv)
