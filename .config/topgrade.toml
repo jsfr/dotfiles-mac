@@ -19,7 +19,7 @@ skip_notify = true
 
 # Custom commands
 [commands]
-"Golang (gup)" = "go run github.com/nao1215/gup@latest update"
+# "Golang (gup)" = "go run github.com/nao1215/gup@latest update"
 "Neovim (lazy.nvim)" = "nvim --headless \"+Lazy! sync\" +qa"
 "Neovim (mason.nvim)" = "nvim --headless +MasonUpdate +qa"
 
