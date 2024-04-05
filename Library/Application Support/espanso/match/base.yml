@@ -1,0 +1,29 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+matches:
+  - trigger: ";a"
+    replace: "å"
+
+  - trigger: ";A"
+    replace: "Å"
+
+  - trigger: ";o"
+    replace: "ø"
+
+  - trigger: ";O"
+    replace: "Ø"
+
+  - trigger: ";e"
+    replace: "æ"
+
+  - trigger: ";E"
+    replace: "Æ"
+
+  - trigger: "TYK"
+    replace: "to your knowledge"
+    word: true
+
+  - trigger: "TMK"
+    replace: "to my knowledge"
+    word: true
