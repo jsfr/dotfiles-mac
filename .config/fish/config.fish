@@ -49,6 +49,7 @@ bkt --ttl "7days" -- atuin init fish | source
 # completions
 bkt --ttl "7days" -- just --completions fish | source 
 bkt --ttl "7days" -- wezterm shell-completion --shell fish | source
+bkt --ttl "7days" -- dofi completions fish | source
 
 # enable pleo oo script
 source $HOME/Repos/github.com/pleo-io/pleo/bin/oo.fish

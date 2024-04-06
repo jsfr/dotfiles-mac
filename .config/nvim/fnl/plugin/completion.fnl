@@ -6,16 +6,7 @@
 (set vim.o.completeopt "menu,menuone,noselect")
 
 (fn snippet-fn [args]
-  (vim.fn.call "vsnip#anonymous" [args.body]))
-
-; (fn feedkey [key mode]
-;   (vim.api.nvim_feedkeys (vim.api.nvim_replace_termcodes key true true true) mode true))
-
-; (fn has-words-before? []
-;   (let [(line col) (unpack (vim.api.nvim_win_get_cursor 0))
-;         line-range (. (vim.api.nvim_buf_get_lines 0 (- line 1) line true) 1)]
-;     (and (~= col 0)
-;          (= (: (line-range:sub col col) :match :%s) nil))))
+  (luasnip.lsp_expand args.body))
 
 (fn tab-complete [fallback]
   (if
