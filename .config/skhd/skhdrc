@@ -30,6 +30,7 @@ hyper - return : open -a WezTerm
 hyper - s      : open -a Slack
 hyper - t      : open -a Todoist
 hyper - z      : (pgrep -fi zoom.us && open -a zoom.us) || (pgrep -fi meetinone && open -a MeetInOne)
+hyper - o      : open -a Logseq
 
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control

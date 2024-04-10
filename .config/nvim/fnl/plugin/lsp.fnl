@@ -68,4 +68,6 @@
                         :automatic_installation true})
 (mason-lspconfig.setup_handlers [setup-server])
 
+(lspconfig.harper_ls.setup {:settings {:harper-ls {:userDictPath "/Users/jens/.config/harper-ls/dict.txt"}}})
+
 {}

@@ -1,4 +1,4 @@
-(import-macros {: set! : augroup!} :hibiscus.vim)
+(import-macros {: set! : augroup! : setlocal!} :hibiscus.vim)
 
 (fn set-options [...]
   (each [_ [opt val] (ipairs [...])]
@@ -67,3 +67,12 @@
 (augroup! :timeout-group
           [[InsertEnter] "*" "set timeout ttimeout"]
           [[InsertLeave] "*" "set notimeout nottimeout"])
+
+(fn markdown-group []
+  ; (vim.cmd :PeekOpen)
+  ; (vim.cmd :ZenMode)
+  (setlocal! :linebreak true))
+
+(augroup! :markdown-group [[FileType] [markdown] `markdown-group])
+
+{}

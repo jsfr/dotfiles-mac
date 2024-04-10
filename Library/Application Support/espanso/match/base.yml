@@ -4,26 +4,48 @@
 matches:
   - trigger: ";a"
     replace: "å"
-
-  - trigger: ";A"
-    replace: "Å"
+    propagate_case: true
 
   - trigger: ";o"
     replace: "ø"
-
-  - trigger: ";O"
-    replace: "Ø"
+    propagate_case: true
 
   - trigger: ";e"
     replace: "æ"
+    propagate_case: true
 
-  - trigger: ";E"
-    replace: "Æ"
-
-  - trigger: "TYK"
+  - trigger: ";tyk"
     replace: "to your knowledge"
+    propagate_case: true
     word: true
 
-  - trigger: "TMK"
+  - trigger: ";tmk"
     replace: "to my knowledge"
+    propagate_case: true
     word: true
+
+  - trigger: ";today"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%F"
+
+  - trigger: ";tomorrow"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%F"
+          offset: 86400
+
+  - trigger: ":yesterday"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%F"
+          offset: -86400

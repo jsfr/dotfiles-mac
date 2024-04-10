@@ -1,4 +1,4 @@
-(import-macros {: color!} :hibiscus.vim)
+(import-macros {: color! : map!} :hibiscus.vim)
 (import-macros {: lazy!} :lazy-macros)
 
 ;;; Defaults
@@ -35,6 +35,10 @@
    :dependencies [:windwp/nvim-ts-autotag]
    :build #(vim.cmd :TSUpdateSync)
    :config #(require :plugin/treesitter)]
+  [:AckslD/nvim-FeMaco.lua
+   :main :femaco
+   :opts {}
+   :event :VeryLazy]
 
   ;; UI and layout management
   [:mrjones2014/smart-splits.nvim
@@ -45,8 +49,11 @@
    :config #(require :plugin/statusline)]
   [:stevearc/dressing.nvim
    :opts {}]
-  [:shortcuts/no-neck-pain.nvim
-   :event :VeryLazy]
+  [:folke/zen-mode.nvim
+   :dependencies [:folke/twilight.nvim]
+   :opts {}
+   :cmd [:ZenMode]]
+
   
   ;; LSP, lint and formatting
   [:williamboman/mason.nvim
@@ -137,12 +144,21 @@
    :event :VeryLazy]
   [:kdheepak/lazygit.nvim
    :dependencies [:nvim-lua/plenary.nvim]
-   :event :VeryLazy]
+   :event :VeryLazy
+   :config #(map! [n] :<leader>g :<cmd>LazyGit<cr>)]
 
   ;; Project env
   [:ahmedkhalf/project.nvim
    :main :project_nvim
    :opts {}]
+
+  ;; Markdown
+  [:toppair/peek.nvim
+   :cmd [:PeekOpen :PeekClose]
+   :build  "deno task --quiet build:fast"
+   :config #(let [peek (require :peek)]
+             (vim.api.nvim_create_user_command :PeekOpen peek.open {})
+             (vim.api.nvim_create_user_command :PeekClose peek.close {}))]
 
   ;; Misc
   [:Wansmer/treesj
