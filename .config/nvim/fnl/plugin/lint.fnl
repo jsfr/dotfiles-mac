@@ -6,10 +6,12 @@
 (set lint.linters_by_ft {:dockerfile [:hadolint]
                          :fennel [:fennel]
                          :fish [:fish]
-                         :yaml [:actionlint]})
+                         :yaml [:actionlint]
+                         :html [:htmlhint]})
 
 (mason-nvim-lint.setup {:ensure_installed [:hadolint
-                                           :actionlint]
+                                           :actionlint
+                                           :htmlhint]
                         :automatic_installation false})
 
 (fn try-lint [] 

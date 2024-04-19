@@ -28,9 +28,6 @@ bind cos recontain shopping
 
 " Redirects
 unset autocmds
-autocmd DocStart ^http(s?)://linear.app/ composite js document.location.href.replace(/http(?:s?):\/\/linear.app\/(.*)/, "linear://$1") | shellescape | exclaim_quiet open | tabclose
-" autocmd DocStart ^http(s?)://www.notion.so/pleo composite js document.location.href.replace(/http(?:s?):\/\/(.*)/, "notion://$1") | shellescape | exclaim_quiet open | tabclose
-
 unset autocontain
 
 autocontain -s opslevel.com Work

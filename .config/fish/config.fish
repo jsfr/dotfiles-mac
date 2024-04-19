@@ -9,14 +9,19 @@ alias ls="eza -1 -F"
 
 # define abbreviations
 abbr k "kubectl"
-abbr pr "gh pr"
+abbr pr "gh pr create"
 abbr zap "brew uninstall --force --zap"
+abbr cask "brew install --cask"
 abbr aum 'gh pr edit --add-label "automerge"'
 abbr tf "terraform"
 abbr u "upto"
 abbr gw "./gradlew"
 abbr cdg "cd (git root)"
 abbr g "git"
+abbr lg "lazygit"
+abbr p "pnpm"
+abbr x "pnpx"
+abbr n "nvim"
 
 # define custom keybindings
 function fish_user_key_bindings

@@ -124,7 +124,7 @@
    :dependencies [:folke/trouble.nvim
                   :debugloop/telescope-undo.nvim
                   :nvim-telescope/telescope-fzy-native.nvim]
-   :keys [[:U "<cmd>Telescope undo<cr>"]]
+   :keys [[:U "<cmd>Telescope undo<cr>" :<leader>. :<leader>ff :<leader>fg]]
    :branch :0.1.x
    :event :VeryLazy
    :config #(require :plugin/telescope)]
@@ -150,7 +150,7 @@
   ;; Project env
   [:ahmedkhalf/project.nvim
    :main :project_nvim
-   :opts {}]
+   :opts {:detection_methods [:pattern]}]
 
   ;; Markdown
   [:toppair/peek.nvim
