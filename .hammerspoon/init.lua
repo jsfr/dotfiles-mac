@@ -18,3 +18,6 @@ spoon.SpoonInstall:andUse("EmmyLua")
 
 local httpCallback = require("http_callback")
 httpCallback:init()
+
+local audioWatcher = require("audio_watcher")
+audioWatcher:init()

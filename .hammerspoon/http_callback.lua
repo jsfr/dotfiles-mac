@@ -26,9 +26,9 @@ local function httpCallback(scheme, host, _, fullURL, _)
 end
 
 return {
-    init = function ()
+    init = function()
         setmetatable(callbacks, {
-            __index = function ()
+            __index = function()
                 return openInDefaultBrowser
             end
         })
