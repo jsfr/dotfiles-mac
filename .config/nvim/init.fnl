@@ -25,8 +25,6 @@
              (color! :tokyonight-storm))]
 
   ;; Syntax
-  [:bakpakin/fennel.vim
-   :ft :fennel]
   [:NoahTheDuke/vim-just
    :ft :just]
   [:tridactyl/vim-tridactyl
@@ -123,7 +121,8 @@
   [:nvim-telescope/telescope.nvim
    :dependencies [:folke/trouble.nvim
                   :debugloop/telescope-undo.nvim
-                  :nvim-telescope/telescope-fzy-native.nvim]
+                  :nvim-telescope/telescope-fzy-native.nvim
+                  :dawsers/telescope-file-history.nvim]
    :keys [[:U "<cmd>Telescope undo<cr>" :<leader>. :<leader>ff :<leader>fg]]
    :branch :0.1.x
    :event :VeryLazy

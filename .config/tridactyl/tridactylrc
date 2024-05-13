@@ -4,8 +4,8 @@
 " General Settings
 set newtab about:blank
 set theme auto
-set hintfiltermode vimperator-reflow
-set hintnames short
+set hintfiltermode simple
+set hintnames uniform
 set hintdelay 100
 set incsearch true
 set tabclosepinned false
@@ -29,6 +29,8 @@ bind cos recontain shopping
 " Redirects
 unset autocmds
 unset autocontain
+
+autocontain -s configure.zsa.io Default
 
 autocontain -s opslevel.com Work
 autocontain -s app.humaans.io Work

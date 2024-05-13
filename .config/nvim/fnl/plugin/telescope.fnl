@@ -3,6 +3,7 @@
 (local actions (require :telescope.actions))
 (local builtin (require :telescope.builtin))
 (local trouble (require :trouble.providers.telescope))
+(local file-history (require :file_history))
 (local telescope (require :telescope))
 
 (telescope.setup {:defaults {:mappings {:i {:<c-t> trouble.open_with_trouble
@@ -12,9 +13,12 @@
                                       :layout_strategy :vertical
                                       :layout_config {:preview_height 0.8}}}})
 
+(file-history.setup {})
+
 ;; Extensions
 (telescope.load_extension :fzy_native)
 (telescope.load_extension :undo)
+(telescope.load_extension :file_history)
 
 (map! [n] :<leader>rg builtin.live_grep)
 (map! [n] :<leader>fa #(builtin.find_files {:hidden true}))

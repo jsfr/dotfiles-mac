@@ -13,10 +13,12 @@ end
 
 local function outputCallback(event)
     local deviceNames = {
+        "External Headphones",
         "Dark Star",
         "WF-1000XM5",
         "Ear (2)",
         "OpenFit by Shokz",
+        "Aeropex by AfterShokz",
         "FiiO UTWS5",
         "FiiO BTR5"
     }

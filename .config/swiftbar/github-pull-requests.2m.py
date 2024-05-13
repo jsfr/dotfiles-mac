@@ -120,7 +120,7 @@ def print_header(nodes, total_count):
     has_unread = any(not node.get("isReadByViewer", True) for node in nodes)
     header = f"{total_count} | sfimage = arrow.branch"
     header = f"{header} color = red" if has_unread else header
-    header = f"{header} shortcut = CTRL+OPTION+P"
+    header = f"{header} shortcut = CTRL+OPTION+SHIFT+COMMAND+P"
     print(header)
 
 

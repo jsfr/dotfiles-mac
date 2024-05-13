@@ -30,6 +30,7 @@
     sw = switch
     swf = "!git switch $(git branch | fzf)"
     up = pull --all --rebase --autostash
+    uu = pull --all --rebase --autostash
     upd = "!git add -u && git yolo && git push"
     wip = commit -m "wip" --no-verify
     yolo = "!git commit -m \"`curl -s https://whatthecommit.com/index.txt`\""

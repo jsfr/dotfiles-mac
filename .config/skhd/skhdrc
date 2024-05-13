@@ -27,8 +27,10 @@ hyper - r      : env GITHUB_ORGS="pleo-io\njsfr" rmenu_repos --prompt ❯
 hyper - return : open -a WezTerm
 hyper - s      : open -a Slack
 hyper - t      : open -a Todoist
-hyper - z      : (pgrep -fi zoom.us && open -a zoom.us) || (pgrep -fi "google meet" && open -a Google\ Meet)
+hyper - z      : pgrep -fi zoom.us && open -a zoom.us
 hyper - o      : open -a Logseq
+hyper - w      : open -a WezTerm
+hyper - j      : open -a Intellij\ Idea
 
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control
@@ -37,6 +39,7 @@ cmd - 0x0A       : open -a Mission\ Control
 # quit focused app
 # shift + cmd - q : osascript -e "quit app \"$(yabai -m query --windows --window | jq -r .app)\""
 shift + cmd - q : osascript -e "tell application \"Finder\" to set p to item 1 of (get file of (processes whose frontmost = true)) as text" -e "tell application p to quit"
+alt + cmd - q : osascript -e "tell application \"Finder\" to set p to item 1 of (get file of (processes whose frontmost = true)) as text" -e "tell application p to quit"
 
 # lock screen
 alt + cmd - l : skhd -k "ctrl + cmd - q"
@@ -65,7 +68,7 @@ shift + alt - l : yabai -m window --swap east
 # move window
 shift + cmd - h : yabai -m window --warp west
 shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
+shift + cmd - k : yabai -m window --warp nortr
 shift + cmd - l : yabai -m window --warp east
 
 # send window to desktop
@@ -111,19 +114,20 @@ resizer < l : yabai -m window --resize right:20:0  ; yabai -m window --resize le
 alt - r : yabai -m space --rotate 90
 
 # mirror tree y-axis
-alt - y : yabai -m space --mirror y-axis
+# alt - y : yabai -m space --mirror y-axis
 
 # mirror tree x-axis
-alt - x : yabai -m space --mirror x-axis
+# alt - x : yabai -m space --mirror x-axis
 
 # toggle window parent zoom
-alt - d : yabai -m window --toggle zoom-parent
+# alt - d : yabai -m window --toggle zoom-parent
 
 # toggle window fullscreen zoom
 alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
+alt + cmd - f   : yabai -m window --toggle native-fullscreen
 
 # toggle window split type
 alt - w : yabai -m window --toggle split

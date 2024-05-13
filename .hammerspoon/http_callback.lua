@@ -10,6 +10,9 @@ local callbacks = {
     end,
     ["meet.google.com"] = function(fullURL)
         hs.urlevent.openURLWithBundle(fullURL, "com.google.Chrome")
+    end,
+    ["www.notion.so"] = function (fullURL)
+        hs.urlevent.openURLWithBundle(fullURL, "notion.id")
     end
 }
 
