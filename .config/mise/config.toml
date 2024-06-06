@@ -1,9 +1,13 @@
 [tools]
-bun = "1"
+bun = "latest"
 java = "temurin-17"
 nodejs = "21"
-pnpm = "8"
+pnpm = "9"
 terraform = "1.5"
 usage = "latest"
 yarn = "1.22.19"
 deno = "latest"
+
+[settings]
+not_found_auto_install = true
+legacy_version_file = false

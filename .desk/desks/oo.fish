@@ -15,7 +15,7 @@ if test -z "$DESK_EXPORTED"
     #     osascript -e "quit app \"Access\"" > /dev/null
     # end
 
-    open -g -j -a Access
+    # open -g -j -a Access
 
     set -gx KUBECONFIG $HOME/.kube/config_desk
     set -gx DESK_EXPORTED true

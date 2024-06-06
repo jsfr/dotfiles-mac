@@ -17,20 +17,21 @@ default, resizer < cmd - 0x30 :
 default, resizer < shift + cmd - 0x30 :
 
 # app bindings
-hyper - 1      : open -a 1Password
+hyper - p      : open -a 1Password
 hyper - a      : open -a Beeper && open -a Signal
 hyper - c      : open -a Notion\ Calendar
-hyper - e      : open -a Firefox
+hyper - e      : ~/.local/bin/,open-or-focus-firefox
 hyper - i      : open -a Linear
 hyper - n      : open -a Notion
 hyper - r      : env GITHUB_ORGS="pleo-io\njsfr" rmenu_repos --prompt ❯
-hyper - return : open -a WezTerm
 hyper - s      : open -a Slack
-hyper - t      : open -a Todoist
+# hyper - t      : open -a Todoist
 hyper - z      : pgrep -fi zoom.us && open -a zoom.us
 hyper - o      : open -a Logseq
-hyper - w      : open -a WezTerm
 hyper - j      : open -a Intellij\ Idea
+hyper - w      : open -a WezTerm
+hyper - t      : open -a WezTerm
+hyper - return : open -a WezTerm
 
 cmd - escape     : open -a Mission\ Control
 cmd - 0x32       : open -a Mission\ Control

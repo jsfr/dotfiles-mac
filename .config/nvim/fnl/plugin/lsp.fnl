@@ -43,6 +43,7 @@
                 :dockerls {}
                 :htmx {}
                 :html {}
+                :harper_ls {:settings {:harper-ls {:userDictPath "/Users/jens/.config/harper-ls/dict.txt"}}}
                 :fennel_language_server {:settings {:fennel {:diagnostics {:globals [:vim]}}}}
                 :docker_compose_language_service {}})
 
@@ -67,7 +68,5 @@
 (mason-lspconfig.setup {:ensure_installed (get-servers)
                         :automatic_installation true})
 (mason-lspconfig.setup_handlers [setup-server])
-
-(lspconfig.harper_ls.setup {:settings {:harper-ls {:userDictPath "/Users/jens/.config/harper-ls/dict.txt"}}})
 
 {}
