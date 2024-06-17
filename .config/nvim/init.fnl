@@ -115,9 +115,10 @@
   ;; Selectors
   [:folke/trouble.nvim
    :dependencies [:kyazdani42/nvim-web-devicons]
-   :event :VeryLazy]
+   :opts {}
+   :cmd :Trouble]
   [:folke/todo-comments.nvim
-   :event :VeryLazy]
+   :cmd :TodoTrouble]
   [:nvim-telescope/telescope.nvim
    :dependencies [:folke/trouble.nvim
                   :debugloop/telescope-undo.nvim

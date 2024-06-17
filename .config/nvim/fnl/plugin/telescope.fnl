@@ -2,13 +2,13 @@
 
 (local actions (require :telescope.actions))
 (local builtin (require :telescope.builtin))
-(local trouble (require :trouble.providers.telescope))
+(local trouble (require :trouble.sources.telescope))
 (local file-history (require :file_history))
 (local telescope (require :telescope))
 
-(telescope.setup {:defaults {:mappings {:i {:<c-t> trouble.open_with_trouble
+(telescope.setup {:defaults {:mappings {:i {:<c-t> trouble.open
                                             :<esc> actions.close}
-                                        :n {:<c-t> trouble.open_with_trouble}}}
+                                        :n {:<c-t> trouble.open}}}
                   :extensions {:undo {:side_by_side true
                                       :layout_strategy :vertical
                                       :layout_config {:preview_height 0.8}}}})
