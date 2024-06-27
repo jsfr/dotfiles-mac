@@ -4,7 +4,6 @@ tap "buo/cask-upgrade" # cask upgrade tool, used by topgrade
 tap "homebrew/bundle" # brew bundle
 tap "homebrew/cask-fonts" # jetbrains mono
 tap "homebrew/services"
-tap "koekeishiya/formulae" # yabai + skhd
 tap "opslevel/tap" # opslevel
 tap "pkgxdev/made" # pkgx
 tap "espanso/espanso"
@@ -90,7 +89,6 @@ brew "ripgrep"
 brew "rm-improved"
 brew "scc"
 brew "sd"
-brew "skhd"
 brew "starship"
 brew "tccutil"
 brew "tealdeer"
@@ -102,7 +100,6 @@ brew "watch"
 brew "watchexec"
 brew "wget"
 brew "xsv"
-brew "yabai"
 brew "yq"
 brew "zig"
 brew "zoxide"

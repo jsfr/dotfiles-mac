@@ -25,9 +25,14 @@ outer.bottom =     8
 outer.top =        8
 outer.right =      8
 
-[mode.main.binding]
-ctrl-alt-shift-cmd-e = 'exec-and-forget open -a Firefox'
+[key-mapping.key-notation-to-key-code]
+hyper = 'ctrl-alt-shift-cmd'
 
+[mode.main.binding]
+# Disable annoying hide keybinding
+cmd-h = []
+
+ctrl-alt-shift-cmd-e = 'exec-and-forget open /Users/jens/.local/bin/,open-or-focus-firefox'
 ctrl-alt-shift-cmd-p = 'exec-and-forget open -a 1Password'
 ctrl-alt-shift-cmd-a = 'exec-and-forget open -a Beeper && open -a Signal'
 ctrl-alt-shift-cmd-c = 'exec-and-forget open -a "Notion Calendar"'
@@ -97,29 +102,28 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main']
 f = ['layout floating tiling', 'mode main']
-backspace = ['close-all-windows-but-current', 'mode main']
+# backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
+alt-h = ['join-with left', 'mode main']
+alt-j = ['join-with down', 'mode main']
+alt-k = ['join-with up', 'mode main']
+alt-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'im.beeper'
-run = ['move-node-to-workspace 7']
-
-[[on-window-detected]]
-if.app-id = 'org.whispersystems.signal-desktop'
-run = ['move-node-to-workspace 7']
-
-[[on-window-detected]]
-if.app-id = 'org.whispersystems.signal-desktop'
-run = ['move-node-to-workspace 7']
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Notion Calendar'
 run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
+if.app-id = 'org.whispersystems.signal-desktop'
+run = ['move-node-to-workspace 8']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Notion Calendar'
 run = ['move-node-to-workspace 9']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace 10']
+
+[workspace-to-monitor-force-assignment]
+10 = 'built-in'
