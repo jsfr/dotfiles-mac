@@ -7,8 +7,8 @@ SETUVAR _fisher_g_2D_plane_2F_pnpm_2D_shell_2D_completion_files:\x7e/\x2econfig/
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_markcial_2F_upto_files:\x7e/\x2econfig/fish/functions/upto\x2efish\x1e\x7e/\x2econfig/fish/completions/upto\x2efish
-SETUVAR _fisher_mong8se_2F_actually_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/actually\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1emarkcial/upto\x1ejorgebucaran/autopair\x2efish\x1eg\x2dplane/pnpm\x2dshell\x2dcompletion\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1emong8se/actually\x2efish
+SETUVAR _fisher_meaningful_2D_ooo_2F_sponge_files:\x7e/\x2econfig/fish/functions/_sponge_clear_state\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_exit\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_postexec\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_preexec\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_on_prompt\x2efish\x1e\x7e/\x2econfig/fish/functions/_sponge_remove_from_history\x2efish\x1e\x7e/\x2econfig/fish/functions/sponge_filter_failed\x2efish\x1e\x7e/\x2econfig/fish/functions/sponge_filter_matched\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/sponge\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1emarkcial/upto\x1ejorgebucaran/autopair\x2efish\x1eg\x2dplane/pnpm\x2dshell\x2dcompletion\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1emeaningful\x2dooo/sponge
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR base16_theme:oceanicnext
 SETUVAR fish_color_autosuggestion:4F5B66
