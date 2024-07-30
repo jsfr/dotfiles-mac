@@ -25,4 +25,4 @@ skip_notify = true
 "Mise" = "mise upgrade"
 
 [post_commands]
-"Update Yabai Sha" = "/Users/jens/.local/bin/,update-yabai"
+# "Update Yabai Sha" = "/Users/jens/.local/bin/,update-yabai"
