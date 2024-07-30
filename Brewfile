@@ -1,15 +1,16 @@
 # Taps
 tap "FelixKratz/formulae" # borders
+tap "abhinav/tap" # git-spice
+tap "alienator88/cask" # pearcleaner
 tap "buo/cask-upgrade" # cask upgrade tool, used by topgrade
+tap "derailed/k9s"
+tap "espanso/espanso"
 tap "homebrew/bundle" # brew bundle
 tap "homebrew/cask-fonts" # jetbrains mono
 tap "homebrew/services"
+tap "nikitabobko/tap" # aerospace
 tap "opslevel/tap" # opslevel
 tap "pkgxdev/made" # pkgx
-tap "espanso/espanso"
-tap "alienator88/cask" # pearcleaner
-tap "derailed/k9s"
-tap "nikitabobko/tap" # aerospace
 
 # Brews
 brew "age"
@@ -44,6 +45,7 @@ brew "gh"
 brew "git"
 brew "git-delta"
 brew "git-extras"
+brew "git-spice"
 brew "gitui"
 brew "glow"
 brew "gnu-sed"
@@ -67,6 +69,7 @@ brew "libqalculate"
 brew "lsd"
 brew "luajit"
 brew "mas"
+brew "mcfly"
 brew "mise"
 brew "mkcert"
 brew "moar"
@@ -129,6 +132,7 @@ cask "logseq"
 cask "maccy"
 cask "meetingbar"
 cask "notion-calendar"
+cask "notunes"
 cask "obsbot-center"
 cask "onyx"
 cask "pearcleaner"
