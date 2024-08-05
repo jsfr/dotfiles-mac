@@ -31,10 +31,10 @@ unset autocmds
 unset autocontain
 
 autocontain -s configure.zsa.io Default
+autocontain -s app.ledgy.com Default
 
 autocontain -s opslevel.com Work
 autocontain -s app.humaans.io Work
-autocontain -s app.ledgy.com Work
 autocontain -s app.pagerduty.com Work
 autocontain -s app.reclaim.ai Work
 autocontain -s app3.greenhouse.io Work
