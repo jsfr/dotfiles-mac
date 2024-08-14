@@ -1,12 +1,12 @@
 [tools]
 bun = "latest"
-java = "temurin-17"
+deno = "latest"
+java = "temurin-21"
 nodejs = "21"
 pnpm = "9"
 terraform = "1.5"
 usage = "latest"
 yarn = "1.22.19"
-deno = "latest"
 
 [settings]
 not_found_auto_install = true

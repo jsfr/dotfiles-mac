@@ -86,12 +86,12 @@
                         (conform.format {:async true :lsp_fallback true}))]]]
 
   ;; Completion
-  [:abecodes/tabout.nvim
-   :dependencies [:hrsh7th/nvim-cmp
-                  :nvim-treesitter/nvim-treesitter]
-   :opts {:act_as_shift_tab true
-          :ignore_beginning false}
-   :event [:InsertEnter]]
+  ; [:abecodes/tabout.nvim
+  ;  :dependencies [:hrsh7th/nvim-cmp
+  ;                 :nvim-treesitter/nvim-treesitter]
+  ;  :opts {:act_as_shift_tab true
+  ;         :ignore_beginning false}
+  ;  :event [:InsertEnter]]
   [:L3MON4D3/LuaSnip
    :lazy true
    :build "make install_jsregexp"

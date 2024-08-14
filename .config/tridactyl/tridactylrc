@@ -61,9 +61,3 @@ autocontain -s heap.dk Banking
 autocontain -s topdanmark.dk Banking
 autocontain -s grandhood.dk Banking
 autocontain -s velliv.dk Banking
-
-autocontain -s linkedin.com LinkedIn
-
-autocontain -s facebook.com Facebook
-autocontain -s instagram.com Facebook
-autocontain -s messenger.com Facebook
