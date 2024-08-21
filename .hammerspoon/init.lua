@@ -16,8 +16,8 @@ LOG_LEVEL = "info"
 hs.loadSpoon("SpoonInstall")
 spoon.SpoonInstall:andUse("EmmyLua")
 
-local httpCallback = require("http_callback")
-httpCallback:init()
+-- local httpCallback = require("http_callback")
+-- httpCallback:init()
 
 local audioWatcher = require("audio_watcher")
 audioWatcher:init()
