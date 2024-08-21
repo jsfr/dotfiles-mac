@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set -l BACKUP "$HOME/Library/CloudStorage/ProtonDrive-jensfredskov@protonmail.com/backup"
+set -l BACKUP "$HOME/Library/CloudStorage/ProtonDrive-jensfredskov@protonmail.com-folder/backup"
 
 rm -r "$BACKUP"
 mkdir "$BACKUP"
