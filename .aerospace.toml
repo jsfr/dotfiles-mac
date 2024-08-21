@@ -131,3 +131,8 @@ run = ['move-node-to-workspace 10']
 
 [workspace-to-monitor-force-assignment]
 10 = 'built-in'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = 'layout floating'
