@@ -50,8 +50,8 @@ bkt --ttl "7days" -- direnv hook fish | source
 bkt --ttl "7days" -- zoxide init fish --cmd cd | source
 
 # enable atuin
-# bkt --ttl "7days" -- atuin init fish | source
-bkt --ttl "7days" -- mcfly init fish | source
+bkt --ttl "7days" -- atuin init fish | source
+# bkt --ttl "7days" -- mcfly init fish | source
 
 # completions
 bkt --ttl "7days" -- just --completions fish | source 

@@ -68,6 +68,7 @@ alt-shift-l = 'move right'
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
+ctrl-shift-equal = 'balance-sizes'
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -91,15 +92,11 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 # alt-shift-tab = 'move-node-to-workspace'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-shift-semicolon = 'mode service'
 alt-shift-semicolon = 'mode service'
-
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -107,7 +104,6 @@ esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main']
 f = ['layout floating tiling', 'mode main']
 b = ['exec-and-forget /opt/homebrew/bin/borders style=round width=5 hidpi=off active_color=0xff618a57 inactive_color=0x00000000', 'mode main']
-
 h = ['join-with left', 'mode main']
 j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
@@ -129,10 +125,10 @@ run = ['move-node-to-workspace 9']
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['move-node-to-workspace 10']
 
-[workspace-to-monitor-force-assignment]
-10 = 'built-in'
-
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
+
+[workspace-to-monitor-force-assignment]
+10 = 'built-in'
