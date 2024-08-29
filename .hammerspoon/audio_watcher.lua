@@ -17,6 +17,7 @@ local function outputCallback(event)
         "Dark Star",
         "WF-1000XM5",
         "Ear (2)",
+        "Nothing Ear",
         "OpenFit by Shokz",
         "Aeropex by AfterShokz",
         "FiiO UTWS5",

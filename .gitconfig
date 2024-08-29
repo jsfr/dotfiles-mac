@@ -7,6 +7,8 @@
 [push]
     default = current
 [alias]
+    mc = merge --continue
+    rc = rebase --continue
     fp = push --force-with-lease
     a = add
     aa = add -A
