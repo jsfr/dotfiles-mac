@@ -7,6 +7,8 @@ tap "homebrew/services"
 tap "nikitabobko/tap" # aerospace
 
 # Brews
+brew "go"
+brew "atool"
 brew "atuin"
 brew "bacon"
 brew "bash"
@@ -52,6 +54,7 @@ brew "topgrade"
 brew "zoxide"
 
 # Casks
+cask "chromium", args: { no_quarantine: true }
 cask "1password"
 cask "aerospace"
 cask "audacity"
