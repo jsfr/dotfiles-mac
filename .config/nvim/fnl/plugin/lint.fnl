@@ -7,11 +7,14 @@
                          :fennel [:fennel]
                          :fish [:fish]
                          :ghaction [:actionlint]
-                         :html [:htmlhint]})
+                         :html [:htmlhint]
+                         :clojure [:joker]
+                         })
 
 (mason-nvim-lint.setup {:ensure_installed [:hadolint
                                            :actionlint
-                                           :htmlhint]
+                                           :htmlhint
+                                           :joker]
                         :automatic_installation false})
 
 (vim.filetype.add {:pattern {".*/.github/workflows/.*%.yml" :yaml.ghaction

@@ -126,7 +126,7 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['move-node-to-workspace 10']
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
+if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
 

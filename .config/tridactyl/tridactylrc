@@ -33,28 +33,6 @@ unset autocontain
 autocontain -s configure.zsa.io Default
 autocontain -s app.ledgy.com Default
 
-autocontain -s opslevel.com Work
-autocontain -s app.humaans.io Work
-autocontain -s app.pagerduty.com Work
-autocontain -s app.reclaim.ai Work
-autocontain -s app3.greenhouse.io Work
-autocontain -s linear.app Work
-autocontain -s pleo-dk.thanksben.com Work
-autocontain -s pleo.latticehq.com Work
-autocontain -s notion.so Work
-autocontain -s pagerduty.com Work
-autocontain -s app.datadoghq.eu Work
-autocontain -s pleo.zoom.us Work
-autocontain -s tella.tv Work
-autocontain -s env0.com Work
-autocontain -s pleo-sso.awsapps.com Work
-autocontain -s pleo.okta.com Work
-autocontain -u ^https?://github\.com/pleo-io Work
-autocontain -u ^https?://github\.com/orgs/pleo-io Work
-autocontain -s metabase.pleo.io Work
-autocontain -s incident.io Work
-autocontain -s swarmia.com Work
-
 autocontain -s nordnet.dk Banking
 autocontain -s lsb.dk Banking
 autocontain -s heap.dk Banking

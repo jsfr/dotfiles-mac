@@ -5,5 +5,5 @@ WINDOW_ID=$(aerospace list-windows --all | grep Firefox | grep -v Picture-in-Pic
 if [ -n "$WINDOW_ID" ]; then
     aerospace focus --window-id "$WINDOW_ID"
 else
-    open -a Firefox
+    open -a "Firefox Developer Edition"
 fi

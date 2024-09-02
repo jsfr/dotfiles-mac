@@ -27,5 +27,5 @@
 (map! [n] :<leader>ff builtin.git_files)
 (map! [n] :<leader>fb builtin.buffers)
 (map! [n] :<leader>fr builtin.registers)
-(map! [n] :<leader>. #(builtin.git_files {:cwd "$HOME/dotfiles"
+(map! [n] :<leader>. #(builtin.git_files {:cwd "$DOFI_DIR"
                                           :show_untracked true}))

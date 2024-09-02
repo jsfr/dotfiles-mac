@@ -1,17 +1,4 @@
 [misc]
-# Same options as the command line flag
-disable = [
-    "emacs",
-    "gem",
-    "vim",
-    "system",
-    "yarn",
-    "helm",
-    "containers",
-    "bun",
-    "nix",
-    "git_repos"
-]
 no_retry = true
 pre_sudo = true
 assume_yes = true
@@ -19,10 +6,6 @@ skip_notify = true
 
 # Custom commands
 [commands]
-# "Golang (gup)" = "go run github.com/nao1215/gup@latest update"
 "Neovim (lazy.nvim)" = "nvim --headless \"+Lazy! sync\" +qa"
 "Neovim (mason.nvim)" = "nvim --headless +MasonUpdate +qa"
 "Mise" = "mise upgrade"
-
-[post_commands]
-# "Update Yabai Sha" = "/Users/jens/.local/bin/,update-yabai"
