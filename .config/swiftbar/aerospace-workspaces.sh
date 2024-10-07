@@ -13,15 +13,21 @@
 # <swiftbar.hideDisablePlugin>true</swiftbar.hideDisablePlugin>
 # <swiftbar.hideSwiftBar>true</swiftbar.hideSwiftBar>
 
-focused_workspace=$(aerospace list-workspaces --focused)
+focused_workspaces=$(aerospace list-workspaces --monitor all --visible)
 
 workspaces=$(aerospace list-workspaces --monitor all --empty no)
 workspaces=$(echo "$workspaces $focused_workspace" | tr ' ' '\n' | sort -h | uniq)
 
 for workspace in $workspaces; do
-    if [ $workspace == $focused_workspace ]; then
-        printf ':%s.square.fill:' "$workspace"
-    else
+    is_done=false
+    for focused_workspace in $focused_workspaces; do
+        if [ $workspace == $focused_workspace ]; then
+            printf ':%s.square.fill:' "$workspace"
+            is_done=true
+            break
+        fi
+    done
+    if [ $is_done = false ]; then
         printf ':%s.square:' "$workspace"
     fi
 done

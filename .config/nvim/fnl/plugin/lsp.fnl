@@ -31,7 +31,7 @@
                 :tflint {}
                 :codeqlls {}
                 :eslint {}
-                :tsserver {:disabled true}
+                :ts_ls {:disabled true}
                 :yamlls {:settings {:yaml {:schemas {"/Users/jens/Repos/github.com/pleo-io/file-distributor/src/files-schema.json" "/.github/templates.yaml"
                                                      "https://app.opslevel.com/public/opslevel.schema.yml" "/*opslevel.yml"}
                                            :schemaStore {:enable true

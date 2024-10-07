@@ -3,6 +3,7 @@ no_retry = true
 pre_sudo = true
 assume_yes = true
 skip_notify = true
+disable = ["git_repos"]
 
 # Custom commands
 [commands]

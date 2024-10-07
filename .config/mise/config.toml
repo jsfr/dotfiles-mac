@@ -3,6 +3,7 @@ bun = "latest"
 nodejs = "latest"
 pnpm = "latest"
 usage = "latest"
+dotnet = "latest"
 
 [settings]
 not_found_auto_install = true

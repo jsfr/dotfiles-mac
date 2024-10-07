@@ -37,15 +37,12 @@ cmd-h = []
 ctrl-alt-shift-cmd-e = 'exec-and-forget /Users/jens/.local/bin/,open-or-focus-firefox'
 ctrl-alt-shift-cmd-p = 'exec-and-forget open -a 1Password'
 ctrl-alt-shift-cmd-a = 'exec-and-forget open -a Beeper && open -a Signal'
-ctrl-alt-shift-cmd-c = 'exec-and-forget open -a "Notion Calendar"'
-ctrl-alt-shift-cmd-i = 'exec-and-forget open -a Linear'
-ctrl-alt-shift-cmd-n = 'exec-and-forget open -a Notion'
-ctrl-alt-shift-cmd-r = 'exec-and-forget env GITHUB_ORGS="pleo-io\njsfr" rmenu_repos --prompt ❯'
+ctrl-alt-shift-cmd-c = 'exec-and-forget open -a "Calendar"'
 ctrl-alt-shift-cmd-s = 'exec-and-forget open -a Slack'
 ctrl-alt-shift-cmd-z = 'exec-and-forget pgrep -fi zoom.us && open -a zoom.us'
-ctrl-alt-shift-cmd-o = 'exec-and-forget open -a Logseq'
-ctrl-alt-shift-cmd-j = 'exec-and-forget open -a "Intellij Idea"'
-ctrl-alt-shift-cmd-t = 'exec-and-forget open -a WezTerm'
+ctrl-alt-shift-cmd-o = 'exec-and-forget open -a Obsidian'
+ctrl-alt-shift-cmd-t = 'exec-and-forget open -a "Microsoft Teams"'
+ctrl-alt-shift-cmd-v = 'exec-and-forget open -a "Visual Studio Code"'
 ctrl-alt-shift-cmd-enter = 'exec-and-forget open -a WezTerm'
 cmd-esc = 'exec-and-forget open -a "Mission Control"'
 
@@ -93,12 +90,10 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
 alt-tab = 'workspace-back-and-forth'
-# alt-shift-tab = 'move-node-to-workspace'
+alt-backtick = 'workspace-back-and-forth'
 
-ctrl-shift-semicolon = 'mode service'
-alt-shift-semicolon = 'mode service'
-# 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+alt-semicolon = 'mode service'
+
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main']
@@ -118,7 +113,7 @@ if.app-id = 'org.whispersystems.signal-desktop'
 run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Notion Calendar'
+if.app-id = 'com.apple.iCal'
 run = ['move-node-to-workspace 9']
 
 [[on-window-detected]]
@@ -126,9 +121,13 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = ['move-node-to-workspace 10']
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace 10']
+
+[[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'
 if.window-title-regex-substring = 'Picture-in-Picture'
-run = 'layout floating'
+run = ['layout floating']
 
 [workspace-to-monitor-force-assignment]
 10 = 'built-in'

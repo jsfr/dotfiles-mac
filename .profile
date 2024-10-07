@@ -54,5 +54,9 @@ if [[ -z $ENV_EXPORTED ]]; then
 
     export FIREFOX_PROFILE="$HOME/Library/Application Support/Firefox/Profiles/rbq3oxda.dev-edition-default"
 
+    export NUGET_CREDENTIALPROVIDER_MSAL_ENABLED=true
+    export NUGET_CREDENTIALPROVIDER_FORCE_CANSHOWDIALOG_TO=true
+    export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+
     export ENV_EXPORTED="exported"
 fi
