@@ -30,7 +30,7 @@
   [:mouse :a]
   [:number true]
   [:pumheight 20]
-  [:relativenumber true]
+  [:relativenumber (not vim.g.vscode)]
   [:report 0]
   [:ruler true]
   [:scrolljump 5]

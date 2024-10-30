@@ -6,6 +6,8 @@
 ;; jj escape sequence
 (map! [i] :jj :<esc>)
 (map! [c] :jj :<c-c>)
+(map! [i] :JJ :<esc>)
+(map! [c] :JJ :<c-c>)
 
 ;; Spacemacs inspired keybings
 (map! [n] :<leader>wc :<C-w>q)

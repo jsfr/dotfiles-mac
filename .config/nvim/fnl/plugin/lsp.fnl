@@ -11,13 +11,13 @@
     (vim.keymap.set :n :gr vim.lsp.buf.references bufopts)
     (vim.keymap.set :n :K vim.lsp.buf.hover bufopts)
     (vim.keymap.set :n :<leader>k vim.lsp.buf.signature_help bufopts)
-    (vim.keymap.set :n :<leader>rn vim.lsp.buf.rename bufopts)
-    (vim.keymap.set :n :<leader>ca vim.lsp.buf.code_action bufopts)
+    (vim.keymap.set :n :<leader>r vim.lsp.buf.rename bufopts)
+    (vim.keymap.set :n :<leader>a vim.lsp.buf.code_action bufopts)
     (vim.keymap.set :n :<leader>f vim.lsp.buf.format bufopts)
     (vim.keymap.set :n :<leader>e vim.diagnostic.open_float bufopts)
     (vim.keymap.set :n "[d" vim.diagnostic.goto_prev bufopts)
     (vim.keymap.set :n "]d" vim.diagnostic.goto_next bufopts)
-    (vim.keymap.set :n :<localleader>q vim.diagnostic.setqflist bufopts)))
+    (vim.keymap.set :n :<leader>q vim.diagnostic.setqflist bufopts)))
 
 (local servers {:bashls {}
                 :golangci_lint_ls {}
@@ -43,7 +43,6 @@
                 :dockerls {}
                 :htmx {}
                 :html {}
-                :harper_ls {:settings {:harper-ls {:userDictPath "/Users/jens/.config/harper-ls/dict.txt"}}}
                 :fennel_language_server {:settings {:fennel {:diagnostics {:globals [:vim]}}}}
                 :docker_compose_language_service {}})
 

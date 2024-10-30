@@ -4,6 +4,8 @@ nodejs = "latest"
 pnpm = "latest"
 usage = "latest"
 dotnet = "latest"
+yarn = "1"
+poetry = "latest"
 
 [settings]
 not_found_auto_install = true
